@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="//xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript">
     var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
@@ -14,16 +14,18 @@
 </script>
 </head>
 <body>
+    <h1>Welcome to Buzzer!</h1>
     <div data-hull-component="login/profile@hull" data-hull-provider="facebook"></div>
     <input type="text" id="searchField"></input>
     <button type="button" id="search">Search</button>
+    <h1>Create new Buzz</h1>
     <input type="text" id="newEntityField">Topic</input>
     Tags
     <input type="text" id="tagsField"></input>
     <button type="button" id="createTopic">Create Topic</button>
     
     <script type='text/x-handlebars' data-hull-template='posts/posts'}>
-        <h1>Trending Buzz</h1>
+    <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
                 <div>
@@ -41,7 +43,7 @@
             {{/if}}
         {{/each}}
         <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load More Trending Topics</button>
-        
+
         <h1>New Buzz</h1>
         {{#each newPosts}}
             {{#if name}}
@@ -59,7 +61,8 @@
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
-        <button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button>
+        <button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button>    
+
       </script>
         
     <script type='text/x-handlebars' data-hull-template='posts/post'}>
@@ -232,7 +235,8 @@
             }, //initialize
             datasources: {
                 newPosts: function() {
-                    return this.api('app/entities', {
+                    return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                        'visibiliy': 'public',
                         limit: this.options.limit,
                         order_by: 'created_at DESC'
                      });
@@ -279,21 +283,6 @@
                                 componenet.options.trendingDaysLimit += 5;
                                 componenet.render();
                             }
-        /* $.each(response.result, function(responseIndex, responseValue){
-                                componenet.api(responseValue.target_id, 'get').then(function(response) {
-                                    result.push(response);
-                                }, function(error) {
-                                        numberOfPosts--;
-                                    });
-                            });
-        
-                            (function wait(){
-                                if(result.length == numberOfPosts) {
-                                    dff.resolve(result);
-                                } else {
-                                    setTimeout(wait, 100);
-                                }
-        })();*/
                         });    //end of keen response
                     });
                     return dff.promise();
@@ -306,6 +295,7 @@
             afterRender: function() {
                 var tab = this.$el.find("li.tab-item." + this.currentView);
                 tab.addClass("active");
+               
             },
             actions: {
                 loadMore: function() {
@@ -471,7 +461,8 @@
             datasources: {
                 post: ':id',
                 postsUnder: function() {
-                    return this.api('app/entities', {
+                    return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                        'visibiliy': 'public',
                         where:{
                           'tags.value':this.options.id,
                         },
@@ -485,14 +476,19 @@
                     var numberOfTags = 0;
                     var componentRef = this;
                     this.api(this.options.id, 'get').then(function(response) {
+                    if(response.tags) {
                         numberOfTags = response.tags.length;
                         $.each(response.tags, function(tagsIndex, tagValue){
-                            componentRef.api('app/entities', {
-                            where:{
-                            'tags.value':tagValue.value,
-                            },
-                            limit: 1000
-                            }).then(function(response){
+                            console.log("tag value");
+                            console.log(tagValue);
+                            componentRef.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                        'visibiliy': 'public',
+                        where:{
+                          'tags.value':tagValue.value
+                        }                     
+                        }).then(function(response){
+                                console.log("related tag");
+                                console.log(response);
                                 $.each(response, function(responseIndex, responseValue){
                                     if(responseValue.id != componentRef.options.id) {
                                         result.push(responseValue);
@@ -510,16 +506,27 @@
                                 setTimeout(wait, 100);
                             }
                         })();
-                    });
+                      }
+                    else {
+                        dff.resolve(result);
+                    }
+                  });            
                   return dff.promise();
                 }
             },    
             initialize: function(data) {
+                console.log("init");
+                console.log(data);
+                console.log(data);
             },
             beforeRender: function (data, errors) {
+                console.log("before render");
+                console.log(data);
                 console.log("Before render errors:" + errors);
             },
-            afterRender: function () {
+            afterRender: function (data) {
+                console.log("after render");
+                console.log(data);
                 var tagsElement = $('#postTags');
                 tagsElement.tagsInput({
                     'autocomplete_url': arr,
@@ -536,9 +543,11 @@
                     'maxChars' : 0,
                     'placeholderColor' : '#666666'
                 });
-               $.each(this.data.post.attributes.tags, function (tagIndex, tagValue) {
-                   tagsElement.addTag(tagValue.label);
-               });
+                if(this.data.post.attributes.tags) {
+                   $.each(this.data.post.attributes.tags, function (tagIndex, tagValue) {
+                       tagsElement.addTag(tagValue.label);
+                   });
+                }
             },
             actions: {
                 deleteTopic: function() {
@@ -570,14 +579,16 @@
         
         Hull.init({
             debug: false, //Enable to see all traces from the app
-            appId : "52c1ef5f4d4b2838a000002c",
+            appId : "52e0c2a06b2de9b464000590",
             orgUrl: "https://d291172a.hullapp.io"
         }, function(hull, me, app, org){
         
             console.log('Here we go!');
             
-            hull.api('app/entities',{"limit":1000}).then(function(response) {
-                console.log('Entities', response);
+            hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                        'visibiliy': 'public'
+            }).then(function(response) {
+                console.log('conversations', response);
                 arr = $.map(response, function(elementOfArray, indexInArray){
                     if(elementOfArray.name){
                         var datum = {
@@ -612,25 +623,24 @@
                     'maxChars' : 0,
                     'placeholderColor' : '#666666'
                 });
-            }); //get entities
+            }); //get conversations
         
         }); //Hull.init
         
         $('#createTopic').on('click', function(){
-            var newEntityName = $('#newEntityField').val();
-            if(newEntityName) {
+            var newConversationName = $('#newEntityField').val();
+            if(newConversationName) {
                 var tagsText = $('#tagsField').val();
                 var tagsPromise = processTags(tagsText);
                 tagsPromise.done(function(result){
-                    //create the new entity
-                    var entity = Hull.util.entity.encode(newEntityName);
-                    Hull.api('/app/entities', 'post',{
-                        "uid": entity,
-                        "name": newEntityName,
+                    //create the new conversation
+                    Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                        "visibility": "public",
+                        "name": newConversationName,
                         "tags": result
                     }).then(function(response) {
                         console.log(response);
-                        window.location.href = '#/posts/nbmbn';
+                        window.location.href = '#/posts';
                     });
                 });
             }
@@ -644,7 +654,8 @@
             Hull.api(postID, 'get').then(function(response) {
                 numberOfTags = response.tags.length;
                 $.each(response.tags, function(tagsIndex, tagValue){
-                    Hull.data.api('app/entities', {
+                Hull.data.api('/52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                    'visibility':'public',
                     where:{
                     'tags.value':tagValue.value,
                     },
@@ -679,14 +690,13 @@
                     if(temp[0]){
                         //Tag has anID
                         tagsWithID.push(temp[0]);
-                        console.log("TAAGS");
+                        console.log("existing tag");
                         console.log(++tagsFinished);
                     } else {
                         //Tag does not have ID, create new Entity
-                        var entity = Hull.util.entity.encode(valueTextTag);
                    
-                        Hull.api('/app/entities', 'post',{
-                            "uid": entity,
+                        Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                            "visibility": "public",
                             "name": valueTextTag
                         }).then(function(response) {
                             console.log("Tag Created");
@@ -695,7 +705,7 @@
                                 value: response.id
                             }
                             tagsWithID.push(datum);
-                            console.log("TAAGS");
+                            console.log("new tag");
                             console.log(++tagsFinished);
                        });
                     }
