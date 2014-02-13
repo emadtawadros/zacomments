@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="//xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript">
     var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
@@ -25,7 +25,7 @@
     <button type="button" id="createTopic">Create Topic</button>
     
     <script type='text/x-handlebars' data-hull-template='posts/posts'}>
-    <h1>Trending Buzz</h1>
+                <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
                 <div>
@@ -74,8 +74,17 @@
         <h1>current user</h1>
     </script>
     
+    <script type='text/x-handlebars' data-hull-template='search/search'}>
+        <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
+        <h1>current search: {{search}}</h1>
+    </script>
+    
      <script type='text/x-handlebars' data-hull-template='posts/user'}>
          <div data-hull-component="user" data-hull-id="{{id}}"></div>
+    </script>
+    
+    <script type='text/x-handlebars' data-hull-template='posts/search'}>
+         <div data-hull-component="search" data-hull-search="{{id}}"></div>
     </script>
     
     <script type='text/x-handlebars' data-hull-template='post/post'}>
@@ -204,7 +213,7 @@
 	<script>
         
         Hull.component('posts', {
-            templates: ['posts', 'post', 'user'],
+            templates: ['posts', 'post', 'user', 'search'],
             initialize: function(){
                 this.options.limit = 5;
                 this.options.trendingDaysLimit = 3;    //3 days
@@ -329,6 +338,28 @@
                 back: function() {
                     window.location.href = '#/posts/nbmbn';
                 }
+            }
+        });
+        
+        Hull.component('search', {
+            templates: ['search'],
+            initialize: function() {
+                console.log(this.options.search);
+            },
+            datasources: {
+                searchResults: function() {
+                var searchTokens = this.options.search.split(/[ ,]+/);
+                
+                return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                                'visibiliy': 'public',
+                                where:{
+        'name': { $regex: '.*(king|lion).*'}
+                                }
+                             });
+                }
+            },
+            beforeRender: function(data, error) {
+                console.log(data);
             }
         });
         
@@ -589,6 +620,7 @@
                         'visibiliy': 'public'
             }).then(function(response) {
                 console.log('conversations', response);
+
                 arr = $.map(response, function(elementOfArray, indexInArray){
                     if(elementOfArray.name){
                         var datum = {
@@ -635,7 +667,7 @@
                 tagsPromise.done(function(result){
                     //create the new conversation
                     Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                        "visibility": "public",
+                        "public": "true",
                         "name": newConversationName,
                         "tags": result
                     }).then(function(response) {
@@ -645,6 +677,13 @@
                 });
             }
         });   //on click
+        
+        $('#search').on('click', function() {
+            var searchTerm = $('#searchField').val();
+            if(searchTerm) {
+                window.location.href = '#/search/' + searchTerm;
+            }
+        });
         
         var processRelatedPosts = function(postID) {
             var dff = $.Deferred();
@@ -696,7 +735,7 @@
                         //Tag does not have ID, create new Entity
                    
                         Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                            "visibility": "public",
+                            "public": "true",
                             "name": valueTextTag
                         }).then(function(response) {
                             console.log("Tag Created");
