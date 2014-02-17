@@ -77,7 +77,12 @@
     
     <script type='text/x-handlebars' data-hull-template='search/search'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
-        <h1>current search: {{search}}</h1>
+        <h1>Search Results</h1>
+        {{#each searchResults}}
+            {{#if name}}
+                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+            {{/if}}
+        {{/each}}
     </script>
     
      <script type='text/x-handlebars' data-hull-template='posts/user'}>
@@ -326,9 +331,11 @@
             templates: ['user'],
             datasources: {
                 user: function() {
+                    var component = this;
                     this.api('/following/' + this.options.id, 'put').then(function(response) {
-                        console.log(response);
-                        return this.api('/me/following_activity', 'get');
+                        component.api('/me/following_activity', 'get').then(function(reponse2) {
+                            console.log(response2);
+                        });
                     });
                 }
             },
@@ -349,18 +356,27 @@
             },
             datasources: {
                 searchResults: function() {
-                var searchTokens = this.options.search.split(/[ ,]+/);
-                
+                var searchString = this.options.search;
+        //searchString.replace(/(the|it is|we all|an?|by|to|you|[mh]e|she|they|we)/ig, '');
+                var searchTokens = searchString.split(/[ ,]+/);
+                console.log(searchTokens);
                 return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
                                 'visibiliy': 'public',
                                 where:{
-        'name': { $regex: '.*(king|lion).*'}
+                                    'name': {
+                                        '$regex': '.*('+ searchTokens.join('|') +').*', '$options': 'i'
+                                    }
                                 }
                              });
                 }
             },
             beforeRender: function(data, error) {
                 console.log(data);
+            },
+            actions: {
+                back: function() {
+                    window.location.href = '#/posts';
+                }       
             }
         });
         
