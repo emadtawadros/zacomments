@@ -331,12 +331,7 @@
             templates: ['user'],
             datasources: {
                 user: function() {
-                    var component = this;
-                    this.api('/following/' + this.options.id, 'put').then(function(response) {
-                        component.api('/me/following_activity', 'get').then(function(reponse2) {
-                            console.log(response2);
-                        });
-                    });
+        return this.api('/me/following/activity', 'get');
                 }
             },
             beforeRender: function(data, errors) {
@@ -680,17 +675,31 @@
             var newConversationName = $('#newEntityField').val();
             if(newConversationName) {
                 var tagsText = $('#tagsField').val();
-                var tagsPromise = processTags(tagsText);
-                tagsPromise.done(function(result){
-                    //create the new conversation
-                    Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                        "public": "true",
-                        "name": newConversationName,
-                        "tags": result
-                    }).then(function(response) {
-                        console.log(response);
-                        window.location.href = '#/posts';
-                    });
+                Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                    'visibiliy': 'public',
+                    where:{
+                        'name': {
+                            '$regex': newConversationName, '$options': 'i'
+                        }
+                    }
+                }).then(function(response) {
+                    console.log(response);
+                    if(response.length == 0) {
+                        var tagsPromise = processTags(tagsText);
+                        tagsPromise.done(function(result){
+                            //create the new conversation
+                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                "public": "true",
+                                "name": newConversationName,
+                                "tags": result
+                            }).then(function(response) {
+                                console.log(response);
+                                window.location.href = '#/posts';
+                            });
+                        });
+                    } else {
+                        alert("A topic with the same name already exsits!");        
+                    }
                 });
             }
         });   //on click
@@ -740,32 +749,53 @@
                 var tagsWithID = [];
         
                 $.each(textTags, function (indexTextTag, valueTextTag) {
-                    var temp = $.grep(arr, function (elementArr, indexArr){
-                        return elementArr.label == valueTextTag;
-                    });
-                    if(temp[0]){
-                        //Tag has anID
-                        tagsWithID.push(temp[0]);
-                        console.log("existing tag");
-                        console.log(++tagsFinished);
+                    if(valueTextTag.length >0) {
+                        var temp = $.grep(arr, function (elementArr, indexArr){
+                                        return elementArr.label == valueTextTag;
+                                    });
+                                    if(temp[0]){
+                                        //Tag has anID
+                                        tagsWithID.push(temp[0]);
+                                        console.log("existing tag");
+                                        console.log(++tagsFinished);
+                                    } else {
+                                        console.log("laaag");
+                                        console.log(valueTextTag);
+                                        //Tag does not have ID, create new Entity
+                                    Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                                        'visibiliy': 'public',
+                                        where:{
+                                            'name': {
+                                                '$regex': valueTextTag, '$options': 'i'
+                                            }
+                                        }
+                                    }).then(function(response) {
+                                        console.log("EEEH");
+                                        console.log(response);
+                                        if(response.length == 0) {
+                                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                                "public": "true",
+                                                "name": valueTextTag
+                                            }).then(function(response) {
+                                                console.log("Tag Created");
+                                                var datum = {
+                                                    label: valueTextTag,
+                                                    value: response.id
+                                                }
+                                            tagsWithID.push(datum);
+                                            console.log("new tag");
+                                            console.log(++tagsFinished);
+                                           });
+                                        } else {
+                                            tagsFinished ++;
+                                             alert("A tag with the same name already exists!");
+                                        }
+                                    });
+                                    }
                     } else {
-                        //Tag does not have ID, create new Entity
-                   
-                        Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                            "public": "true",
-                            "name": valueTextTag
-                        }).then(function(response) {
-                            console.log("Tag Created");
-                            var datum = {
-                                label: valueTextTag,
-                                value: response.id
-                            }
-                            tagsWithID.push(datum);
-                            console.log("new tag");
-                            console.log(++tagsFinished);
-                       });
-                    }
-                });
+                        tagsFinished ++;
+                    }       
+                });    //end of each
         
                 (function wait(){
                     if(tagsFinished == numberOfTags) {
