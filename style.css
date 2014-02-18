@@ -5,9 +5,9 @@ body{margin:0;}
 .search{float:left;width:462px;height:24px;margin:6px;background-color:white;border:none;}
 .searchbtn{float:left;padding:6px;margin:6px;background-color:#888888;color:white;border:none;}
 .account{float:right;width:200px;height:24px;margin:6px;}
-.account img{height:24px;float:left;}
-.account h4{float:left;}
-.account span{float:left;}
+.account img{height:24px;width:24px;float:left;}
+.account h4{float:left;background-color:#888888;padding:6px;margin:6px;}
+.account span{float:left;background-color:#888888;padding:6px;margin:6px;}
 .body{width:720px;margin:0 auto;}
 .col1{width:500px;margin-right:5px;}
 .create{}
