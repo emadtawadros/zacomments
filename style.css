@@ -6,8 +6,9 @@ body{margin:0;}
 .searchbtn{float:left;padding:6px;margin:6px;background-color:#888888;color:white;border:none;}
 .account{float:right;height:24px;margin:6px;}
 .account .pull-left img{height:24px;width:24px;float:left;}
-.account .media-body{height:24px;float:left;background-color:#888888;padding:6px;margin:6px;color:white;}
-.account .pull-right{height:24px;float:left;background-color:#888888;padding:6px;margin:6px;color:white;}
+.account .media-body{float:left;background-color:#888888;padding:6px;margin:6px;color:white;}
+.account .media-body h4{margin:0;}
+.account .pull-right{float:left;background-color:#888888;padding:6px;margin:6px;color:white;}
 .body{width:100%;margin:0 auto;}
 .col1{width:65%;margin-right:5%;}
 .create{}
