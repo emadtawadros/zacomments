@@ -4,9 +4,9 @@ body{margin:0;font-family:arial;}
 .logo{float:left;}
 .search{float:left;width:462px;height:36px;margin:6px;background-color:white;border:none;}
 .searchbtn{float:left;padding:6px 12px;margin:6px;background-color:#888888;color:white;border:none;}
-.account{font-size:12px;float:right;height:36px;margin:6px;}
+.account{float:right;height:36px;margin:6px;}
 .account .pull-left img{height:36px;width:36px;float:right;}
-.account .media-body{float:right;background-color:#888888;padding:6px 12px;margin:6px;color:white;}
+.account .media-body{font-size:10px;float:right;background-color:#888888;padding:6px 12px;margin:6px;color:white;}
 .account .media-body h4{margin:0;}
 .account .pull-right{float:right;background-color:#888888;padding:6px 12px;margin:6px;color:white;}
 .body{width:100%;margin:0 auto;}
