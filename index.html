@@ -254,7 +254,7 @@
                 tab.slideDown();
         
                 this.options.limit = 5;
-                this.options.trendingDaysLimit = 3;    //3 days
+                this.options.trendingDaysLimit = 30;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
                 var HullagramRouter = Backbone.Router.extend({
                     routes: {
@@ -350,11 +350,10 @@
                     this.render();
                 },
                 loadMoreTrending: function() {
-                    if(this.options.trendingDaysLimit < 10)
-                    {
+
                         this.options.trendingLimit += 10;
                         this.render();
-                    }
+                    
                 }
             }
         });    //posts component
