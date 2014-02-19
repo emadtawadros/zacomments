@@ -9,8 +9,8 @@ body{margin:0;font-family:arial;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:10px;}
 .account .media-body{display:none;}
 .account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;}
-.body{width:90%;margin:0 auto;}
-.col1{width:55%;margin-right:5%;}
+.body{width:80%;margin:0 auto;}
+.col1{width:50%;margin-right:5%;}
 .create{}
 .trendingbuzz{}
 .newbuzz{}
@@ -18,7 +18,7 @@ body{margin:0;font-family:arial;}
 .topcomment{}
 .newcomments
 .trending{}
-.col2{width:25%;margin-left:5%;}
+.col2{width:20%;margin-left:5%;}
 .under{}
 .related{}
 
