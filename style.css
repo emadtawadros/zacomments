@@ -11,9 +11,9 @@ body{margin:0;font-family:arial;}
 .account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;}
 .body{width:80%;margin:0 auto;}
 .col1{width:50%;margin-right:5%;}
-.create{font-size:11px;width:100%;float:left;}
-.create input{float:left;margin:10px;padding:6px 12px;}
-.create button{float:left;margin:10px;padding:6px 12px;}
+.create{width:100%;float:left;}
+.create input{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
+.create button{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
 .trendingbuzz{}
 .newbuzz{}
 .comments{}
