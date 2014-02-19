@@ -24,13 +24,15 @@
     		<div class="account" data-hull-component="login/profile@hull" data-hull-provider="facebook"></div>
 	</div>
 </div>
-    <h1>Create new Buzz</h1>
+<div class="body">
+	<div class="col1">
+	    <h1>Create new Buzz</h1>
     <input type="text" id="newEntityField">Topic</input>
     Tags
     <input type="text" id="tagsField"></input>
     <button type="button" id="createTopic">Create Topic</button>
     
-    <script type='text/x-handlebars' data-hull-template='posts/posts'}>
+    <script type='text/x-handlebars' data-hull-template='posts/posts'>
                 <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
@@ -210,7 +212,7 @@
       {{/if}}
     </div>
     </script>
-                
+       
     <div data-hull-component="posts"></div>        
           
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
@@ -220,6 +222,12 @@
     <script src="//documentcloud.github.io/backbone/backbone-min.js"></script>
     <script src="//d3f5pyioow99x0.cloudfront.net/0.8/hull.js"></script>
     <script src="//xoxco.com/projects/code/tagsinput/jquery.tagsinput.js"></script>
+		
+	</div>
+	<div class="col2">
+		
+	</div>
+</div>
 
 	<script>
         
