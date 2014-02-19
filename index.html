@@ -34,11 +34,10 @@
                 <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
-                <div>
+                <div class="trendingbuzz">
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
                 {{#if tags}}
                     </div>
-                    Tags:
                     {{#each tags}}
                         {{#if this}}
                             <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
