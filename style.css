@@ -4,7 +4,8 @@ body{margin:0;font-family:arial;}
 .logo{font-size:24px;float:left;font-family:impact;margin:0;padding:10px;color:white;}
 .search{float:left;width:40%;margin:10px;padding:6px 12px;background-color:white;border:none;}
 .searchbtn{float:left;padding:6px 12px;margin:10px;background-color:#888888;color:white;border:none;}
-.ui-menu-item{background-color:white;border:none;border-bottom:1px solid #888888;}
+.ui-menu-item{background-color:white;border:none;border-top:1px solid #333333;}
+.ui-autocomplete .ui-front .ui-menu .ui-widget .ui-widget-content .ui-corner-all{border-radius:0;}
 .account{float:right;height:24px;width:20%;}
 .account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;border:none;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:10px;}
