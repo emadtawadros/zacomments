@@ -1,13 +1,13 @@
 body{margin:0;font-family:arial;}
 .navigation{font-size:14px;width:100%;height:48px;background-color:#333333;}
 .navwidth{width:80%;margin:0 auto;}
-.logo{font-size:16px;float:left;font-family:impact;margin:0;padding:10px;}
+.logo{font-size:16px;float:left;font-family:impact;margin:0;padding:10px;color:white;}
 .search{float:left;width:462px;height:24px;margin:10px;background-color:white;border:none;}
 .searchbtn{float:left;padding:6px 12px;margin:10px;background-color:#888888;color:white;border:none;}
 .account{float:right;height:24px;}
-.account .pull-left img{height:24px;width:24px;margin:10px;float:right;}
+.account .pull-left img{height:24px;width:24px;margin:10px;}
 .account .media-body{display:none;}
-.account .pull-right{float:right;background-color:#888888;padding:6px 12px;margin:6px;color:white;}
+.account .pull-right{background-color:#888888;padding:6px 12px;margin:6px;color:white;}
 .body{width:100%;margin:0 auto;}
 .col1{width:65%;margin-right:5%;}
 .create{}
