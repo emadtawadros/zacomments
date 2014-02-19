@@ -5,7 +5,7 @@ body{margin:0;font-family:arial;}
 .search{float:left;width:45%;margin:10px;padding:6px 12px;background-color:white;border:none;}
 .searchbtn{float:left;padding:6px 12px;margin:10px;background-color:#888888;color:white;border:none;}
 .account{float:right;height:24px;width:25%;}
-.account .btn btn-small btn-facebook{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;display:inline-block;}
+.account .btn .btn-small .btn-facebook{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;display:inline-block;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:10px;display:inline-block;}
 .account .media-body{display:none;}
 .account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;display:inline-block;}
