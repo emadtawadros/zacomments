@@ -17,6 +17,7 @@ body{margin:0;font-family:arial;}
 .create #createTopic{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
 .trendingbuzz{width:100%;float:left;margin:12px;}
 .trendingbuzz h1{margin:0;float:left;}
+.trendingbuzz ul{list-style-type: none;padding: 0px;margin: 0px;}
 .trendingbuzz li{padding:6px 12px;margin:12px;float:left;}
 .newbuzz{}
 .comments{}
