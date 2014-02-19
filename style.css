@@ -12,8 +12,9 @@ body{margin:0;font-family:arial;}
 .body{width:80%;margin:0 auto;}
 .col1{width:50%;margin-right:5%;}
 .create{width:100%;float:left;}
-.create #input{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
-.create #btn{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
+.create #newEntityField{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
+.create #tagsField{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
+.create #createTopic{font-size:11px;float:left;width:100%margin:10px;padding:6px 12px;}
 .trendingbuzz{}
 .newbuzz{}
 .comments{}
