@@ -85,7 +85,15 @@
     
     <script type='text/x-handlebars' data-hull-template='user/user'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
-        <h1>current user</h1>
+        {{#each feed}}
+            {{#ifEqual object.type "comment"}}
+                {{#if target.name}}
+                    <p>commented on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
+                {{/if}}
+            {{else}}
+                <p>reviewed a comment on a <a href="#/post/{{target.commentable_id}}">post</a></p>
+            {{/ifEqual}}
+        {{/each}}
     </script>
     
     <script type='text/x-handlebars' data-hull-template='search/search'}>
@@ -359,8 +367,21 @@
         Hull.component('user', {
             templates: ['user'],
             datasources: {
-                user: function() {
-        return this.api('/me/following/activity', 'get');
+                feed: function() {
+                    var dff = $.Deferred(); 
+                    var component = this;
+                    component.api('/following/' + component.options.id, 'put').then(function(response) {
+                        component.api('app/following_activity', 'get', {
+                            where: {
+                                'actor_id': component.options.id,
+                                'obj_type': { $in: ['Comment', 'Review'] }
+                            },
+                            limit: 1000
+                        }).then(function(response) {
+                            dff.resolve(response);
+                        });        
+                    });
+                    return dff.promise();
                 }
             },
             beforeRender: function(data, errors) {
