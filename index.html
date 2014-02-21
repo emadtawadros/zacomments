@@ -36,6 +36,9 @@
             {{#if name}}
                 <div class="trendingbuzz">
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+                {{#if picture}}
+                    <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+                {{/if}}
                 {{#if tags}}
                     </div>
                     {{#each tags}}
@@ -57,6 +60,10 @@
             {{#if name}}
                 <div>
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+                {{#if picture}}
+                    <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+                {{/if}}
+                
                 {{#if tags}}
                     </div>
                     Tags:
@@ -114,11 +121,25 @@
          <div data-hull-component="search" data-hull-search="{{id}}"></div>
     </script>
     
+    <script type='text/x-handlebars' data-hull-template='posts/createtopic'}>
+        <div data-hull-component="createtopic" data-hull-id="{{id}}"></div>
+    </script>
+        
+    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
+        <h1>Do you want to add an image to that topic?</h1>
+        <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
+                <button type="button" id="skipImageUpload" data-hull-action="skipImageUpload">No thanks!</button>
+    </script>
+    
     <script type='text/x-handlebars' data-hull-template='post/post'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         <button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
 
         <h1>{{post.name}}</h1>
+        {{#if post.picture}}
+            <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
+        {{/if}}
+        
         <input type="text" id="postTags"></input>
         <button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
         <h1>Top Comments</h1>
@@ -254,7 +275,7 @@
 	<script>
         
         Hull.component('posts', {
-            templates: ['posts', 'post', 'user', 'search'],
+            templates: ['posts', 'post', 'user', 'search', 'createtopic'],
             initialize: function(){
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
@@ -390,6 +411,28 @@
             actions: {
                 back: function() {
                     window.location.href = '#/posts/nbmbn';
+                }
+            }
+        });
+        
+            Hull.component('createtopic', {
+            templates: ['createtopic'],
+            datasources: {
+                topic: ':id'
+            },
+            afterRender: function() {
+                var component = this;
+                this.sandbox.on('hull.uploads.image.finished', function(image) {                  
+                    component.api(component.options.id, 'put',{
+                            "picture": image.id
+                        }).then(function() {
+                        window.location.href = '#/post/'+ component.options.id;
+                    });                    
+                });
+            },
+            actions: {
+                skipImageUpload: function() {
+                    window.location.href = '#/post/'+ component.options.id;
                 }
             }
         });
@@ -750,7 +793,7 @@
                                 "tags": result
                             }).then(function(response) {
                                 console.log(response);
-                                window.location.href = '#/posts';
+                                window.location.href = '#/createtopic/' + response.id;
                             });
                         });
                     } else {
