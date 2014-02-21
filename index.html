@@ -134,6 +134,7 @@
     <script type='text/x-handlebars' data-hull-template='post/post'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         <button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
+        <button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 
         <h1>{{post.name}}</h1>
         {{#if post.picture}}
@@ -719,6 +720,9 @@
                             window.location.href = '#/posts/nbmbn';
                         });
                     });
+                },
+                updateImage: function() {
+                    window.location.href = '#/createtopic/' + this.options.id;
                 }
             }
         }); //post component
