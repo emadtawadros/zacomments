@@ -155,6 +155,9 @@
 
         <h1>Posts under {{post.name}}</h1>
         {{#each postsUnder}}
+            {{#if picture}}
+                <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+            {{/if}}
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
             {{#if tags}}
                 Tags:
@@ -169,6 +172,9 @@
         
         <h1>Posts related to {{post.name}}</h1>
         {{#each postsRelated}}
+             {{#if picture}}
+                <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+            {{/if}}
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
         {{/each}}
     </script>
