@@ -136,7 +136,7 @@
     <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
         <h1>Do you want to add an image to that topic?</h1>
         <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
-                <button type="button" id="skipImageUpload" data-hull-action="skipImageUpload">No thanks!</button>
+                <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks!</button>
     </script>
     
     <script type='text/x-handlebars' data-hull-template='post/post'}>
@@ -446,7 +446,7 @@
                 });
             },
             actions: {
-                skipImageUpload: function() {
+                skipimageupload: function() {
                     window.location.href = '#/post/'+ component.options.id;
                 }
             }
