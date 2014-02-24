@@ -560,7 +560,8 @@
             var tab = this.$el.parent().find('.loading');
             tab.slideUp();
             
-            this.$el.find('textarea#description').linkPreview();
+            var textArea = this.$el.find('textarea#description');
+            textArea.linkPreview();
 
         
             if(this.options.focus || this.focusAfterRender) {
