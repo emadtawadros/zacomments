@@ -10,7 +10,7 @@
 
         var selector = $(this);
 
-        $.get('php/retrieve.php', {}, function(answer) {
+        $.get('Facebook-Link-Preview-master/php/retrieve.php', {}, function(answer) {
             for(var i =0; i < answer.length; i++){
                 var item = answer[i];
 
