@@ -94,6 +94,8 @@
 
 
 		$('#text_'+selector).keyup(function(e) {
+			
+			console.log("KEY UP");
 
 			allowPosting = true;
 
