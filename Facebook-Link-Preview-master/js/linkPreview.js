@@ -108,7 +108,7 @@
 					allowPosting = false;
 					isCrawling = true;
 
-					$.post('php/textCrawler.php', {
+					$.post('Facebook-Link-Preview-master/php/textCrawler.php', {
 						text : text,
 						imagequantity : opts.imageQuantity
 					}, function(answer) {
@@ -388,7 +388,7 @@
 			description = $('#previewDescription_'+selector).html();
 
 			if (((trim(text) !== "") || (trim(text) === "" && trim(hrefUrl) !== "")) && (allowPosting === true && isCrawling === false)) {
-				$.get('php/highlightUrls.php', {
+				$.get('Facebook-Link-Preview-master/php/highlightUrls.php', {
 					text : text,
 					description : description
 				}, function(urls) {
@@ -414,7 +414,7 @@
 					content = '<div class="previewPosted">' + '<div class="previewTextPosted">' + urls.urls + '</div>' + videoIframe + '<div class="previewImagesPosted">' + '<div class="previewImagePosted">' + leftSideContent + '</div>' + '</div>' + '<div class="previewContentPosted">' + '<div class="previewTitlePosted" id="' + pTP + '" style="width: ' + contentWidth + 'px" ><a href="' + hrefUrl + '" target="_blank">' + title + '</a></div>' + '<div class="previewUrlPosted">' + fancyUrl + '</div>' + '<div class="previewDescriptionPosted" id="' + pDP + '" style="width: ' + contentWidth + 'px" >' + urls.description + '</div>' + '</div>' + '<div style="clear: both"></div>' + '</div>';
 
                     /** Database insert */
-                    $.post('php/save.php', {
+                    $.post('Facebook-Link-Preview-master/php/save.php', {
                         text : $('#text_'+selector).val(),
                         image : $('#imagePreview_'+ selector + '_' + photoNumber).attr("src"),
                         title : title,
