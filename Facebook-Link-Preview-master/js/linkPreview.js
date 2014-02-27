@@ -20,8 +20,11 @@
         }
 
         var selector = $(this).selector;
+        console.log("SELECTOR");
+        console.log(selector);
         selector = selector.substr(1);
-
+	console.log("THIS");
+	console.log(this);
         $(this).append('<div id="previewLoading_'+selector+'" class="previewLoading"></div> <div style="float: left;"> <textarea type="text" id="text_'+selector+'" style="text-align: left" placeholder="'+opts.placeholder+'" class="text" style="text-align: left"/></textarea> <div style="clear: both"></div> </div> <div id="preview_'+selector+'" class="preview"> <div id="previewImages_'+selector+'" class="previewImages"> <div id="previewImage_'+selector+'" class="previewImage"><img src="img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber_'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent_'+selector+'" class="previewContent"> <div id="closePreview_'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle_'+selector+'" class="previewTitle"></div> <div id="previewUrl_'+selector+'" class="previewUrl"></div> <div id="previewDescription_'+selector+'" class="previewDescription"></div> <div id="hiddenDescription_'+selector+'" class="hiddenDescription"></div> <div id="previewButtons_'+selector+'" class="previewButtons" > <div id="previewPreviousImg_'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg_'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers_'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail_'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb_'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT_'+selector+'" > <span id="noThumbDiv_'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview_'+selector+'" class="postPreview"> <input id="postPreviewButton_'+selector+'" class="postPreviewButton" type="submit" value="Post" /> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList_'+selector+'"></div>');
 
 		var text;
