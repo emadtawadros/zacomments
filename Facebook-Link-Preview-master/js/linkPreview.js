@@ -95,7 +95,7 @@
 		console.log("lamma nshoof");
 		var dada = $(this).find('textarea');
 		console.log(dada);
-		$('#text'+selector).keyup(function(e) {
+		$(this).find('textarea').keyup(function(e) {
 			
 			console.log("KEY UP");
 
