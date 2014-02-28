@@ -92,7 +92,9 @@
 			images = "";
 		}
 
-
+		console.log("lamma nshoof");
+		var dada = $('#text'+selector);
+		console.log(dada);
 		$('#text'+selector).keyup(function(e) {
 			
 			console.log("KEY UP");
