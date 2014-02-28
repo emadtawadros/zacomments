@@ -109,7 +109,7 @@
 				if (block === false && urlRegex.test(text)) {
 					block = true;
 					myThis.find('#preview'+selector).hide();
-					myThis.find('#previewButtons'+selector).hide();
+					//myThis.find('#previewButtons'+selector).hide();
 					myThis.find('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
 					myThis.find('#photoNumber'+selector).val(0);
 
@@ -243,7 +243,7 @@
 								"width" : "495px"
 							});
 							contentWidth = 495;
-							myThis.find('#previewButtons'+selector).hide();
+							//myThis.find('#previewButtons'+selector).hide();
 							myThis.find('#noThumb'+selector).hide();
 							myThis.find('#nT'+selector).hide();
 						}
@@ -259,7 +259,7 @@
 									myThis.find('#whiteImage'+selector).css({
 										'display' : 'block'
 									});
-									myThis.find('#previewButtons'+selector).hide();
+									//myThis.find('#previewButtons'+selector).hide();
 								} else {
 									myThis.find('#noThumb'+selector).removeAttr("checked");
 									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
@@ -355,7 +355,7 @@
 								myThis.find('#whiteImage'+selector).css({
 									'display' : 'block'
 								});
-								myThis.find('#previewButtons'+selector).hide();
+								//myThis.find('#previewButtons'+selector).hide();
 							}
 						});
 						myThis.find('#closePreview'+selector).click(function() {
