@@ -588,6 +588,7 @@
             },
             
             postComment: function (e) {
+            	console.log("Post comment called");
             e.preventDefault();
             var self = this, $form = this.$find('form'),
             formData = this.sandbox.dom.getFormData($form);
