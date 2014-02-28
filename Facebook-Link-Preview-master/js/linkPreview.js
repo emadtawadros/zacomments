@@ -20,6 +20,7 @@
         }
 
         var selector = $(this).selector;
+        var myThis = $(this);
         console.log("SELECTOR");
         console.log(selector);
         selector = selector.substr(1);
@@ -56,15 +57,15 @@
 		var isCrawling = false;
 
 		var textText = "";
-		$('#text'+selector).focus(function() {
-			if (trim($('#text'+selector).val()) === textText) {
+		myThis.find('#text'+selector).focus(function() {
+			if (trim(myThis.find('#text'+selector).val()) === textText) {
 				$(this).val('');
 				$(this).css({
 					'color' : 'black'
 				});
 			}
 		}).blur(function() {
-			if (trim($('#text'+selector).val()) === "") {
+			if (trim(myThis.find('#text'+selector).val()) === "") {
 				$(this).val(textText);
 				$(this).css({
 					'color' : 'grey'
@@ -73,22 +74,22 @@
 		});
 
 		function resetPreview() {
-			$('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
-			$('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
-			$('#previewNextImg'+selector).removeClass('buttonRightActive');
-			$('#previewNextImg'+selector).addClass('buttonRightDeactive');
-			$('#previewTitle'+selector).css({
+			myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
+			myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
+			myThis.find('#previewNextImg'+selector).removeClass('buttonRightActive');
+			myThis.find('#previewNextImg'+selector).addClass('buttonRightDeactive');
+			myThis.find('#previewTitle'+selector).css({
 				"width" : "355px"
 			});
-			$('#previewDescription'+selector).css({
+			myThis.find('#previewDescription'+selector).css({
 				"width" : "355px"
 			});
-			$('#previewButtons'+selector).show();
+			myThis.find('#previewButtons'+selector).show();
 			contentWidth = 355;
 			photoNumber = 0;
-			$('#noThumb'+selector).show();
-			$('#nT'+selector).show();
-			$('#noThumb'+selector).removeAttr("checked");
+			myThis.find('#noThumb'+selector).show();
+			myThis.find('#nT'+selector).show();
+			myThis.find('#noThumb'+selector).removeAttr("checked");
 			images = "";
 		}
 
@@ -102,15 +103,15 @@
 			allowPosting = true;
 
 			if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
-				text = " " + $('#text'+selector).val();
+				text = " " + myThis.find('#text'+selector).val();
 				video = "no";
 				videoPlay = "";
 				if (block === false && urlRegex.test(text)) {
 					block = true;
-					$('#preview'+selector).hide();
-					$('#previewButtons'+selector).hide();
-					$('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
-					$('#photoNumber'+selector).val(0);
+					myThis.find('#preview'+selector).hide();
+					myThis.find('#previewButtons'+selector).hide();
+					myThis.find('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
+					myThis.find('#photoNumber'+selector).val(0);
 
 					allowPosting = false;
 					isCrawling = true;
@@ -140,30 +141,30 @@
 						if (answer.videoIframe === null)
 							answer.videoIframe = "";
 						resetPreview();
-						$('#previewLoading'+selector).html("");
-						$('#preview'+selector).show();
-						$('#previewTitle'+selector).html("<span id='previewSpanTitle"+selector+"' class='previewSpanTitle' >" + answer.title + "</span><input type='text' value='" + answer.title + "' id='previewInputTitle"+selector+"' class='previewInputTitle inputPreview' style='display: none;'/>");
-						$('#text'+selector).css({
+						myThis.find('#previewLoading'+selector).html("");
+						myThis.find('#preview'+selector).show();
+						myThis.find('#previewTitle'+selector).html("<span id='previewSpanTitle"+selector+"' class='previewSpanTitle' >" + answer.title + "</span><input type='text' value='" + answer.title + "' id='previewInputTitle"+selector+"' class='previewInputTitle inputPreview' style='display: none;'/>");
+						myThis.find('#text'+selector).css({
 							"border" : "1px solid #b3b3b3",
 							"border-bottom" : "1px dashed #b3b3b3"
 						});
 
-						$('#previewUrl'+selector).html(answer.url);
-						$('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='width: 355px; display: none;' class='inputPreview' >" + answer.description + "</textarea>");
-						title = "<a href='" + answer.pageUrl + "' target='_blank'>" + $('#previewTitle'+selector).html() + "</a>";
+						myThis.find('#previewUrl'+selector).html(answer.url);
+						myThis.find('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='width: 355px; display: none;' class='inputPreview' >" + answer.description + "</textarea>");
+						title = "<a href='" + answer.pageUrl + "' target='_blank'>" + myThis.find('#previewTitle'+selector).html() + "</a>";
 						url = "<a href='http://" + answer.canonicalUrl + "' target='_blank'>" + answer.canonicalUrl + "</a>";
 						fancyUrl = answer.canonicalUrl;
 						hrefUrl = answer.url;
-						description = $('#previewDescription'+selector).html();
+						description = myThis.find('#previewDescription'+selector).html();
 						video = answer.video;
 						videoIframe = answer.videoIframe;
 						try {
 							images = (answer.images).split("|");
-							$('#previewImages'+selector).show();
-							$('#previewButtons'+selector).show();
+							myThis.find('#previewImages'+selector).show();
+							myThis.find('#previewButtons'+selector).show();
 						} catch (err) {
-							$('#previewImages'+selector).hide();
-							$('#previewButtons'+selector).hide();
+							myThis.find('#previewImages'+selector).hide();
+							myThis.find('#previewButtons'+selector).hide();
 						}
 						images.length = parseInt(images.length);
 						var appendImage = "";
@@ -173,205 +174,205 @@
 							else
 								appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto; display: none' ></img>";
 						}
-						$('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' style='width: 130px; color: transparent; display:none;'>...</div>");
-						$('#photoNumbers'+selector).html("1 of " + images.length);
+						myThis.find('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' style='width: 130px; color: transparent; display:none;'>...</div>");
+						myThis.find('#photoNumbers'+selector).html("1 of " + images.length);
 						if (images.length > 1) {
-							$('#previewNextImg'+selector).removeClass('buttonRightDeactive');
-							$('#previewNextImg'+selector).addClass('buttonRightActive');
+							myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
+							myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
 
 							if (firstPosted === false) {
 								firstPosted = true;
-								$('#previewPreviousImg'+selector).click(function() {
+								myThis.find('#previewPreviousImg'+selector).click(function() {
 									if (images.length > 1) {
-										photoNumber = parseInt($('#photoNumber'+selector).val());
-										$('#imagePreview'+ selector + '_' + photoNumber).css({
+										photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
+										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 											'display' : 'none'
 										});
 										photoNumber -= 1;
 										if (photoNumber === -1)
 											photoNumber = 0;
-										$('#previewNextImg'+selector).removeClass('buttonRightDeactive');
-										$('#previewNextImg'+selector).addClass('buttonRightActive');
+										myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
+										myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
 										if (photoNumber === 0) {
 											photoNumber = 0;
-											$('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
-											$('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
+											myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
+											myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
 										}
-										$('#imagePreview'+ selector + '_' + photoNumber).css({
+										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 											'display' : 'block'
 										});
-										$('#photoNumber'+selector).val(photoNumber);
-										$('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
+										myThis.find('#photoNumber'+selector).val(photoNumber);
+										myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
 									}
 								});
-								$('#previewNextImg'+selector).click(function() {
+								myThis.find('#previewNextImg'+selector).click(function() {
 									if (images.length > 1) {
-										photoNumber = parseInt($('#photoNumber'+selector).val());
-										$('#imagePreview'+ selector + '_' + photoNumber).css({
+										photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
+										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 											'display' : 'none'
 										});
 										photoNumber += 1;
 										if (photoNumber === images.length)
 											photoNumber = images.length - 1;
-										$('#previewPreviousImg'+selector).removeClass('buttonLeftDeactive');
-										$('#previewPreviousImg'+selector).addClass('buttonLeftActive');
+										myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftDeactive');
+										myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftActive');
 										if (photoNumber === images.length - 1) {
 											photoNumber = images.length - 1;
-											$('#previewNextImg'+selector).removeClass('buttonRightActive');
-											$('#previewNextImg'+selector).addClass('buttonRightDeactive');
+											myThis.find('#previewNextImg'+selector).removeClass('buttonRightActive');
+											myThis.find('#previewNextImg'+selector).addClass('buttonRightDeactive');
 										}
-										$('#imagePreview'+ selector + '_' + photoNumber).css({
+										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 											'display' : 'block'
 										});
-										$('#photoNumber'+selector).val(photoNumber);
-										$('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
+										myThis.find('#photoNumber'+selector).val(photoNumber);
+										myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
 									}
 								});
 							}
 						} else if (images.length === 0) {
-							$('#closePreview'+selector).css({
+							myThis.find('#closePreview'+selector).css({
 								"margin-right" : "-206px"
 							});
-							$('#previewTitle'+selector).css({
+							myThis.find('#previewTitle'+selector).css({
 								"width" : "495px"
 							});
-							$('#previewDescription'+selector).css({
+							myThis.find('#previewDescription'+selector).css({
 								"width" : "495px"
 							});
-							$('#previewInputDescription'+selector).css({
+							myThis.find('#previewInputDescription'+selector).css({
 								"width" : "495px"
 							});
 							contentWidth = 495;
-							$('#previewButtons'+selector).hide();
-							$('#noThumb'+selector).hide();
-							$('#nT'+selector).hide();
+							myThis.find('#previewButtons'+selector).hide();
+							myThis.find('#noThumb'+selector).hide();
+							myThis.find('#nT'+selector).hide();
 						}
 						if (nT === false) {
 							nT = true;
-							$('#nT'+selector).click(function() {
-								var noThumb = $('#noThumb'+selector).attr("checked");
+							myThis.find('#nT'+selector).click(function() {
+								var noThumb = myThis.find('#noThumb'+selector).attr("checked");
 								if (noThumb !== "checked") {
-									$('#noThumb'+selector).attr("checked", "checked");
-									$('#imagePreview'+ selector + '_' + photoNumber).css({
+									myThis.find('#noThumb'+selector).attr("checked", "checked");
+									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 										'display' : 'none'
 									});
-									$('#whiteImage'+selector).css({
+									myThis.find('#whiteImage'+selector).css({
 										'display' : 'block'
 									});
-									$('#previewButtons'+selector).hide();
+									myThis.find('#previewButtons'+selector).hide();
 								} else {
-									$('#noThumb'+selector).removeAttr("checked");
-									$('#imagePreview'+ selector + '_' + photoNumber).css({
+									myThis.find('#noThumb'+selector).removeAttr("checked");
+									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 										'display' : 'block'
 									});
-									$('#whiteImage'+selector).css({
+									myThis.find('#whiteImage'+selector).css({
 										'display' : 'none'
 									});
-									$('#previewButtons'+selector).show();
+									myThis.find('#previewButtons'+selector).show();
 								}
 							});
 						}
-						$('#previewSpanTitle'+selector).click(function() {
+						myThis.find('#previewSpanTitle'+selector).click(function() {
 							if (blockTitle === false) {
 								blockTitle = true;
-								$('#previewSpanTitle'+selector).hide();
-								$('#previewInputTitle'+selector).show();
-								$('#previewInputTitle'+selector).val($('#previewInputTitle'+selector).val());
-								$('#previewInputTitle'+selector).focus().select();
+								myThis.find('#previewSpanTitle'+selector).hide();
+								myThis.find('#previewInputTitle'+selector).show();
+								myThis.find('#previewInputTitle'+selector).val(myThis.find('#previewInputTitle'+selector).val());
+								myThis.find('#previewInputTitle'+selector).focus().select();
 							}
 						});
-						$('#previewInputTitle'+selector).blur(function() {
+						myThis.find('#previewInputTitle'+selector).blur(function() {
 							blockTitle = false;
-							$('#previewSpanTitle'+selector).html($('#previewInputTitle'+selector).val());
-							$('#previewSpanTitle'+selector).show();
-							$('#previewInputTitle'+selector).hide();
+							myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
+							myThis.find('#previewSpanTitle'+selector).show();
+							myThis.find('#previewInputTitle'+selector).hide();
 						});
-						$('#previewInputTitle'+selector).keypress(function(e) {
+						myThis.find('#previewInputTitle'+selector).keypress(function(e) {
 							if (e.which === 13) {
 								blockTitle = false;
-								$('#previewSpanTitle'+selector).html($('#previewInputTitle'+selector).val());
-								$('#previewSpanTitle'+selector).show();
-								$('#previewInputTitle'+selector).hide();
+								myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
+								myThis.find('#previewSpanTitle'+selector).show();
+								myThis.find('#previewInputTitle'+selector).hide();
 							}
 						});
-						$('#previewSpanDescription'+selector).click(function() {
+						myThis.find('#previewSpanDescription'+selector).click(function() {
 							if (blockDescription === false) {
 								blockDescription = true;
-								$('#previewSpanDescription'+selector).hide();
-								$('#previewInputDescription'+selector).show();
-								$('#previewInputDescription'+selector).val($('#previewInputDescription'+selector).val());
-								$('#previewInputDescription'+selector).focus().select();
+								myThis.find('#previewSpanDescription'+selector).hide();
+								myThis.find('#previewInputDescription'+selector).show();
+								myThis.find('#previewInputDescription'+selector).val(myThis.find('#previewInputDescription'+selector).val());
+								myThis.find('#previewInputDescription'+selector).focus().select();
 							}
 						});
-						$('#previewInputDescription'+selector).blur(function() {
+						myThis.find('#previewInputDescription'+selector).blur(function() {
 							blockDescription = false;
-							$('#previewSpanDescription'+selector).html($('#previewInputDescription'+selector).val());
-							$('#previewSpanDescription'+selector).show();
-							$('#previewInputDescription'+selector).hide();
+							myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
+							myThis.find('#previewSpanDescription'+selector).show();
+							myThis.find('#previewInputDescription'+selector).hide();
 						});
-						$('#previewInputDescription'+selector).keypress(function(e) {
+						myThis.find('#previewInputDescription'+selector).keypress(function(e) {
 							if (e.which === 13) {
 								blockDescription = false;
-								$('#previewSpanDescription'+selector).html($('#previewInputDescription'+selector).val());
-								$('#previewSpanDescription'+selector).show();
-								$('#previewInputDescription'+selector).hide();
+								myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
+								myThis.find('#previewSpanDescription'+selector).show();
+								myThis.find('#previewInputDescription'+selector).hide();
 							}
 						});
-						$('#previewSpanTitle'+selector).mouseover(function() {
-							$('#previewSpanTitle'+selector).css({
+						myThis.find('#previewSpanTitle'+selector).mouseover(function() {
+							myThis.find('#previewSpanTitle'+selector).css({
 								"background-color" : "#ff9"
 							});
 						});
-						$('#previewSpanTitle'+selector).mouseout(function() {
-							$('#previewSpanTitle'+selector).css({
+						myThis.find('#previewSpanTitle'+selector).mouseout(function() {
+							myThis.find('#previewSpanTitle'+selector).css({
 								"background-color" : "transparent"
 							});
 						});
-						$('#previewSpanDescription'+selector).mouseover(function() {
-							$('#previewSpanDescription'+selector).css({
+						myThis.find('#previewSpanDescription'+selector).mouseover(function() {
+							myThis.find('#previewSpanDescription'+selector).css({
 								"background-color" : "#ff9"
 							});
 						});
-						$('#previewSpanDescription'+selector).mouseout(function() {
-							$('#previewSpanDescription'+selector).css({
+						myThis.find('#previewSpanDescription'+selector).mouseout(function() {
+							myThis.find('#previewSpanDescription'+selector).css({
 								"background-color" : "transparent"
 							});
 						});
-						$('#noThumb'+selector).click(function() {
+						myThis.find('#noThumb'+selector).click(function() {
 							var noThumb = $(this).attr("checked");
 							if (noThumb !== "checked") {
-								$('#imagePreview'+ selector + '_' + photoNumber).css({
+								myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 									'display' : 'block'
 								});
-								$('#whiteImage'+selector).css({
+								myThis.find('#whiteImage'+selector).css({
 									'display' : 'none'
 								});
-								$('#previewButtons'+selector).show();
+								myThis.find('#previewButtons'+selector).show();
 							} else {
-								$('#imagePreview'+ selector + '_' + photoNumber).css({
+								myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 									'display' : 'none'
 								});
-								$('#whiteImage'+selector).css({
+								myThis.find('#whiteImage'+selector).css({
 									'display' : 'block'
 								});
-								$('#previewButtons'+selector).hide();
+								myThis.find('#previewButtons'+selector).hide();
 							}
 						});
-						$('#closePreview'+selector).click(function() {
+						myThis.find('#closePreview'+selector).click(function() {
 							block = false;
 							hrefUrl = '';
 							fancyUrl = '';
 							images = '';
 							video = '';
-							$('#preview'+selector).fadeOut("fast", function() {
-								$('#text'+selector).css({
+							myThis.find('#preview'+selector).fadeOut("fast", function() {
+								myThis.find('#text'+selector).css({
 									"border" : "1px solid #b3b3b3",
 									"border-bottom" : "1px solid #e6e6e6"
 								});
-								$('#previewImage'+selector).html("");
-								$('#previewTitle'+selector).html("");
-								$('#previewUrl'+selector).html("");
-								$('#previewDescription'+selector).html("");
+								myThis.find('#previewImage'+selector).html("");
+								myThis.find('#previewTitle'+selector).html("");
+								myThis.find('#previewUrl'+selector).html("");
+								myThis.find('#previewDescription'+selector).html("");
 							});
 
 						});
@@ -385,21 +386,21 @@
 			}
 		});
 
-		$('#postPreview'+selector).click(function() {
+		myThis.find('#postPreview'+selector).click(function() {
 
 			imageId = "";
 			pTP = "";
 			pDP = "";
-			text = " " + $('#text'+selector).val();
-			title = $('#previewTitle'+selector).html();
-			description = $('#previewDescription'+selector).html();
+			text = " " + myThis.find('#text'+selector).val();
+			title = myThis.find('#previewTitle'+selector).html();
+			description = myThis.find('#previewDescription'+selector).html();
 
 			if (((trim(text) !== "") || (trim(text) === "" && trim(hrefUrl) !== "")) && (allowPosting === true && isCrawling === false)) {
 				$.get('Facebook-Link-Preview-master/php/highlightUrls.php', {
 					text : text,
 					description : description
 				}, function(urls) {
-					if ($('#noThumb'+selector).attr("checked") === "checked" || images.length === 0) {
+					if (myThis.find('#noThumb'+selector).attr("checked") === "checked" || images.length === 0) {
 						contentWidth = 495;
 						leftSideContent = "";
 					} else if (images || video) {
@@ -410,11 +411,11 @@
 							pTP = "pTP" + imageId;
 							pDP = "pDP" + imageId;
 							imageId = "img" + imageId;
-							image = "<img id='" + imageId + "' src='" + $('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' class='imgIframe' style='width: 130px; height: auto; float: left;' ></img>";
+							image = "<img id='" + imageId + "' src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' class='imgIframe' style='width: 130px; height: auto; float: left;' ></img>";
 							videoPlay = '<span class="videoPostPlay"></span>';
 							leftSideContent = image + videoPlay;
 						} else {
-							image = "<img src='" + $('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' style='width: 130px; height: auto; float: left;' ></img>";
+							image = "<img src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' style='width: 130px; height: auto; float: left;' ></img>";
 							leftSideContent = '<a href="' + hrefUrl + '" target="_blank">' + image + '</a>';
 						}
 					}
@@ -422,43 +423,43 @@
 
                     /** Database insert */
                     $.post('Facebook-Link-Preview-master/php/save.php', {
-                        text : $('#text'+selector).val(),
-                        image : $('#imagePreview'+ selector + '_' + photoNumber).attr("src"),
+                        text : myThis.find('#text'+selector).val(),
+                        image : myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src"),
                         title : title,
                         canonicalUrl : fancyUrl,
                         url : hrefUrl,
-                        description : $('#previewSpanDescription'+selector).html(),
+                        description : myThis.find('#previewSpanDescription'+selector).html(),
                         iframe : videoIframe
                     });
 
-					$('#preview'+selector).fadeOut("fast", function() {
-						$('#text'+selector).css({
+					myThis.find('#preview'+selector).fadeOut("fast", function() {
+						myThis.find('#text'+selector).css({
 							"border" : "1px solid #b3b3b3",
 							"border-bottom" : "1px solid #e6e6e6"
 						});
-						$('#text'+selector).val("");
-						$('#previewImage'+selector).html("");
-						$('#previewTitle'+selector).html("");
-						$('#previewUrl'+selector).html("");
-						$('#previewDescription'+selector).html("");
-						$(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
-						$(".imgIframe").click(function() {
+						myThis.find('#text'+selector).val("");
+						myThis.find('#previewImage'+selector).html("");
+						myThis.find('#previewTitle'+selector).html("");
+						myThis.find('#previewUrl'+selector).html("");
+						myThis.find('#previewDescription'+selector).html("");
+						myThis.find(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
+						myThis.find(".imgIframe").click(function() {
 							var oldId = $(this).attr("id");
 							var currentId = oldId.substring(3);
 							pTP = "pTP" + currentId;
 							pDP = "pDP" + currentId;
 							oldId = "#" + oldId;
 							currentId = "#" + currentId;
-							$(oldId).css({
+							myThis.find(oldId).css({
 								'display' : 'none'
 							});
-							$(currentId).css({
+							myThis.find(currentId).css({
 								'display' : 'block'
 							});
-							$('#' + pTP).css({
+							myThis.find('#' + pTP).css({
 								'width' : '495px'
 							});
-							$('#' + pDP).css({
+							myThis.find('#' + pDP).css({
 								'width' : '495px'
 							});
 						});
