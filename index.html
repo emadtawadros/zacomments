@@ -594,12 +594,12 @@
             e.preventDefault();
             var self = this;
             var $form = this.$find('form');
-            console.log("ZIS.$find");
-            console.log(this.$find);
-            console.log("ZIs.$EL");
-            console.log(this.$el);
-
-            var richComment = this.$find('#commentExtra').html();
+   
+            var richComment;
+            do
+            {
+            	richComment = this.$el.find('#commentExtra').html();
+            } while (!richComment);
             
             formData = this.sandbox.dom.getFormData($form);
             
