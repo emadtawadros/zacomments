@@ -435,6 +435,14 @@
                     var itemDescription = myThis.find('#previewSpanDescription'+selector).html();
                     var itemIframe = videoIframe;
                     
+                    console.log("itemtext" + itemText);
+                    console.log("itemImage" + itemImage);
+                    console.log("itemtitle" + title);
+                    console.log("itemcanonicalirl" + itemCanonicalUrl);
+                    console.log("itemurl" + hrefUrl);
+                    console.log("itemdescription" + itemDescription);
+                    console.log("itemiframe" + itemIframe;
+                    
                     //Pasted from linkPreviewRetrieve
                     if(itemIframe != ""){
                     iframeId = itemIframe.split("id=\"");
