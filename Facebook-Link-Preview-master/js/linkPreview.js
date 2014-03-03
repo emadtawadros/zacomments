@@ -487,7 +487,7 @@
 						myThis.find('#previewTitle'+selector).html("");
 						myThis.find('#previewUrl'+selector).html("");
 						myThis.find('#previewDescription'+selector).html("");
-						myThis.find(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
+						//myThis.find(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
 						myThis.find(".imgIframe").click(function() {
 							var oldId = $(this).attr("id");
 							var currentId = oldId.substring(3);
