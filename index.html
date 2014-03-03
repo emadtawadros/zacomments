@@ -562,7 +562,10 @@
             tab.slideUp();
             
             //this.$el.find('textarea').linkPreview();
-            this.$el.find('#lp1').linkPreview({objectID: this.options.id, component: this});
+            var linkPreviewDiv = this.$el.find('#lp1');
+            if(linkPreviewDiv.children().length == 0) {
+            	linkPreviewDiv.linkPreview({objectID: this.options.id, component: this});
+            }
 
             //textArea.linkPreview();
 
