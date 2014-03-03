@@ -451,7 +451,10 @@
 			
 			
                     var richComment = '<div class="previewPosted" style="">'+itemIframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+itemImage+'" class="imgIframe" style="width: 130px; height: auto; float: left;"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" style="width: 355px">'+itemTitle+'</div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'" style="width: 355px"> <span id="previewSpanDescription">'+itemDescription+'</textarea></div></div><div style="clear: both"></div></div>';
-
+	           if(!itemImage) {
+	           	richComment = null;
+	           }
+	           
                    opts.component.api(opts.objectID + '/comments', 'post', {
             		"description": itemText,
             		"extra": {
@@ -493,6 +496,10 @@
                 {
                 	
                 	var richComment = '<div class="previewPosted" style=""><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+itemUrl+'" target="_blank"><img src="'+itemImage+'" style="width: 130px; height: auto; float: left;"></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+itemUrl+'" target="_blank"><span id="previewSpanTitle">'+itemTitle+'</span></a></div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+itemDescription+'</span></div><div style="clear: both"></div></div>';
+                	if(!itemImage) {
+	           		richComment = null;
+	           	}
+	           	
                 	opts.component.api(opts.objectID + '/comments', 'post', {
                 		"description": itemText,
                 		"extra": {
