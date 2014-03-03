@@ -11,7 +11,8 @@
         var defaults = {
             placeholder: "What's in your mind",
             imageQuantity : -1,
-            objectID: -1
+            objectID: -1,
+            hull: null
         };
 
         var opts = jQuery.extend(defaults, options);
@@ -445,7 +446,7 @@
 			
                     var richComment = '<div class="previewPosted" style=""><div class="previewTextPosted"> '+itemText+' </div> '+itemIframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+itemImage+'" class="imgIframe" style="width: 130px; height: auto; float: left;"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" style="width: 355px">'+itemTitle+'</div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'" style="width: 355px"> <span id="previewSpanDescription">'+itemDescription+'</textarea></div></div><div style="clear: both"></div></div>';
 
-                   hull.api(opts.objectID + '/comments', 'post', {
+                   opts.hull(opts.objectID + '/comments', 'post', {
             	"description": "Rich Comment",
             	"extra": {
             		"richComment": richComment
@@ -479,7 +480,7 @@
                 
                 
                 
-                                   hull.api(opts.objectID + '/comments', 'post', {
+                                   opts.hull.api(opts.objectID + '/comments', 'post', {
             	"description": "Rich Comment",
             	"extra": {
             		"richComment": richComment
