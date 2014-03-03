@@ -596,13 +596,13 @@
             var $form = this.$find('form');
    
             var richComment;
-            do
-            {
+           // do
+            //{
             	console.log(this.$el.find('#commentExtra'));
             	richComment = this.$el.find('#commentExtra').html();
             	console.log("RICH COMMENT");
             	console.log(richComment);
-            } while (richComment!=="");
+           // } while (richComment!=="");
             
             formData = this.sandbox.dom.getFormData($form);
             
