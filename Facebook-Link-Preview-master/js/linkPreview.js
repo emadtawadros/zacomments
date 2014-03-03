@@ -26,7 +26,7 @@
         selector = selector.substr(1);
 	console.log("THIS");
 	console.log(this);
-        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder+'" class="text"/></textarea> <div style="clear: both"></div> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton" data-hull-action="comment" /> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div>');
+        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder+'" class="text"/></textarea> <div style="clear: both"></div> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton" data-hull-action="comment" /> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div> <div id ="commentExtra"> </div>');
 
 		var text;
 		var urlRegex = /(https?\:\/\/|\s)[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})(\/+[a-z0-9_.\:\;-]*)*(\?[\&\%\|\+a-z0-9_=,\.\:\;-]*)?([\&\%\|\+&a-z0-9_=,\:\;\.-]*)([\!\#\/\&\%\|\+a-z0-9_=,\:\;\.-]*)}*/i;
@@ -422,7 +422,7 @@
 					content = '<div class="previewPosted">' + '<div class="previewTextPosted">' + urls.urls + '</div>' + videoIframe + '<div class="previewImagesPosted">' + '<div class="previewImagePosted">' + leftSideContent + '</div>' + '</div>' + '<div class="previewContentPosted">' + '<div class="previewTitlePosted" id="' + pTP + '" style="width: ' + contentWidth + 'px" ><a href="' + hrefUrl + '" target="_blank">' + title + '</a></div>' + '<div class="previewUrlPosted">' + fancyUrl + '</div>' + '<div class="previewDescriptionPosted" id="' + pDP + '" style="width: ' + contentWidth + 'px" >' + urls.description + '</div>' + '</div>' + '<div style="clear: both"></div>' + '</div>';
 
                     /** Database insert */
-                    $.post('Facebook-Link-Preview-master/php/save.php', {
+                 /*   $.post('Facebook-Link-Preview-master/php/save.php', {
                         text : myThis.find('#text'+selector).val(),
                         image : myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src"),
                         title : title,
@@ -430,7 +430,52 @@
                         url : hrefUrl,
                         description : myThis.find('#previewSpanDescription'+selector).html(),
                         iframe : videoIframe
-                    });
+                    });*/
+                    
+                    var itemText = myThis.find('#text'+selector).val();
+                    var itemImage = myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src");
+                    var itemTitle = title;
+                    var itemCanonicalUrl = fancyUrl;
+                    var itemUrl = hrefUrl;
+                    var itemDescription = myThis.find('#previewSpanDescription'+selector).html();
+                    var itemIframe = videoIframe;
+                    
+                    //Pasted from linkPreviewRetrieve
+                    if(itemIframe != ""){
+                    iframeId = itemIframe.split("id=\"");
+                    iframeId = iframeId[1].split("\"");
+                    iframeId = iframeId[0];
+			
+			
+                    myThis.find('#commentExtra').html('<div class="previewPosted" style=""><div class="previewTextPosted"> '+itemText+' </div> '+itemIframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+itemImage+'" class="imgIframe" style="width: 130px; height: auto; float: left;"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" style="width: 355px">'+itemTitle+'</div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'" style="width: 355px"> <span id="previewSpanDescription">'+itemDescription+'</textarea></div></div><div style="clear: both"></div></div>');
+
+                    /*$(".imgIframe").click(function() {
+                        var oldId = $(this).attr("id");
+                        var currentId = oldId.substring(4);
+                        pTP = "pTP_" + currentId;
+                        pDP = "pDP_" + currentId;
+                        oldId = "#" + oldId;
+                        currentId = "#" + currentId;
+                        $(oldId).css({
+                            'display' : 'none'
+                        });
+                        $(currentId).css({
+                            'display' : 'block'
+                        });
+                        $('#' + pTP).css({
+                            'width' : '495px'
+                        });
+                        $('#' + pDP).css({
+                            'width' : '495px'
+                        });
+                    });*/
+
+                }
+                else
+                {
+                    myThis.find('#commentExtra').html('<div class="previewPosted" style=""><div class="previewTextPosted"> '+itemText+'  </div><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+itemUrl+'" target="_blank"><img src="'+itemImage+'" style="width: 130px; height: auto; float: left;"></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+itemUrl+'" target="_blank"><span id="previewSpanTitle">'+itemTitle+'</span></a></div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+itemDescription+'</span></div><div style="clear: both"></div></div>');
+                }
+                    ///End of pasted
 
 					myThis.find('#preview'+selector).fadeOut("fast", function() {
 						myThis.find('#text'+selector).css({
