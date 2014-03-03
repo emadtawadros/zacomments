@@ -254,7 +254,6 @@
             </div>
             <div class="media-body">
               <div class="linkPreview" id="lp1"></div>
-              <textarea name='description' class="input-block-level" rows="3" placeholder="Leave a comment..."></textarea>
               <div>
                 <button data-hull-action="comment" class="btn btn-small btn-primary">Post as {{me.name}}</button>
                 <div class='pull-right'>
@@ -563,7 +562,7 @@
             tab.slideUp();
             
             //this.$el.find('textarea').linkPreview();
-            this.$el.find('#lp1').linkPreview({objectID: this.options.id, hull: this.api});
+            this.$el.find('#lp1').linkPreview({objectID: this.options.id, hull: this});
 
             //textArea.linkPreview();
 
@@ -590,20 +589,10 @@
             },
             
             postComment: function (e) {
-            	console.log("Post comment called");
             e.preventDefault();
             var self = this;
             var $form = this.$find('form');
    
-            var richComment;
-           // do
-            //{
-            	console.log(this.$el.find('#commentExtra'));
-            	richComment = this.$el.find('#commentExtra').html();
-            	console.log("RICH COMMENT");
-            	console.log(richComment);
-           // } while (richComment!=="");
-            
             formData = this.sandbox.dom.getFormData($form);
             
             //if (formData.description && formData.description.length > 0) {
