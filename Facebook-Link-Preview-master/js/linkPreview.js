@@ -10,7 +10,8 @@
 
         var defaults = {
             placeholder: "What's in your mind",
-            imageQuantity : -1 // illimited
+            imageQuantity : -1,
+            objectID: -1
         };
 
         var opts = jQuery.extend(defaults, options);
