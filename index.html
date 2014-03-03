@@ -3,7 +3,6 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="//xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
     
     <link rel="stylesheet" class="cssStatics" type="text/css" href="Facebook-Link-Preview-master/css/stylesheet.css" />
     <link rel="stylesheet" class="cssButtons" type="text/css" href="Facebook-Link-Preview-master/css/linkPreview.css" />
@@ -595,6 +594,11 @@
             e.preventDefault();
             var self = this;
             var $form = this.$find('form');
+            console.log("ZIS.$find");
+            console.log(this.$find);
+            console.log("ZIs.$EL");
+            console.log(this.$el);
+
             var richComment = this.$find('#commentExtra').html();
             
             formData = this.sandbox.dom.getFormData($form);
