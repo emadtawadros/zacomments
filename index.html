@@ -204,8 +204,8 @@
               <div class="hull-comments__description">
                 {{description}}
               </div>
-              {{#if extra}}
-              	{{{extra}}}
+              {{#if extra.richComment}}
+              	{{{extra.richComment}}}
               {{/if}}
               <div class="hull-comments__actions">
                   {{#if isDeletable}}
@@ -603,7 +603,9 @@
             this.toggleLoading();
             this.api(this.options.id + '/comments', 'post', {
             	"description": "Rich Comment",
-            	"extra": richComment
+            	"extra": {
+            		"richComment": richComment
+            	}
             }).then(function(comment) {
             self.sandbox.emit('hull.comments.' + self.options.id + '.added', comment);
             self.toggleLoading();
