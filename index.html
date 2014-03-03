@@ -593,7 +593,8 @@
             postComment: function (e) {
             	console.log("Post comment called");
             e.preventDefault();
-            var self = this, $form = this.$find('form'),
+            var self = this;
+            var $form = this.$find('form');
             var richComment = this.$find('#commentExtra').html();
             
             formData = this.sandbox.dom.getFormData($form);
