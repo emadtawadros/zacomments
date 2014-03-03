@@ -204,6 +204,9 @@
               <div class="hull-comments__description">
                 {{description}}
               </div>
+              {{#if extra}}
+              	{{{extra}}}
+              {{/if}}
               <div class="hull-comments__actions">
                   {{#if isDeletable}}
                     <small>
@@ -591,11 +594,16 @@
             	console.log("Post comment called");
             e.preventDefault();
             var self = this, $form = this.$find('form'),
+            var richComment = this.$find('#commentExtra').html();
+            
             formData = this.sandbox.dom.getFormData($form);
             
-            if (formData.description && formData.description.length > 0) {
+            //if (formData.description && formData.description.length > 0) {
             this.toggleLoading();
-            this.api(this.options.id + '/comments', 'post', formData).then(function(comment) {
+            this.api(this.options.id + '/comments', 'post', {
+            	"description": "Rich Comment",
+            	"extra": richComment
+            }).then(function(comment) {
             self.sandbox.emit('hull.comments.' + self.options.id + '.added', comment);
             self.toggleLoading();
             self.focusAfterRender = true;
@@ -604,7 +612,7 @@
             self.$el.find('input,textarea').focus();
             self.toggleLoading();
             });
-            }
+            //}
             },
             
             flagItem: function (event, action) {
