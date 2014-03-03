@@ -602,7 +602,7 @@
             	richComment = this.$el.find('#commentExtra').html();
             	console.log("RICH COMMENT");
             	console.log(richComment);
-            } while (!richComment);
+            } while (richComment!=="");
             
             formData = this.sandbox.dom.getFormData($form);
             
