@@ -441,7 +441,7 @@
                     console.log("itemcanonicalirl" + itemCanonicalUrl);
                     console.log("itemurl" + hrefUrl);
                     console.log("itemdescription" + itemDescription);
-                    console.log("itemiframe" + itemIframe;
+                    console.log("itemiframe" + itemIframe);
                     
                     //Pasted from linkPreviewRetrieve
                     if(itemIframe != ""){
