@@ -480,7 +480,7 @@
                 
                 
                 
-                                   opts.hull.api(opts.objectID + '/comments', 'post', {
+                                   opts.hull(opts.objectID + '/comments', 'post', {
             	"description": "Rich Comment",
             	"extra": {
             		"richComment": richComment
