@@ -93,11 +93,14 @@
 
 		$(this).find('textarea').keyup(function(e) {
 			
-			console.log("KEY UP");
+			
 
 			allowPosting = true;
 
 			if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
+				
+				myThis.find('#postPreviewButton').removeAttr("disabled");
+
 				text = " " + myThis.find('#text'+selector).val();
 				video = "no";
 				videoPlay = "";
@@ -378,6 +381,8 @@
 						isCrawling = false;
 					}, "json");
 				}
+			} else {
+				myThis.find('#postPreviewButton').attr("disabled", "disabled");
 			}
 		});
 
