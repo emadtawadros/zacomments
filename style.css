@@ -7,7 +7,7 @@ body{margin:0;font-family:arial;}
 .account{float:right;height:24px;width:20%;}
 .account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;border:none;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:10px;}
-.account .media-body{}
+.account .media-body{display:none;}
 .account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:10px;color:white;}
 .body{width:80%;margin:0 auto;}
 .col1{width:50%;margin-right:5%;}
