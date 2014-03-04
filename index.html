@@ -89,6 +89,7 @@
                 <div class="loading">
                      <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
                 </div>
+                <p>{{stats.comments}} comments</p>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
@@ -122,6 +123,7 @@
         {{#each searchResults}}
             {{#if name}}
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+		<p>{{stats.comments}} comments</p>
             {{/if}}
         {{/each}}
     </script>
@@ -156,6 +158,7 @@
         
         <input type="text" id="postTags"></input>
         <button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+	<p>{{post.stats.comments}} comments</p>
         <h1>Top Comments</h1>
         <div class="loading">
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
@@ -183,6 +186,7 @@
                     {{/if}}
                 {{/each}}
             {{/if}}
+	    <p>{{stats.comments}} comments</p>
             <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
         {{/each}}
         </div>
@@ -194,6 +198,7 @@
                 <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
             {{/if}}
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
+            <p>{{stats.comments}} comments</p>
         {{/each}}
     </script>
         </div>
