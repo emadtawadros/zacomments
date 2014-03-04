@@ -32,11 +32,14 @@
 </div>
 <div class="body">
 	<div class="col1">
+		<div class="createbuzz">
 	    <h1>Create new Buzz</h1>
     <input type="text" placeholder="Write Topic" id="newEntityField"></input>
     <input type="text" placeholder="Insert Tags" id="tagsField"></input>
     <button type="button" id="createTopic">Create Topic</button>
+    		</div>
     
+    <div class="trendingbuzz">
     <script type='text/x-handlebars' data-hull-template='posts/posts'>
                 <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
@@ -61,7 +64,9 @@
             {{/if}}
         {{/each}}
         <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load More Trending Topics</button>
+        </div>
 
+	<div class="newbuzz">
         <h1>New Buzz</h1>
         {{#each newPosts}}
             {{#if name}}
@@ -160,7 +165,9 @@
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
         </div>
         <div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></div>
+        </div>
 
+	<div class="under">
         <h1>Posts under {{post.name}}</h1>
         {{#each postsUnder}}
             {{#if picture}}
@@ -177,7 +184,9 @@
             {{/if}}
             <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
         {{/each}}
+        </div>
         
+        <div class="related">
         <h1>Posts related to {{post.name}}</h1>
         {{#each postsRelated}}
              {{#if picture}}
@@ -186,7 +195,7 @@
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
         {{/each}}
     </script>
-        
+        </div>
     <script type='text/handlebars' data-hull-template='test/test'>
         {{> test/form}}
     
@@ -270,7 +279,7 @@
     </div>
     </script>
     <div class="loading">
-       <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
+       <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="24" height="24"> 
     </div>
     <div data-hull-component="posts"></div>        
           
