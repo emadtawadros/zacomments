@@ -96,10 +96,15 @@
 			
 
 			allowPosting = true;
-
+			
+			if(trim($(this).val()) !== "") {
+				myThis.find('#postPreviewButton' + selector).removeAttr("disabled");
+			} else {
+				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
+			}
+			
 			if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
 				
-				myThis.find('#postPreviewButton' + selector).removeAttr("disabled");
 
 				text = " " + myThis.find('#text'+selector).val();
 				video = "no";
@@ -381,8 +386,6 @@
 						isCrawling = false;
 					}, "json");
 				}
-			} else {
-				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
 			}
 		});
 
