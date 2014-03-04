@@ -24,7 +24,7 @@
         var selector = $(this).selector;
         var myThis = $(this);
         selector = selector.substr(1);
-        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder+'" class="text"/></textarea> <div style="clear: both"></div> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton"/> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div> <div id ="commentExtra" > </div>');
+        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder+'" class="text"/></textarea> <div style="clear: both"></div> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton" disabled/> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div> <div id ="commentExtra" > </div>');
 
 		var text;
 		var urlRegex = /(https?\:\/\/|\s)[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})(\/+[a-z0-9_.\:\;-]*)*(\?[\&\%\|\+a-z0-9_=,\.\:\;-]*)?([\&\%\|\+&a-z0-9_=,\:\;\.-]*)([\!\#\/\&\%\|\+a-z0-9_=,\:\;\.-]*)}*/i;
@@ -99,7 +99,7 @@
 
 			if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
 				
-				myThis.find('#postPreviewButton').removeAttr("disabled");
+				myThis.find('#postPreviewButton' + selector).removeAttr("disabled");
 
 				text = " " + myThis.find('#text'+selector).val();
 				video = "no";
@@ -382,7 +382,7 @@
 					}, "json");
 				}
 			} else {
-				myThis.find('#postPreviewButton').attr("disabled", "disabled");
+				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
 			}
 		});
 
