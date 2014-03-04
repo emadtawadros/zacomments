@@ -106,6 +106,7 @@
     
     <script type='text/x-handlebars' data-hull-template='user/user'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
+        <h1>{{feed[0].actor.name}}</h1>
         {{#each feed}}
             {{#ifEqual object.type "comment"}}
                 {{#if target.name}}
