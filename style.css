@@ -1,29 +1,29 @@
 body{margin:0;font-family:arial;}
 .navigation{width:100%;height:48px;background-color:#333333;}
 .navwidth{width:1000px;margin:0 auto;}
-.logo{height:24px;float:left;margin:12px;color:white;}
-.search{float:left;width:500px;margin:12px;padding:6px 12px;background-color:white;border:none;border-radius:4px;}
-.searchbtn{float:left;padding:6px 12px;margin:12px;background-color:#888888;color:white;border:none;border-radius:4px;}
+.logo{height:24px;float:left;margin:12px 6px;color:white;}
+.search{float:left;width:500px;margin:12px 6px;padding:6px 12px;background-color:white;border:none;border-radius:4px;}
+.searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:4px;}
 .account{float:right;height:24px;width:200px;}
-.account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px;color:white;border:none;border-radius:4px;}
-.account .pull-left img{float:right;height:24px;width:24px;margin:12px;border-radius:4px;}
+.account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border:none;border-radius:4px;}
+.account .pull-left img{float:right;height:24px;width:24px;margin:12px 6px;border-radius:4px;}
 .account .media-body{display:none;}
-.account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px;color:white;border-radius:4px;}
+.account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border-radius:4px;}
 .body{width:1000px;margin:0 auto;}
 .col1{width:500px;margin-right:5%;}
 .create{width:100%;}
-.create #newEntityField{font-size:11px;width:500px;margin:12px;padding:6px 12px;}
-.create #tagsField{font-size:11px;width:500px;margin:12px;padding:6px 12px;}
-.create #createTopic{font-size:11px;width:500px;margin:12px;padding:6px 12px;}
-.trendingbuzz{width:500px;margin:12px;}
+.create #newEntityField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
+.create #tagsField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
+.create #createTopic{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
+.trendingbuzz{width:500px;margin:12px 6px;}
 .trendingbuzz h1{margin:0;}
-.trendingbuzz li{padding:6px 12px;margin:12px;}
+.trendingbuzz li{padding:6px 12px;margin:12px 6px;}
 .newbuzz{}
 .comments{}
 .topcomment{}
 .newcomments
 .trending{}
-.col2{width:200;margin-left:5%;}
+.col2{width:200px;}
 .under{}
 .related{}
 
