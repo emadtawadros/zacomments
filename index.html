@@ -520,7 +520,8 @@
             },
             
             datasources: {
-            comments: function() {
+            	post: ':id',
+            	comments: function() {
                     var orderBy;
                     if(this.options.orderby == 'votes') {
                         orderBy = 'stats.reviews.updown DESC';
@@ -573,7 +574,7 @@
             
             var linkPreviewDiv = this.$el.find('#lp1');
             if(linkPreviewDiv.children().length == 0) {
-            	linkPreviewDiv.linkPreview({objectID: this.options.id, component: this});
+            	linkPreviewDiv.linkPreview({objectID: this.options.id, objectName: data.post.name, component: this});
             }
             
             this.$el.find(".imgIframe").click(function() {
