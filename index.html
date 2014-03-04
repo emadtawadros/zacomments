@@ -566,9 +566,9 @@
             return data;
             },
             
-            afterRender: function() {
+            afterRender: function(data) {
             
-            console.log(this.options);
+            console.log(data);
             var tab = this.$el.parent().find('.loading');
             tab.slideUp();
             
