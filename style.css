@@ -4,7 +4,7 @@ body{margin:0;font-family:arial;}
 .logo{height:24px;float:left;margin:12px 6px;color:white;}
 .search{float:left;width:500px;margin:12px 6px;padding:6px 12px;background-color:white;border:none;border-radius:4px;}
 .navwidth span{display:none;}
-ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;}
+ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;position: static; width:500px;}
 li{padding:6px 12px;background-color:white;}
 .searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:4px;}
 .account{float:right;width:300px;height:24px;}
