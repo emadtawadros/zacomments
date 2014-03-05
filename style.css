@@ -2,24 +2,24 @@ body{margin:0;font-family:arial;}
 .navigation{width:100%;height:48px;background-color:#333333;}
 .navwidth{width:1000px;margin:0 auto;}
 .logo{height:24px;float:left;margin:12px 6px;color:white;}
-.search{float:left;width:500px;margin:12px 6px;padding:6px 12px;background-color:white;border:none;border-radius:4px;}
+.search{float:left;width:500px;margin:12px 6px;padding:6px 12px;background-color:white;border:none;border-radius:2px;}
 .navwidth span{display:none;}
-ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:500px;border-radius:4px;}
-li{padding:6px 12px;background-color:white;border-radius:4px;}
-.searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:4px;}
+ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:500px;border-radius:2px;}
+li{padding:6px 12px;background-color:white;border-radius:2px;}
+.searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:2px;}
 .account{float:right;width:300px;height:24px;}
-.account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border:none;border-radius:4px;}
-.account .pull-left img{float:right;height:24px;width:24px;margin:12px 6px;border-radius:4px;}
+.account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border:none;border-radius:2px;}
+.account .pull-left img{float:right;height:24px;width:24px;margin:12px 6px;border-radius:2px;}
 .account .media-body{display:none;}
-.account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border-radius:4px;}
+.account .pull-right{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border-radius:2px;}
 .body{width:1000px;margin:0 auto;}
 .col1{width:600px;}
 .col2{width:300px;}
-.createbuzz{width:100%;}
+.createbuzz{background-color:red;width:100%;}
 .createbuzz #newEntityField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
 .createbuzz #tagsField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
 .createbuzz #createTopic{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
-.trendingbuzz{width:600px;margin:12px 6px;}
+.trendingbuzz{background-color:green;width:600px;margin:12px 6px;}
 .trendingbuzz h1{margin:0;}
 .trendingbuzz li{padding:6px 12px;margin:12px 6px;}
 .newbuzz{}
