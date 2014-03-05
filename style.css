@@ -15,7 +15,7 @@ li{padding:6px 12px;background-color:white;border-radius:2px;}
 .body{width:1000px;margin:0 auto;}
 .col1{width:600px;}
 .col2{width:300px;}
-.body img{width:300px;height:150px;overflow:hidden;}
+.body img{width:100%;overflow:hidden;}
 .createbuzz{background-color:red;width:100%;}
 .createbuzz #newEntityField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
 .createbuzz #tagsField{font-size:11px;width:500px;margin:12px 6px;padding:6px 12px;}
