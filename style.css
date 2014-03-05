@@ -22,7 +22,7 @@ li{padding:6px 12px;background-color:white;border-radius:2px;}
 .trendingbuzz{background-color:green;width:600px;margin:12px 6px;}
 .trendingbuzz h1{margin:0;}
 .trendingbuzz li{padding:6px 12px;margin:12px 6px;}
-.newbuzz{}
+.newbuzz{background-color:blue;}
 .comments{}
 .topcomment{}
 .newcomments
