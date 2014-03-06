@@ -111,10 +111,10 @@
         {{#each feed}}
             {{#ifEqual object.type "comment"}}
                 {{#if target.name}}
-                    <p>commented on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
-                {{/if}}
+                    <p><a href="#/comment/{{object.id}}">commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
+                 {{/if}}
             {{else}}
-                <p>reviewed a comment on a <a href="#/post/{{target.commentable_id}}">post</a></p>
+                <p>reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
             {{/ifEqual}}
         {{/each}}
     </script>
@@ -147,6 +147,28 @@
         <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
                 <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks!</button>
     </script>
+    
+    <script type='text/x-handlebars' data-hull-template='posts/comment'}>
+        <div data-hull-component="comment" data-hull-id="{{id}}"></div>
+    </script>
+       
+     <script type='text/x-handlebars' data-hull-template='comment/comment'}>
+         <img src="{{comment.user.picture}}" alt="{{comment.user.name}}" width="50" height="50">
+         <h4 ><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
+         <small > • {{fromNow comment.updated_at}}</small></h4>
+         <div>
+         	{{comment.description}}
+         </div>
+         {{#if comment.extra.richComment}}
+              	{{{comment.extra.richComment}}}
+         {{/if}}
+         <div data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></div>
+             on
+         <h1>{{post.name}}</h1>
+        {{#if post.picture}}
+            <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
+        {{/if}}
+     </script>
     
     <script type='text/x-handlebars' data-hull-template='post/post'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
