@@ -1,5 +1,5 @@
 Hull.component('posts', {
-            templates: ['posts', 'post', 'user', 'search', 'createtopic'],
+            templates: ['posts', 'post', 'user', 'search', 'createtopic', 'comment'],
             initialize: function(){
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
@@ -479,3 +479,43 @@ Hull.component('posts', {
                 }
             }
         }); //post component
+        
+        Hull.component('comment', {
+            templates: ['comment'],
+            datasources: {
+                comment: ':id',
+                post: function() {
+                    var dff = $.Deferred(); 
+                    var component = this;
+                    component.api(this.options.id, 'get').then(function(response) {
+                        component.api(response.commentable_id, 'get').then(function(response1) {
+                            dff.resolve(response1);
+                        });        
+                    });
+                    return dff.promise();
+                }
+            },
+            afterRender: function(data) {
+                console.log(data);
+                this.$el.find(".imgIframe").click(function() {
+                    var oldId = $(this).attr("id");
+                    var currentId = oldId.substring(4);
+                    pTP = "pTP_" + currentId;
+                    pDP = "pDP_" + currentId;
+                    oldId = "#" + oldId;
+                    currentId = "#" + currentId;
+                    $(oldId).css({
+                    'display' : 'none'
+                    });
+                    $(currentId).css({
+                    'display' : 'block'
+                    });
+                    $('#' + pTP).css({
+                    'width' : '495px'
+                    });
+                    $('#' + pDP).css({
+                    'width' : '495px'
+                    });
+                });
+            }        
+        });
