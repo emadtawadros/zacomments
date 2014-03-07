@@ -32,15 +32,10 @@
 </div>
 <div class="body">
 	<div class="col1">
-		<div class="createbuzz">
-	    <h1>Create new Buzz</h1>
-    <input type="text" placeholder="Write Topic" id="newEntityField"></input>
-    <input type="text" placeholder="Insert Tags" id="tagsField"></input>
-    <button type="button" id="createTopic">Create Topic</button>
-    		</div>
-    
     
     <script type='text/x-handlebars' data-hull-template='posts/posts'>
+    	<div data-hull-component="createtopicform"></div>
+
     	<div class="trendingbuzz">
                 <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
@@ -99,6 +94,7 @@
       </script>
         
     <script type='text/x-handlebars' data-hull-template='posts/post'}>
+	<div data-hull-component="createtopicform"></div>
         <div class="loading">
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
         </div>
@@ -131,10 +127,12 @@
     </script>
     
      <script type='text/x-handlebars' data-hull-template='posts/user'}>
+	<div data-hull-component="createtopicform"></div>
          <div data-hull-component="user" data-hull-id="{{id}}"></div>
     </script>
     
     <script type='text/x-handlebars' data-hull-template='posts/search'}>
+	<div data-hull-component="createtopicform"></div>
          <div data-hull-component="search" data-hull-search="{{id}}"></div>
     </script>
     
@@ -149,6 +147,7 @@
     </script>
     
     <script type='text/x-handlebars' data-hull-template='posts/comment'}>
+	<div data-hull-component="createtopicform"></div>
         <div data-hull-component="comment" data-hull-id="{{id}}"></div>
     </script>
        
@@ -170,6 +169,16 @@
             <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
         {{/if}}
      </script>
+     
+    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
+    	<div class="createbuzz">
+	    	<h1>Create new Buzz</h1>
+	    	<input type="text" placeholder="Write Topic" id="newEntityField">Topic</input>
+	    	Tags
+	    	<input type="text" placeholder="Add Tags" id="tagsField"></input>
+	    	<button type="button" id="createTopic" data-hull-action="createtopic">Create Topic</button>
+    	</div>
+    </script>
     
     <script type='text/x-handlebars' data-hull-template='post/post'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
@@ -362,57 +371,9 @@
                     }
                 });
                 
-                $('#tagsField').tagsInput({
-                    'autocomplete_url': arr,
-                    'autocomplete': {select: function(event, ui){
-                        $('#tagsField').addTag(ui.item.label);
-                        $('#tagsField').removeTag(ui.item.value);
-                    }},
-                    'height':'100px',
-                    'width':'300px',
-                    'interactive':true,
-                    'defaultText':'add a tag',
-                    'removeWithBackspace' : true,
-                    'minChars' : 0,
-                    'maxChars' : 0,
-                    'placeholderColor' : '#666666'
-                });
             }); //get conversations
         
         }); //Hull.init
-        
-        $('#createTopic').on('click', function(){
-            var newConversationName = $('#newEntityField').val();
-            if(newConversationName) {
-                var tagsText = $('#tagsField').val();
-                Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                    'visibiliy': 'public',
-                    where:{
-                        'name': {
-                            '$regex': newConversationName, '$options': 'i'
-                        }
-                    }
-                }).then(function(response) {
-                    console.log(response);
-                    if(response.length == 0) {
-                        var tagsPromise = processTags(tagsText);
-                        tagsPromise.done(function(result){
-                            //create the new conversation
-                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                                "public": "true",
-                                "name": newConversationName,
-                                "tags": result
-                            }).then(function(response) {
-                                console.log(response);
-                                window.location.href = '#/createtopic/' + response.id;
-                            });
-                        });
-                    } else {
-                        alert("A topic with the same name already exsits!");        
-                    }
-                });
-            }
-        });   //on click
         
         $('#search').on('click', function() {
             var searchTerm = $('#searchField').val();
