@@ -519,3 +519,78 @@ Hull.component('posts', {
                 });
             }        
         });
+        
+        Hull.component('createtopicform', {
+            templates: ['createtopicform'],
+            datasources: {
+                allTopics: function () {
+                    return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                        'visibiliy': 'public',
+                        limit: 1000
+                    });
+                }
+            },
+            afterRender: function (data) {
+        
+                var mappedTopics = $.map(data.allTopics, function(elementOfArray, indexInArray){
+                    if(elementOfArray.name){
+                        var datum = {
+                            label: elementOfArray.name,
+                            value: elementOfArray.id
+                        }
+                        return datum;
+                    }
+                });
+        
+                this.$el.find('#tagsField').tagsInput({
+                    'autocomplete_url': mappedTopics,
+                    'autocomplete': {select: function(event, ui){
+                        $('#tagsField').addTag(ui.item.label);
+                        $('#tagsField').removeTag(ui.item.value);
+                    }},
+                    'height':'100px',
+                    'width':'300px',
+                    'interactive':true,
+                    'defaultText':'add a tag',
+                    'removeWithBackspace' : true,
+                    'minChars' : 0,
+                    'maxChars' : 0,
+                    'placeholderColor' : '#666666'
+                });
+            },
+            actions: {
+                createtopic: function() {
+                    var component = this;
+                    var newConversationName = this.$el.find('#newEntityField').val();
+                    if(newConversationName) {
+                        var tagsText = this.$el.find('#tagsField').val();
+                        component.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                            'visibiliy': 'public',
+                             where:{
+                                'name': {
+                                    '$regex': newConversationName, '$options': 'i'
+                                }
+                            }
+                        }).then(function(response) {
+                            console.log(response);
+                            if(response.length == 0) {
+                                var tagsPromise = processTags(tagsText);
+                                tagsPromise.done(function(result){
+                                    //create the new conversation
+                                    component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                        "public": "true",
+                                        "name": newConversationName,
+                                        "tags": result
+                                    }).then(function(response) {
+                                        console.log(response);
+                                        window.location.href = '#/createtopic/' + response.id;
+                                    });
+                                });
+                            } else {
+                                alert("A topic with the same name already exsits!");        
+                            }
+                        });
+                    }        
+                }
+            }
+        });
