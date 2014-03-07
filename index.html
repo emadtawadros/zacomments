@@ -39,8 +39,9 @@
     <button type="button" id="createTopic">Create Topic</button>
     		</div>
     
-    <div class="trendingbuzz">
+    
     <script type='text/x-handlebars' data-hull-template='posts/posts'>
+    	<div class="trendingbuzz">
                 <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
@@ -48,6 +49,7 @@
                 {{#if picture}}
                     <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
                 {{/if}}
+                
                 {{#if tags}}
                     {{#each tags}}
                         {{#if this}}
