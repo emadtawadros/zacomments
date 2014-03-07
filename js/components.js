@@ -429,7 +429,7 @@ Hull.component('posts', {
         
                 console.log("after render");
                 console.log(data);
-                var tagsElement = $('#postTags');
+                var tagsElement = this.$el.find('#postTags');
                 tagsElement.tagsInput({
                     'autocomplete_url': arr,
                     'autocomplete': {select: function(event, ui){
@@ -462,7 +462,7 @@ Hull.component('posts', {
                     window.location.href = '#/posts/nbmbn';
                 },
                 updateTags: function() {
-                    var tagsText = $('.tagsinput').eq(1).prev().val(); 
+                    var tagsText = this.$el.find('.tagsinput').prev().val(); 
                     var tagsPromise = processTags(tagsText);
                     var postID = this.options.id;
                     tagsPromise.done(function(result){
