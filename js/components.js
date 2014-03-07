@@ -1,5 +1,5 @@
 Hull.component('posts', {
-            templates: ['posts', 'post', 'user', 'search', 'createtopic', 'comment'],
+            templates: ['posts'],
             initialize: function(){
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
@@ -7,25 +7,6 @@ Hull.component('posts', {
                 this.options.limit = 5;
                 this.options.trendingDaysLimit = 30;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
-        
-                var HullagramRouter = Backbone.Router.extend({
-                    routes: {
-                        ':view(/:id)(/:action)' : 'view'
-                    }
-                });
-            
-                var router  = new HullagramRouter();
-                router.on('route:view', function(view, id, action) {
-                    console.log('current view:' + view);
-                    console.log('currrent id:' + id);
-                    var tpl = action || view || 'posts';
-                    this.currentView = tpl;
-                    this.render(tpl, { id: id });
-                }, this);
-        
-                this.sandbox.on('hullagram.route', function(route) {
-                    router.navigate(route, { trigger: true });
-                });
         
                 setTimeout(function() {
                     Backbone.history.start();
@@ -86,15 +67,10 @@ Hull.component('posts', {
                     });
                     return dff.promise();
                 }
-            },  
-            beforeRender: function(data) {
-                data.currentView = this.currentView;
-                return data;
             },
             afterRender: function() {
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
-               
             },
             actions: {
                 loadMore: function() {
@@ -594,4 +570,40 @@ Hull.component('posts', {
                     }        
                 }
             }
+        });
+        
+         Hull.component('maincomp', {
+            templates: ['maincomp', 'post', 'user', 'search', 'createtopic', 'comment'],
+            initialize: function(){
+                var HullagramRouter = Backbone.Router.extend({
+                    routes: {
+                        ':view(/:id)(/:action)' : 'view'
+                    }
+                });
+            
+                var router  = new HullagramRouter();
+                router.on('route:view', function(view, id, action) {
+                    var tpl = action || view || 'maincomp';
+                    this.currentView = tpl;
+                    this.render(tpl, { id: id });
+                }, this);
+        
+                this.sandbox.on('hullagram.route', function(route) {
+                    router.navigate(route, { trigger: true });
+                });
+        
+                setTimeout(function() {
+                    Backbone.history.start();
+                }, 200);
+        
+            },  
+            beforeRender: function(data) {
+                data.currentView = this.currentView;
+                return data;
+            },
+            afterRender: function() {
+                var tab = this.$el.parent().find('.loading:first');
+                tab.slideUp();
+               
+            }               
         });
