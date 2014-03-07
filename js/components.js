@@ -7,28 +7,10 @@ Hull.component('posts', {
                 this.options.limit = 5;
                 this.options.trendingDaysLimit = 30;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
-                var HullagramRouter = Backbone.Router.extend({
-                    routes: {
-                        ':view(/:id)(/:action)' : 'view'
-                    }
-                });
-            
-                var router  = new HullagramRouter();
-                router.on('route:view', function(view, id, action) {
-                    console.log('current view:' + view);
-                    console.log('currrent id:' + id);
-                    var tpl = action || view || 'posts';
-                    this.currentView = tpl;
-                    this.render(tpl, { id: id });
-                }, this);
         
                 this.sandbox.on('hullagram.route', function(route) {
                     router.navigate(route, { trigger: true });
                 });
-        
-                setTimeout(function() {
-                    Backbone.history.start();
-                }, 200);
         
             }, //initialize
             datasources: {
