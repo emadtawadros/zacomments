@@ -592,6 +592,7 @@ Hull.component('posts', {
         
          Hull.component('maincomp', {
             templates: ['maincomp', 'post', 'user', 'search', 'createtopic', 'comment'],
+            refreshEvents: ['model.hull.me.change'],
             initialize: function(){
                 var HullagramRouter = Backbone.Router.extend({
                     routes: {
