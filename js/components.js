@@ -539,6 +539,8 @@ Hull.component('posts', {
                     'placeholderColor' : '#666666'
                 });
                 
+                this.$el.find('tagsinput').hide();
+                
                 var component = this;
                 this.$el.find('#newEntityField').keyup(function(e) {
 		if(trim($(this).val()) !== "") {
