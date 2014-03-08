@@ -415,7 +415,7 @@ Hull.component('posts', {
                     }},
                     'height':'100px',
                     'width':'300px',
-                    'interactive':true,
+                    'interactive':data.isAdmin,
                     'defaultText':'add a tag',
                     'removeWithBackspace' : true,
                     'minChars' : 0,
