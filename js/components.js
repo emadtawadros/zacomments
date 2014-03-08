@@ -542,9 +542,9 @@ Hull.component('posts', {
                 var component = this;
                 this.$el.find('#newEntityField').keyup(function(e) {
 		if(trim($(this).val()) !== "") {
-			component.$el.find('#tagsField').slideUp();
+			component.$el.find('.tagsinput').slideDown();
 		} else {
-			component.$el.find('#tagsField').slideDown();
+			component.$el.find('.tagsinput').slideUp();
 		}
                 });
             },
