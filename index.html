@@ -39,7 +39,9 @@
     </script>
             
     <script type='text/x-handlebars' data-hull-template='posts/posts'>
-    	<div data-hull-component="createtopicform"></div>
+        {{#if loggedIn}}
+    		<div data-hull-component="createtopicform"></div>
+    	{{/if}}
 
     	<h1>Trending Buzz</h1>
     	<div class="trendingbuzz">
@@ -99,7 +101,9 @@
       </script>
         
     <script type='text/x-handlebars' data-hull-template='maincomp/post'}>
-	<div data-hull-component="createtopicform"></div>
+    	{{#if loggedIn}}
+		<div data-hull-component="createtopicform"></div>
+        {{/if}}
         <div class="loading">
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
         </div>
@@ -132,12 +136,16 @@
     </script>
     
      <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
-	<div data-hull-component="createtopicform"></div>
+        {{#if loggedIn}}
+		<div data-hull-component="createtopicform"></div>
+	{{/if}
          <div data-hull-component="user" data-hull-id="{{id}}"></div>
     </script>
     
     <script type='text/x-handlebars' data-hull-template='maincomp/search'}>
-	<div data-hull-component="createtopicform"></div>
+        {{#if loggedIn}}
+		<div data-hull-component="createtopicform"></div>
+	{{/if}}
          <div data-hull-component="search" data-hull-search="{{id}}"></div>
     </script>
     
@@ -152,7 +160,9 @@
     </script>
     
     <script type='text/x-handlebars' data-hull-template='maincomp/comment'}>
-	<div data-hull-component="createtopicform"></div>
+        {{#if loggedIn}}
+		<div data-hull-component="createtopicform"></div>
+	{{/if}}
         <div data-hull-component="comment" data-hull-id="{{id}}"></div>
     </script>
        
