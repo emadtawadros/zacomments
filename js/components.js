@@ -542,10 +542,10 @@ Hull.component('posts', {
                 var component = this;
                 this.$el.find('#newEntityField').keyup(function(e) {
 		if(trim($(this).val()) !== "") {
-			component.$el.find('.tagsinput').slideDown();
+			component.$el.find('.newTopicTags').slideDown();
 			component.$el.find('#createTopic').removeAttr("disabled");
 		} else {
-			component.$el.find('.tagsinput').slideUp();
+			component.$el.find('.newTopicTags').slideUp();
 			component.$el.find('#createTopic').attr("disabled", "disabled");
 		}
                 });
