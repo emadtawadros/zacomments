@@ -111,7 +111,7 @@ Hull.component('posts', {
             },
             actions: {
                 back: function() {
-                    window.location.href = '#/posts/nbmbn';
+                    window.location.href = '#/maincomp';
                 }
             }
         });
@@ -164,7 +164,7 @@ Hull.component('posts', {
             },
             actions: {
                 back: function() {
-                    window.location.href = '#/posts';
+                    window.location.href = '#/maincomp';
                 }       
             }
         });
@@ -433,10 +433,10 @@ Hull.component('posts', {
                     Hull.api(this.options.id, 'delete').then(function(response) {
                     console.log(response);
                     });
-                    window.location.href = '#/posts/nbmbn';
+                    window.location.href = '#/maincomp';
                 },
                 back: function() {
-                    window.location.href = '#/posts/nbmbn';
+                    window.location.href = '#/maincomp';
                 },
                 updateTags: function() {
                     var tagsText = this.$el.find('.tagsinput').prev().val(); 
@@ -447,7 +447,7 @@ Hull.component('posts', {
                             "tags": result
                         }).then(function(response) {
                             console.log(response);
-                            window.location.href = '#/posts/nbmbn';
+                            window.location.href = '#/maincomp';
                         });
                     });
                 },
