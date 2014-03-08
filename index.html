@@ -403,6 +403,10 @@
             }
         });
         
+        var trim = function (str) {
+            return str.replace(/^\s+|\s+$/g, "");
+        };
+        
         var processRelatedPosts = function(postID) {
             var dff = $.Deferred();
             var result = [];
