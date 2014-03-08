@@ -133,7 +133,7 @@ Hull.component('posts', {
             },
             actions: {
                 skipimageupload: function() {
-                    window.location.href = '#/post/'+ component.options.id;
+                    window.location.href = '#/post/'+ this.options.id;
                 }
             }
         });
