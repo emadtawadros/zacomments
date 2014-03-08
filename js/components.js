@@ -538,6 +538,15 @@ Hull.component('posts', {
                     'maxChars' : 0,
                     'placeholderColor' : '#666666'
                 });
+                
+                var component = this;
+                this.$el.find('#newEntityField').keyup(function(e) {
+		if(trim($(this).val()) !== "") {
+			component.$el.find('#tagsField').slideUp();
+		} else {
+			component.$el.find('#tagsField').slideDown();
+		}
+                });
             },
             actions: {
                 createtopic: function() {
