@@ -503,6 +503,7 @@ Hull.component('posts', {
         
         Hull.component('createtopicform', {
             templates: ['createtopicform'],
+            refreshEvents: ['model.hull.me.change'],
             datasources: {
                 allTopics: function () {
                     return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
