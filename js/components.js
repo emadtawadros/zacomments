@@ -401,6 +401,10 @@ Hull.component('posts', {
                 console.log("Before render errors:" + errors);
             },
             afterRender: function (data) {
+                var isTagsEditable = false;
+                if(data.loggedIn && data.isAdmin) {
+                            isTagsEditable = true; 
+                }
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
         
@@ -415,7 +419,7 @@ Hull.component('posts', {
                     }},
                     'height':'100px',
                     'width':'300px',
-                    'interactive':data.isAdmin,
+                    'interactive':isTagsEditable,
                     'defaultText':'add a tag',
                     'removeWithBackspace' : true,
                     'minChars' : 0,
