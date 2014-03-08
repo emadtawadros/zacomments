@@ -41,8 +41,8 @@
     <script type='text/x-handlebars' data-hull-template='posts/posts'>
     	<div data-hull-component="createtopicform"></div>
 
+    	<h1>Trending Buzz</h1>
     	<div class="trendingbuzz">
-                <h1>Trending Buzz</h1>
         {{#each trendingPosts}}
             {{#if name}}
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
@@ -66,9 +66,9 @@
         {{/each}}
         <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load More Trending Topics</button>
         </div>
-
+        
+	<h1>New Buzz</h1>
 	<div class="newbuzz">
-        <h1>New Buzz</h1>
         {{#each newPosts}}
             {{#if name}}
                 <div>
