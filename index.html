@@ -112,6 +112,7 @@
     
     <script type='text/x-handlebars' data-hull-template='user/user'}>
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
+        {{#if loggedIn}}
         <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
         {{#each feed}}
             {{#ifEqual object.type "comment"}}
@@ -122,6 +123,10 @@
                 <p>reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
             {{/ifEqual}}
         {{/each}}
+        {{else}}
+        	<p>You need to login to view user feed</p>
+        	<div data-hull-component="login_button@hull"></div>
+        {{/if}}
     </script>
     
     <script type='text/x-handlebars' data-hull-template='search/search'}>
