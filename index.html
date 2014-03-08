@@ -202,8 +202,8 @@
         <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         {{#if isAdmin}}
         	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
+        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
         {{/if}}
-        <button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 
         <h1>{{post.name}}</h1>
         {{#if post.picture}}
@@ -211,7 +211,9 @@
         {{/if}}
         
         <input type="text" id="postTags"></input>
-        <button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+        {{#if isAdmin}}
+        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+        {{/if}}
 	<p>{{post.stats.comments}} comments</p>
         <h1>Top Comments</h1>
         <div class="loading">
