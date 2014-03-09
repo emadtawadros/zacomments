@@ -524,11 +524,12 @@ Hull.component('posts', {
                     }
                 });
         
-                this.$el.find('#tagsField').tagsInput({
+        	var tagsField = this.$el.find('#tagsField');
+                tagsField.tagsInput({
                     'autocomplete_url': mappedTopics,
                     'autocomplete': {select: function(event, ui){
-                        $('#tagsField').addTag(ui.item.label);
-                        $('#tagsField').removeTag(ui.item.value);
+                        tagsField.addTag(ui.item.label);
+                        tagsField.removeTag(ui.item.value);
                     }},
                     'height':'100px',
                     'width':'300px',
