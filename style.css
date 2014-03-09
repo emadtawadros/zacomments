@@ -24,7 +24,7 @@ body{margin:0;font-family:arial;}
 .trendingbuzz{}
 .trendingbuzz .post{font-size:36px;margin:0 0 6px 0;clear:both;}
 .trendingbuzz li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;float:left;}
-.trendingbuzz img{clear:both;}
+.trendingbuzz .postimg{float:left;clear:both;}
 .trendingbuzz p{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;}
 .trendingbuzz .hull-component{background-color:#EEEEEE;width:600px;padding:24px;border-radius:2px;margin:12px 0;}
 .trendingbuzz .hull-component .well{}
