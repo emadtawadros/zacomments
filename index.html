@@ -52,7 +52,7 @@
                     <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
                 {{/if}}
                 
-                <ul>
+                <ul class="posttags">
                 {{#if tags}}
                     {{#each tags}}
                         {{#if this}}
@@ -64,7 +64,7 @@
                      <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
                 </div>
                 </ul>
-                <span class="commentsdata">{{stats.comments}} comments</span>
+                <span class="postcomments">{{stats.comments}} comments</span>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
