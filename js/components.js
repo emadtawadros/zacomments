@@ -557,7 +557,7 @@ Hull.component('posts', {
                             'visibiliy': 'public',
                              where:{
                                 'name': {
-                                    '$regex': newConversationName, '$options': 'i'
+                                    '$regex': '^' + newConversationName + '$', '$options': 'i'
                                 }
                             }
                         }).then(function(response) {
