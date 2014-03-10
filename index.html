@@ -361,6 +361,7 @@
 	<script>
         
         var arr;
+        var rawAllTopics;
         
         Hull.init({
             debug: false, //Enable to see all traces from the app
@@ -371,10 +372,11 @@
             console.log('Here we go!');
             
             hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                        'visibiliy': 'public'
+                        'visibiliy': 'public',
+                        'limit': 1000
             }).then(function(response) {
-                console.log('conversations', response);
-
+		rawAllTopics = response;
+		
                 arr = $.map(response, function(elementOfArray, indexInArray){
                     if(elementOfArray.name){
                         var datum = {
