@@ -561,6 +561,7 @@ Hull.component('posts', {
                                 }
                             }
                         }).then(function(response) {
+                            console.log("regular expression result");
                             console.log(response);
                             if(response.length == 0) {
                                 var tagsPromise = processTags(tagsText);
