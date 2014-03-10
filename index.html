@@ -230,6 +230,9 @@
 
 	<div class="under">
         <h1>Posts under {{post.name}}</h1>
+	{{#ifEqual postsUnder.length 0}}
+        	<p>No posts currently tagged with {{post.name}}</P
+        {{/ifEqual}}
         {{#each postsUnder}}
             {{#if picture}}
                 <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
