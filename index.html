@@ -466,7 +466,7 @@
                                         'visibiliy': 'public',
                                         where:{
                                             'name': {
-                                                '$regex': valueTextTag, '$options': 'i'
+                                                '$regex': '^' + valueTextTag '$', '$options': 'i'
                                             }
                                         }
                                     }).then(function(response) {
