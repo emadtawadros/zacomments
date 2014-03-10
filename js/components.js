@@ -366,7 +366,7 @@ Hull.component('posts', {
                                 console.log("related tag");
                                 console.log(response);
                                 $.each(response, function(responseIndex, responseValue){
-                                    if(responseValue.id != componentRef.options.id) {
+                                	if((responseValue.id != componentRef.options.id) && notAlreadyAdded(result, responseValue.id)) {
                                         result.push(responseValue);
                                     }
                                 });
