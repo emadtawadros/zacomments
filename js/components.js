@@ -564,18 +564,27 @@ Hull.component('posts', {
                             console.log("regular expression result");
                             console.log(response);
                             if(response.length == 0) {
-                                var tagsPromise = processTags(tagsText);
-                                tagsPromise.done(function(result){
-                                    //create the new conversation
-                                    component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                                        "public": "true",
-                                        "name": newConversationName,
-                                        "tags": result
-                                    }).then(function(response) {
-                                        console.log(response);
-                                        window.location.href = '#/createtopic/' + response.id;
-                                    });
-                                });
+                            	if(tagsText) {
+                            		var tagsPromise = processTags(tagsText);
+                                	tagsPromise.done(function(result){
+                                    		component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                        		"public": "true",
+                                        		"name": newConversationName,
+                                        		"tags": result
+                                    		}).then(function(response) {
+                                        		console.log(response);
+                                        		window.location.href = '#/createtopic/' + response.id;
+                                    		});
+                                	});
+                        	} else {
+                        		component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                		"public": "true",
+                                		"name": newConversationName
+                                    	}).then(function(response) {
+                                		console.log(response);
+                                		window.location.href = '#/createtopic/' + response.id;
+                                	});
+                        	}
                             } else {
                                 alert("A topic with the same name already exsits!");        
                             }
