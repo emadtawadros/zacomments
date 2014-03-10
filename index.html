@@ -252,7 +252,7 @@
         <h1>Posts related to {{post.name}}</h1>
         {{#ifEqual postsRelated.length 0}}
         	<p>No posts currently share tags with {{post.name}}</P
-        {{/if}}
+        {{/ifEqual}}
         {{#each postsRelated}}
              {{#if picture}}
                 <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
