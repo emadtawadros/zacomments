@@ -250,6 +250,9 @@
         
         <div class="related">
         <h1>Posts related to {{post.name}}</h1>
+        {{#ifEqual postsRelated.length 0}}
+        	<p>No posts currently share tags with {{post.name}}</P
+        {{/if}}
         {{#each postsRelated}}
              {{#if picture}}
                 <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
@@ -339,9 +342,6 @@
       {{/if}}
     </div>
     </script>
-    <div class="loading">
-       <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-    </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
