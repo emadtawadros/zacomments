@@ -552,7 +552,7 @@ Hull.component('posts', {
                     var component = this;
                     var newConversationName = this.$el.find('#newEntityField').val();
                     if(newConversationName) {
-                        var tagsText = this.$el.find('#tagsField').val();
+                        var tagsText = this.$el.find('.tagsinput').prev().val();
                         component.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
                             'visibiliy': 'public',
                              where:{
