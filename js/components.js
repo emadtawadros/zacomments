@@ -44,7 +44,7 @@ Hull.component('posts', {
                                 
                                 for(var i = 0; i< response.result.length; i++)
                                 {
-                                    componenet.api(response.result[i].target_id, 'get').then(function(response) {
+                                    componenet.api(response.result[i].target_id, {async:true}).then(function(response) {
                                     	if(result.length < componenet.options.trendingLimit) {
                                     		result.push(response);
                                     	}
