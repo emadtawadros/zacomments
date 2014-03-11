@@ -302,7 +302,7 @@
           </li>
         {{/comments}}
       </ul>
-      {{#ifcond comments.length < post.stats.comments}}
+      {{#ifcond 2 < 3}}
           <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
       {{/ifcond}}
     {{/if}}
