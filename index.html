@@ -131,6 +131,9 @@
         <h1>Search Results</h1>
         {{#each searchResults}}
             {{#if name}}
+                {{#if picture}}
+                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+                {{/if}}
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 		<p>{{stats.comments}} comments</p>
             {{/if}}
