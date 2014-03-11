@@ -302,9 +302,7 @@
           </li>
         {{/comments}}
       </ul>
-      <p>{{options.showLoadMoreButton}}</p>
-      <p>{{showLoadMoreButton}}</p>
-      {{#ifEqual showLoadMoreButton true}}
+      {{#ifEqual options.showLoadMoreButton true}}
           <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
       {{/ifEqual}}
     {{/if}}
