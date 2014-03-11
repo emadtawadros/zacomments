@@ -35,23 +35,25 @@ Hull.component('posts', {
                 
                       //Get the result of the query and alert it.
                         metric.getResponse(function(response){
-                            var numberOfPosts = componenet.options.trendingLimit;
+                            var numberOfDeletedItems = 0;
                             if(response.result.length >= componenet.options.trendingLimit) {
                                 response.result.sort(function(a,b) {
                                     return b.result - a.result;
                                 });
                                 
-                                console.log(response.result);
-                                for(var i = 0; i< componenet.options.trendingLimit; i++)
+                                
+                                for(var i = 0; i< response.result.length; i++)
                                 {
                                     componenet.api(response.result[i].target_id, 'get').then(function(response) {
-                                        result.push(response);
+                                    	if(result.length < componenet.options.trendingLimit) {
+                                    		result.push(response);
+                                    	}
                                     }, function(error) {
-                                        numberOfPosts--;
+                                        numberOfDeletedItems ++;
                                     });
                                 }
                                 (function wait(){
-                                    if(result.length >= numberOfPosts) {
+                                    if(result.length >= componenet.options.trendingLimit || result.length + numberOfDeletedItems >= response.result.length) {
                                         dff.resolve(result);
                                     } else {
                                         setTimeout(wait, 100);
@@ -275,7 +277,6 @@ Hull.component('posts', {
             
             afterRender: function(data) {
             
-            console.log(data);
             var tab = this.$el.parent().find('.loading');
             tab.slideUp();
             
