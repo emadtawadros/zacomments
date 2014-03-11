@@ -24,7 +24,7 @@
 <body>
 <div class="navigation">
 	<div class="navwidth">
-		<a href="http://zacomments.azurewebsites.net/"><img class="logo" src="images/logo.png"/></a>
+		<a href="#/maincomp"><img class="logo" src="images/logo.png"/></a>
 		<input class="search" type="text" id="searchField" id="tags"></input>
     		<button class="searchbtn" type="button" id="search">Search</button>
     		<div class="account" data-hull-component="login/profile@hull" data-hull-provider="facebook"></div>
@@ -113,7 +113,6 @@
     </script>
     
     <script type='text/x-handlebars' data-hull-template='user/user'}>
-        <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
         {{#each feed}}
             {{#ifEqual object.type "comment"}}
@@ -127,7 +126,6 @@
     </script>
     
     <script type='text/x-handlebars' data-hull-template='search/search'}>
-        <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         <h1>Search Results</h1>
         {{#each searchResults}}
             {{#if name}}
@@ -203,7 +201,6 @@
     </script>
     
     <script type='text/x-handlebars' data-hull-template='post/post'}>
-        <button type="button" id="back" data-hull-action="back">&lt&ltBack</button>
         {{#if isAdmin}}
         	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
         	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
