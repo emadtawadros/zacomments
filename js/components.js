@@ -260,6 +260,12 @@ Hull.component('posts', {
             },
             
             beforeRender: function(data) {
+            if(data.comments.length < data.post.stats.comments) {
+            	this.options.showLoadMoreButton = true;	
+            } else {
+		this.options.showLoadMoreButton = false;	
+            }
+            
             this.sandbox.util._.each(data.comments, function(c) {
             c.isDeletable = (c.user.id === data.me.id);
             return c;
