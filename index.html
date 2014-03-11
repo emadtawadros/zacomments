@@ -392,7 +392,7 @@
                         return datum;
                     }
                 });
-        
+        	
                 $( "#searchField" ).autocomplete({
                     source: arr,
                     select: function(event, ui) {
@@ -401,6 +401,16 @@
                         window.location.href = '#/post/' + ui.item.value;
                     }
                 });
+                
+                $('#searchField').keyup(function(e){
+    			if(e.keyCode == 13)
+    			{
+    				var searchTerm = $(this).val();
+    				if(searchTerm) {
+    					window.location.href = '#/search/' + searchTerm;
+    				}
+    			}
+		});
                 
             }); //get conversations
         
