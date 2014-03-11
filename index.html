@@ -302,9 +302,9 @@
           </li>
         {{/comments}}
       </ul>
-      {{#ifcond 2 < 3}}
+      {{#ifEqual showLoadMoreButton true}}
           <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
-      {{/ifcond}}
+      {{/ifEqual}}
     {{/if}}
     
     {{^comments}}
