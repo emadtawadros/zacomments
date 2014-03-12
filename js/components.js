@@ -288,6 +288,8 @@ Hull.component('posts', {
             this.$el.find(".imgIframe").click(function() {
             	var oldId = $(this).attr("id");
                 var currentId = oldId.substring(4);
+                console.log("old " + oldId);
+                console.log("current " + currentId);
                 pTP = "pTP_" + currentId;
                 pDP = "pDP_" + currentId;
                 oldId = "#" + oldId;
