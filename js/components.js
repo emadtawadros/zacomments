@@ -285,6 +285,7 @@ Hull.component('posts', {
             	linkPreviewDiv.linkPreview({objectID: this.options.id, objectName: data.post.name, component: this});
             }
             
+            var component = this;
             this.$el.find(".imgIframe").click(function() {
             	var oldId = $(this).attr("id");
                 var currentId = oldId.substring(4);
@@ -294,16 +295,16 @@ Hull.component('posts', {
                 pDP = "pDP_" + currentId;
                 oldId = "#" + oldId;
                 currentId = "#" + currentId;
-                $(oldId).css({
+                component.$el.find(oldId).css({
                 	'display' : 'none'
                 });
-                $(currentId).css({
+                component.$el.find(currentId).css({
                     'display' : 'block'
                 });
-                $('#' + pTP).css({
+                component.$el.find('#' + pTP).css({
                     'width' : '495px'
                 });
-                $('#' + pDP).css({
+                component.$el.find('#' + pDP).css({
                     'width' : '495px'
                 });
             });
