@@ -135,8 +135,8 @@ Hull.component('posts', {
                 var component = this;
                 
 		this.sandbox.on('hull.upload.image.add', function(image) {                  
-			console.log("Started image upload");                   
-                });
+			component.$el.children().attr("disabled", "disabled");
+		});
                 
                 this.sandbox.on('hull.uploads.image.finished', function(image) {                  
                     component.api(component.options.id, 'put',{
