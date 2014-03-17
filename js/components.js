@@ -177,6 +177,7 @@ Hull.component('posts', {
             },
             beforeRender: function(data, error) {
                 console.log(data);
+                console.log(error);
             },
             afterRender: function(data) {
             	console.log(data);
