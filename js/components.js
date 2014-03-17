@@ -632,7 +632,8 @@ Hull.component('posts', {
                                 	});
                         	}
                             } else {
-                                alert("A topic with the same name already exsits!");        
+                                alert("A topic with the same name already exsits!");
+                                component.$el.find('.createbuzz').children().removeAttr("disabled");
                             }
                         });
                     }        
