@@ -178,6 +178,9 @@ Hull.component('posts', {
             beforeRender: function(data, error) {
                 console.log(data);
             },
+            afterRender: function(data) {
+            	console.log(data);
+            },
             actions: {
                 back: function() {
                     window.location.href = '#/maincomp';
