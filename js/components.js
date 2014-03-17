@@ -11,7 +11,6 @@ Hull.component('posts', {
                 setTimeout(function() {
                     Backbone.history.start();
                 }, 200);
-        se
             }, //initialize
             datasources: {
                 newPosts: function() {
