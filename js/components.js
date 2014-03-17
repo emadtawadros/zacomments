@@ -494,6 +494,10 @@ Hull.component('posts', {
                     window.location.href = '#/maincomp';
                 },
                 updateTags: function() {
+                   var component = this;
+                	
+                   this.$el.find('#updateTags').attr("disabled", "disabled");
+                                        
                     var tagsText = this.$el.find('.tagsinput').prev().val(); 
                     var tagsPromise = processTags(tagsText);
                     var postID = this.options.id;
@@ -501,8 +505,10 @@ Hull.component('posts', {
                         Hull.api(postID, 'put',{
                             "tags": result
                         }).then(function(response) {
+                            component.$el.find('#updateTags').removeAttr("disabled");
+                            
                             console.log(response);
-                            window.location.href = '#/maincomp';
+                            window.location.href = '#/post/'+ component.options.id;
                         });
                     });
                 },
