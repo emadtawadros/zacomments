@@ -593,7 +593,7 @@ Hull.component('posts', {
             actions: {
                 createtopic: function() {
                 	
-                    this.$el.find('.createbuzz').attr("disabled", "disabled");
+                    this.$el.find('.createbuzz').children().attr("disabled", "disabled");
                     
                     var component = this;
                     var newConversationName = this.$el.find('#newEntityField').val();
