@@ -135,7 +135,7 @@ Hull.component('posts', {
             afterRender: function() {
                 var component = this;
                 
-		this.sandbox.on('hull.uploads.image.send', function(image) {                  
+		this.sandbox.on('hull.upload.image.add', function(image) {                  
 			console.log("Started image upload");                   
                 });
                 
