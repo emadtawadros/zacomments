@@ -75,9 +75,14 @@ Hull.component('posts', {
                 tab.slideUp();
                 
                 this.$el.find('#loadMoreTrending').removeAttr('dissabled');
+                this.$el.find('#loadMore').removeAttr('dissabled');
+
             },
             actions: {
                 loadMore: function() {
+                	
+                    this.$el.find('#loadMore').attr("disabled", "disabled");
+                    
                     this.options.limit += 10;
                     this.render();
                 },
