@@ -11,7 +11,7 @@ Hull.component('posts', {
                 setTimeout(function() {
                     Backbone.history.start();
                 }, 200);
-        
+        se
             }, //initialize
             datasources: {
                 newPosts: function() {
@@ -161,7 +161,7 @@ Hull.component('posts', {
             },
             datasources: {
                 searchResults: function() {
-                var searchString = this.options.search;
+                var searchString = ''+ this.options.search;
         //searchString.replace(/(the|it is|we all|an?|by|to|you|[mh]e|she|they|we)/ig, '');
                 var searchTokens = searchString.split(/[ ,]+/);
                 console.log(searchTokens);
