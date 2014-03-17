@@ -73,6 +73,8 @@ Hull.component('posts', {
             afterRender: function() {
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
+                
+                this.$el.find('#loadMoreTrending').removeAttr('dissabled');
             },
             actions: {
                 loadMore: function() {
@@ -80,6 +82,8 @@ Hull.component('posts', {
                     this.render();
                 },
                 loadMoreTrending: function() {
+                	
+                	this.$el.find('#loadMoreTrending').attr("disabled", "disabled");
 
                         this.options.trendingLimit += 10;
                         this.render();
