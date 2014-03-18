@@ -383,6 +383,45 @@ Hull.component('posts', {
             }
         });
         
+        Hull.component('commentbox', {
+        	templates: ['commentbox'],
+        	datasources: {
+        		post: ':id'
+        	},
+        	actions: {
+	            comment: 'postComment'
+            },
+            afterRender: function(data) {
+	            var linkPreviewDiv = this.$el.find('#lp1');
+	            if(linkPreviewDiv.children().length == 0) {
+	            	linkPreviewDiv.linkPreview({objectID: data.post.id, objectName: data.post.name, component: this});
+	            }
+            },
+            postComment: function (e) {
+	            e.preventDefault();
+	            var self = this;
+	            var $form = this.$find('form');
+	   
+	            formData = this.sandbox.dom.getFormData($form);
+	            
+	            this.toggleLoading();
+	            this.api(this.options.id + '/comments', 'post', {
+	            	"description": "Rich Comment",
+	            	"extra": {
+	            		"richComment": richComment
+	            	}
+	            }).then(function(comment) {
+		            self.sandbox.emit('hull.comments.' + self.options.id + '.added', comment);
+		            self.toggleLoading();
+		            self.focusAfterRender = true;
+		            self.render();
+	            }, function() {
+		            self.$el.find('input,textarea').focus();
+		            self.toggleLoading();
+	            });
+            }
+        });
+        
         Hull.component('post', {
             templates: ['post'],
             datasources: {
