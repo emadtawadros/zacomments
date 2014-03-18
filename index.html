@@ -65,8 +65,7 @@
                 </div>
                 </ul>
                 <span class="postcomments">{{stats.comments}} comments</span>
-                            <div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-
+		<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
@@ -96,6 +95,7 @@
                      <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
                 </div>
                 <p>{{stats.comments}} comments</p>
+		<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
@@ -218,6 +218,7 @@
         	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
         {{/if}}
 	<p>{{post.stats.comments}} comments</p>
+	<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
         <h1>Top Comments</h1>
         <div class="loading">
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
@@ -249,6 +250,7 @@
                 {{/each}}
             {{/if}}
 	    <p>{{stats.comments}} comments</p>
+	    <div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
             <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
         {{/each}}
         </div>
