@@ -189,7 +189,7 @@ Hull.component('posts', {
         });
         
         Hull.component('test', {
-            templates: ['test', 'form'],
+            templates: ['test'],
             helpers: {
             	ifcond: function (v1, operator, v2, options) {
             		switch (operator) {
@@ -225,8 +225,7 @@ Hull.component('posts', {
             
             
             actions: {
-            comment: 'postComment',
-            'delete':  'deleteComment',
+            comment: 'delete':  'deleteComment',
             flag:    'flagItem',
             loadMore: function() {
                 this.options.limit += 10;
@@ -296,12 +295,7 @@ Hull.component('posts', {
             
             var tab = this.$el.parent().find('.loading');
             tab.slideUp();
-            
-            var linkPreviewDiv = this.$el.find('#lp1');
-            if(linkPreviewDiv.children().length == 0) {
-            	linkPreviewDiv.linkPreview({objectID: this.options.id, objectName: data.post.name, component: this});
-            }
-            
+           
             var component = this;
             this.$el.find(".imgIframe").click(function() {
             	var oldId = $(this).attr("id");
