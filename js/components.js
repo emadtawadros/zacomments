@@ -225,7 +225,7 @@ Hull.component('posts', {
             
             
             actions: {
-            comment: 'delete':  'deleteComment',
+            delete:  'deleteComment',
             flag:    'flagItem',
             loadMore: function() {
                 this.options.limit += 10;
