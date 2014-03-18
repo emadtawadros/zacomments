@@ -273,9 +273,6 @@
       <ul class="media-list hull-comments__list">
         {{#comments}}
           <li class="media" data-hull-comment-id="{{id}}">
-            <div class="pull-left">
-              <img class="media-object img-rounded" src="{{user.picture}}" alt="{{user.name}}" width="50" height="50">
-            </div>
             <div class="media-body">
               <h4 class="media-heading"><a href="#/user/{{user.id}}">{{user.name}}</a>
  <small class="muted"> • {{fromNow updated_at}}</small></h4>
@@ -359,14 +356,6 @@
         </div>
         <div class="media-body">
               <div class="linkPreview" id="lp1"></div>
-          <div>
-            <button data-hull-action="comment" class="btn btn-small btn-primary">Post as {{me.name}}</button>
-            <div class='pull-right'>
-              <small>
-                <a href="#" data-hull-action="logout" class="link">Logout</a>
-              </small>
-            </div>
-          </div>
         </div>
       </div>
     </form>
