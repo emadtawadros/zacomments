@@ -23,7 +23,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .createbuzz h1{margin:0 0 6px 0;}
 .trendingbuzz{}
 .trendingbuzz .post{font-size:36px;margin:0 0 6px 0;}
-.trendingbuzz .posttags {list-style-type: none;padding: 0px;margin: 0px;clear:both;}
+.trendingbuzz .posttags {list-style-type: none;border:none;padding: 0px;margin: 0px;clear:both;}
 .trendingbuzz .posttags li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;float:left;}
 .trendingbuzz .postimg{}
 .trendingbuzz .postcomments{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;display:inline-block;}
@@ -32,7 +32,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .hull-component .well .media{}
 .trendingbuzz .hull-component .well .media .pull-left{width:24px;height:24px;float:left;display:inline-block;}
 .trendingbuzz .hull-component .well .media .media-body textarea{width:500px;}
-.trendingbuzz .hull-component .media-list .hull-comments__list{list-style-type: none;padding: 0px;margin: 0px;clear:both;}
+.trendingbuzz .hull-component .media-list .hull-comments__list{list-style-type: none;border:none;padding: 0px;margin: 0px;clear:both;}
 .trendingbuzz .hull-component .media-list .hull-comments__list .media{}
 .newbuzz{}
 .newbuzz h1{margin:0 0 6px 0;}
