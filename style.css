@@ -6,7 +6,7 @@ body{margin:0;font-family:arial;}
 .navwidth span{display:none;}
 .navwidth ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:500px;border-radius:2px;}
 .navwidth li{padding:6px 12px;background-color:white;border-radius:2px;}
-.navwidth .ui-autocomplete .ui-front .ui-menu .ui-widget .ui-widget-content .ui-corner-all{list-style-type: none;padding: 0px;margin: 0px;clear:both;background-color:white;}
+.ui-autocomplete .ui-front .ui-menu .ui-widget .ui-widget-content .ui-corner-all{list-style-type: none;padding: 0px;margin: 0px;clear:both;background-color:white;}
 .searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:2px;}
 .account{float:right;width:300px;height:24px;}
 .account button{font-size:11px;float:right;background-color:#888888;padding:6px 12px;margin:12px 6px;color:white;border:none;border-radius:2px;}
