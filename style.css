@@ -30,9 +30,9 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .hull-component{}
 .trendingbuzz ul{border:none;}
 .trendingbuzz il{}
-.trendingbuzz il h4{padding:12px 0px;}
-.trendingbuzz .hull-comments__description{padding:12px 0px;}
-.trendingbuzz .hull-comments__actions{padding:12px 0px;}
+.trendingbuzz il h4{padding:6px 0px;margin:0;}
+.trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
+.trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;}
 .newbuzz{}
 .newbuzz h1{margin:0 0 6px 0;}
 .under{}
