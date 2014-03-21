@@ -32,6 +32,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;}
 .trendingbuzz .media-heading{padding:6px 0px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
+.trendingbuzz .previewPosted{width:500px;padding:0px;color:black;margin-bottom:12px;font-family:inherit;font-size:default;border:none;float:none;}
 .trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;display:inline-block;}
 .trendingbuzz .hull-comments__actions small{float:left;display:inline-block;margin: 0 6px 0 0;}
 .trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
