@@ -29,10 +29,10 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .postcomments{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;display:inline-block;}
 .trendingbuzz .hull-component{}
 .trendingbuzz ul{border:none;margin:6px 0 0 0;}
-.trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;display:block;}
+.trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;}
 .trendingbuzz .media-heading{padding:6px 0px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
-.trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;}
+.trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;display:block;}
 .trendingbuzz .hull-comments__actions small{float:left;display:inline-block;margin: 0 6px 0 0;}
 .trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
 .trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
