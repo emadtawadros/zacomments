@@ -29,7 +29,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .postcomments{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;display:inline-block;}
 .trendingbuzz .hull-component{}
 .trendingbuzz ul{border:none;margin:6px 0 0 0;}
-.trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;width:100%;}
+.trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;width:600px;}
 .trendingbuzz .media-heading{padding:6px 0px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
 .trendingbuzz .previewPosted{width:500px;padding:0px;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
