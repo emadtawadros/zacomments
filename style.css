@@ -33,9 +33,9 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .media-heading{padding:6px 0px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
 .trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;}
-.trendingbuzz .hull-comments__actions small{float:left;display:block;}
-.trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;}
-.trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;}
+.trendingbuzz .hull-comments__actions small{float:left;display:inline-block;}
+.trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
+.trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
 .newbuzz{}
 .newbuzz h1{margin:0 0 6px 0;}
 .under{}
