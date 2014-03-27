@@ -129,15 +129,19 @@
     
     <script type='text/x-handlebars' data-hull-template='search/search'}>
         <h1>Search Results</h1>
-        {{#each searchResults}}
-            {{#if name}}
-                {{#if picture}}
-                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-                {{/if}}
-                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-		<p>{{stats.comments}} comments</p>
-            {{/if}}
-        {{/each}}
+        {{#ifEqual searchResults.length 0}}
+        	<p>No results were found</p>
+        {{else}}
+	        {{#each searchResults}}
+	            {{#if name}}
+	                {{#if picture}}
+	                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+	                {{/if}}
+	                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+			<p>{{stats.comments}} comments</p>
+	            {{/if}}
+	        {{/each}}
+        {{/ifEqual}}
     </script>
     
      <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
