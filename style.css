@@ -25,7 +25,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz{}
 .trendingbuzz .post{font-size:36px;margin:0 0 6px 0;}
 .trendingbuzz .posttags {list-style-type: none;border:none;padding: 0px;margin: 0px;clear:both;}
-.trendingbuzz .posttags li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;float:left;}
+.trendingbuzz .posttags li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:white;float:left;border-radius:4px;}
 .trendingbuzz .postimg{}
 .trendingbuzz .postcomments{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;display:inline-block;}
 .trendingbuzz .media .pull-left{float:left;height:48px;width:48px;padding-right:12px;}
@@ -33,7 +33,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .media .linkPreview{}
 .previewLoading {display:none;}
 .trendingbuzz ul{border:none;margin:6px 0 0 0;}
-.trendingbuzz .media{background-color:white;border:1px solid lightgray;padding:12px;margin:12px 0;width:600px;border-radius:4px;display:inline-block;}
+.trendingbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:600px;border-radius:4px;display:inline-block;}
 .trendingbuzz .media-heading{display:inline-block;}
 .trendingbuzz .media-heading img{float:left;height:48px;width:48px;padding-right:12px;}
 .trendingbuzz .media-heading h4{float:left;padding:0;margin:0;}
