@@ -33,7 +33,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .media-heading{padding:6px 0px;margin:0;clear:both;}
 .trendingbuzz .media-heading img{float:left;height:48px;width:48px;}
 .trendingbuzz .media-heading h4{display:inline;float:left;padding:6px;margin:0;}
-.trendingbuzz .media-heading small{padding:6px;margin:0;}
+.trendingbuzz .media-heading small{display: inline;padding:6px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
 .trendingbuzz .previewPosted{width:500px;padding:0px;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
 .trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;display:inline-block;}
