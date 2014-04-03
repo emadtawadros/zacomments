@@ -180,8 +180,8 @@
        
      <script type='text/x-handlebars' data-hull-template='comment/comment'}>
          <img src="{{comment.user.picture}}" alt="{{comment.user.name}}" width="50" height="50">
-         <h4 ><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
-         <small > • {{fromNow comment.updated_at}}</small></h4>
+         <div ><h4><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></h4>
+         <small > • {{fromNow comment.updated_at}}</small></div>
          <div>
          	{{comment.description}}
          </div>
@@ -280,8 +280,8 @@
         {{#comments}}
           <li class="media" data-hull-comment-id="{{id}}">
             <div class="media-body">
-              <h4 class="media-heading"><img src={{user.picture}}><a href="#/user/{{user.id}}">{{user.name}}</a>
- <small class="muted"> • {{fromNow updated_at}}</small></h4>
+              <div class="media-heading"><img src={{user.picture}}><h4><a href="#/user/{{user.id}}">{{user.name}}</a></h4>
+ <small class="muted"> • {{fromNow updated_at}}</small></div>
               <div class="hull-comments__description">
                 {{description}}
               </div>
