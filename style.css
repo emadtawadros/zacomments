@@ -29,15 +29,15 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;width:50
 .trendingbuzz .postcomments{font-size:12px;padding: 6px 12px;margin: 0 6px 0 0;background-color:lightgray;display:inline-block;}
 .trendingbuzz .hull-component{}
 .trendingbuzz ul{border:none;margin:6px 0 0 0;}
-.trendingbuzz .media{background-color:lightgray;padding: 6px 12px;margin:0 0 6px 0;width:600px;}
-.trendingbuzz .media-heading{clear:both;}
+.trendingbuzz .media{background-color:lightgray;padding:12px;margin:0 0 6px 0;width:600px;}
+.trendingbuzz .media-heading{display:inline-block;}
 .trendingbuzz .media-heading img{float:left;height:48px;width:48px;}
+.trendingbuzz .media-heading h4{float:left;padding:0;margin:0;}
 .trendingbuzz .media-heading a{display:inline;padding:6px;margin:0;}
-.trendingbuzz .media-heading small{display:inline;padding:6px;margin:0;}
-.trendingbuzz .media-heading h4{padding:0;margin:0;}
+.trendingbuzz .media-heading small{float:left;padding:6px;margin:0;}
 .trendingbuzz .hull-comments__description{padding:12px 0px;margin:0;}
 .trendingbuzz .previewPosted{width:500px;padding:0px;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
-.trendingbuzz .hull-comments__actions{padding:6px 0px;margin:0;clear:both;display:inline-block;}
+.trendingbuzz .hull-comments__actions{padding:0px;margin:0;clear:both;display:inline-block;}
 .trendingbuzz .hull-comments__actions small{float:left;display:inline-block;margin: 0 6px 0 0;}
 .trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
 .trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
