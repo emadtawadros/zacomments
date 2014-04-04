@@ -40,10 +40,10 @@ h1{margin:12px 0px;color:white;}
 .trendingbuzz .media-heading{display:inline-block;}
 .trendingbuzz .media-heading img{float:left;height:36px;width:36px;padding-right:12px;}
 .trendingbuzz .media-heading h4{float:left;padding:0;margin:0;}
-.trendingbuzz .media-heading small{float:left;padding:6px 0;margin:0;}
-.trendingbuzz .hull-comments__description{padding:12px 0px;margin:0;}
+.trendingbuzz .media-heading small{float:left;padding-top:6px;margin:0;}
+.trendingbuzz .hull-comments__description{padding:6px 0px;margin:0;}
 .trendingbuzz .previewPosted{width:576px;padding:0 0 6px 0;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
-.trendingbuzz .hull-comments__actions{display:inline-block;}
+.trendingbuzz .hull-comments__actions{font-size:12px;display:inline-block;}
 .trendingbuzz .hull-comments__actions small{float:left;margin-right:6px;}
 .trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
 .trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
@@ -62,10 +62,10 @@ h1{margin:12px 0px;color:white;}
 .newbuzz .media-heading{display:inline-block;}
 .newbuzz .media-heading img{float:left;height:36px;width:36px;padding-right:12px;}
 .newbuzz .media-heading h4{float:left;padding:0;margin:0;}
-.newbuzz .media-heading small{float:left;padding:6px 0;margin:0;}
-.newbuzz .hull-comments__description{padding:12px 0px;margin:0;}
+.newbuzz .media-heading small{float:left;padding-top:6px;margin:0;}
+.newbuzz .hull-comments__description{padding:6px 0px;margin:0;}
 .newbuzz .previewPosted{width:276px;padding:0 0 6px 0;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
-.newbuzz .hull-comments__actions{display:inline-block;}
+.newbuzz .hull-comments__actions{font-size:12px;display:inline-block;}
 .newbuzz .hull-comments__actions small{float:left;margin-right:6px;}
 .newbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
 .newbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
