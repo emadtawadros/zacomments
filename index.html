@@ -31,7 +31,6 @@
 	</div>
 </div>
 <div class="body">
-	<div class="col1">
 	<div data-hull-component="maincomp"></div>   
     
     <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
@@ -42,7 +41,8 @@
         {{#if loggedIn}}
     		<div data-hull-component="createtopicform"></div>
     	{{/if}}
-
+    	
+	<div class="col1">
     	<h1>Trending Buzz</h1>
     	<div class="trendingbuzz">
         {{#each trendingPosts}}
@@ -282,7 +282,7 @@
         {{/each}}
         </div>
     </script>
-        </div>
+        
     <script type='text/handlebars' data-hull-template='test/test'>
 
     {{#if comments}}
