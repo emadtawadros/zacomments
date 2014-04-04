@@ -78,6 +78,7 @@
 	<h1>New Buzz</h1>
 	<div class="newbuzz">
         {{#each newPosts}}
+        <div class="post">
             {{#if name}}
                 <div>
                 <h1 class="posttitle" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
@@ -100,6 +101,7 @@
                 <p>{{stats.comments}} comments</p>
 		<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+                </div>
             {{/if}}
         {{/each}}
         <button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button>
