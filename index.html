@@ -47,7 +47,7 @@
     	<div class="trendingbuzz">
         {{#each trendingPosts}}
             {{#if name}}
-                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+                <h1 class="posttitle" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
                 {{#if picture}}
                     <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
                 {{/if}}
@@ -77,7 +77,7 @@
         {{#each newPosts}}
             {{#if name}}
                 <div>
-                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+                <h1 class="posttitle" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
                 {{#if picture}}
                     <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
                 {{/if}}
@@ -111,7 +111,7 @@
         <div class="loading">
             <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
         </div>
-        <div data-hull-component="post" data-hull-id="{{id}}"></div>
+        <div data-hull-component="posttitle" data-hull-id="{{id}}"></div>
     </script>
     
     <script type='text/x-handlebars' data-hull-template='user/user'}>
@@ -137,7 +137,7 @@
 	                {{#if picture}}
 	                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
 	                {{/if}}
-	                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+	                <h1 class="posttitle" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			<p>{{stats.comments}} comments</p>
 	            {{/if}}
 	        {{/each}}
