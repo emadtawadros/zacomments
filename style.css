@@ -23,8 +23,8 @@ ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid g
 .createbuzz img{width:100%;height:100%;overflow:hidden;border-radius:2px;}
 .createbuzz h1{margin:0 0 6px 0;}
 .post{padding: 12px;background-color: #003030;width: 100%;border-radius: 4px;margin-bottom: 24px;}
-.posttitle{font-size:36px;margin:0 0 6px 0;background-color:white;padding:12px;width:576px;border-radius:4px;}
-.postimg{width:576px;padding:12px;background-color:white;margin:2px 0;border-radius:4px;}
+.trendingbuzz .posttitle{font-size:36px;margin:0 0 6px 0;background-color:white;padding:12px;width:576px;border-radius:4px;}
+.trendingbuzz .postimg{width:576px;padding:12px;background-color:white;margin:2px 0;border-radius:4px;}
 .trendingbuzz{}
 .trendingbuzz .posttags {list-style-type: none;border:none;padding: 0px;margin:0px;clear:both;}
 .trendingbuzz .posttags li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:white;float:left;border-radius:2px;}
@@ -48,6 +48,8 @@ ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid g
 .trendingbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
 .trendingbuzz .hull-comments__actions .hull-component button{background-color:white;padding:2px 4px;margin:0;border:none;}
 .newbuzz{}
+.newbuzz .posttitle{font-size:36px;margin:0 0 6px 0;background-color:white;padding:12px;width:276px;border-radius:4px;}
+.newbuzz .postimg{width:276px;padding:12px;background-color:white;margin:2px 0;border-radius:4px;}
 .newbuzz .posttags {list-style-type: none;border:none;padding: 0px;margin:0px;clear:both;}
 .newbuzz .posttags li{font-size:12px;list-style-type: none;padding: 6px 12px;margin: 0 6px 0 0;background-color:white;float:left;border-radius:2px;}
 .newbuzz .postimg{}
@@ -57,13 +59,13 @@ ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid g
 .newbuzz .media .media-body{}
 .newbuzz .media .linkPreview{}
 .newbuzz ul{border:none;width:100%;margin:0px}
-.newbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:576px;border-radius:4px;}
+.newbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:276px;border-radius:4px;}
 .newbuzz .media-heading{display:inline-block;}
 .newbuzz .media-heading img{float:left;height:48px;width:48px;padding-right:12px;}
 .newbuzz .media-heading h4{float:left;padding:0;margin:0;}
 .newbuzz .media-heading small{float:left;padding:6px 0;margin:0;}
 .newbuzz .hull-comments__description{padding:12px 0px;margin:0;}
-.newbuzz .previewPosted{width:576px;padding:0 0 6px 0;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
+.newbuzz .previewPosted{width:276px;padding:0 0 6px 0;color:black;margin-bottom:6px;font-family:inherit;border:none;float:none;}
 .newbuzz .hull-comments__actions{display:inline-block;}
 .newbuzz .hull-comments__actions small{float:left;margin-right:6px;}
 .newbuzz .hull-comments__actions .hull-component{float:left;font-size: smaller;display:inline-block;}
