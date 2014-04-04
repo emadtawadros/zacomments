@@ -1,4 +1,4 @@
-body{margin:0;font-family:arial;background-color:#003030;color:black;}
+body{margin:0;font-family:arial;}
 a{color:#003030;}
 ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid gray;border-radius:2px;background-color:white;color:black;}
 h1{margin:12px 0px;color:white;}
@@ -14,7 +14,7 @@ h1{margin:12px 0px;color:white;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:12px 6px;border-radius:2px;}
 .account .media-body{display:none;}
 .account .pull-right{font-size:11px;float:right;background-color:white;padding:6px 12px;margin:12px 6px;color:#003030;;border-radius:2px;}
-.body{width:1000px;margin:0 auto;}
+.body{width:1000px;margin:0 auto;background-color:#003030;}
 .col1{width:600px;float:left;margin-right:24px;}
 .col2{width:300px;float:left;margin-left:24px;}
 .createbuzz{background-color:#EEEEEE;width:100%;padding:24px;border-radius:2px;margin:12px 0;}
