@@ -1,5 +1,5 @@
-body{margin:0;font-family:arial;background-color:#006060;color:black;}
-a{color:#006060;}
+body{margin:0;font-family:arial;background-color:#003030;color:black;}
+a{color:#003030;}
 ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid gray;border-radius:2px;background-color:white;color:black;}
 h1{margin:12px 0px;color:white;}
 .navigation{width:100%;height:48px;background-color:#003030;}
@@ -8,12 +8,12 @@ h1{margin:12px 0px;color:white;}
 .search{float:left;width:500px;margin:12px 6px;padding:6px 12px;border:none;border-radius:2px;}
 .navwidth span{display:none;}
 .ui-menu-item{padding:6px 12px;border-radius:2px;}
-.searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:white;color:#006060;border:none;border-radius:2px;}
+.searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:white;color:#003030;border:none;border-radius:2px;}
 .account{float:right;width:300px;height:24px;}
-.account button{font-size:11px;float:right;background-color:white;padding:6px 12px;margin:12px 6px;color:#006060;;border:none;border-radius:2px;}
+.account button{font-size:11px;float:right;background-color:white;padding:6px 12px;margin:12px 6px;color:#003030;;border:none;border-radius:2px;}
 .account .pull-left img{float:right;height:24px;width:24px;margin:12px 6px;border-radius:2px;}
 .account .media-body{display:none;}
-.account .pull-right{font-size:11px;float:right;background-color:white;padding:6px 12px;margin:12px 6px;color:#006060;;border-radius:2px;}
+.account .pull-right{font-size:11px;float:right;background-color:white;padding:6px 12px;margin:12px 6px;color:#003030;;border-radius:2px;}
 .body{width:1000px;margin:0 auto;}
 .col1{width:600px;float:left;margin-right:24px;}
 .col2{width:300px;float:left;margin-left:24px;}
@@ -23,7 +23,7 @@ h1{margin:12px 0px;color:white;}
 .createbuzz #createTopic{font-size:11px;width:100%;margin:12px 6px;padding:6px 12px;}
 .createbuzz img{width:100%;height:100%;overflow:hidden;border-radius:2px;}
 .createbuzz h1{margin:0 0 6px 0;}
-.post{padding: 12px;background-color: #003030;width: 100%;border-radius: 4px;margin-bottom: 24px;}
+.post{padding: 12px;background-color: #004040;width: 100%;border-radius: 4px;margin-bottom: 24px;}
 .trendingbuzz .posttitle{font-size:36px;margin:0 0 6px 0;background-color:white;padding:12px;width:576px;border-radius:4px;}
 .trendingbuzz .postimg{width:576px;padding:12px;background-color:white;margin:2px 0;border-radius:4px;}
 .trendingbuzz{}
