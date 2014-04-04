@@ -37,7 +37,7 @@ h1{margin:12px 0px;color:white;}
 .trendingbuzz .media .linkPreview{}
 .previewLoading {}
 .trendingbuzz ul{border:none;width:100%;margin:0px}
-.trendingbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:576px;border-radius:4px;}
+.trendingbuzz .media{background-color:white;padding:12px;width:576px;border-radius:4px;}
 .trendingbuzz .media-heading{display:inline-block;}
 .trendingbuzz .media-heading img{float:left;height:48px;width:48px;padding-right:12px;}
 .trendingbuzz .media-heading h4{float:left;padding:0;margin:0;}
