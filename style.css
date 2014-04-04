@@ -1,12 +1,11 @@
 body{margin:0;font-family:arial;background-color:#005050;color:black;}
 a{color:#005050;}
-ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;border-radius:2px;}
+ul{list-style-type: none;padding: 0px;margin: 0px;width:500px;border:1px solid gray;border-radius:2px;}
 .navigation{width:100%;height:48px;background-color:#333333;}
 .navwidth{width:1000px;margin:0 auto;}
 .logo{height:24px;float:left;margin:12px 6px;color:white;}
 .search{float:left;width:500px;margin:12px 6px;padding:6px 12px;background-color:white;border:none;border-radius:2px;}
 .navwidth span{display:none;}
-.navwidth ul{width:500px;}
 .ui-menu-item{padding:6px 12px;background-color:white;border-radius:2px;}
 .searchbtn{float:left;padding:6px 12px;margin:12px 6px;background-color:#888888;color:white;border:none;border-radius:2px;}
 .account{float:right;width:300px;height:24px;}
@@ -36,7 +35,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;border-r
 .trendingbuzz .media .media-body{}
 .trendingbuzz .media .linkPreview{}
 .previewLoading {display:none;}
-.trendingbuzz ul{border:none;margin:0px}
+.trendingbuzz ul{border:none;width:100%;margin:0px}
 .trendingbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:100%;border-radius:4px;}
 .trendingbuzz .media-heading{display:inline-block;}
 .trendingbuzz .media-heading img{float:left;height:48px;width:48px;padding-right:12px;}
@@ -57,7 +56,7 @@ ul{list-style-type: none;padding: 0px;margin: 0px;border:1px solid gray;border-r
 .newbuzz .media .pull-left{height:48px;width:48px;padding-right:12px;}
 .newbuzz .media .media-body{}
 .newbuzz .media .linkPreview{}
-.newbuzz ul{border:none;margin:0px}
+.newbuzz ul{border:none;width:100%;margin:0px}
 .newbuzz .media{background-color:white;padding:12px;margin-bottom:6px;width:100%;border-radius:4px;}
 .newbuzz .media-heading{display:inline-block;}
 .newbuzz .media-heading img{float:left;height:48px;width:48px;padding-right:12px;}
