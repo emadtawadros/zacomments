@@ -46,7 +46,8 @@
     	<h1>Trending Buzz</h1>
     	<div class="trendingbuzz">
         {{#each trendingPosts}}
-            {{#if name}}
+        <div class="post">
+        	{{#if name}}
                 <h1 class="posttitle" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
                 {{#if picture}}
                     <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
@@ -64,13 +65,14 @@
                      <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
                 </div>
                 </ul>
+                
                 <span class="postcomments">{{stats.comments}} comments</span>
 		<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
                 <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
             {{/if}}
         {{/each}}
         <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load More Trending Topics</button>
-        </div>
+        </div></div>
         
 	<h1>New Buzz</h1>
 	<div class="newbuzz">
