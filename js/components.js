@@ -5,7 +5,7 @@ Hull.component('posts', {
                 tab.slideDown();
         
                 this.options.limit = 5;
-                this.options.trendingDaysLimit = 30;    //3 days
+                this.options.trendingDaysLimit = 90;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
         
                 setTimeout(function() {
