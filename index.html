@@ -74,35 +74,35 @@
 	
 	<h1>New Buzz</h1>
 	<div class="newbuzz">
-	{{#each newPosts}}
-	{{#if name}}
-	<div>
-	<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-	{{#if picture}}
-	<img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-	{{/if}}
+		{{#each newPosts}}
+			{{#if name}}
+				<div>
+					<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+					{{#if picture}}
+						<img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
+					{{/if}}
 	
-	{{#if tags}}
-	</div>
-	Tags:
-	{{#each tags}}
-	{{#if this}}
-	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-	{{/if}}
-	{{/each}}
-	{{/if}}
-	<div class="loading">
-	<img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-	</div>
-	<p>{{stats.comments}} comments</p>
-	<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-	<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
-	{{/if}}
-	{{/each}}
-	<button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button></div>
+					{{#if tags}}
+					</div>
+						Tags:
+						{{#each tags}}
+							{{#if this}}
+								<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+							{{/if}}
+						{{/each}}
+					{{/if}}
+					<div class="loading">
+						<img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
+					</div>
+					<p>{{stats.comments}} comments</p>
+					<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+					<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+			{{/if}}
+		{{/each}}
+		<button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button></div>
 	</div>
 	
-	</script>
+    </script>
         
     <script type='text/x-handlebars' data-hull-template='maincomp/post'}>
     	{{#if loggedIn}}
