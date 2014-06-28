@@ -96,6 +96,33 @@ Hull.component('posts', {
             }
         });    //posts component
         
+        Hull.component('newposts', {
+        	template: ['newposts'],
+        	datasources: {
+        		newPosts: function() {
+        			return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+        				'visibiliy': 'public',
+        				limit: this.options.limit,
+        				order_by: 'created_at DESC'
+        				});
+        				}
+        				
+        				},
+        	initialize: function(){
+        		this.options.limit = 5;
+        	},
+        	afterRender: function() {
+        		this.$el.find('#loadMore').removeAttr('dissabled');
+        	},
+        	actions: {
+        		loadMore: function() {
+        			this.$el.find('#loadMore').attr("disabled", "disabled");
+        			this.options.limit += 10;
+        			this.render();
+        			}	
+        	}
+        });
+        
         Hull.component('user', {
             templates: ['user'],
             datasources: {
