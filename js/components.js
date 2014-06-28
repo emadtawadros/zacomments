@@ -4,7 +4,6 @@ Hull.component('posts', {
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
         
-                this.options.limit = 5;
                 this.options.trendingDaysLimit = 90;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
         
@@ -13,13 +12,6 @@ Hull.component('posts', {
                 }, 200);
             }, //initialize
             datasources: {
-                newPosts: function() {
-                    return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                        'visibiliy': 'public',
-                        limit: this.options.limit,
-                        order_by: 'created_at DESC'
-                     });
-                },
                 trendingPosts: function loadTrendingPosts() {
                     var dff = $.Deferred();
                     var result = [];
@@ -74,17 +66,9 @@ Hull.component('posts', {
                 tab.slideUp();
                 
                 this.$el.find('#loadMoreTrending').removeAttr('dissabled');
-                this.$el.find('#loadMore').removeAttr('dissabled');
 
             },
             actions: {
-                loadMore: function() {
-                	
-                    this.$el.find('#loadMore').attr("disabled", "disabled");
-                    
-                    this.options.limit += 10;
-                    this.render();
-                },
                 loadMoreTrending: function() {
                 	
                 	this.$el.find('#loadMoreTrending').attr("disabled", "disabled");
