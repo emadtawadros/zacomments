@@ -97,7 +97,7 @@ Hull.component('posts', {
         });    //posts component
         
         Hull.component('newposts', {
-        	template: ['newposts'],
+        	templates: ['newposts'],
         	datasources: {
         		newPosts: function() {
         			return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
