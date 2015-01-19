@@ -291,17 +291,19 @@
               {{#if extra.richComment}}
               	{{{extra.richComment}}}
               {{/if}}
-              <div class="hull-comments__actions">
-                  {{#if isDeletable}}
-                    <small>
-                      <a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
-                    </small>
-                  {{/if}}
-                  <small>
-                    <a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
-                  </small>
-                   <div data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></div>
-              </div>
+              {{#if loggedIn}}
+              	<div class="hull-comments__actions">
+              		{{#if isDeletable}}
+              			<small>
+              				<a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
+              			</small>
+              		{{/if}}
+              		<small>
+              			<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
+                  	</small>
+                  	<div data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></div>
+                </div>
+              {{/if}}
             </div>
           </li>
         {{/comments}}
