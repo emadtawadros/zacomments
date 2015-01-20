@@ -528,19 +528,20 @@ Hull.component('posts', {
                    });
                 }
                 
-                var postTitle = this.$el.find('#postTitle');
-                postTitle.editable({
-                	type: 'text',
-    			title: 'Enter new title',
-    			success: function(response, newValue) {
-    				component.api(component.options.id, 'put',{
-    					"name": newValue
-    				}).then(function() {
-                        console.log("Title updated successfully!");
-                    });  
-    				
-    			}
-                });
+                if(data.loggedIn && data.isAdmin) {
+                	var postTitle = this.$el.find('#postTitle');
+	                postTitle.editable({
+	                	type: 'text',
+	                	title: 'Enter new title',
+	                	success: function(response, newValue) {
+	                		component.api(component.options.id, 'put',{
+	                			"name": newValue
+	                		}).then(function() {
+	                			console.log("Title updated successfully!");
+	                		});
+	                	}
+	                });
+                }
             },
             actions: {
                 deleteTopic: function() {
