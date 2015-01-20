@@ -438,6 +438,11 @@
 		});
                 
             }); //get conversations
+            
+            console.log("Flagged items");
+            hull.api('/org/flagged', 'get').then(function(response) {
+ 		console.log(response);
+	});
         
         }); //Hull.init
         
