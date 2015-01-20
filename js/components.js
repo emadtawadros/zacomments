@@ -526,6 +526,9 @@ Hull.component('posts', {
                        tagsElement.addTag(tagValue.label);
                    });
                 }
+                
+                var postTitle = this.$el.find('#postTitle');
+                console.log(postTitle);
             },
             actions: {
                 deleteTopic: function() {
