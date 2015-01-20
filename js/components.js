@@ -528,7 +528,13 @@ Hull.component('posts', {
                 }
                 
                 var postTitle = this.$el.find('#postTitle');
-                console.log(postTitle);
+                postTitle.editable({
+                	type: 'text',
+    			pk: 1,
+    			url: '/post',
+    			title: 'Enter username'
+                	
+                });
             },
             actions: {
                 deleteTopic: function() {
