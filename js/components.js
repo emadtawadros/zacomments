@@ -496,6 +496,7 @@ Hull.component('posts', {
                 console.log("Before render errors:" + errors);
             },
             afterRender: function (data) {
+            	var component = this;
                 var isTagsEditable = false;
                 if(data.loggedIn && data.isAdmin) {
                             isTagsEditable = true; 
