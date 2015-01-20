@@ -215,7 +215,7 @@
         	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
         {{/if}}
 
-        <h1>{{post.name}}</h1>
+        <h1 id="postTitle">{{post.name}}</h1>
         {{#if post.picture}}
             <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
         {{/if}}
