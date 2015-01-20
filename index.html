@@ -301,11 +301,9 @@
               				<a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
               			</small>
               		{{/if}}
-              		{{#if loggedIn}}
               		<small>
               			<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
                   	</small>
-                  	{{/if}}
                   	<div data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></div>
                 </div>
             </div>
