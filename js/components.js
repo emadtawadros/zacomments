@@ -530,10 +530,15 @@ Hull.component('posts', {
                 var postTitle = this.$el.find('#postTitle');
                 postTitle.editable({
                 	type: 'text',
-    			pk: 1,
-    			url: '/post',
-    			title: 'Enter username'
-                	
+    			title: 'Enter new title',
+    			success: function(response, newValue) {
+    				component.api(component.options.id, 'put',{
+    					"name": newValue
+    				}).then(function() {
+                        console.log("Title updated successfully!");
+                    });  
+    				
+    			}
                 });
             },
             actions: {
