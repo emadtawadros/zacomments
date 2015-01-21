@@ -69,6 +69,7 @@ Hull.component('posts', {
 
             },
             actions: {
+            	flag:    'flagItem',
                 loadMoreTrending: function() {
                 	
                 	this.$el.find('#loadMoreTrending').attr("disabled", "disabled");
