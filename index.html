@@ -56,7 +56,9 @@
                 {{#if picture}}
                     <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
                 {{/if}}
-                
+                <small>
+                	<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
+                </small>
                 <ul class="posttags">
                 {{#if tags}}
                     {{#each tags}}
