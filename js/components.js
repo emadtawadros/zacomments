@@ -68,6 +68,14 @@ Hull.component('posts', {
                 this.$el.find('#loadMoreTrending').removeAttr('dissabled');
 
             },
+            flagItem: function (event, action) {
+            	event.preventDefault();
+            	var id = action.data.id;
+            	var isCertain = confirm('Do you want to report this content as inappropriate ?');
+            	if (isCertain) {
+            		this.sandbox.flag(id);
+            	}
+            },
             actions: {
             	flag:    'flagItem',
                 loadMoreTrending: function() {
