@@ -371,7 +371,12 @@ Hull.component('posts', {
             e.preventDefault();
             var self = this;
             var $form = this.$find('form');
-   
+   	
+   		//See if the user already commented on this post today
+   		this.api(this.options.id + '/comments', 'get').then(function(response) {
+ 		console.log(response);
+		});
+		
             formData = this.sandbox.dom.getFormData($form);
             
             //if (formData.description && formData.description.length > 0) {
