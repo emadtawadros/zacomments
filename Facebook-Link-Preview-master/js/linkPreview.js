@@ -517,7 +517,13 @@
                 	
                 	//See if the user already commented on this post today
                 	opts.component.api(opts.objectID + '/comments', 'get', {
-                		'created_at': '2015-01-22T00:39:17Z'
+                		where:{
+                			created_at:{
+                				"$lte":"2015-01-21T19:03:28.894Z"
+                				
+                			}
+                			
+                		}
                 		
                 	}).then(function(response) {
                 		console.log(response);
