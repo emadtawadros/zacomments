@@ -518,12 +518,11 @@
                 	var start = opts.component.sandbox.util.moment().startOf('day').toDate().toISOString();
 			var end = opts.component.sandbox.util.moment().endOf('day').toDate().toISOString();
 			var currentUser = opts.component.sandbox.currentUser();
-			console.log(currentUser.id);
-			console.log(currentUser);
-			
+
                 	//See if the user already commented on this post today
                 	opts.component.api(opts.objectID + '/comments', 'get', {
                 		where: {
+                			user_id: currentUser.id,
                 			created_at: {
                 				'$gte': start,
                 				'$lte': end
