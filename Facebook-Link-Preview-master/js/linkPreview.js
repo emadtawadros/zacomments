@@ -515,11 +515,15 @@
                 		
                 	}
                 	
+                	var start = opts.component.util.moment().startOf('day').toDate().toISOString();
+			var end = opts.component.util.moment().endOf('day').toDate().toISOString();
+			
                 	//See if the user already commented on this post today
                 	opts.component.api(opts.objectID + '/comments', 'get', {
-                		where:{
-                			created_at:{
-                				"$lte":"$currentDate"
+                		where: {
+                			created_at: {
+                				'$gte': start,
+                				'$lte': end
                 				
                 			}
                 			
