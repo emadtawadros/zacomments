@@ -464,11 +464,19 @@
                     	
                     }
                     
-                    //See if the user already commented on this post today
-                    opts.component.api(opts.objectID + '/comments', 'get').then(function(response) {
-                    	console.log(response);
-                    	
-                    });
+                	//See if the user already commented on this post today
+                	opts.component.api(opts.objectID + '/comments', 'get', {
+                		where: {
+                			user_id: currentUser.id,
+                			created_at: {
+                				'$gte': start,
+                				'$lte': end
+                				}
+                			}
+                		}).then(function(response) {
+                		console.log(response);
+                		console.log(response.result.length);
+                		});
 		
                    opts.component.api(opts.objectID + '/comments', 'post', {
             		"description": itemText,
@@ -526,15 +534,12 @@
                 			created_at: {
                 				'$gte': start,
                 				'$lte': end
-                				
+                				}
                 			}
-                			
-                		}
-                		
-                	}).then(function(response) {
+                		}).then(function(response) {
                 		console.log(response);
-                		
-                	});
+                		console.log(response.result.length);
+                		});
                 	
                 	opts.component.api(opts.objectID + '/comments', 'post', {
                 		"description": itemText,
