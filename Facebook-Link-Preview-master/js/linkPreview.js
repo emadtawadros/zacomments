@@ -474,8 +474,7 @@
                 				}
                 			}
                 		}).then(function(response) {
-                		console.log(response);
-                		console.log(response.result.length);
+                		console.log(response.length);
                 		});
 		
                    opts.component.api(opts.objectID + '/comments', 'post', {
@@ -537,8 +536,7 @@
                 				}
                 			}
                 		}).then(function(response) {
-                		console.log(response);
-                		console.log(response.result.length);
+                		console.log(response.length);
                 		});
                 	
                 	opts.component.api(opts.objectID + '/comments', 'post', {
