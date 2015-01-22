@@ -515,8 +515,8 @@
                 		
                 	}
                 	
-                	var start = opts.component.util.moment().startOf('day').toDate().toISOString();
-			var end = opts.component.util.moment().endOf('day').toDate().toISOString();
+                	var start = opts.component.sandbox.util.moment().startOf('day').toDate().toISOString();
+			var end = opts.component.sandbox.util.moment().endOf('day').toDate().toISOString();
 			
                 	//See if the user already commented on this post today
                 	opts.component.api(opts.objectID + '/comments', 'get', {
