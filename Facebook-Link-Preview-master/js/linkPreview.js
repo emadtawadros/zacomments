@@ -516,7 +516,12 @@
                 	}
                 	
                 	//See if the user already commented on this post today
-                	opts.component.api(opts.objectID + '/comments', 'get').then(function(response) {
+                	opts.component.api(opts.objectID + '/comments', 'get', {
+                            where: {
+                                'created_at': "2015-01-22T00:39:17Z"
+                            }
+                		
+                	}).then(function(response) {
                 		console.log(response);
                 		
                 	});
