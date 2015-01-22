@@ -464,6 +464,11 @@
 	           	richComment = null;
 	           }
 	           
+	              		//See if the user already commented on this post today
+   		opts.component.api(opts.objectID + '/comments', 'get').then(function(response) {
+ 		console.log(response);
+		});
+		
                    opts.component.api(opts.objectID + '/comments', 'post', {
             		"description": itemText,
             		"extra": {
