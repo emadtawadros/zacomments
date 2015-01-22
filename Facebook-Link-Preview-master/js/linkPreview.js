@@ -519,7 +519,7 @@
                 	opts.component.api(opts.objectID + '/comments', 'get', {
                 		where:{
                 			created_at:{
-                				"$lte":"2015-01-21T19:03:28.894Z"
+                				"$lte":"$currentDate"
                 				
                 			}
                 			
