@@ -474,23 +474,28 @@
                 				}
                 			}
                 		}).then(function(response) {
-                		console.log(response.length);
+	                		if(response.length>=1)
+	                		{
+	                			
+	                		} else {
+	                			opts.component.api(opts.objectID + '/comments', 'post', {
+	                				"description": itemText,
+	                				"extra": {
+	                					"richComment": richComment
+	                				}
+	                			}).then(function(comment) {
+	                				opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+							opts.component.toggleLoading();
+							opts.component.focusAfterRender = true;
+							opts.component.render();
+	                			}, function() {
+	                				opts.component.$el.find('input,textarea').focus();
+            						opts.component.toggleLoading();
+	                			});	
+	                		}
                 		});
 		
-                   opts.component.api(opts.objectID + '/comments', 'post', {
-            		"description": itemText,
-            		"extra": {
-            			"richComment": richComment
-            			}
-            		}).then(function(comment) {
-                		opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-				opts.component.toggleLoading();
-				opts.component.focusAfterRender = true;
-				opts.component.render();
-			}, function() {
-            			opts.component.$el.find('input,textarea').focus();
-            			opts.component.toggleLoading();
-            		});
+
             		
                     /*$(".imgIframe").click(function() {
                         var oldId = $(this).attr("id");
@@ -536,25 +541,27 @@
                 				}
                 			}
                 		}).then(function(response) {
-                		console.log(response.length);
-                		});
-                	
-                	opts.component.api(opts.objectID + '/comments', 'post', {
-                		"description": itemText,
-                		"extra": {
-                			"richComment": richComment
+                			if(response.length>=1)
+                			{
+                				
+                			} else {
+                				opts.component.api(opts.objectID + '/comments', 'post', {
+                					"description": itemText,
+                					"extra": {
+                						"richComment": richComment
+                					}
+                				}).then(function(comment) {
+                					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+							opts.component.toggleLoading();
+							opts.component.focusAfterRender = true;
+							opts.component.render();
+                				}, function() {
+                					opts.component.$el.find('input,textarea').focus();
+                					opts.component.toggleLoading();
+                				});	
                 			}
-                	}).then(function(comment) {
-                		opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-				opts.component.toggleLoading();
-				opts.component.focusAfterRender = true;
-				opts.component.render();
-			}, function() {
-            			opts.component.$el.find('input,textarea').focus();
-            			opts.component.toggleLoading();
-            		});
-            	
-            	}
+                		});
+                }
                     ///End of pasted
 
 					myThis.find('#preview'+selector).fadeOut("fast", function() {
