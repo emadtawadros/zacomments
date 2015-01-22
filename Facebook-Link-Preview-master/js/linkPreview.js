@@ -480,6 +480,7 @@
                 	}).then(function(response) {
 	                	if(response.length>=1)
 	                	{
+	                		alert("It seems you already commented on this topic today!");
 	                	} else {
 	                		opts.component.api(opts.objectID + '/comments', 'post', {
 	                			"description": itemText,
@@ -546,7 +547,7 @@
                 		}).then(function(response) {
                 			if(response.length>=1)
                 			{
-                				
+                				alert("It seems you already commented on this topic today!");
                 			} else {
                 				opts.component.api(opts.objectID + '/comments', 'post', {
                 					"description": itemText,
