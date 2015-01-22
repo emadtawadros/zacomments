@@ -464,36 +464,39 @@
                     	
                     }
                     
-                	//See if the user already commented on this post today
-                	opts.component.api(opts.objectID + '/comments', 'get', {
-                		where: {
-                			user_id: currentUser.id,
-                			created_at: {
-                				'$gte': start,
-                				'$lte': end
-                				}
+                    var start = opts.component.sandbox.util.moment().startOf('day').toDate().toISOString();
+                    var end = opts.component.sandbox.util.moment().endOf('day').toDate().toISOString();
+                    var currentUser = opts.component.sandbox.currentUser();
+                    
+                    //See if the user already commented on this post today
+                    opts.component.api(opts.objectID + '/comments', 'get', {
+                    	where: {
+                		user_id: currentUser.id,
+                		created_at: {
+                			'$gte': start,
+                			'$lte': end
                 			}
-                		}).then(function(response) {
-	                		if(response.length>=1)
-	                		{
-	                			
-	                		} else {
-	                			opts.component.api(opts.objectID + '/comments', 'post', {
-	                				"description": itemText,
-	                				"extra": {
-	                					"richComment": richComment
-	                				}
-	                			}).then(function(comment) {
-	                				opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-							opts.component.toggleLoading();
-							opts.component.focusAfterRender = true;
-							opts.component.render();
-	                			}, function() {
-	                				opts.component.$el.find('input,textarea').focus();
-            						opts.component.toggleLoading();
-	                			});	
-	                		}
-                		});
+                		}
+                	}).then(function(response) {
+	                	if(response.length>=1)
+	                	{
+	                	} else {
+	                		opts.component.api(opts.objectID + '/comments', 'post', {
+	                			"description": itemText,
+	                			"extra": {
+	                				"richComment": richComment
+	                			}
+	                		}).then(function(comment) {
+	                			opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+						opts.component.toggleLoading();
+						opts.component.focusAfterRender = true;
+						opts.component.render();
+	                		}, function() {
+	                			opts.component.$el.find('input,textarea').focus();
+            					opts.component.toggleLoading();
+	                		});	
+	                	}
+                	});
 		
 
             		
