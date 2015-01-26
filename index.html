@@ -408,6 +408,7 @@
                         'visibiliy': 'public',
                         'limit': 1000
             }).then(function(response) {
+            	console.log("Number of items "  + response.length);
 		rawAllTopics = response;
 		
                 arr = $.map(response, function(elementOfArray, indexInArray){
