@@ -442,9 +442,13 @@
             }); //get conversations
             
             console.log("Flagged items");
-            hull.api('/org/flagged', 'get').then(function(response) {
- 		console.log(response);
-	});
+Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
+  'meta.flags': {
+    '$gt': 0
+  }
+}).then(function(response){
+	console.log(response);
+});
         
         }); //Hull.init
         
