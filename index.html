@@ -443,14 +443,15 @@
             }); //get conversations
             
             console.log("Flagged items");
-Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
-	limit: 1000,
-  'meta.flags': {
-    '$gt': 0
-  }
-}).then(function(response){
-	console.log(response);
-});
+            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
+            	'where': {
+            		'meta.flags': {
+            			'$gt': 0
+            		}
+            	}
+            }).then(function(response){
+            	console.log(response);
+            });
         
         }); //Hull.init
         
