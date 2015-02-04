@@ -174,7 +174,10 @@ Hull.component('posts', {
                 	var component = this;
                 	var newUrl = this.$el.find('#imageURL').val();
                 	component.api(component.options.id, 'put',{
-                		"picture": newUrl
+                		"picture": null,
+                		"extra": {
+                			"fallbackUrl": newUrl
+                		}
                 	}).then(function() {
                 		window.location.href = '#/post/'+ component.options.id;
                     }); 
