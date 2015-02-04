@@ -227,10 +227,8 @@
         {{/if}}
 
         <h1 id="postTitle">{{post.name}}</h1>
-        {{#if post.picture}}
             <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
-        {{/if}}
-        
+
         <input type="text" id="postTags"></input>
         {{#if isAdmin}}
         	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
