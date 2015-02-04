@@ -169,6 +169,14 @@ Hull.component('posts', {
             actions: {
                 skipimageupload: function() {
                     window.location.href = '#/post/'+ this.options.id;
+                },
+                updateimage: function() {
+                	var newUrl = this.$el.find('#imageURL').val();
+                	component.api(component.options.id, 'put',{
+                		"picture": newUrl
+                	}).then(function() {
+                		window.location.href = '#/post/'+ component.options.id;
+                    }); 
                 }
             }
         });
