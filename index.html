@@ -53,9 +53,7 @@
         {{#each trendingPosts}}
         	{{#if name}}
                 <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-                {{#if picture}}
-                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-                {{/if}}
+                <img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
                 <small>
                 	<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
                 </small>
@@ -88,10 +86,8 @@
 			{{#if name}}
 				<div>
 					<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-					{{#if picture}}
-						<img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-					{{/if}}
-	
+					<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+
 					{{#if tags}}
 					</div>
 						Tags:
@@ -143,9 +139,7 @@
         {{else}}
 	        {{#each searchResults}}
 	            {{#if name}}
-	                {{#if picture}}
-	                    <img class="postimg" src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-	                {{/if}}
+	                    <img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
 	                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			<p>{{stats.comments}} comments</p>
 	            {{/if}}
@@ -206,9 +200,7 @@
              on
          <h1><a href="#/post/{{post.id}}">{{post.name}}</a></h1>
          <p>{{post.stats.comments}} comments</p>
-        {{#if post.picture}}
-            <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
-        {{/if}}
+            <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
      </script>
      
     <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
@@ -253,9 +245,7 @@
         	<p>No posts currently tagged with {{post.name}}</P
         {{/ifEqual}}
         {{#each postsUnder}}
-            {{#if picture}}
-                <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-            {{/if}}
+                <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
             {{#if tags}}
                 Tags:
@@ -277,9 +267,7 @@
         	<p>No posts currently share tags with {{post.name}}</P
         {{/ifEqual}}
         {{#each postsRelated}}
-             {{#if picture}}
-                <img src="{{imageUrl picture 'small' 'http://placehold.it/200x200'}}"/> 
-            {{/if}}
+                <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
             <h1><a href="#/post/{{id}}">{{name}}</a></h1>
             <p>{{stats.comments}} comments</p>
         {{/each}}
