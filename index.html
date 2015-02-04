@@ -176,6 +176,11 @@
         
     <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
         <h1>Do you want to add an image to that topic?</h1>
+        <p>Use Image URL</p>
+        <input type="text" id="imageURL"></input>
+        <button type="button" id="updateImage">Upload Image</button>
+        <h1>Or</h1>
+        <p>Upload an Image</p>
         <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
                 <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
     </script>
