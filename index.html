@@ -228,7 +228,7 @@
 
         <h1 id="postTitle">{{post.name}}</h1>
         {{#if post.picture}}
-            <img src="{{imageUrl post.picture 'large' 'http://placehold.it/200x200'}}"/> 
+            <img src="{{imageUrl post.picture 'large' post.picture}}"/> 
         {{/if}}
         
         <input type="text" id="postTags"></input>
