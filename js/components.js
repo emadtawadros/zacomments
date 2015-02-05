@@ -116,6 +116,21 @@ Hull.component('posts', {
         	}
         });
         
+        Hull.component('flaggedposts', {
+        	templates: ['flaggedposts'],
+        	datasources: {
+        		flaggedPosts: function() {
+        			return this.api('/52e138eaf0f1b0ac30000bad/conversations', {
+        				'where': {
+        					'meta.flags': {
+        						'$gt': 0
+        					}
+        				}
+        			});
+        		}
+        	}
+        });
+        
         Hull.component('user', {
             templates: ['user'],
             datasources: {
