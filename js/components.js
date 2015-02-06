@@ -141,7 +141,7 @@ Hull.component('posts', {
         	unflagItem: function (event, action) {
         		event.preventDefault();
         		var id = action.data.id;
-        		this.api(id + '/flag', 'delete').then(function(response) {
+        		this.api(id + '/flag?all=1', 'delete').then(function(response) {
         			console.log(response);
         		});
         		window.location.href = '#/maincomp';
