@@ -107,7 +107,16 @@ Hull.component('posts', {
         	afterRender: function() {
         		this.$el.find('#loadMore').removeAttr('dissabled');
         	},
+        	flagItem: function (event, action) {
+        		event.preventDefault();
+        		var id = action.data.id;
+        		var isCertain = confirm('Do you want to report this content as inappropriate ?');
+        		if (isCertain) {
+        			this.sandbox.flag(id);
+        		}
+        	},
         	actions: {
+        		flag: 'flagItem',
         		loadMore: function() {
         			this.$el.find('#loadMore').attr("disabled", "disabled");
         			this.options.limit += 10;
