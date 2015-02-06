@@ -128,6 +128,17 @@ Hull.component('posts', {
         				}
         			});
         		}
+        	},
+        	unflagItem: function (event, action) {
+        		event.preventDefault();
+        		var id = action.data.id;
+        		this.api('/' + id + '/flag', 'delete').then(function(response) {
+        			console.log(response);
+        		});
+        	},
+        	actions:
+        	{
+        		unflag: 'unflagItem'
         	}
         });
         
