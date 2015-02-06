@@ -147,10 +147,10 @@ Hull.component('posts', {
         		});
         		window.location.href = '#/maincomp';
         	},
-        	deleteItem: function() {
+        	deleteItem: function(event, action) {
         		event.preventDefault();
         		var id = action.data.id;
-        		this.api(this.options.id, 'delete').then(function(response) {
+        		this.api(id, 'delete').then(function(response) {
         			console.log(response);
         		});
                     window.location.href = '#/maincomp';
