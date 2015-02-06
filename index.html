@@ -115,7 +115,8 @@
     		{{#each flaggedPosts}}
     		<div>
     		<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-    		<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+    		<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+    		<a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a>
 		{{/each}}
     </script>
     
