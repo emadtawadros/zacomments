@@ -39,8 +39,10 @@
 	<div data-hull-component="maincomp"></div>   
     
     <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
-    	<div data-hull-component="flaggedposts"></div> 
-	<div data-hull-component="posts"></div> 
+        {{#if isAdmin}}
+            	<div data-hull-component="flaggedposts"></div>
+        {{/if}}
+        <div data-hull-component="posts"></div> 
 	<div data-hull-component="newposts"></div>
     </script>
             
