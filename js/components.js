@@ -158,7 +158,7 @@ Hull.component('posts', {
         	actions:
         	{
         		unflag: 'unflagItem',
-        		deleteitem: 'deleteItem'
+        		deleteItem: 'deleteItem'
         	}
         });
         
