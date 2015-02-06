@@ -136,10 +136,20 @@ Hull.component('posts', {
         		this.api(id + '/flag', 'delete').then(function(response) {
         			console.log(response);
         		});
+        		window.location.href = '#/maincomp';
         	},
+        	deleteItem: function() {
+        		event.preventDefault();
+        		var id = action.data.id;
+        		this.api(this.options.id, 'delete').then(function(response) {
+        			console.log(response);
+        		});
+                    window.location.href = '#/maincomp';
+                },
         	actions:
         	{
-        		unflag: 'unflagItem'
+        		unflag: 'unflagItem',
+        		deleteitem: 'deleteItem'
         	}
         });
         
