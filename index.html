@@ -235,8 +235,10 @@
         {{/if}}
 
         <h1 id="postTitle">{{post.name}}</h1>
-            <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
-
+        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
+	<small>
+		<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a>
+        </small>
         <input type="text" id="postTags"></input>
         {{#if isAdmin}}
         	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
