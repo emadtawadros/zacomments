@@ -97,7 +97,7 @@ class LinkPreview
                     $descriptionUnderstood = true;
 
                 if (($descriptionUnderstood == false && strlen($title) > strlen($description) && !preg_match(Regex::$urlRegex, $description) && $description != "" && !preg_match('/[A-Z]/', $description)) || $title == $description) {
-                    $title = $description;
+                    //$title = $description;
                     $description = Content::crawlCode($raw);
                 }
 
@@ -117,7 +117,7 @@ class LinkPreview
                 if ($media != null && $media[0] != "" && $media[1] != "")
                     $video = "yes";
 
-                //$title = Content::extendedTrim($title);
+                $title = Content::extendedTrim($title);
                 $pageUrl = Content::extendedTrim($pageUrl);
                 $description = Content::extendedTrim($description);
 
