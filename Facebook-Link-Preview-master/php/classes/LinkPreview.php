@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $tempTitle, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
