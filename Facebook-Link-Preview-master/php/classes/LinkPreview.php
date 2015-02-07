@@ -68,7 +68,7 @@ class LinkPreview
                     elseif (strpos($pageUrl, "https://") !== false)
                         $pageUrl = str_replace("https://", "https://www.", $pageUrl);
 
-                    $urlData = $this->getPage($pageUrl);
+                    //$urlData = $this->getPage($pageUrl);
                 }
 
                 $pageUrl = $finalUrl = $urlData["url"];
