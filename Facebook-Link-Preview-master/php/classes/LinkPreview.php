@@ -176,7 +176,20 @@ class LinkPreview
         );
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
+        try
+        {
         $content = curl_exec($ch);
+        if (FALSE === $content)
+        throw new Exception(curl_error($ch), curl_errno($ch));
+
+        } catch(Exception $e) {
+
+    trigger_error(sprintf(
+        'Curl failed with error #%d: %s',
+        $e->getCode(), $e->getMessage()),
+        E_USER_ERROR);
+
+}
         $header = curl_getinfo($ch);
         curl_close($ch);
 
