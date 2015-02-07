@@ -97,7 +97,7 @@ class LinkPreview
                     $descriptionUnderstood = true;
 
                 if (($descriptionUnderstood == false && strlen($title) > strlen($description) && !preg_match(Regex::$urlRegex, $description) && $description != "" && !preg_match('/[A-Z]/', $description)) || $title == $description) {
-                    //$title = $description;
+                    $title = $description;
                     $description = Content::crawlCode($raw);
                 }
 
@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $tempTitle, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
