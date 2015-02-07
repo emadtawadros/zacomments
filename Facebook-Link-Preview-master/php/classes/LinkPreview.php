@@ -70,7 +70,7 @@ class LinkPreview
 
                     $urlData = $this->getPage($pageUrl);
                 }
-
+                
                 $pageUrl = $finalUrl = $urlData["url"];
                 $raw = $urlData["content"];
                 $header = $urlData["header"];
@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $urlData["error"], "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
@@ -176,19 +176,12 @@ class LinkPreview
         );
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
-        try
-        {
+        try{
         $content = curl_exec($ch);
-        if (FALSE === $content)
-        throw new Exception(curl_error($ch), curl_errno($ch));
-
+            if (FALSE === $content)
+                throw new Exception(curl_error($ch), curl_errno($ch));
         } catch(Exception $e) {
-
-    trigger_error(sprintf(
-        'Curl failed with error #%d: %s',
-        $e->getCode(), $e->getMessage()),
-        E_USER_ERROR);
-
+$res['error'] = $e->getMessage();
 }
         $header = curl_getinfo($ch);
         curl_close($ch);
