@@ -4,16 +4,18 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * Version: 1.0.0
+ * Version: 1.3.0
  */
 
 /** This class handles the content analysis */
 
 include_once "Regex.php";
 
-class Content {
+class Content
+{
 
-    static function crawlCode($text) {
+    static function crawlCode($text)
+    {
         $contentSpan = Content::getTagContent("span", $text);
         $contentParagraph = Content::getTagContent("p", $text);
         $contentDiv = Content::getTagContent("div", $text);
@@ -26,14 +28,8 @@ class Content {
         return $content;
     }
 
-    static function isImage($url) {
-        if (preg_match(Regex::$imagePrefixRegex, $url))
-            return true;
-        else
-            return false;
-    }
-
-    static function getTagContent($tag, $string) {
+    static function getTagContent($tag, $string)
+    {
         $pattern = "/<$tag(.*?)>(.*?)<\/$tag>/i";
 
         preg_match_all($pattern, $string, $matches);
@@ -52,7 +48,16 @@ class Content {
         return str_replace("&nbsp;", "", $content);
     }
 
-    static function getImages($text, $url, $imageQuantity) {
+    static function isImage($url)
+    {
+        if (preg_match(Regex::$imagePrefixRegex, $url))
+            return true;
+        else
+            return false;
+    }
+
+    static function getImages($text, $url, $imageQuantity)
+    {
         $content = array();
         if (preg_match_all(Regex::$imageRegex, $text, $matching)) {
 
@@ -60,6 +65,7 @@ class Content {
                 $src = "";
                 $pathCounter = substr_count($matching[0][$i], "../");
                 preg_match(Regex::$srcRegex, $matching[0][$i], $imgSrc);
+
                 $imgSrc = Url::canonicalImgSrc($imgSrc[2]);
                 if (!preg_match(Regex::$httpRegex, $imgSrc)) {
                     $src = Url::getImageUrl($pathCounter, Url::canonicalLink($imgSrc, $url));
@@ -80,43 +86,86 @@ class Content {
 
         $images = "";
         for ($i = 0; $i < count($content); $i++) {
+            if (!($size = @getimagesize($content[$i]))) {
+                continue;
+            }
             $size = getimagesize($content[$i]);
-            if ($size[0] > 100 && $size[1] > 15) {// avoids getting very small images
+            if ($size[0] > 40 && $size[1] > 15) {// avoids getting very small images
                 $images .= $content[$i] . "|";
                 $maxImages--;
                 if ($maxImages == 0)
                     break;
             }
         }
+
         return substr($images, 0, -1);
     }
 
-    static function separeMetaTagsContent($raw) {
-        preg_match(Regex::$contentRegex1, $raw, $match);
-        if(count($match) == 0){
-            preg_match(Regex::$contentRegex2, $raw, $match);
+    static function getMetaTags($contents)
+    {
+
+        $result = false;
+
+        if (isset($contents)) {
+
+            $list = array(
+                "UTF-8",
+                "EUC-CN",
+                "EUC-JP",
+                "EUC-KR",
+                'ISO-8859-1', 'ISO-8859-2', 'ISO-8859-3', 'ISO-8859-4', 'ISO-8859-5',
+                'ISO-8859-6', 'ISO-8859-7', 'ISO-8859-8', 'ISO-8859-9', 'ISO-8859-10',
+                'ISO-8859-13', 'ISO-8859-14', 'ISO-8859-15', 'ISO-8859-16',
+                'Windows-1251', 'Windows-1252', 'Windows-1254',
+            );
+
+            $encoding_check = mb_detect_encoding($contents, $list, true);
+            $encoding = ($encoding_check === false) ? "UTF-8" : $encoding_check;
+
+            $metaTags = Content::getMetaTagsEncoding($contents, $encoding);
+
+
+            $result = $metaTags;
         }
-        return $match[1];
+
+        return $result;
     }
 
-    static function getMetaTags($contents) {
+    static function getMetaTagsEncoding($contents, $encoding)
+    {
         $result = false;
         $metaTags = array("url" => "", "title" => "", "description" => "", "image" => "");
 
         if (isset($contents)) {
 
-            preg_match_all(Regex::$metaRegex, $contents, $match);
+            $doc = new DOMDocument('1.0', 'utf-8');
+            @$doc->loadHTML($contents);
 
-            foreach ($match[1] as $value) {
+            $metas = $doc->getElementsByTagName('meta');
 
-                if ((strpos($value, 'property="og:url"') !== false || strpos($value, "property='og:url'") !== false) || (strpos($value, 'name="url"') !== false || strpos($value, "name='url'") !== false))
-                    $metaTags["url"] = Content::separeMetaTagsContent($value);
-                else if ((strpos($value, 'property="og:title"') !== false || strpos($value, "property='og:title'") !== false) || (strpos($value, 'name="title"') !== false || strpos($value, "name='title'") !== false))
-                    $metaTags["title"] = Content::separeMetaTagsContent($value);
-                else if ((strpos($value, 'property="og:description"') !== false || strpos($value, "property='og:description'") !== false) || (strpos($value, 'name="description"') !== false || strpos($value, "name='description'") !== false))
-                    $metaTags["description"] = Content::separeMetaTagsContent($value);
-                else if ((strpos($value, 'property="og:image"') !== false || strpos($value, "property='og:image'") !== false) || (strpos($value, 'name="image"') !== false || strpos($value, "name='image'") !== false))
-                    $metaTags["image"] =  Content::separeMetaTagsContent($value);
+            for ($i = 0; $i < $metas->length; $i++) {
+                $meta = $metas->item($i);
+                if ($meta->getAttribute('name') == 'description')
+                    $metaTags["description"] = $meta->getAttribute('content');
+                if ($meta->getAttribute('name') == 'keywords')
+                    $metaTags["keywords"] = $meta->getAttribute('content');
+                if ($meta->getAttribute('property') == 'og:title')
+                    $metaTags["title"] = $meta->getAttribute('content');
+                if ($meta->getAttribute('property') == 'og:image')
+                    $metaTags["image"] = $meta->getAttribute('content');
+                if ($meta->getAttribute('property') == 'og:description')
+                    $metaTags["og_description"] = $meta->getAttribute('content');
+                if ($meta->getAttribute('property') == 'og:url')
+                    $metaTags["url"] = $meta->getAttribute('content');
+            }
+
+            if (!empty($metaTags["og_description"])) {
+                $metaTags["description"] = $metaTags["og_description"];
+            }
+
+            if (empty($metaTags["title"])) {
+                $nodes = $doc->getElementsByTagName('title');
+                $metaTags["title"] = $nodes->item(0)->nodeValue;
             }
 
             $result = $metaTags;
@@ -124,7 +173,30 @@ class Content {
         return $result;
     }
 
-    static function extendedTrim($content) {
+    static function separeMetaTagsContent($raw)
+    {
+        preg_match(Regex::$contentRegex1, $raw, $match);
+        if (count($match) == 0) {
+            preg_match(Regex::$contentRegex2, $raw, $match);
+        }
+        return $match[1];
+    }
+
+    static function extendedTrim($content)
+    {
         return trim(str_replace("\n", " ", str_replace("\t", " ", preg_replace("/\s+/", " ", $content))));
+    }
+
+    static function isJson($string)
+    {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
+
+    static function stripIrrelevantTags($content)
+    {
+        $tags = array('style', 'script');
+        $content = preg_replace('#<(' . implode('|', $tags) . ')>.*?</\1>#s', '', $content);
+        return $content;
     }
 }
