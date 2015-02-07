@@ -173,6 +173,7 @@ class LinkPreview
             CURLOPT_CONNECTTIMEOUT => 120, // timeout on connect
             CURLOPT_TIMEOUT => 120, // timeout on response
             CURLOPT_MAXREDIRS => 10, // stop after 10 redirects
+            CURLOPT_SSL_VERIFYPEER => false,
         );
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
