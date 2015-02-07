@@ -101,9 +101,9 @@ class LinkPreview
                     $description = Content::crawlCode($raw);
                 }
 
-                if(Content::isJson($title)){
+                /*if(Content::isJson($title)){
                     $title = "";
-                }
+                }*/
                 if(Content::isJson($description)){
                     $description = "";
                 }
@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => "eshta", "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
