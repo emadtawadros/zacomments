@@ -106,8 +106,6 @@
 		
 		var crawlText = function () {
 			
-			
-
 			allowPosting = true;
 			
 			//var oldText = trim($(this).val());
@@ -117,255 +115,158 @@
 				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
 			}
 			
-			//if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
+			text = " " + myThis.find('#text'+selector).val();
+			video = "no";
+			videoPlay = "";
+			if (block === false && urlRegex.test(text)) {
+				block = true;
+				myThis.find('#preview'+selector).hide();
+				myThis.find('#previewButtons'+selector).hide();
+				myThis.find('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
+				myThis.find('#photoNumber'+selector).val(0);
 				
-
-				text = " " + myThis.find('#text'+selector).val();
-				video = "no";
-				videoPlay = "";
-				if (block === false && urlRegex.test(text)) {
-					block = true;
-					myThis.find('#preview'+selector).hide();
-					myThis.find('#previewButtons'+selector).hide();
-					myThis.find('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
-					myThis.find('#photoNumber'+selector).val(0);
-
-					allowPosting = false;
-					isCrawling = true;
-
-					$.post('Facebook-Link-Preview-master/php/textCrawler.php', {
-						text : text,
-						imagequantity : opts.imageQuantity
-					}, function(answer) {
-						if (answer.url === null)
-							answer.url = "";
-						if (answer.pageUrl === null)
-							answer.pageUrl = "";
-						if (answer.title === null)
-							answer.title = answer.titleEsc;
-						if (answer.description === null)
-							answer.description = answer.descriptionEsc;
-						if (answer.title === null || answer.title === "")
-							answer.title = "Enter a title";
-						if (answer.description === null || answer.description === "")
-							answer.description = "Enter a description";
-						if (answer.canonicalUrl === null)
-							answer.canonicalUrl = "";
-						if (answer.images === null)
-							answer.images = "";
-						if (answer.video === null)
-							answer.video = "";
-						if (answer.videoIframe === null)
-							answer.videoIframe = "";
-						resetPreview();
-						myThis.find('#previewLoading'+selector).html("");
-						myThis.find('#preview'+selector).show();
-						myThis.find('#previewTitle'+selector).html("<span id='previewSpanTitle"+selector+"' class='previewSpanTitle' >" + answer.title + "</span><input type='text' value='" + answer.title + "' id='previewInputTitle"+selector+"' class='previewInputTitle inputPreview' style='display: none;'/>");
-						myThis.find('#text'+selector).css({
-							"border" : "1px solid #b3b3b3",
-							"border-bottom" : "1px dashed #b3b3b3"
-						});
-
-						myThis.find('#previewUrl'+selector).html(answer.url);
-						myThis.find('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='width: 355px; display: none;' class='inputPreview' >" + answer.description + "</textarea>");
-						title = "<a href='" + answer.pageUrl + "' target='_blank'>" + myThis.find('#previewTitle'+selector).html() + "</a>";
-						url = "<a href='http://" + answer.canonicalUrl + "' target='_blank'>" + answer.canonicalUrl + "</a>";
-						fancyUrl = answer.canonicalUrl;
-						hrefUrl = answer.url;
-						description = myThis.find('#previewDescription'+selector).html();
-						video = answer.video;
-						videoIframe = answer.videoIframe;
-						try {
-							images = (answer.images).split("|");
-							myThis.find('#previewImages'+selector).show();
-							myThis.find('#previewButtons'+selector).show();
-						} catch (err) {
-							myThis.find('#previewImages'+selector).hide();
-							myThis.find('#previewButtons'+selector).hide();
-						}
-						images.length = parseInt(images.length);
-						var appendImage = "";
-						for ( i = 0; i < images.length; i++) {
-							if (i === 0)
-								appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto' ></img>";
-							else
-								appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto; display: none' ></img>";
-						}
-						myThis.find('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' style='width: 130px; color: transparent; display:none;'>...</div>");
-						myThis.find('#photoNumbers'+selector).html("1 of " + images.length);
-						if (images.length > 1) {
-							myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
-							myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
-
-							if (firstPosted === false) {
-								firstPosted = true;
-								myThis.find('#previewPreviousImg'+selector).click(function() {
-									if (images.length > 1) {
-										photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
-										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
-											'display' : 'none'
-										});
-										photoNumber -= 1;
-										if (photoNumber === -1)
-											photoNumber = 0;
-										myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
-										myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
-										if (photoNumber === 0) {
-											photoNumber = 0;
-											myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
-											myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
-										}
-										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
-											'display' : 'block'
-										});
-										myThis.find('#photoNumber'+selector).val(photoNumber);
-										myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
-									}
-								});
-								myThis.find('#previewNextImg'+selector).click(function() {
-									if (images.length > 1) {
-										photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
-										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
-											'display' : 'none'
-										});
-										photoNumber += 1;
-										if (photoNumber === images.length)
-											photoNumber = images.length - 1;
-										myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftDeactive');
-										myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftActive');
-										if (photoNumber === images.length - 1) {
-											photoNumber = images.length - 1;
-											myThis.find('#previewNextImg'+selector).removeClass('buttonRightActive');
-											myThis.find('#previewNextImg'+selector).addClass('buttonRightDeactive');
-										}
-										myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
-											'display' : 'block'
-										});
-										myThis.find('#photoNumber'+selector).val(photoNumber);
-										myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
-									}
-								});
-							}
-						} else if (images.length === 0) {
-							myThis.find('#closePreview'+selector).css({
-								"margin-right" : "-206px"
-							});
-							myThis.find('#previewTitle'+selector).css({
-								"width" : "495px"
-							});
-							myThis.find('#previewDescription'+selector).css({
-								"width" : "495px"
-							});
-							myThis.find('#previewInputDescription'+selector).css({
-								"width" : "495px"
-							});
-							contentWidth = 495;
-							myThis.find('#previewButtons'+selector).hide();
-							myThis.find('#noThumb'+selector).hide();
-							myThis.find('#nT'+selector).hide();
-						}
-						if (nT === false) {
-							nT = true;
-							myThis.find('#nT'+selector).click(function() {
-								var noThumb = myThis.find('#noThumb'+selector).attr("checked");
-								if (noThumb !== "checked") {
-									myThis.find('#noThumb'+selector).attr("checked", "checked");
+				allowPosting = false;
+				isCrawling = true;
+				
+				$.post('Facebook-Link-Preview-master/php/textCrawler.php', {
+					text : text,
+					imagequantity : opts.imageQuantity
+				}, function(answer) {
+					if (answer.url === null)
+						answer.url = "";
+					if (answer.pageUrl === null)
+						answer.pageUrl = "";
+					if (answer.title === null)
+						answer.title = answer.titleEsc;
+					if (answer.description === null)
+						answer.description = answer.descriptionEsc;
+					if (answer.title === null || answer.title === "")
+						answer.title = "Enter a title";
+					if (answer.description === null || answer.description === "")
+						answer.description = "Enter a description";
+					if (answer.canonicalUrl === null)
+						answer.canonicalUrl = "";
+					if (answer.images === null)
+						answer.images = "";
+					if (answer.video === null)
+						answer.video = "";
+					if (answer.videoIframe === null)
+						answer.videoIframe = "";
+					resetPreview();
+					myThis.find('#previewLoading'+selector).html("");
+					myThis.find('#preview'+selector).show();
+					myThis.find('#previewTitle'+selector).html("<span id='previewSpanTitle"+selector+"' class='previewSpanTitle' >" + answer.title + "</span><input type='text' value='" + answer.title + "' id='previewInputTitle"+selector+"' class='previewInputTitle inputPreview' style='display: none;'/>");
+					myThis.find('#text'+selector).css({
+						"border" : "1px solid #b3b3b3",
+						"border-bottom" : "1px dashed #b3b3b3"
+					});
+					
+					myThis.find('#previewUrl'+selector).html(answer.url);
+					myThis.find('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='width: 355px; display: none;' class='inputPreview' >" + answer.description + "</textarea>");
+					title = "<a href='" + answer.pageUrl + "' target='_blank'>" + myThis.find('#previewTitle'+selector).html() + "</a>";
+					url = "<a href='http://" + answer.canonicalUrl + "' target='_blank'>" + answer.canonicalUrl + "</a>";
+					fancyUrl = answer.canonicalUrl;
+					hrefUrl = answer.url;
+					description = myThis.find('#previewDescription'+selector).html();
+					video = answer.video;
+					videoIframe = answer.videoIframe;
+					try {
+						images = (answer.images).split("|");
+						myThis.find('#previewImages'+selector).show();
+						myThis.find('#previewButtons'+selector).show();
+					} catch (err) {
+						myThis.find('#previewImages'+selector).hide();
+						myThis.find('#previewButtons'+selector).hide();
+					}
+					
+					images.length = parseInt(images.length);
+					var appendImage = "";
+					for ( i = 0; i < images.length; i++) {
+						if (i === 0)
+							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto' ></img>";
+						else
+							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto; display: none' ></img>";
+					}
+					
+					myThis.find('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' style='width: 130px; color: transparent; display:none;'>...</div>");
+					myThis.find('#photoNumbers'+selector).html("1 of " + images.length);
+					if (images.length > 1) {
+						myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
+						myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
+						if (firstPosted === false) {
+							firstPosted = true;
+							myThis.find('#previewPreviousImg'+selector).click(function() {
+								if (images.length > 1) {
+									photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
 									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 										'display' : 'none'
 									});
-									myThis.find('#whiteImage'+selector).css({
-										'display' : 'block'
-									});
-									myThis.find('#previewButtons'+selector).hide();
-								} else {
-									myThis.find('#noThumb'+selector).removeAttr("checked");
+									
+									photoNumber -= 1;
+									if (photoNumber === -1)
+										photoNumber = 0;
+									myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
+									myThis.find('#previewNextImg'+selector).addClass('buttonRightActive');
+									if (photoNumber === 0) {
+										photoNumber = 0;
+										myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftActive');
+										myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftDeactive');
+									}
 									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 										'display' : 'block'
 									});
-									myThis.find('#whiteImage'+selector).css({
+									myThis.find('#photoNumber'+selector).val(photoNumber);
+									myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
+								}
+							});
+							myThis.find('#previewNextImg'+selector).click(function() {
+								if (images.length > 1) {
+									photoNumber = parseInt(myThis.find('#photoNumber'+selector).val());
+									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 										'display' : 'none'
 									});
-									myThis.find('#previewButtons'+selector).show();
+									photoNumber += 1;
+									if (photoNumber === images.length)
+										photoNumber = images.length - 1;
+									myThis.find('#previewPreviousImg'+selector).removeClass('buttonLeftDeactive');
+									myThis.find('#previewPreviousImg'+selector).addClass('buttonLeftActive');
+									if (photoNumber === images.length - 1) {
+										photoNumber = images.length - 1;
+										myThis.find('#previewNextImg'+selector).removeClass('buttonRightActive');
+										myThis.find('#previewNextImg'+selector).addClass('buttonRightDeactive');
+									}
+									myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
+										'display' : 'block'
+									});
+									myThis.find('#photoNumber'+selector).val(photoNumber);
+									myThis.find('#photoNumbers'+selector).html(parseInt(photoNumber + 1) + " of " + images.length);
 								}
 							});
 						}
-						myThis.find('#previewSpanTitle'+selector).click(function() {
-							if (blockTitle === false) {
-								blockTitle = true;
-								myThis.find('#previewSpanTitle'+selector).hide();
-								myThis.find('#previewInputTitle'+selector).show();
-								myThis.find('#previewInputTitle'+selector).val(myThis.find('#previewInputTitle'+selector).val());
-								myThis.find('#previewInputTitle'+selector).focus().select();
-							}
+					} else if (images.length === 0) {
+						myThis.find('#closePreview'+selector).css({
+							"margin-right" : "-206px"
 						});
-						myThis.find('#previewInputTitle'+selector).blur(function() {
-							blockTitle = false;
-							myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
-							myThis.find('#previewSpanTitle'+selector).show();
-							myThis.find('#previewInputTitle'+selector).hide();
+						myThis.find('#previewTitle'+selector).css({
+							"width" : "495px"
 						});
-						myThis.find('#previewInputTitle'+selector).keypress(function(e) {
-							if (e.which === 13) {
-								blockTitle = false;
-								myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
-								myThis.find('#previewSpanTitle'+selector).show();
-								myThis.find('#previewInputTitle'+selector).hide();
-							}
+						myThis.find('#previewDescription'+selector).css({
+							"width" : "495px"
 						});
-						myThis.find('#previewSpanDescription'+selector).click(function() {
-							if (blockDescription === false) {
-								blockDescription = true;
-								myThis.find('#previewSpanDescription'+selector).hide();
-								myThis.find('#previewInputDescription'+selector).show();
-								myThis.find('#previewInputDescription'+selector).val(myThis.find('#previewInputDescription'+selector).val());
-								myThis.find('#previewInputDescription'+selector).focus().select();
-							}
+						myThis.find('#previewInputDescription'+selector).css({
+							"width" : "495px"
 						});
-						myThis.find('#previewInputDescription'+selector).blur(function() {
-							blockDescription = false;
-							myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
-							myThis.find('#previewSpanDescription'+selector).show();
-							myThis.find('#previewInputDescription'+selector).hide();
-						});
-						myThis.find('#previewInputDescription'+selector).keypress(function(e) {
-							if (e.which === 13) {
-								blockDescription = false;
-								myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
-								myThis.find('#previewSpanDescription'+selector).show();
-								myThis.find('#previewInputDescription'+selector).hide();
-							}
-						});
-						myThis.find('#previewSpanTitle'+selector).mouseover(function() {
-							myThis.find('#previewSpanTitle'+selector).css({
-								"background-color" : "#ff9"
-							});
-						});
-						myThis.find('#previewSpanTitle'+selector).mouseout(function() {
-							myThis.find('#previewSpanTitle'+selector).css({
-								"background-color" : "transparent"
-							});
-						});
-						myThis.find('#previewSpanDescription'+selector).mouseover(function() {
-							myThis.find('#previewSpanDescription'+selector).css({
-								"background-color" : "#ff9"
-							});
-						});
-						myThis.find('#previewSpanDescription'+selector).mouseout(function() {
-							myThis.find('#previewSpanDescription'+selector).css({
-								"background-color" : "transparent"
-							});
-						});
-						myThis.find('#noThumb'+selector).click(function() {
-							var noThumb = $(this).attr("checked");
+						contentWidth = 495;
+						myThis.find('#previewButtons'+selector).hide();
+						myThis.find('#noThumb'+selector).hide();
+						myThis.find('#nT'+selector).hide();
+					}
+					if (nT === false) {
+						nT = true;
+						myThis.find('#nT'+selector).click(function() {
+							var noThumb = myThis.find('#noThumb'+selector).attr("checked");
 							if (noThumb !== "checked") {
-								myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
-									'display' : 'block'
-								});
-								myThis.find('#whiteImage'+selector).css({
-									'display' : 'none'
-								});
-								myThis.find('#previewButtons'+selector).show();
-							} else {
+								myThis.find('#noThumb'+selector).attr("checked", "checked");
 								myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
 									'display' : 'none'
 								});
@@ -373,34 +274,128 @@
 									'display' : 'block'
 								});
 								myThis.find('#previewButtons'+selector).hide();
+							} else {
+								myThis.find('#noThumb'+selector).removeAttr("checked");
+								myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
+									'display' : 'block'
+								});
+								myThis.find('#whiteImage'+selector).css({
+									'display' : 'none'
+								});
+								myThis.find('#previewButtons'+selector).show();
 							}
 						});
-						myThis.find('#closePreview'+selector).click(function() {
-							block = false;
-							hrefUrl = '';
-							fancyUrl = '';
-							images = '';
-							video = '';
-							myThis.find('#preview'+selector).fadeOut("fast", function() {
-								myThis.find('#text'+selector).css({
-									"border" : "1px solid #b3b3b3",
-									"border-bottom" : "1px solid #e6e6e6"
-								});
-								myThis.find('#previewImage'+selector).html("");
-								myThis.find('#previewTitle'+selector).html("");
-								myThis.find('#previewUrl'+selector).html("");
-								myThis.find('#previewDescription'+selector).html("");
-							});
-
-						});
-						if (firstPosting === false) {
-							firstPosting = true;
+					}
+					myThis.find('#previewSpanTitle'+selector).click(function() {
+						if (blockTitle === false) {
+							blockTitle = true;
+							myThis.find('#previewSpanTitle'+selector).hide();
+							myThis.find('#previewInputTitle'+selector).show();
+							myThis.find('#previewInputTitle'+selector).val(myThis.find('#previewInputTitle'+selector).val());
+							myThis.find('#previewInputTitle'+selector).focus().select();
 						}
-						allowPosting = true;
-						isCrawling = false;
-					}, "json");
-				}
-			//}
+					});
+					myThis.find('#previewInputTitle'+selector).blur(function() {
+						blockTitle = false;
+						myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
+						myThis.find('#previewSpanTitle'+selector).show();
+						myThis.find('#previewInputTitle'+selector).hide();
+					});
+					myThis.find('#previewInputTitle'+selector).keypress(function(e) {
+						if (e.which === 13) {
+							blockTitle = false;
+							myThis.find('#previewSpanTitle'+selector).html(myThis.find('#previewInputTitle'+selector).val());
+							myThis.find('#previewSpanTitle'+selector).show();
+							myThis.find('#previewInputTitle'+selector).hide();
+						}
+					});
+					myThis.find('#previewSpanDescription'+selector).click(function() {
+						if (blockDescription === false) {
+							blockDescription = true;
+							myThis.find('#previewSpanDescription'+selector).hide();
+							myThis.find('#previewInputDescription'+selector).show();
+							myThis.find('#previewInputDescription'+selector).val(myThis.find('#previewInputDescription'+selector).val());
+							myThis.find('#previewInputDescription'+selector).focus().select();
+						}
+					});
+					myThis.find('#previewInputDescription'+selector).blur(function() {
+						blockDescription = false;
+						myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
+						myThis.find('#previewSpanDescription'+selector).show();
+						myThis.find('#previewInputDescription'+selector).hide();
+					});
+					myThis.find('#previewInputDescription'+selector).keypress(function(e) {
+						if (e.which === 13) {
+							blockDescription = false;
+							myThis.find('#previewSpanDescription'+selector).html(myThis.find('#previewInputDescription'+selector).val());
+							myThis.find('#previewSpanDescription'+selector).show();
+							myThis.find('#previewInputDescription'+selector).hide();
+						}
+					});
+					myThis.find('#previewSpanTitle'+selector).mouseover(function() {
+						myThis.find('#previewSpanTitle'+selector).css({
+							"background-color" : "#ff9"
+						});
+					});
+					myThis.find('#previewSpanTitle'+selector).mouseout(function() {
+						myThis.find('#previewSpanTitle'+selector).css({
+							"background-color" : "transparent"
+						});
+					});
+					myThis.find('#previewSpanDescription'+selector).mouseover(function() {
+						myThis.find('#previewSpanDescription'+selector).css({
+							"background-color" : "#ff9"
+						});
+					});
+					myThis.find('#previewSpanDescription'+selector).mouseout(function() {
+						myThis.find('#previewSpanDescription'+selector).css({
+							"background-color" : "transparent"
+						});
+					});
+					myThis.find('#noThumb'+selector).click(function() {
+						var noThumb = $(this).attr("checked");
+						if (noThumb !== "checked") {
+							myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
+								'display' : 'block'
+							});
+							myThis.find('#whiteImage'+selector).css({
+								'display' : 'none'
+							});
+							myThis.find('#previewButtons'+selector).show();
+						} else {
+							myThis.find('#imagePreview'+ selector + '_' + photoNumber).css({
+								'display' : 'none'
+							});
+							myThis.find('#whiteImage'+selector).css({
+								'display' : 'block'
+							});
+							myThis.find('#previewButtons'+selector).hide();
+						}
+					});
+					myThis.find('#closePreview'+selector).click(function() {
+						block = false;
+						hrefUrl = '';
+						fancyUrl = '';
+						images = '';
+						video = '';
+						myThis.find('#preview'+selector).fadeOut("fast", function() {
+							myThis.find('#text'+selector).css({
+								"border" : "1px solid #b3b3b3",
+								"border-bottom" : "1px solid #e6e6e6"
+							});
+							myThis.find('#previewImage'+selector).html("");
+							myThis.find('#previewTitle'+selector).html("");
+							myThis.find('#previewUrl'+selector).html("");
+							myThis.find('#previewDescription'+selector).html("");
+						});
+					});
+					if (firstPosting === false) {
+						firstPosting = true;
+					}
+					allowPosting = true;
+					isCrawling = false;
+				}, "json");
+			}
 		}
 
 		myThis.find('#postPreview'+selector).click(function() {
