@@ -101,9 +101,9 @@ class LinkPreview
                     $description = Content::crawlCode($raw);
                 }
 
-                /*if(Content::isJson($title)){
+                if(Content::isJson($title)){
                     $title = "";
-                }*/
+                }
                 if(Content::isJson($description)){
                     $description = "";
                 }
@@ -117,7 +117,7 @@ class LinkPreview
                 if ($media != null && $media[0] != "" && $media[1] != "")
                     $video = "yes";
 
-                $title = Content::extendedTrim($title);
+                //$title = Content::extendedTrim($title);
                 $pageUrl = Content::extendedTrim($pageUrl);
                 $description = Content::extendedTrim($description);
 
