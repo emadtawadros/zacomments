@@ -68,7 +68,7 @@ class LinkPreview
                     elseif (strpos($pageUrl, "https://") !== false)
                         $pageUrl = str_replace("https://", "https://www.", $pageUrl);
 
-                    //$urlData = $this->getPage($pageUrl);
+                    $urlData = $this->getPage($pageUrl);
                 }
 
                 $pageUrl = $finalUrl = $urlData["url"];
@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $urlData, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
