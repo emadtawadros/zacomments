@@ -1,593 +1,645 @@
 <!DOCTYPE html>
-<head>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.tagsinput.css" />
-   
-    <link rel="stylesheet" class="cssStatics" type="text/css" href="Facebook-Link-Preview-master/css/stylesheet.css" />
-    <link rel="stylesheet" class="cssButtons" type="text/css" href="Facebook-Link-Preview-master/css/linkPreview.css" />
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreview.js" ></script>
-    <script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreviewRetrieve.js" ></script>
-    
-    <script type="text/javascript">
-    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-
-    // Configure the Keen object with your Project ID and (optional) access keys.
-    Keen.configure({
-        projectId: "52c6e20836bf5a6dd0000015",
-        writeKey: "d523d28ca0cf1406ac6a4275d70c09f31e06fa575355a163f411a81ae4b9caabc73c211a53c93c14286da3e33ebfcb3696e8e5973da40ac16035c28c8f8c38eabcdc6fa15f2474edc748212d748475a62d59d6bcf9479b6b10fa187ae42f1245663fedbeabcc6af28df2dec0f2ff5b0d", // required for sending events
-        readKey: "98ec71562a7174440c4b628f1871282e333dd4e7df76994e3ebc269f49bea6bc356b567e8db69b5a0735d3bd3221cf31ebf5c4c780e61a5388f1550616536c286ecbdad69994dd51c183333c05e7fbe0f51ed695301c7470f6e3cceb2ca5db9c3d81593f41dd26419d5e96460f44380c"    // required for doing analysis
-    });
-</script>
-</head>
-<body>
-<div class="navigation">
-	<div class="navwidth">
-		<a href="#/maincomp"><img class="logo" src="images/logo.png"/></a>
-		<input class="search" type="text" id="searchField" id="tags"></input>
-    		<button class="searchbtn" type="button" id="search">Search</button>
-    		<div class="account" data-hull-component="login/profile@hull" data-hull-provider="facebook,twitter"></div>
-	</div>
-</div>
-<div class="body">
-	<div class="col1">
-	<div data-hull-component="maincomp"></div>   
-    
-    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
-        {{#if isAdmin}}
-            	<div data-hull-component="flaggedposts"></div>
-        {{/if}}
-        <div data-hull-component="posts"></div> 
-	<div data-hull-component="newposts"></div>
-    </script>
-            
-    <script type='text/x-handlebars' data-hull-template='posts/posts'>
-        {{#if loggedIn}}
-    		<div data-hull-component="createtopicform"></div>
-    	{{/if}}
-    	
-    	<h1>Trending Buzz</h1>
-    	<div class="trendingbuzz">
-        {{#each trendingPosts}}
-        	{{#if name}}
-                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-                <img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-                <small>
-                	<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
-                </small>
-                <ul class="posttags">
-                {{#if tags}}
-                    {{#each tags}}
-                        {{#if this}}
-                            <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-                        {{/if}}
-                    {{/each}}
-                {{/if}}
-                <div class="loading">
-                     <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-                </div>
-                </ul>	
-                <span class="postcomments">{{stats.comments}} comments</span>
-		<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-                <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
-            {{/if}}
-        {{/each}}
-        <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load More Trending Topics</button>
-        </div>
+<html>
 	
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='newposts/newposts'>
-    	<h1>New Buzz</h1>
-	<div class="newbuzz">
-		{{#each newPosts}}
-			{{#if name}}
-				<div>
-					<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-					<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-					<small>
-					<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
-					</small>
-					{{#if tags}}
-					</div>
-						Tags:
-						{{#each tags}}
-							{{#if this}}
-								<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-							{{/if}}
-						{{/each}}
-					{{/if}}
-					<div class="loading">
-						<img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-					</div>
-					<p>{{stats.comments}} comments</p>
-					<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-					<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
-			{{/if}}
-		{{/each}}
-		<button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button></div>
-	</div>
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
-    	<h1>Flagged Posts</h1>
-    		{{#each flaggedPosts}}
-    		<div>
-    		<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-    		<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
-    		<a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a>
-    		<a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a>
-		{{/each}}
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='maincomp/post'}>
-    	{{#if loggedIn}}
-		<div data-hull-component="createtopicform"></div>
-        {{/if}}
-        <div class="loading">
-            <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-        </div>
-        <div data-hull-component="post" data-hull-id="{{id}}"></div>
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='user/user'}>
-        <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
-        {{#each feed}}
-            {{#ifEqual object.type "comment"}}
-                {{#if target.name}}
-                    <p><a href="#/comment/{{object.id}}">commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
-                 {{/if}}
-            {{else}}
-                <p>reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
-            {{/ifEqual}}
-        {{/each}}
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='search/search'}>
-        <h1>Search Results</h1>
-        {{#ifEqual searchResults.length 0}}
-        	<p>No results were found</p>
-        {{else}}
-	        {{#each searchResults}}
-	            {{#if name}}
-	                    <img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-	                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-			<p>{{stats.comments}} comments</p>
-	            {{/if}}
-	        {{/each}}
-        {{/ifEqual}}
-    </script>
-    
-     <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
-        {{#if loggedIn}}
-		<div data-hull-component="createtopicform"></div>
-		<div data-hull-component="user" data-hull-id="{{id}}"></div>
-	{{else}}
-        	<p>You need to login to view user feed</p>
-    		<div class="account" data-hull-component="login/profile@hull" data-hull-provider="facebook"></div>
-        {{/if}}
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='maincomp/search'}>
-        {{#if loggedIn}}
-		<div data-hull-component="createtopicform"></div>
-	{{/if}}
-         <div data-hull-component="search" data-hull-search="{{id}}"></div>
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'}>
-        <div data-hull-component="createtopic" data-hull-id="{{id}}"></div>
-    </script>
-        
-    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
-        <h1>Do you want to add an image to that topic?</h1>
-        <p>Use Image URL</p>
-        <input type="text" id="imageURL"></input>
-        <button type="button" id="updateImage" data-hull-action="updateimage">Update Image</button>
-        <h1>Or</h1>
-        <p>Upload an Image</p>
-        <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
-                <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='maincomp/comment'}>
-        {{#if loggedIn}}
-		<div data-hull-component="createtopicform"></div>
-	{{/if}}
-        <div data-hull-component="comment" data-hull-id="{{id}}"></div>
-    </script>
-       
-     <script type='text/x-handlebars' data-hull-template='comment/comment'}>
-         <img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
-         <h4 ><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
-	 <small >{{fromNow comment.updated_at}}</small></h4>
-         <div>
-         	{{comment.description}}
-         </div>
-         {{#if comment.extra.richComment}}
-              	{{{comment.extra.richComment}}}
-         {{/if}}
-         <div data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></div>
-             on
-         <h1><a href="#/post/{{post.id}}">{{post.name}}</a></h1>
-         <p>{{post.stats.comments}} comments</p>
-            <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
-     </script>
-     
-    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
-    	<div class="createbuzz">
-	    	<h1>Create new Buzz</h1>
-	    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
-	    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
-	    	<button type="button" id="createTopic" data-hull-action="createtopic" disabled>Create Topic</button>
-    	</div>
-    </script>
-    
-    <script type='text/x-handlebars' data-hull-template='post/post'}>
-        {{#if isAdmin}}
-        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
-        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
-        {{/if}}
-
-        <h1 id="postTitle">{{post.name}}</h1>
-        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
-	<small>
-		<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a>
-        </small>
-        <input type="text" id="postTags"></input>
-        {{#if isAdmin}}
-        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
-        {{/if}}
-	<p>{{post.stats.comments}} comments</p>
-	<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
-        <h1>Top Comments</h1>
-        <div class="loading">
-            <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-        </div>
-        <div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></div>
-        <h1>New Comments</h1>
-         <div class="loading">
-            <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
-        </div>
-        <div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></div>
-        
-
-	<div class="under">
-        <h1>Posts under {{post.name}}</h1>
-	{{#ifEqual postsUnder.length 0}}
-        	<p>No posts currently tagged with {{post.name}}</P
-        {{/ifEqual}}
-        {{#each postsUnder}}
-                <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
-            {{#if tags}}
-                Tags:
-                {{#each tags}}
-                    {{#if this}}
-                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-                    {{/if}}
-                {{/each}}
-            {{/if}}
-	    <p>{{stats.comments}} comments</p>
-	    <div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-            <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
-        {{/each}}
-        </div>
-        
-        <div class="related">
-        <h1>Posts related to {{post.name}}</h1>
-        {{#ifEqual postsRelated.length 0}}
-        	<p>No posts currently share tags with {{post.name}}</P
-        {{/ifEqual}}
-        {{#each postsRelated}}
-                <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
-            <p>{{stats.comments}} comments</p>
-        {{/each}}
-    </script>
-        </div>
-    <script type='text/handlebars' data-hull-template='test/test'>
-
-    {{#if comments}}
-      <ul class="media-list hull-comments__list">
-        {{#comments}}
-          <li class="media" data-hull-comment-id="{{id}}">
-            <div class="media-body">
-              <h4 class="media-heading"><img src={{user.picture}}><a href="#/user/{{user.id}}">{{user.name}}</a>
-	      <small class="muted">{{fromNow updated_at}}</small></h4>
-              <div class="hull-comments__description">
-                {{description}}
-              </div>
-              {{#if extra.richComment}}
-              	{{{extra.richComment}}}
-              {{/if}}
-              	<div class="hull-comments__actions">
-              		{{#if isDeletable}}
-              			<small>
-              				<a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
-              			</small>
-              		{{/if}}
-              		<small>
-              			<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
-                  	</small>
-                  	<div data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></div>
-                </div>
-            </div>
-          </li>
-        {{/comments}}
-      </ul>
-      {{#ifEqual options.showLoadMoreButton true}}
-          <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
-      {{/ifEqual}}
-    {{/if}}
-    
-    {{^comments}}
-      <div class="alert alert-info">
-        No comments for the moment
-      </div>
-    {{/comments}}
-    </script>
-        
-    <script type='text/handlebars' data-hull-template='ratings/vote/vote'>
-        {{#if loggedIn}}
-          <div class='btn-group'>
-          Upvote
-        <button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'><span class='caret'></span>&nbsp;{{votes.up}}</button>
-          Downvote
-        <button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'><span class='caret'></span>&nbsp;{{votes.down}}</button>
-      </div>
-    {{else}}
-      <div data-hull-component="login_button@hull"></div>
-    {{/if}}
-    </script>
-    
-    
-    <script type='text/handlebars' data-hull-template='test/form'>
-        <div class="well">
-      {{#if loggedIn}}
-        <form>
-          <div class='media'>
-            <div class="pull-left">
-              <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
-            </div>
-            <div class="media-body">
-              <div class="linkPreview" id="lp1"></div>
-              <div>
-                <div class='pull-right'>
-                  <small>
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      {{/if}}
-    </div>
-    </script>
-    
-    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
-<div class="well">
-  {{#if loggedIn}}
-    <form>
-      <div class='media'>
-        <div class="pull-left">
-          <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
-        </div>
-        <div class="media-body">
-              <div class="linkPreview" id="lp1"></div>
-        </div>
-      </div>
-    </form>
-  {{/if}}
-</div>
-<div class="col2">
-
-</div>
-</div>
-</div>
-    	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
-    	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    	<script src="//documentcloud.github.io/underscore/underscore.js"></script>
-    	<script src="//documentcloud.github.io/backbone/backbone-min.js"></script>
-    	<script src="//d3f5pyioow99x0.cloudfront.net/0.8/hull.js"></script>
-    	<script src="js/jquery.tagsinput.js"></script>
-    	<script src="js/components.js"></script>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-
-	<script>
-        
-        var arr;
-        var rawAllTopics;
-        
-        Hull.init({
-            debug: false, //Enable to see all traces from the app
-            appId : "52e0c2a06b2de9b464000590",
-            orgUrl: "https://d291172a.hullapp.io"
-        }, function(hull, me, app, org){
-        
-            console.log('Here we go!');
-            
-            hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                        'visibiliy': 'public',
-                        'limit': 1000
-            }).then(function(response) {
-            	console.log("Number of items "  + response.length);
-		rawAllTopics = response;
+	<head>
 		
-                arr = $.map(response, function(elementOfArray, indexInArray){
-                    if(elementOfArray.name){
-                        var datum = {
-                        label: elementOfArray.name,
-                        value: elementOfArray.id
-                        }
-                        return datum;
-                    }
-                });
-        	
-                $( "#searchField" ).autocomplete({
-                    source: arr,
-                    select: function(event, ui) {
-                        event.preventDefault();
-                        $(this).val(ui.item.label);
-                        window.location.href = '#/post/' + ui.item.value;
-                    }
-                });
-                
-                $('#searchField').keyup(function(e){
-    			if(e.keyCode == 13)
-    			{
-    				var searchTerm = $(this).val();
-    				if(searchTerm) {
-    					window.location.href = '#/search/' + searchTerm;
-    				}
-    			}
-		});
-                
-            }); //get conversations
-            
-            console.log("Flagged items");
-            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
-            	'where': {
-            		'meta.flags': {
-            			'$gt': 0
-            		}
-            	}
-            }).then(function(response){
-            	console.log(response);
-            });
-        
-        }); //Hull.init
-        
-        $('#search').on('click', function() {
-            var searchTerm = $('#searchField').val();
-            if(searchTerm) {
-                window.location.href = '#/search/' + searchTerm;
-            }
-        });
-        
-        var trim = function (str) {
-            return str.replace(/^\s+|\s+$/g, "");
-        };
-        
-        var processRelatedPosts = function(postID) {
-            var dff = $.Deferred();
-            var result = [];
-            var tagsProcessed = 0;
-            var numberOfTags = 0;
-            Hull.api(postID, 'get').then(function(response) {
-                numberOfTags = response.tags.length;
-                $.each(response.tags, function(tagsIndex, tagValue){
-                Hull.data.api('/52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                    'visibility':'public',
-                    where:{
-                    'tags.value':tagValue.value,
-                    },
-                    limit: 1000
-                    }).then(function(response){
-                        result = result.concat(response);
-                        tagsProcessed++;
-                    });
-                });
-                    (function wait(){
-                    if(tagsProcessed == numberOfTags) {
-                    dff.resolve(result);
-                    } else {
-                        setTimeout(wait, 100);
-                    }
-            })();
-            });
-          return dff.promise();
-        };
-        
-        var processTags = function(tagsFieldText) {
-            var dff = $.Deferred();
-            var textTags = tagsFieldText.split(',');
-                var numberOfTags = textTags.length;
-                var tagsFinished = 0;
-                var tagsWithID = [];
-        
-                $.each(textTags, function (indexTextTag, valueTextTag) {
-                    if(valueTextTag.length >0) {
-                        var temp = $.grep(arr, function (elementArr, indexArr){
-                                        return elementArr.label == valueTextTag;
-                                    });
-                                    if(temp[0]){
-                                        //Tag has anID
-                                        tagsWithID.push(temp[0]);
-                                        console.log("existing tag");
-                                        console.log(++tagsFinished);
-                                    } else {
-                                        console.log("laaag");
-                                        console.log(valueTextTag);
-                                        //Tag does not have ID, create new Entity
-                                    Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-                                        'visibiliy': 'public',
-                                        where:{
-                                            'name': {
-                                                '$regex': '^' + valueTextTag  + '$', '$options': 'i'
-                                            }
-                                        }
-                                    }).then(function(response) {
-                                        console.log("EEEH");
-                                        console.log(response);
-                                        if(response.length == 0) {
-                                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                                                "public": "true",
-                                                "name": valueTextTag
-                                            }).then(function(response) {
-                                                console.log("Tag Created");
-                                                var datum = {
-                                                    label: valueTextTag,
-                                                    value: response.id
-                                                }
-                                            tagsWithID.push(datum);
-                                            console.log("new tag");
-                                            console.log(++tagsFinished);
-                                           });
-                                        } else {
-                                            tagsFinished ++;
-                                             alert("A tag with the same name already exists!");
-                                             $('.createbuzz').children().removeAttr("disabled");
-                                        }
-                                    });
-                                    }
-                    } else {
-                        tagsFinished ++;
-                    }       
-                });    //end of each
-        
-                (function wait(){
-                    if(tagsFinished == numberOfTags) {
-                        dff.resolve(tagsWithID);
-                    } else {
-                        setTimeout(wait, 100);
-                    }
-                })();
-          return dff.promise();
-        };
-        
-        var notAlreadyAdded = function(collection, element) {
-        	var result = true;
-                for(var i = 0; i < collection.length; i++) {
-                    if(collection[i].id == element) {
-                        result = false;
-                        break;
-                    }
-                }
-                return result;
-        };
-            
-        (function(){
+	    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	    <link rel="stylesheet" type="text/css" href="css/jquery.tagsinput.css" />
+	   
+	    <link rel="stylesheet" class="cssStatics" type="text/css" href="Facebook-Link-Preview-master/css/stylesheet.css" />
+	    <link rel="stylesheet" class="cssButtons" type="text/css" href="Facebook-Link-Preview-master/css/linkPreview.css" />
+	    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	
+	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	
+	    <script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreview.js" ></script>
+	    <script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreviewRetrieve.js" ></script>
+	    
+	    <script type="text/javascript">
+	    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+	
+	    // Configure the Keen object with your Project ID and (optional) access keys.
+	    Keen.configure({
+	        projectId: "52c6e20836bf5a6dd0000015",
+	        writeKey: "d523d28ca0cf1406ac6a4275d70c09f31e06fa575355a163f411a81ae4b9caabc73c211a53c93c14286da3e33ebfcb3696e8e5973da40ac16035c28c8f8c38eabcdc6fa15f2474edc748212d748475a62d59d6bcf9479b6b10fa187ae42f1245663fedbeabcc6af28df2dec0f2ff5b0d", // required for sending events
+	        readKey: "98ec71562a7174440c4b628f1871282e333dd4e7df76994e3ebc269f49bea6bc356b567e8db69b5a0735d3bd3221cf31ebf5c4c780e61a5388f1550616536c286ecbdad69994dd51c183333c05e7fbe0f51ed695301c7470f6e3cceb2ca5db9c3d81593f41dd26419d5e96460f44380c"    // required for doing analysis
+	    });
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<header>
+							
+			<input class="search" type="text" id="searchField" id="tags"></input>
+	    	<button type="button" id="search">Search</button>
+	    	
+	    	<a href="#/maincomp"><img class="logo" src="images/logo.png"/></a>
+	    	
+	    	<div data-hull-component="login/profile@hull" data-hull-provider="facebook,twitter"></div>
+			
+		</header>
+		
+		<main>
+			
+			<div data-hull-component="maincomp"></div>   
+		    
+		    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
+		        {{#if isAdmin}}
+		            	<div data-hull-component="flaggedposts"></div>
+		        {{/if}}
+		        <div data-hull-component="posts"></div> 
+				<div data-hull-component="newposts"></div>
+		    </script>
+		            
+		    <script type='text/x-handlebars' data-hull-template='posts/posts'>
+		        {{#if loggedIn}}
+		    		<div data-hull-component="createtopicform"></div>
+		    	{{/if}}
+		    	
+		    <h1>Trending Buzz</h1>
+		    
+		        {{#each trendingPosts}}
+		        	{{#if name}}
+						<article>
+			        		<div class="topic">
+				                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+				                
+				                <ul>
+				                {{#if tags}}
+				                    {{#each tags}}
+				                        {{#if this}}
+				                            <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+				                        {{/if}}
+				                    {{/each}}
+				                {{/if}}
+				                	<li><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
+				                	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+									<li>{{stats.comments}} comments</li>
+				                </ul>	
+				                
+								<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+							</div>
+			        	
+							<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+							<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+			        		
+		        		</article>
+		            {{/if}}
+		        {{/each}}
+		       
+		        
+		        <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">More</button>			
+		    </script>
+		    		    
+		</main>
+		
+		<aside>
+			
+			<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
+			
+		    <h1>New Buzz</h1>
+		    
+				{{#each newPosts}}
+					{{#if name}}
+					
+						<div class="topic">
+							
+							<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+							
+							<ul>
+							{{#if tags}}
+								Tags:
+								{{#each tags}}
+									{{#if this}}
+										<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+									{{/if}}
+								{{/each}}
+							{{/if}}
+								<li><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+								<li>{{stats.comments}} comments</li>
+							</ul>
+							
+							<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
 
-        
-        })();
-        
- </script>
-</body>
+							<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+							<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+					{{/if}}
+				{{/each}}
+				
+				<button type="button" id="loadMore" data-hull-action="loadMore">Load More New Posts</button></div>
+		    </script>
+		    
+		</aside>
+		    
+		    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
+		    	<h1>Flagged Posts</h1>
+		    		{{#each flaggedPosts}}
+		    		<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+		    		<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+		    		<a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a>
+		    		<a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a>
+					{{/each}}
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='maincomp/post'}>
+		    	{{#if loggedIn}}
+				<div data-hull-component="createtopicform"></div>
+		        {{/if}}
+		        <div class="loading">
+		            <img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"> 
+		        </div>
+		        <div data-hull-component="post" data-hull-id="{{id}}"></div>
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='user/user'}>
+		        <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
+		        {{#each feed}}
+		            {{#ifEqual object.type "comment"}}
+		                {{#if target.name}}
+		                    <p><a href="#/comment/{{object.id}}">commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
+		                 {{/if}}
+		            {{else}}
+		                <p>reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
+		            {{/ifEqual}}
+		        {{/each}}
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='search/search'}>
+		        <h1>Search Results</h1>
+		        {{#ifEqual searchResults.length 0}}
+		        	<p>No results were found</p>
+		        {{else}}
+			        {{#each searchResults}}
+			            {{#if name}}
+			                <img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+			                
+			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+							<p>{{stats.comments}} comments</p>
+			            {{/if}}
+			        {{/each}}
+		        {{/ifEqual}}
+		    </script>
+		    
+		     <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
+		        {{#if loggedIn}}
+					<div data-hull-component="createtopicform"></div>
+					<div data-hull-component="user" data-hull-id="{{id}}"></div>
+				{{else}}
+		        	<p>You need to login to view user feed</p>
+		    		<div data-hull-component="login/profile@hull" data-hull-provider="facebook"></div>
+		        {{/if}}
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='maincomp/search'}>
+		        {{#if loggedIn}}
+				<div data-hull-component="createtopicform"></div>
+				{{/if}}
+		        <div data-hull-component="search" data-hull-search="{{id}}"></div>
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'}>
+		        <div data-hull-component="createtopic" data-hull-id="{{id}}"></div>
+		    </script>
+		        
+		    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
+		        <h1>Do you want to add an image to that topic?</h1>
+		        <p>Use Image URL</p>
+		        <input type="text" id="imageURL"></input>
+		        <button type="button" id="updateImage" data-hull-action="updateimage">Update Image</button>
+		        
+		        <h1>Or</h1>
+		        <p>Upload an Image</p>
+		        <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
+		        <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='maincomp/comment'}>
+		        {{#if loggedIn}}
+				<div data-hull-component="createtopicform"></div>
+				{{/if}}
+		        <div data-hull-component="comment" data-hull-id="{{id}}"></div>
+		    </script>
+		       
+		    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
+		     	<div class="comment">
+		         <img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
+		         <span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
+				 <ul>
+				 	<li>{{fromNow comment.updated_at}}</li>
+				 	<li>{{post.stats.comments}} comments</li>
+				 	<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
+				 	on
+				 	<li><a href="#/post/{{post.id}}">{{post.name}}</a></li>
+				 </ul>
+		         <p>{{comment.description}}</p>
+		         
+		         {{#if comment.extra.richComment}}
+		              	{{{comment.extra.richComment}}}
+		         {{/if}}
+		         
+		         <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
+		    </script>
+		    
+		    <!--findme-->
+		     
+		    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
+		    	<h1>Create new Buzz</h1>
+		    	<form>
+			    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
+			    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
+			    	<button type="button" id="createTopic" data-hull-action="createtopic" disabled>Create</button>
+		    	</form>
+		    </script>
+		    
+		    <script type='text/x-handlebars' data-hull-template='post/post'}>
+		        {{#if isAdmin}}
+		        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
+		        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
+		        {{/if}}
+		        
+		        <h1 id="postTitle">{{post.name}}</h1>
+		        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
+		        
+		        <ul>
+					<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
+					<li><input type="text" id="postTags"></input></li>
+		        </ul>
+		        
+		        {{#if isAdmin}}
+		        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+		        {{/if}}
+		        
+				<p>{{post.stats.comments}} comments</p>
+				
+				<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
+		        	<h1>Top Comments</h1>
+		        	<ul>
+						<li class="loading"><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
+						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
+		        	</ul>
+		        
+			        <h1>New Comments</h1>
+			        <ul>
+			        	<li class="loading"><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
+						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
+			        </ul>
+			        
+		        
+				<div class="under">
+			        <h1>Posts under {{post.name}}</h1>
+					{{#ifEqual postsUnder.length 0}}
+			        <p>No posts currently tagged with {{post.name}}</P
+			        {{/ifEqual}}
+			        {{#each postsUnder}}
+			            <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+			            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			            <ul>
+			            {{#if tags}}
+			                Tags:
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+			            {{/if}}
+							<li>{{stats.comments}} comments</li>
+			            </ul>
+			            
+						<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+			            <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+			            
+			        {{/each}}
+			    </div>
+			        
+			    <div class="related">
+			        <h1>Posts under {{post.name}}</h1>
+					{{#ifEqual postsUnder.length 0}}
+			        <p>No posts currently tagged with {{post.name}}</P
+			        {{/ifEqual}}
+			        {{#each postsUnder}}
+			            <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+			            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			            <ul>
+			            {{#if tags}}
+			                Tags:
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+			            {{/if}}
+							<li>{{stats.comments}} comments</li>
+			            </ul>
+			            
+						<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+			            <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+			            
+			        {{/each}}
+			    </div>
+		    
+		    </script>
+		        
+		    <script type='text/handlebars' data-hull-template='test/test'>
+		
+		    {{#if comments}}
+		      <div class="media-list hull-comments__list">
+		        {{#comments}}
+		          <div class="comment" data-hull-comment-id="{{id}}">
+		              
+			              <img src={{user.picture}}>
+			              <div>
+			              	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
+						  	<p class="hull-comments__description">
+						  	{{description}}
+						  	</p>
+						  	<ul>
+						  		<li class="muted">{{fromNow updated_at}}</li>
+			              	</ul>
+						  {{#if extra.richComment}}
+						  	{{{extra.richComment}}}
+						  {{/if}}
+			              </div>
+			              
+		              	<ul class="hull-comments__actions">
+		              		{{#if isDeletable}}
+		              			<li>
+		              				<a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
+		              			</li>
+		              		{{/if}}
+		              		<li>
+		              			<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
+		                  	</li>
+		                  	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
+		                </ul> 
+		                
+		        	</div>
+		        {{/comments}}
+		      </div>
+		      {{#ifEqual options.showLoadMoreButton true}}
+		          <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
+		      {{/ifEqual}}
+		    {{/if}}
+		    
+			{{^comments}}
+		    <p class="alert alert-info">No comments for the moment</p>
+			{{/comments}}
+			
+		    </script>
+		        
+		    <script type='text/handlebars' data-hull-template='ratings/vote/vote'>
+		        {{#if loggedIn}}
+		        <ul class='btn-group'>
+		          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'><span class='caret'></span>&nbsp;{{votes.up}}</button></li>
+		          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'><span class='caret'></span>&nbsp;{{votes.down}}</button></li>
+		        </ul>
+				{{else}}
+				<div data-hull-component="login_button@hull"></div>
+				{{/if}}
+		    </script>
+		    
+		    <script type='text/handlebars' data-hull-template='test/form'>
+		        <div class="well">
+		      {{#if loggedIn}}
+		        <form>
+		          <div class='media'>
+		            <div class="pull-left">
+		              <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
+		            </div>
+		            <div class="media-body">
+		              <div class="linkPreview" id="lp1"></div>
+		              <div>
+		                <div class='pull-right'>
+		                 
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </form>
+		      {{/if}}
+		    </div>
+		    </script>
+		    
+		    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
+			<div class="well">
+			  {{#if loggedIn}}
+			    <form>
+			      <div class='media'>
+			        <div class="pull-left">
+			          <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
+			        </div>
+			        <div class="media-body">
+			              <div class="linkPreview" id="lp1"></div>
+			        </div>
+			      </div>
+			    </form>
+			  {{/if}}
+			</div>
+
+		</main>
+			
+		<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script src="//documentcloud.github.io/underscore/underscore.js"></script>
+		<script src="//documentcloud.github.io/backbone/backbone-min.js"></script>
+		<script src="//d3f5pyioow99x0.cloudfront.net/0.8/hull.js"></script>
+		<script src="js/jquery.tagsinput.js"></script>
+		<script src="js/components.js"></script>
+		<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+		<script>
+	        var arr;
+	        var rawAllTopics;
+	        
+	        Hull.init({
+	            debug: false, //Enable to see all traces from the app
+	            appId : "52e0c2a06b2de9b464000590",
+	            orgUrl: "https://d291172a.hullapp.io"
+	        }, function(hull, me, app, org){
+	        
+	            console.log('Here we go!');
+	            
+	            hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+	                        'visibiliy': 'public',
+	                        'limit': 1000
+	            }).then(function(response) {
+	            	console.log("Number of items "  + response.length);
+			rawAllTopics = response;
+			
+	                arr = $.map(response, function(elementOfArray, indexInArray){
+	                    if(elementOfArray.name){
+	                        var datum = {
+	                        label: elementOfArray.name,
+	                        value: elementOfArray.id
+	                        }
+	                        return datum;
+	                    }
+	                });
+	        	
+	                $( "#searchField" ).autocomplete({
+	                    source: arr,
+	                    select: function(event, ui) {
+	                        event.preventDefault();
+	                        $(this).val(ui.item.label);
+	                        window.location.href = '#/post/' + ui.item.value;
+	                    }
+	                });
+	                
+	                $('#searchField').keyup(function(e){
+	    			if(e.keyCode == 13)
+	    			{
+	    				var searchTerm = $(this).val();
+	    				if(searchTerm) {
+	    					window.location.href = '#/search/' + searchTerm;
+	    				}
+	    			}
+			});
+	                
+	            }); //get conversations
+	            
+	            console.log("Flagged items");
+	            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
+	            	'where': {
+	            		'meta.flags': {
+	            			'$gt': 0
+	            		}
+	            	}
+	            }).then(function(response){
+	            	console.log(response);
+	            });
+	        
+	        }); //Hull.init
+	        
+	        $('#search').on('click', function() {
+	            var searchTerm = $('#searchField').val();
+	            if(searchTerm) {
+	                window.location.href = '#/search/' + searchTerm;
+	            }
+	        });
+	        
+	        var trim = function (str) {
+	            return str.replace(/^\s+|\s+$/g, "");
+	        };
+	        
+	        var processRelatedPosts = function(postID) {
+	            var dff = $.Deferred();
+	            var result = [];
+	            var tagsProcessed = 0;
+	            var numberOfTags = 0;
+	            Hull.api(postID, 'get').then(function(response) {
+	                numberOfTags = response.tags.length;
+	                $.each(response.tags, function(tagsIndex, tagValue){
+	                Hull.data.api('/52e138eaf0f1b0ac30000bad/conversations', 'get', {
+	                    'visibility':'public',
+	                    where:{
+	                    'tags.value':tagValue.value,
+	                    },
+	                    limit: 1000
+	                    }).then(function(response){
+	                        result = result.concat(response);
+	                        tagsProcessed++;
+	                    });
+	                });
+	                    (function wait(){
+	                    if(tagsProcessed == numberOfTags) {
+	                    dff.resolve(result);
+	                    } else {
+	                        setTimeout(wait, 100);
+	                    }
+	            })();
+	            });
+	          return dff.promise();
+	        };
+	        
+	        var processTags = function(tagsFieldText) {
+	            var dff = $.Deferred();
+	            var textTags = tagsFieldText.split(',');
+	                var numberOfTags = textTags.length;
+	                var tagsFinished = 0;
+	                var tagsWithID = [];
+	        
+	                $.each(textTags, function (indexTextTag, valueTextTag) {
+	                    if(valueTextTag.length >0) {
+	                        var temp = $.grep(arr, function (elementArr, indexArr){
+	                                        return elementArr.label == valueTextTag;
+	                                    });
+	                                    if(temp[0]){
+	                                        //Tag has anID
+	                                        tagsWithID.push(temp[0]);
+	                                        console.log("existing tag");
+	                                        console.log(++tagsFinished);
+	                                    } else {
+	                                        console.log("laaag");
+	                                        console.log(valueTextTag);
+	                                        //Tag does not have ID, create new Entity
+	                                    Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+	                                        'visibiliy': 'public',
+	                                        where:{
+	                                            'name': {
+	                                                '$regex': '^' + valueTextTag  + '$', '$options': 'i'
+	                                            }
+	                                        }
+	                                    }).then(function(response) {
+	                                        console.log("EEEH");
+	                                        console.log(response);
+	                                        if(response.length == 0) {
+	                                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+	                                                "public": "true",
+	                                                "name": valueTextTag
+	                                            }).then(function(response) {
+	                                                console.log("Tag Created");
+	                                                var datum = {
+	                                                    label: valueTextTag,
+	                                                    value: response.id
+	                                                }
+	                                            tagsWithID.push(datum);
+	                                            console.log("new tag");
+	                                            console.log(++tagsFinished);
+	                                           });
+	                                        } else {
+	                                            tagsFinished ++;
+	                                             alert("A tag with the same name already exists!");
+	                                             $('.createbuzz').children().removeAttr("disabled");
+	                                        }
+	                                    });
+	                                    }
+	                    } else {
+	                        tagsFinished ++;
+	                    }       
+	                });    //end of each
+	        
+	                (function wait(){
+	                    if(tagsFinished == numberOfTags) {
+	                        dff.resolve(tagsWithID);
+	                    } else {
+	                        setTimeout(wait, 100);
+	                    }
+	                })();
+	          return dff.promise();
+	        };
+	        
+	        var notAlreadyAdded = function(collection, element) {
+	        	var result = true;
+	                for(var i = 0; i < collection.length; i++) {
+	                    if(collection[i].id == element) {
+	                        result = false;
+	                        break;
+	                    }
+	                }
+	                return result;
+	        };
+	            
+	        (function(){
+	
+	        
+	        })();
+	        
+ 		</script>
+ 		
+ 	</body>
 </html>

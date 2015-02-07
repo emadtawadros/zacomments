@@ -1,0 +1,167 @@
+/* Global Styles */
+
+*{box-sizing: border-box;}
+
+body{margin:0;}
+
+header,
+main,
+aside,
+footer{
+	font-family:arial;
+	width:100%;
+	padding:0.9em;
+	background: #FFFFFF;
+	float:left;
+}
+	
+ul,ol{
+	list-style:none;
+	margin:0;
+	padding:0;
+	clear:both;
+}
+	
+/* Header Styles */	
+
+header{
+	border-bottom:1px solid #DDDDDD;
+	position:fixed;
+}
+
+.search{
+	float:left;
+}
+.search input{
+	font-size:0.9em;
+	font-family:inherit;
+	padding:0.6em;
+	margin:0;
+	border: 1px solid #DDDDDD;
+	border-radius:3px;
+}
+
+.logo{
+	float:left;
+	height:35px;
+	margin-left:0.6em;
+}
+	
+header nav{
+	float:right;
+}
+header nav li{
+	font-size:0.9em;
+	display:inline-block;
+	margin-left:0.6em;
+	padding:0.6em;
+	background:#FAC832;
+	border-radius:3px;
+}
+	
+/* Phone size */
+
+main,
+aside {
+	margin-top:4em;
+}
+
+.topic,
+.create-comment,
+.comment,
+button{
+	float:left;
+	clear:both;
+	margin:0.3em 0;
+}
+
+.topic h1{
+	font-size:1.8em;
+	margin:0.3em 0;
+}
+.topic ul{}
+.topic ul li{
+	display:inline-block;
+	margin-right:0.6em;
+	margin-bottom:0.6em;
+	font-size:0.9em;
+}
+.topic img{
+	width:100%;
+	border-radius:3px;
+}
+	
+.create-comment img,
+.comment img{
+	width:35px;
+	height:35px;
+	margin-right:0.6em;
+	border-radius:3px;
+	float:left;
+}
+.create-comment input{
+	font-size:0.9em;
+	font-family:inherit;
+	padding:0.6em;
+	margin:0;
+	border: 1px solid #DDDDDD;
+	border-radius:3px;
+}
+	
+.comment div{
+	width:auto;
+	float:left;
+}
+.comment span{
+	font-size:0.9em;	
+	height:35px;
+	color:#AAAAAA;
+}
+.comment p{
+	font-size:1.2em;
+	margin:0.3em 0;
+	line-height: 1.2em;
+}
+.comment ul li{
+	font-size:0.9em;	
+	display:inline-block;
+	margin-right:0.6em;
+	margin-bottom:0.6em;
+}
+
+.more-comments{
+	width:100%;
+	height:35px;
+	border:1px solid #DDDDDD;
+	background:#FFFFFF;
+	border-radius:3px;
+}
+
+footer ul{
+	text-align: center;
+}
+footer ul li{
+	font-size:0.9em;	
+	display:inline-block;
+	margin-right:0.6em;
+	margin-bottom:0.6em;
+}
+
+/* Desktop-tablet size */
+
+@media (min-width: 600px){
+
+main{
+	width:70%;
+}
+
+aside{
+	width:30%;
+}
+
+}
+
+
+
+
+
