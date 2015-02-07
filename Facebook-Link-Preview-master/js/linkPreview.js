@@ -278,7 +278,7 @@
 						}
 						myThis.find('#previewSpanTitle'+selector).click(function() {
 							if (blockTitle === false) {
-								//blockTitle = true;
+								blockTitle = true;
 								myThis.find('#previewSpanTitle'+selector).hide();
 								myThis.find('#previewInputTitle'+selector).show();
 								myThis.find('#previewInputTitle'+selector).val(myThis.find('#previewInputTitle'+selector).val());
