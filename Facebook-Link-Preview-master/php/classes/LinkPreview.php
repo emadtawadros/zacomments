@@ -47,8 +47,8 @@ class LinkPreview
 
         if (preg_match(Regex::$urlRegex, $text, $match)) {
 
-            //$title = "emad";
-            //$description = "";
+            $title = "";
+            $description = "";
             $videoIframe = "";
             $video = "no";
 
@@ -130,7 +130,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $urlData["error"], "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
@@ -178,12 +178,12 @@ class LinkPreview
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
         try{
-        $content = curl_exec($ch);
+            $content = curl_exec($ch);
             if (FALSE === $content)
-                throw new Exception(curl_error($ch), curl_errno($ch));
+            throw new Exception(curl_error($ch), curl_errno($ch));
         } catch(Exception $e) {
-$res['error'] = $e->getMessage();
-}
+            $res['error'] = $e->getMessage();
+        }
         $header = curl_getinfo($ch);
         curl_close($ch);
 
