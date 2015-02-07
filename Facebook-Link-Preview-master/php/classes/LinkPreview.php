@@ -47,7 +47,7 @@ class LinkPreview
 
         if (preg_match(Regex::$urlRegex, $text, $match)) {
 
-            //$title = "";
+            $title = "";
             $description = "";
             $videoIframe = "";
             $video = "no";
@@ -97,12 +97,12 @@ class LinkPreview
                     $descriptionUnderstood = true;
 
                 if (($descriptionUnderstood == false && strlen($title) > strlen($description) && !preg_match(Regex::$urlRegex, $description) && $description != "" && !preg_match('/[A-Z]/', $description)) || $title == $description) {
-                    //$title = $description;
+                    $title = $description;
                     $description = Content::crawlCode($raw);
                 }
 
                 if(Content::isJson($title)){
-                    //$title = "";
+                    $title = "";
                 }
                 if(Content::isJson($description)){
                     $description = "";
@@ -117,7 +117,7 @@ class LinkPreview
                 if ($media != null && $media[0] != "" && $media[1] != "")
                     $video = "yes";
 
-                //$title = Content::extendedTrim($title);
+                $title = Content::extendedTrim($title);
                 $pageUrl = Content::extendedTrim($pageUrl);
                 $description = Content::extendedTrim($description);
 
