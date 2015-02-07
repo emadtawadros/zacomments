@@ -110,7 +110,8 @@
 
 			allowPosting = true;
 			
-			if(trim($(this).val()) !== "") {
+			//var oldText = trim($(this).val());
+			if(trim(myThis.find('#text'+selector).val()) !== "") {
 				myThis.find('#postPreviewButton' + selector).removeAttr("disabled");
 			} else {
 				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
