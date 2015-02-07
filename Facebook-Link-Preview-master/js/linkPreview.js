@@ -91,8 +91,20 @@
 			myThis.find('#noThumb'+selector).removeAttr("checked");
 			images = "";
 		}
-
-		$(this).find('textarea').keyup(function(e) {
+		$(this).find('textarea').bind({
+			paste: function () {
+				setTimeout(function () {
+					crawlText();
+				}, 100);
+			},
+			keyup: function (e) {
+				if ((e.which === 13 || e.which === 32 || e.which === 17)) {
+					crawlText();
+				}
+			}
+		});
+		
+		var crawlText = function () {
 			
 			
 
@@ -104,7 +116,7 @@
 				myThis.find('#postPreviewButton' + selector).attr("disabled", "disabled");
 			}
 			
-			if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
+			//if ((e.which === 13 || e.which === 32 || e.which === 17) && trim($(this).val()) !== "") {
 				
 
 				text = " " + myThis.find('#text'+selector).val();
@@ -387,8 +399,8 @@
 						isCrawling = false;
 					}, "json");
 				}
-			}
-		});
+			//}
+		}
 
 		myThis.find('#postPreview'+selector).click(function() {
 
