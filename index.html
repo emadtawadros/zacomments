@@ -109,7 +109,6 @@
 								
 								<ul>
 								{{#if tags}}
-									Tags:
 									{{#each tags}}
 										{{#if this}}
 											<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
@@ -260,12 +259,14 @@
 		        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 		        {{/if}}
 		        
-		        <main>
+		        <aside>
 		        
+		        <div class="topic">
 			        <h1 id="postTitle">{{post.name}}</h1>
 			        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
 			        
 			        <ul>
+				        <li>{{post.stats.comments}} comments</li>
 						<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
 						<li><input type="text" id="postTags"></input></li>
 			        </ul>
@@ -274,7 +275,6 @@
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
 			        {{/if}}
 			        
-					<p>{{post.stats.comments}} comments</p>
 					
 					<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
 			        	
@@ -287,10 +287,11 @@
 			        <ul>
 						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
 			        </ul>
+			    </div>
 			        
-			    </main>
+			    </aside>
 			        
-		        <aside>
+		        <main>
 			        
 					<div class="under">
 				        <h1>Posts under {{post.name}}</h1>
@@ -302,7 +303,6 @@
 				            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
 				            <ul>
 				            {{#if tags}}
-				                Tags:
 				                {{#each tags}}
 				                    {{#if this}}
 				                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
@@ -328,7 +328,6 @@
 				            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
 				            <ul>
 				            {{#if tags}}
-				                Tags:
 				                {{#each tags}}
 				                    {{#if this}}
 				                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
@@ -344,7 +343,7 @@
 				        {{/each}}
 				    </div>
 				    
-				</aside>
+				</main>
 		    
 		    </script>
 		        
@@ -375,9 +374,7 @@
 		              				<a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
 		              			</li>
 		              		{{/if}}
-		              		<li>
-		              			<a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a>
-		                  	</li>
+		              		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 		                  	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
 		                </ul> 
 		                
