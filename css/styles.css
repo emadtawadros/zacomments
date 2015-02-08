@@ -21,6 +21,11 @@ ul,ol{
 	padding:0;
 	clear:both;
 }
+
+/*temporary*/
+div{
+	clear:both;
+}
 	
 /* Header Styles */	
 
