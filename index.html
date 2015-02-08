@@ -75,7 +75,6 @@
 				                        {{/if}}
 				                    {{/each}}
 				                {{/if}}
-				                	<li><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
 				                	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 									<li>{{stats.comments}} comments</li>
 				                </ul>	
@@ -117,7 +116,7 @@
 										{{/if}}
 									{{/each}}
 								{{/if}}
-									<li><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
+									
 									<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 									<li>{{stats.comments}} comments</li>
 								</ul>
@@ -155,7 +154,6 @@
 		    	{{#if loggedIn}}
 				<div data-hull-component="createtopicform"></div>
 		        {{/if}}
-		        <div class="loading"><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></div>
 		        <div data-hull-component="post" data-hull-id="{{id}}"></div>
 		    </script>
 		    
@@ -282,13 +280,11 @@
 			        	
 					<h1>Top Comments</h1>
 		        	<ul>
-						<li class="loading"><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
 						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
 		        	</ul>
 			        
 			        <h1>New Comments</h1>
 			        <ul>
-			        	<li class="loading"><img src="https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif" alt="Loading" width="42" height="42"></li>
 						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
 			        </ul>
 			        
