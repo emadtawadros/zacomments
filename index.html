@@ -359,7 +359,6 @@
 		      <div class="media-list hull-comments__list">
 		        {{#comments}}
 				<div class="comment" data-hull-comment-id="{{id}}">
-		              
 		              <img src={{user.picture}}>
 		              <div>
 		              	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
@@ -378,7 +377,10 @@
 						{{#if extra.richComment}}
 						  {{{extra.richComment}}}
 						{{/if}}
-		              </div>	                
+		              </div>	
+		              {{^comments}}
+					  <p>No comments for the moment</p>
+					  {{/comments}}                
 		        </div>
 		        {{/comments}}
 		      </div>
@@ -386,10 +388,6 @@
 		          <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
 		      {{/ifEqual}}
 		    {{/if}}
-		    
-			{{^comments}}
-		    <p class="alert alert-info">No comments for the moment</p>
-			{{/comments}}
 			
 		    </script>
 		        
