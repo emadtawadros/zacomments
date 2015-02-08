@@ -305,7 +305,9 @@
 				        <p>No posts currently tagged with {{post.name}}</P
 				        {{/ifEqual}}
 				        {{#each postsUnder}}
-							<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+				        <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+				        <div>
+							<span><a href="#/post/{{id}}">{{name}}</a></span>
 				            <ul>
 				            {{#if tags}}
 				                {{#each tags}}
@@ -316,10 +318,10 @@
 				            {{/if}}
 								<li>{{stats.comments}} comments</li>
 				            </ul>
-							<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-
-							<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-				            <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+				        </div>
+				        
+						<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+				        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 				            
 				        {{/each}}
 				    </div>
@@ -330,8 +332,9 @@
 				        <p>No posts currently tagged with {{post.name}}</P
 				        {{/ifEqual}}
 				        {{#each postsUnder}}
-				            <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-				            <h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			            <img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+			            <div> 
+				            <span><a href="#/post/{{id}}">{{name}}</a></span>
 				            <ul>
 				            {{#if tags}}
 				                {{#each tags}}
@@ -342,9 +345,10 @@
 				            {{/if}}
 								<li>{{stats.comments}} comments</li>
 				            </ul>
+			            </div>
 				            
-							<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
-				            <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+						<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
+				        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 				            
 				        {{/each}}
 				    </div>
@@ -359,9 +363,9 @@
 		    <div class="media-list hull-comments__list">
 		        {{#comments}}
 				<div class="comment" data-hull-comment-id="{{id}}">
-		              <img src={{user.picture}}>
-		              <div>
-		              	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
+		            <img src={{user.picture}}>
+		            <div>
+		            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 					  	<p class="hull-comments__description">
 					  	{{description}}
 					  	</p>
@@ -373,12 +377,12 @@
 		              		{{/if}}
 		                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 	                	</ul> 
-
-						{{#if extra.richComment}}
-						  {{{extra.richComment}}}
-						{{/if}}
-		              </div>	
-             
+						
+					</div>
+					{{#if extra.richComment}}
+					  {{{extra.richComment}}}
+					{{/if}}
+		              	
 		        </div>
 			{{/comments}}
 		    	{{^comments}}
@@ -405,7 +409,6 @@
 		    </script>
 		    
 		    <script type='text/handlebars' data-hull-template='test/form'>
-		        <div class="well">
 		      {{#if loggedIn}}
 		        <form>
 		          <div class='media'>
@@ -423,11 +426,9 @@
 		          </div>
 		        </form>
 		      {{/if}}
-		    </div>
 		    </script>
 		    
 		    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
-			<div class="well">
 			  {{#if loggedIn}}
 			    <form>
 			      <div class='media'>
@@ -440,8 +441,8 @@
 			      </div>
 			    </form>
 			  {{/if}}
-			</div>
-
+		    </script>
+		    
 		</main>
 			
 		<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
