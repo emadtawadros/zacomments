@@ -272,18 +272,17 @@
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
 			        {{/if}}
 			        
-					
-					<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
-			        	
-					<h1>Top Comments</h1>
-		        	<ul>
-						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
-		        	</ul>
-			        
-			        <h1>New Comments</h1>
-			        <ul>
-						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
-			        </ul>
+					<div data-hull-component="commentbox" data-hull-id="{{post.id}}">
+						<h1>Top Comments</h1>
+			        	<ul>
+							<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
+			        	</ul>
+				        
+				        <h1>New Comments</h1>
+				        <ul>
+							<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
+				        </ul>
+			        </div>
 				</article>	    
 				    
 		    </main>
