@@ -298,9 +298,10 @@
 			        
 		        <aside>
 			        
+			       	<h1>Posts under {{post.name}}</h1>
+			       	
 					<div class="topic">
 						
-				        <h1>Posts under {{post.name}}</h1>
 						{{#ifEqual postsUnder.length 0}}
 				        <p>No posts currently tagged with {{post.name}}</P
 				        {{/ifEqual}}
@@ -324,9 +325,9 @@
 				            
 				        {{/each}}
 				    
-				        
+				    <h1>Posts under {{post.name}}</h1>
+
 				    <div class="topic">
-				        <h1>Posts under {{post.name}}</h1>
 						{{#ifEqual postsUnder.length 0}}
 				        <p>No posts currently tagged with {{post.name}}</P
 				        {{/ifEqual}}
