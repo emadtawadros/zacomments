@@ -356,7 +356,7 @@
 		    <script type='text/handlebars' data-hull-template='test/test'>
 		
 		    {{#if comments}}
-		      <div class="media-list hull-comments__list">
+		    <div class="media-list hull-comments__list">
 		        {{#comments}}
 				<div class="comment" data-hull-comment-id="{{id}}">
 		              <img src={{user.picture}}>
@@ -378,16 +378,18 @@
 						  {{{extra.richComment}}}
 						{{/if}}
 		              </div>	
-		              {{^comments}}
-					  <p>No comments for the moment</p>
-					  {{/comments}}                
+             
 		        </div>
-		        {{/comments}}
-		      </div>
-		      {{#ifEqual options.showLoadMoreButton true}}
-		          <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
-		      {{/ifEqual}}
-		    {{/if}}
+			{{/comments}}
+		    	{{^comments}}
+					<span>No more comments</span>
+				{{/comments}}   
+		    	
+				{{#ifEqual options.showLoadMoreButton true}}
+		        <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
+				{{/ifEqual}}
+				{{/if}}
+			</div>
 			
 		    </script>
 		        
