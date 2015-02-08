@@ -259,39 +259,41 @@
 		        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 		        {{/if}}
 		        
-		        <aside>
-		        
-		        <div class="topic">
-			        <h1 id="postTitle">{{post.name}}</h1>
-			        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
-			        
-			        <ul>
-				        <li>{{post.stats.comments}} comments</li>
-						<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
-						<li><input type="text" id="postTags"></input></li>
-			        </ul>
-			        
-			        {{#if isAdmin}}
-			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
-			        {{/if}}
-			        
-					
-					<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
-			        	
-					<h1>Top Comments</h1>
-		        	<ul>
-						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
-		        	</ul>
-			        
-			        <h1>New Comments</h1>
-			        <ul>
-						<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
-			        </ul>
-			    </div>
-			        
-			    </aside>
-			        
 		        <main>
+		        
+		        	<article>
+				        <div class="topic">
+					        <h1 id="postTitle">{{post.name}}</h1>
+					        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
+					        
+					        <ul>
+						        <li>{{post.stats.comments}} comments</li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
+								<li><input type="text" id="postTags"></input></li>
+					        </ul>
+					    </div>
+
+				        {{#if isAdmin}}
+				        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+				        {{/if}}
+				        
+						
+						<div data-hull-component="commentbox" data-hull-id="{{post.id}}"></div>
+				        	
+						<h1>Top Comments</h1>
+			        	<ul>
+							<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></li>
+			        	</ul>
+				        
+				        <h1>New Comments</h1>
+				        <ul>
+							<li data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></li>
+				        </ul>
+					</article>	    
+					    
+			    </main>
+			        
+		        <aside>
 			        
 					<div class="under">
 				        <h1>Posts under {{post.name}}</h1>
@@ -343,7 +345,7 @@
 				        {{/each}}
 				    </div>
 				    
-				</main>
+				</aside>
 		    
 		    </script>
 		        
