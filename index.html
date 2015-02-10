@@ -161,20 +161,22 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'}>
-	        <h1>Search Results</h1>
-	        {{#ifEqual searchResults.length 0}}
-	        	<p>No results were found</p>
-	        {{else}}
-		        {{#each searchResults}}
-		            {{#if name}}
-		                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-		                <ul>
-							<li>{{stats.comments}} comments</li>
-		                </ul>
-						<img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
-		            {{/if}}
-		        {{/each}}
-	        {{/ifEqual}}
+	    	<main>
+		        <h1>Search Results</h1>
+		        {{#ifEqual searchResults.length 0}}
+		        	<p>No results were found</p>
+		        {{else}}
+			        {{#each searchResults}}
+			            {{#if name}}
+			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+			                <ul>
+								<li>{{stats.comments}} comments</li>
+			                </ul>
+							<img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/> 
+			            {{/if}}
+			        {{/each}}
+		        {{/ifEqual}}
+	    	</main>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
