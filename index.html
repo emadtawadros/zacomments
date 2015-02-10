@@ -17,6 +17,16 @@
 	    <link rel="stylesheet" type="text/css" href="css/styles.css">
 	    <script src="js/jquery.tagsinput.js"></script>
 		<script src="js/components.js"></script>
+		<script type="text/javascript">
+		    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+		
+		    // Configure the Keen object with your Project ID and (optional) access keys.
+		    Keen.configure({
+		        projectId: "52c6e20836bf5a6dd0000015",
+		        writeKey: "d523d28ca0cf1406ac6a4275d70c09f31e06fa575355a163f411a81ae4b9caabc73c211a53c93c14286da3e33ebfcb3696e8e5973da40ac16035c28c8f8c38eabcdc6fa15f2474edc748212d748475a62d59d6bcf9479b6b10fa187ae42f1245663fedbeabcc6af28df2dec0f2ff5b0d", // required for sending events
+		        readKey: "98ec71562a7174440c4b628f1871282e333dd4e7df76994e3ebc269f49bea6bc356b567e8db69b5a0735d3bd3221cf31ebf5c4c780e61a5388f1550616536c286ecbdad69994dd51c183333c05e7fbe0f51ed695301c7470f6e3cceb2ca5db9c3d81593f41dd26419d5e96460f44380c"    // required for doing analysis
+		    });
+		</script>
 	</head>
 	
 	<body>
@@ -401,17 +411,6 @@
 		<script src="//documentcloud.github.io/underscore/underscore.js"></script>
 		<script src="//documentcloud.github.io/backbone/backbone-min.js"></script>
 		<script src="//d3f5pyioow99x0.cloudfront.net/0.8/hull.js"></script>
-		
-	    <script type="text/javascript">
-	    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-	
-	    // Configure the Keen object with your Project ID and (optional) access keys.
-	    Keen.configure({
-	        projectId: "52c6e20836bf5a6dd0000015",
-	        writeKey: "d523d28ca0cf1406ac6a4275d70c09f31e06fa575355a163f411a81ae4b9caabc73c211a53c93c14286da3e33ebfcb3696e8e5973da40ac16035c28c8f8c38eabcdc6fa15f2474edc748212d748475a62d59d6bcf9479b6b10fa187ae42f1245663fedbeabcc6af28df2dec0f2ff5b0d", // required for sending events
-	        readKey: "98ec71562a7174440c4b628f1871282e333dd4e7df76994e3ebc269f49bea6bc356b567e8db69b5a0735d3bd3221cf31ebf5c4c780e61a5388f1550616536c286ecbdad69994dd51c183333c05e7fbe0f51ed695301c7470f6e3cceb2ca5db9c3d81593f41dd26419d5e96460f44380c"    // required for doing analysis
-	    });
-		</script>
 
 		<script>
 	        var arr;
