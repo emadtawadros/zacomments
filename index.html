@@ -235,10 +235,12 @@
 				 		<li><a href="#/post/{{post.id}}">{{post.name}}</a></li>
 				 	</ul>
 	        	</div>
-	     	</div>
 			 	{{#if comment.extra.richComment}}
 	              	{{{comment.extra.richComment}}}
-				  	{{/if}}
+	              	</div>
+				{{/if}}
+			</div>
+
 	         <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
 	    </script>
 	    		     
@@ -343,12 +345,12 @@
 	                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
                 	</ul> 
 				</div>
-			</div>
 				{{#if extra.richComment}}
 				  {{{extra.richComment}}}
+				  </div>
 				{{/if}}
-
-		{{/comments}}
+			{{/comments}}
+			</div>
 		
 	    	{{^comments}}
 				<span>No more comments</span>
@@ -357,7 +359,7 @@
 			{{#ifEqual options.showLoadMoreButton true}}
 	        <button type="button" id="loadMore" data-hull-action="loadMore">Load More Comments</button>
 			{{/ifEqual}}
-			{{/if}}
+		{{/if}}
 		</div>
 		
 	    </script>
