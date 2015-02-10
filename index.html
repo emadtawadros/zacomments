@@ -141,16 +141,20 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'}>
-	        <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
-	        {{#each feed}}
-	            {{#ifEqual object.type "comment"}}
-	                {{#if target.name}}
-	                <p><a href="#/comment/{{object.id}}">commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
-	                {{/if}}
-	            {{else}}
-	                <p>reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
-	            {{/ifEqual}}
-	        {{/each}}
+	    	<div class="user">
+		        <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
+		        {{#each feed}}
+	    			<div class="comment">
+		            {{#ifEqual object.type "comment"}}
+		                {{#if target.name}}
+		                <p><a href="#/comment/{{object.id}}">Commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
+		                {{/if}}
+		            {{else}}
+		                <p>Reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
+		            {{/ifEqual}}
+	    			</div>
+		        {{/each}}
+	    	</div>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'}>
