@@ -21,8 +21,6 @@ ul,ol{
 	padding:0;
 	clear:both;
 }
-
-p{clear:both;}
 	
 /* Header Styles */	
 
@@ -81,8 +79,6 @@ aside {
 .create-comment,
 .comment,
 button{
-	float:left;
-	clear:both;
 	margin:0.3em 0;
 }
 
@@ -108,7 +104,9 @@ button{
 	height:35px;
 	margin-right:0.6em;
 	border-radius:3px;
-	float:left;
+	position:absolute;
+	top:0;
+	left:0;
 }
 .create-comment input{
 	font-size:0.9em;
@@ -120,8 +118,8 @@ button{
 }
 	
 .comment div{
-	width:auto;
-	float:left;
+	margin-left:45px;
+	clear:both;
 }
 .comment span{
 	font-size:0.9em;	
