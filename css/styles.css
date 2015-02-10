@@ -43,8 +43,12 @@ header{
 	border-radius:3px;
 }
 
-.search ul{
-	background:white;
+.search span{
+	display:none;
+}
+
+ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all{
+	font-family: inherit;
 	margin:0.3em;
 }
 
