@@ -47,7 +47,7 @@ header{
 	display:none;
 }
 
-ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all{
+#ui-id-1{
 	font-family: inherit;
 	margin:0.3em;
 }
