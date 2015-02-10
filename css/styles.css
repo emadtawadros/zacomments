@@ -43,6 +43,11 @@ header{
 	border-radius:3px;
 }
 
+.search ul{
+	background:white;
+	margin:0.3em;
+}
+
 .logo{
 	float:left;
 	height:35px;
