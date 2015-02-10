@@ -234,7 +234,7 @@
 	        	</div>
 			</div>
 
-	         <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/> 
+	        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
@@ -338,8 +338,9 @@
 	                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
                 	</ul> 
 				</div>
-			{{/comments}}
 			</div>
+			{{/comments}}
+			
 		
 	    	{{^comments}}
 				<span>No more comments</span>
