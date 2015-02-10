@@ -224,16 +224,18 @@
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
 	     	<div class="comment">
 	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
-				<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
-				<p>{{comment.description}}</p>
-				<ul>
-			 		<li>{{fromNow comment.updated_at}}</li>
-			 		<li>{{post.stats.comments}} comments</li>
-			 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
-			 		on
-			 		<li><a href="#/post/{{post.id}}">{{post.name}}</a></li>
-			 	</ul>
-			 	
+	        	<div>
+					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
+					<p>{{comment.description}}</p>
+					<ul>
+				 		<li>{{fromNow comment.updated_at}}</li>
+				 		<li>{{post.stats.comments}} comments</li>
+				 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
+				 		on
+				 		<li><a href="#/post/{{post.id}}">{{post.name}}</a></li>
+				 	</ul>
+	        	</div>
+	     	</div>
 			 	{{#if comment.extra.richComment}}
 	              	{{{comment.extra.richComment}}}
 				  	{{/if}}
@@ -340,13 +342,12 @@
 	              		{{/if}}
 	                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
                 	</ul> 
-					
 				</div>
+			</div>
 				{{#if extra.richComment}}
 				  {{{extra.richComment}}}
 				{{/if}}
-	              	
-	        </div>
+
 		{{/comments}}
 		
 	    	{{^comments}}
