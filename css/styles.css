@@ -49,10 +49,10 @@ header{
 	margin-left:0.6em;
 }
 	
-header nav{
+.login{
 	float:right;
 }
-header nav li{
+.login div{
 	font-size:0.9em;
 	display:inline-block;
 	margin-left:0.6em;
