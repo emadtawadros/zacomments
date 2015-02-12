@@ -50,8 +50,10 @@
 	        {{#if isAdmin}}
 	            <div data-hull-component="flaggedposts"></div>
 	        {{/if}}
-	        <main data-hull-component="posts"></main> 
-			<aside data-hull-component="newposts"></aside>
+	        <div class="body">
+		        <main data-hull-component="posts"></main> 
+				<aside data-hull-component="newposts"></aside>
+	        </div>
 	    </script>
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
@@ -334,6 +336,7 @@
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
 	            <img src={{user.picture}}>
+	            <input class="linkPreview" id="lp1"></input>
 	            <div>
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<p class="hull-comments__description">
