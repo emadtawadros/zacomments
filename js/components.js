@@ -6,10 +6,6 @@ Hull.component('posts', {
         
                 this.options.trendingDaysLimit = 30;    //3 days
                 this.options.trendingLimit = 10;    //10 posts
-        
-                setTimeout(function() {
-                    Backbone.history.start();
-                }, 200);
             }, //initialize
             datasources: {
                 trendingPosts: function loadTrendingPosts() {
