@@ -137,7 +137,7 @@
     		<h1>Flagged Posts</h1>
     		{{#each flaggedPosts}}
     		<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-    		<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+    		<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
     		<ul>
     			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
 				<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
@@ -182,7 +182,7 @@
 			                <ul>
 								<li>{{stats.comments}} comments</li>
 			                </ul>
-							<img class="postimg" src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+							<img class="postimg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 			            </div>
 			            {{/if}}
 			        {{/each}}
@@ -317,7 +317,7 @@
 	            {{/if}}
 						<li>{{stats.comments}} comments</li>
 	            	</ul>
-					<img src="{{imageUrl picture 'small' extra.fallbackUrl}}"/>
+					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 		    	</div>
 		    
 				<div data-hull-component="commentbox" data-hull-id="{{id}}"></div>
