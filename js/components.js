@@ -121,6 +121,64 @@ Hull.component('posts', {
         	}
         });
         
+	Hull.component('mylogin', {
+	  type: 'Hull',
+	
+	  templates: [
+	    'mylogin'
+	  ],
+	
+	  options:{
+	    provider:''
+	  },
+	
+	  refreshEvents: ['model.hull.me.change'],
+	
+	  initialize: function() {
+	    "use strict";
+	    this.authHasFailed = false;
+	
+	
+	    this.sandbox.on('hull.auth.failure', this.sandbox.util._.bind(function() {
+	      this.authHasFailed = true;
+	      this.render();
+	    }, this));
+	
+	  },
+	
+	  beforeRender: function(data) {
+	    "use strict";
+	
+	    data.authHasFailed = this.authHasFailed;
+	    var authServices = this.authServices() || [];
+	
+	    // If providers are specified, then use only those. else use all configuredauthServices
+	    if(this.options.provider){
+	      data.providers = this.options.provider.replace(' ','').split(',');
+	    } else {
+	      data.providers = authServices;
+	    }
+	
+	    // If I'm logged in, then create an array of logged In providers
+	    if(this.loggedIn()){
+	      data.loggedInProviders = this.sandbox.util._.keys(this.loggedIn());
+	    } else {
+	      data.loggedInProviders = [];
+	    }
+	
+	    // Create an array of logged out providers.
+	    data.loggedOut = this.sandbox.util._.difference(data.providers, data.loggedInProviders);
+	    data.matchingProviders = this.sandbox.util._.intersection(data.providers.concat('email'), data.loggedInProviders);
+	    data.authServices = authServices;
+	
+	    return data;
+	  },
+	
+	  afterRender: function() {
+	    this.authHasFailed = false;
+	  }
+	});
+	
         Hull.component('flaggedposts', {
         	templates: ['flaggedposts'],
         	datasources: {
