@@ -67,6 +67,18 @@ header{
 	background:#FAC832;
 	border-radius:3px;
 }
+
+.login .media-object{
+	float:left;
+}
+
+.login .btn{
+	float:left;
+}
+
+.login .media-heading{
+	float:left;
+}
 	
 /* Phone size */
 

@@ -5,7 +5,7 @@
 		<title>Zacomments</title>
 
 		<meta name="referrer" content="always"/>
-		<meta name="keywords" content="Zacomments,comments,topics">
+		<meta name="keywords" content="zacomments,comments,topics">
 		<meta name="description" content="Your Zacomments all belong to us.">
 
 		<meta property="og:site_name" content="Zacomments" />
@@ -154,16 +154,19 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'}>
 	    	<div class="user">
-		        <h1><img src={{feed.0.actor.picture}}> {{feed.0.actor.name}}</h1>
+		    	<img src={{feed.0.actor.picture}}>
+		        <h1>{{feed.0.actor.name}}</h1>
 		        {{#each feed}}
 	    			<div class="comment">
+		    			<ul>
 		            {{#ifEqual object.type "comment"}}
 		                {{#if target.name}}
-		                <p><a href="#/comment/{{object.id}}">Commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
+		                <li><a href="#/comment/{{object.id}}">Commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></li>
 		                {{/if}}
 		            {{else}}
-		                <p>Reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
+		                <li>Reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</li>
 		            {{/ifEqual}}
+		            	<ul>
 	    			</div>
 		        {{/each}}
 	    	</div>
@@ -251,7 +254,6 @@
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
-	    	<h1>Create new Buzz</h1>
 	    	<form>
 		    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
 		    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
@@ -337,7 +339,7 @@
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
 	            <img src={{user.picture}}>
-	            <input class="linkPreview" id="lp1"></input>
+	            <!--<input class="linkPreview" id="lp1"></input>-->
 	            <div>
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<p class="hull-comments__description">
