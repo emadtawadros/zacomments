@@ -231,6 +231,9 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
+	    
+	    	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+	    	
 	     	<div class="comment">
 	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
 	        	<div>
@@ -240,13 +243,11 @@
 				 		<li>{{fromNow comment.updated_at}}</li>
 				 		<li>{{post.stats.comments}} comments</li>
 				 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
-				 		on
-				 		<li><a href="#/post/{{post.id}}">{{post.name}}</a></li>
+				 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
 				 	</ul>
 	        	</div>
 			</div>
-
-	        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+			
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
