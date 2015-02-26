@@ -141,24 +141,16 @@
 	    {{/if}}
 		
 	    {{#if matchingProviders}}
-	    	<div class='media'>
 	    	{{#if me.picture}}
-		    <div class="pull-left">
 		      <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="70px" height="70px">
-		    </div>
 		 {{/if}}
-		<div class="pull-right">
-			<a data-hull-action="logout" class="btn"> Sign Out </a>
-		</div>
-		<div class="media-body">
+
+		<a data-hull-action="logout" class="btn"> Sign Out </a>
 		<h4 class="media-heading">{{me.name}}</h4>
-		Logged in with {{#each loggedInProviders}}
 		<span class='provider'><i class="icon-{{this}}">
 		</i> {{capitalize this}}
 		</span>
 		{{/each}}
-		</div>
-	      </div>
 		
 		{{else}}
 		  {{#if loggedOut}}

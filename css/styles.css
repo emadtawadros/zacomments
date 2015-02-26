@@ -1,5 +1,7 @@
 /* Global Styles */
 
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
 *{box-sizing: border-box;}
 
 html,body{margin:0;padding:0;}
@@ -8,7 +10,7 @@ header,
 main,
 aside,
 footer{
-	font-family:arial;
+	font-family: 'Roboto', sans-serif;
 	width:100%;
 	padding:0.9em;
 	background: #FFFFFF;
@@ -20,6 +22,15 @@ ul,ol{
 	margin:0;
 	padding:0;
 	clear:both;
+}
+
+a{
+	color:#08080;
+	text-decoration: none;
+}
+
+a:hover{
+	color:#04040;
 }
 	
 /* Header Styles */	
@@ -178,6 +189,10 @@ main{
 
 aside{
 	width:40%;
+}
+
+.body{
+	width:80%;
 }
 
 }
