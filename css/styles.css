@@ -37,6 +37,8 @@ a:hover{
 
 header{
 	border-bottom:1px solid #DDDDDD;
+	background:#FFFFFF;
+	z-index: 200;
 	position:fixed;
 }
 
