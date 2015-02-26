@@ -25,12 +25,12 @@ ul,ol{
 }
 
 a{
-	color:#08080;
+	color:#008080;
 	text-decoration: none;
 }
 
 a:hover{
-	color:#04040;
+	color:#004040;
 }
 	
 /* Header Styles */	
@@ -192,7 +192,8 @@ aside{
 }
 
 .body{
-	width:80%;
+	width:90%;
+	margin:0 auto;
 }
 
 }
