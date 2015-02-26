@@ -142,14 +142,11 @@
 		
 	    {{#if matchingProviders}}
 	    	{{#if me.picture}}
-		      <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="70px" height="70px">
-		 {{/if}}
-
+		      <img src="{{me.picture}}" alt="{{me.name}}" width="35px" height="35px">
+		{{/if}}
 		<a data-hull-action="logout" class="btn"> Sign Out </a>
-		<h4 class="media-heading">{{me.name}}</h4>
-		<span class='provider'><i class="icon-{{this}}">
-		</i> {{capitalize this}}
-		</span>
+		<span>{{me.name}}</span>
+		<span><i class="icon-{{this}}"></i>{{capitalize this}}</span>
 		{{/each}}
 		
 		{{else}}
@@ -372,7 +369,7 @@
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
 	            <img src={{user.picture}}>
-	            <!--<input class="linkPreview" id="lp1"></input>-->
+	            <!--<input id="lp1"></input>-->
 	            <div>
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<p class="hull-comments__description">
@@ -406,8 +403,8 @@
 	    <script type='text/handlebars' data-hull-template='ratings/vote/vote'>
 	        {{#if loggedIn}}
 	        <ul class='btn-group'>
-	          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'><span class='caret'></span>&nbsp;{{votes.up}}</button></li>
-	          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'><span class='caret'></span>&nbsp;{{votes.down}}</button></li>
+	          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>&nbsp;{{votes.up}}</button></li>
+	          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>&nbsp;{{votes.down}}</button></li>
 	        </ul>
 			{{else}}
 			<div data-hull-component="login_button@hull"></div>
@@ -417,15 +414,8 @@
 	    <script type='text/handlebars' data-hull-template='test/form'>
 	      {{#if loggedIn}}
 	        <form>
-	          	<div class='media'>
-	            	<div class="pull-left">
-						<img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
-	            	</div>
-					<div class="media-body">
-		            	<div class="linkPreview" id="lp1"></div>
-		                <div class='pull-right'></div>
-		        	</div>
-	          	</div>
+					<img src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
+		            <input id="lp1"></div>
 	        </form>
 	      {{/if}}
 	    </script>
@@ -433,14 +423,8 @@
 	    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
 		  {{#if loggedIn}}
 		    <form>
-		      	<div class='media'>
-		        	<div class="pull-left">
-						<img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
-		        	</div>
-					<div class="media-body">
-		            	<div class="linkPreview" id="lp1"></div>
-		        	</div>
-		      	</div>
+					<img src="{{me.picture}}" alt="{{me.name}}">
+	            	<input id="lp1"></div>
 		    </form>
 		  {{/if}}
 	    </script>
