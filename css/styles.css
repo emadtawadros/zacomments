@@ -30,7 +30,7 @@ a{
 }
 
 a:hover{
-	text-decoration: underline;
+	color:#004040;
 }
 	
 /* Header Styles */	
@@ -115,6 +115,10 @@ article{
 	color:#FFFFFF;
 	letter-spacing:1px;
 }
+.topic ul li a:hover{
+	background:#004040;
+	color:#FFFFFF;
+}
 .topic ul li:last-child a{
 	background:#FFFFFF;
 	color:#008080;
@@ -182,7 +186,7 @@ article{
 	font-size:0.6em;
 	margin-right:0.6em;
 }
-.tag a{
+.tag a:hover{
 	color:#FAC832;
 }
 
