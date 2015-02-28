@@ -4,7 +4,7 @@
 
 *{box-sizing: border-box;}
 
-html,body{margin:0;padding:0;}
+html,body{margin:0;padding:0;background: #FFFFFF;}
 
 header,
 section,
@@ -13,8 +13,6 @@ footer{
 	font-family: 'Roboto', sans-serif;
 	width:100%;
 	padding:0.9em;
-	background: #FFFFFF;
-	display: flex;
 }
 	
 ul,ol{
@@ -73,18 +71,6 @@ a:hover{
 	background:#FAC832;
 	border-radius:3px;
 }
-
-.login .media-object{
-	float:left;
-}
-
-.login .btn{
-	float:left;
-}
-
-.login .media-heading{
-	float:left;
-}
 	
 /* Phone size */
 
@@ -104,12 +90,12 @@ aside {
 	font-size:1.8em;
 	margin:0.3em 0;
 }
-.topic ul{}
 .topic ul li{
-	display:inline-block;
+	float:left;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
 	font-size:0.9em;
+	display:block;
 }
 .topic img{
 	width:100%;
