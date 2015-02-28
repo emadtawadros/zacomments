@@ -38,7 +38,7 @@
 		    	<button type="button" id="search">Search</button>
 	    	</form>
 	    	
-	    	<a href="#/maincomp"><img class="logo" src="images/logo.png"/></a>
+	    	<a href="#/maincomp"><img class="logo" src="css/logo.svg"/></a>
 	    	
 	    	<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 			
@@ -203,7 +203,7 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'}>
-	    	<main>
+	    	<section>
 		        <h3>Search Results</h3>
 		        {{#ifEqual searchResults.length 0}}
 		        	<p>No results were found</p>
@@ -220,7 +220,7 @@
 			            {{/if}}
 			        {{/each}}
 		        {{/ifEqual}}
-	    	</main>
+	    	</section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
@@ -297,7 +297,7 @@
 	        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 	        {{/if}}
 	        
-	        <main>
+	        <section>
 	        
 	        	<article>
 			        <div class="topic">
@@ -328,7 +328,7 @@
 					<div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></div>
 				</article>	    
 				    
-		    </main>
+		    </section>
 		        
 	        <aside>
 		        
