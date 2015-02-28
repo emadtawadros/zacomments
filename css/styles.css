@@ -34,7 +34,7 @@ a:hover{
 }
 .search input,
 .search button{
-	font-size:0.9em;
+	font-size:0.8em;
 	font-family:inherit;
 	padding:0.4em;
 	margin:0 0.4em 0 0;
@@ -50,7 +50,7 @@ a:hover{
 
 #ui-id-1{
 	background:#FFFFFF;
-	font-size:0.9em;
+	font-size:0.8em;
 	font-family:inherit;
 }
 #ui-id-1 li{
@@ -74,7 +74,7 @@ header,
 main,
 footer{
 	width:100%;
-	padding:0.9em;
+	padding:0.8em;
 	clear:both;
 }
 
@@ -98,7 +98,7 @@ article{
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
-	font-size:0.9em;
+	font-size:0.8em;
 }
 .topic img{
 	width:100%;
@@ -129,7 +129,7 @@ article{
 	clear:both;
 }
 .comment span{
-	font-size:0.9em;	
+	font-size:0.8em;	
 	height:35px;
 	color:#AAAAAA;
 }
@@ -139,7 +139,7 @@ article{
 	line-height: 1.2em;
 }
 .comment ul li{
-	font-size:0.9em;	
+	font-size:0.8em;	
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
@@ -155,7 +155,7 @@ article{
 
 #loadMore,
 #loadMoreTrending{
-	font-size:0.9em;
+	font-size:0.8em;
 	font-family:inherit;
 	padding:1.2em;
 	margin:1.2em 0;
@@ -169,7 +169,7 @@ footer ul{
 	text-align: center;
 }
 footer ul li{
-	font-size:0.9em;	
+	font-size:0.8em;	
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
