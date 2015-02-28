@@ -226,10 +226,12 @@
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
 	        {{#if loggedIn}}
 				<div data-hull-component="createtopicform"></div>
-				<div data-hull-component="user" data-hull-id="{{id}}"></div>
+				<main data-hull-component="user" data-hull-id="{{id}}"></main>
 			{{else}}
-	        	<p>You need to login to view user feed</p>
+			<main>
+	        	<h3>You need to login to view user feed</h3>
 	    		<div data-hull-component="mylogin" data-hull-provider="facebook"></div>
+			</main>
 	        {{/if}}
 	    </script>
 	    
@@ -237,7 +239,7 @@
 	        {{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 			{{/if}}
-	        <div data-hull-component="search" data-hull-search="{{id}}"></div>
+	        <main data-hull-component="search" data-hull-search="{{id}}"></main>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'}>
