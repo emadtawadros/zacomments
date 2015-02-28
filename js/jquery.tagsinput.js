@@ -222,7 +222,7 @@
 				markup = markup + '<input id="'+id+'_tag" value="" data-default="'+settings.defaultText+'" />';
 			}
 			
-			markup = '</div><div class="tags_clear"></div></div>';
+			markup = markup + '</div><div class="tags_clear"></div></div>';
 			
 			$(markup).insertAfter(this);
 	
