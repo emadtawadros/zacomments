@@ -4,7 +4,7 @@
 
 *{box-sizing: border-box;}
 
-html,body{margin:0;padding:0;background: #FFFFFF;}
+html,body{margin:0;padding:0;}
 
 header,
 section,
@@ -13,6 +13,8 @@ footer{
 	font-family: 'Roboto', sans-serif;
 	width:100%;
 	padding:0.9em;
+	background: #FFFFFF;
+	float:left;
 }
 	
 ul,ol{
@@ -32,6 +34,13 @@ a:hover{
 }
 	
 /* Header Styles */	
+
+header{
+	border-bottom:1px solid #DDDDDD;
+	background:#FFFFFF;
+	z-index: 200;
+	position:fixed;
+}
 
 .search{
 	float:left;
@@ -71,6 +80,18 @@ a:hover{
 	background:#FAC832;
 	border-radius:3px;
 }
+
+.login .media-object{
+	float:left;
+}
+
+.login .btn{
+	float:left;
+}
+
+.login .media-heading{
+	float:left;
+}
 	
 /* Phone size */
 
@@ -90,12 +111,12 @@ aside {
 	font-size:1.8em;
 	margin:0.3em 0;
 }
+.topic ul{}
 .topic ul li{
-	float:left;
+	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
 	font-size:0.9em;
-	display:block;
 }
 .topic img{
 	width:100%;
@@ -172,7 +193,7 @@ aside{
 	width:40%;
 }
 
-header, main{
+main,header{
 	width:90%;
 	margin:0 auto;
 }
