@@ -109,7 +109,7 @@ article{
 }
 .topic .img img{
 	margin:0 auto;
-	width:80%;
+	max-width:300px;
 	display:block;
 }
 	
