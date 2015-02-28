@@ -105,11 +105,12 @@ article{
 }
 .topic .img{
 	border-radius:3px;
-	background:#EEEEEE;
+	background:#DDDDDD;
 }
 .topic .img img{
 	margin:0 auto;
 	width:80%;
+	display:block;
 }
 	
 .create-comment img,
