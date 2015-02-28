@@ -216,13 +216,15 @@
 				tags_callbacks[id]['onChange'] = settings.onChange;
 			}
 	
-			var markup = '<ul id="'+id+'_tagsinput" class="tagsinput"><li id="'+id+'_addTag">';
+			var markup = '<div id="'+id+'_tagsinput" class="tagsinput"><div id="'+id+'_addTag">';
 			
 			if (settings.interactive) {
 				markup = markup + '<input id="'+id+'_tag" value="" data-default="'+settings.defaultText+'" />';
 			}
 			
-			markup = markup + '</li></ul>';
+			markup = '</div><div class="tags_clear"></div></div>';
+			
+			$(markup).insertAfter(this);
 	
 			if ($(data.real_input).val()!='') { 
 				$.fn.tagsInput.importTags($(data.real_input),$(data.real_input).val());
