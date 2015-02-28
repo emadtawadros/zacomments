@@ -106,16 +106,14 @@ article{
 	margin-bottom:0.6em;
 	font-size:0.6em;
 	text-transform: uppercase;
-	color:#FFFFFF;
-	padding:0.1em 0.2em;
+}
+.topic ul li a{
+	padding:0.2em 0.4em;
 	background:#008080;
 	border-radius: 3px;
+	color:#FFFFFF;
 }
-.topic ul li:first-child{
-	color:#444444;
-	padding:0.2em 0.4em;
-	background:#FFFFFF;
-}
+
 .topic .img{
 	border-radius:3px;
 	background:#FCFCFC;
