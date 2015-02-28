@@ -25,7 +25,7 @@ a{
 }
 
 a:hover{
-	color:#004040;
+	text-decoration: underline;
 }
 	
 /* Header Styles */	
@@ -108,10 +108,16 @@ article{
 	text-transform: uppercase;
 }
 .topic ul li a{
-	padding:0.2em 0.4em;
+	padding:0.2em 0.6em;
 	background:#008080;
 	border-radius: 3px;
 	color:#FFFFFF;
+	letter-spacing:1px;
+}
+.topic ul li a:last-child{
+	background:#FFFFFF;
+	color:#008080;
+	letter-spacing:0px;
 }
 
 .topic .img{
