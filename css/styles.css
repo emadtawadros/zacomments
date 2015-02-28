@@ -103,9 +103,13 @@ article{
 	margin-bottom:0.6em;
 	font-size:0.8em;
 }
-.topic img{
-	width:100%;
+.topic .img{
 	border-radius:3px;
+	background:#EEEEEE;
+}
+.topic .img img{
+	margin:0 auto;
+	width:80%;
 }
 	
 .create-comment img,
