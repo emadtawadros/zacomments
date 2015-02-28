@@ -57,13 +57,15 @@ footer{
 	font-family: 'Roboto', sans-serif;
 	width:100%;
 	padding:0.9em;
-	background: #FFFFFF;
+	background: #EEEEEE;
 	clear:both;
 }
 
 article{
-	background:#EEEEEE;
+	background:#FFFFFF;
 	padding:0.6em;
+	margin:0.6em 0;
+	border-radius:3px;
 }
 
 .topic,
