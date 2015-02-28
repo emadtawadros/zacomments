@@ -9,6 +9,7 @@ body{
 	margin:0;
 	padding:0;
 	background:#FFFFFF;
+	color:#444444;
 }
 
 ul,ol{
@@ -108,6 +109,12 @@ article{
 	color:#FFFFFF;
 	padding:0.1em 0.2em;
 	background:#008080;
+	border-radius: 3px;
+}
+.topic ul li:first-child{
+	color:#444444;
+	padding:0.2em 0.4em;
+	background:#FFFFFF;
 }
 .topic .img{
 	border-radius:3px;
