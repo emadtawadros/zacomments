@@ -34,7 +34,7 @@ a:hover{
 	width:40%;
 }
 
-.search input{width:80%;}
+.search input{width:60%;}
 
 .search input,
 .search button{
@@ -65,7 +65,6 @@ a:hover{
 .logo{
 	float:left;
 	height:34px;
-	margin-left:0.6em;
 }
 	
 .login{
@@ -155,6 +154,16 @@ article{
 	border:1px solid #DDDDDD;
 	background:#FFFFFF;
 	border-radius:3px;
+}
+
+/*Tags*/
+
+.tagsinput{}
+.tag{
+	display:inline-block;
+	margin-right:0.6em;
+	margin-bottom:0.6em;
+	font-size:0.8em;
 }
 
 #loadMore,
