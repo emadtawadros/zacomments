@@ -50,10 +50,10 @@
 	        {{#if isAdmin}}
 	            <div data-hull-component="flaggedposts"></div>
 	        {{/if}}
-	        <main>
+	        <section>
 		        <section data-hull-component="posts"></section> 
 				<aside data-hull-component="newposts"></aside>
-	        </main>
+	        </section>
 	    </script>
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
@@ -179,7 +179,7 @@
 	    	{{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 	        {{/if}}
-	        <div data-hull-component="post" data-hull-id="{{id}}"></div>
+	        <main data-hull-component="post" data-hull-id="{{id}}"></main>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'}>
