@@ -173,10 +173,17 @@ article{
 
 .tagsinput{}
 .tag{
-	display:inline-block;
-	margin-right:0.6em;
-	margin-bottom:0.6em;
+	padding:0.2em 0.6em;
+	background:#008080;
+	border-radius: 3px;
+	color:#FFFFFF;
+	letter-spacing:1px;
+	text-transform: capitalize;
 	font-size:0.6em;
+	margin-right:0.6em;
+}
+.tag a{
+	color:#FAC832;
 }
 
 #loadMore,
