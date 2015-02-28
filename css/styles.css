@@ -103,7 +103,8 @@ article{
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
-	font-size:0.8em;
+	font-size:0.6em;
+	text-transform: uppercase;
 }
 .topic .img{
 	border-radius:3px;
@@ -139,7 +140,7 @@ article{
 	clear:both;
 }
 .comment span{
-	font-size:0.8em;	
+	font-size:1em;	
 	height:35px;
 	color:#AAAAAA;
 }
@@ -162,7 +163,7 @@ article{
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
-	font-size:0.8em;
+	font-size:0.6em;
 }
 
 #loadMore,
