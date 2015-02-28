@@ -39,6 +39,20 @@ a:hover{
 	float:left;
 }
 
+.search span{
+	display:none;
+}
+
+#ui-id-1{
+	background:#FFFFFF;
+}
+#ui-id-1 li{
+	font-size:0.9em;
+	font-family:inherit;
+	padding:0.4em;
+	border-bottom: 1px solid #DDDDDD;
+}
+
 .logo{
 	float:left;
 	height:34px;
@@ -61,7 +75,6 @@ footer{
 }
 
 article{
-	padding:0.6em 0;
 	margin:1.2em 0;
 }
 
