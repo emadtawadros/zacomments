@@ -113,7 +113,8 @@ article{
 	letter-spacing:1px;
 }
 .topic ul li:last-child a{
-	background:#FAC832;
+	background:#FFFFFF;
+	color:#444444;
 	letter-spacing:0px;
 }
 
