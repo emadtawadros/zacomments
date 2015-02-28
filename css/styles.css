@@ -114,11 +114,6 @@ article{
 	color:#FFFFFF;
 	letter-spacing:1px;
 }
-.topic ul li a:last-child{
-	background:#FFFFFF;
-	color:#008080;
-	letter-spacing:0px;
-}
 
 .topic .img{
 	border-radius:3px;
