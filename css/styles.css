@@ -14,6 +14,7 @@ footer{
 	width:100%;
 	padding:0.9em;
 	background: #FFFFFF;
+	display: flex;
 }
 	
 ul,ol{
@@ -179,12 +180,10 @@ footer ul li{
 
 section{
 	width:60%;
-	float:left;
 }
 
 aside{
 	width:40%;
-	float:left;
 }
 
 header, main{
