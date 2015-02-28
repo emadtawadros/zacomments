@@ -61,9 +61,9 @@ footer{
 }
 
 article{
-	background:#FFFFFF;
-	padding:0.6em;
-	margin:0.6em 0;
+	padding:0.6em 1.2em;
+	margin:1.2em 0;
+	border-bottom:1px solid #DDDDDD;
 	border-radius:3px;
 }
 
