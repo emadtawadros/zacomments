@@ -61,7 +61,7 @@
 	    		<div data-hull-component="createtopicform"></div>
 	    	{{/if}}
 	    	
-			<h1>Trending Buzz</h1>
+			<h3>Trending Buzz</h3>
 	    
 	        {{#each trendingPosts}}
 	        	{{#if name}}
@@ -97,7 +97,7 @@
 	    		    			
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
 		
-	    	<h1>New Buzz</h1>
+	    	<h3>New Buzz</h3>
 	    
 			{{#each newPosts}}
 				{{#if name}}
@@ -164,7 +164,7 @@
 	    </script>	
 	    
 	    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
-    		<h1>Flagged Posts</h1>
+    		<h3>Flagged Posts</h3>
     		{{#each flaggedPosts}}
     		<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
     		<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -204,7 +204,7 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'}>
 	    	<main>
-		        <h1>Search Results</h1>
+		        <h3>Search Results</h3>
 		        {{#ifEqual searchResults.length 0}}
 		        	<p>No results were found</p>
 		        {{else}}
@@ -245,12 +245,12 @@
 	    </script>
 	        
 	    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
-	        <h1>Do you want to add an image to that topic?</h1>
+	        <h3>Do you want to add an image to that topic?</h1>
 	        <p>Use Image URL</p>
 	        <input type="text" id="imageURL"></input>
 	        <button type="button" id="updateImage" data-hull-action="updateimage">Update Image</button>
 	        
-	        <h1>Or</h1>
+	        <h3>Or</h3>
 	        <p>Upload an Image</p>
 	        <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
 	        <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
@@ -332,7 +332,7 @@
 		        
 	        <aside>
 		        
-	       		<h1>Posts under {{post.name}}</h1>
+	       		<h3>Posts under {{post.name}}</h3>
 
 				{{#ifEqual postsUnder.length 0}}
 		        <p>No posts currently tagged with {{post.name}}</p>
