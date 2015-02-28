@@ -216,6 +216,7 @@
 			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			                <ul>
 								<li>{{stats.comments}} comments</li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 			                </ul>
 			                <div class="img">
 								<img class="postimg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -356,6 +357,7 @@
 	                    {{/if}}
 	                {{/each}}
 	            {{/if}}
+	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 	            	</ul>
 	            	<div class="img">
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
