@@ -105,6 +105,9 @@ article{
 	margin-bottom:0.6em;
 	font-size:0.6em;
 	text-transform: uppercase;
+	color:#FFFFFF;
+	padding:0.1em 0.2em;
+	background:#008080;
 }
 .topic .img{
 	border-radius:3px;
@@ -150,7 +153,7 @@ article{
 	line-height: 1.2em;
 }
 .comment ul li{
-	font-size:0.8em;	
+	font-size:0.6em;	
 	display:inline-block;
 	margin-right:0.6em;
 	margin-bottom:0.6em;
