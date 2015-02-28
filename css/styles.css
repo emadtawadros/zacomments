@@ -8,7 +8,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 	margin:0;
 	padding:0;
-	background:#FFFFFF;
+	background:#FCFCFC;
 }
 
 ul,ol{
@@ -42,7 +42,7 @@ a:hover{
 	font-family:inherit;
 	padding:0.6em;
 	margin:0 0.6em 0 0;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	background:#FFFFFF;
 	float:left;
@@ -59,7 +59,7 @@ a:hover{
 }
 #ui-id-1 li{
 	padding:0.4em;
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid #EEEEEE;
 }
 
 .logo{
@@ -82,18 +82,20 @@ footer{
 }
 
 article{
-	margin:1.2em 0;
+	padding-bottom:2em;
+	margin-bottom:2em;
+	border-bottom: 1px solid #EEEEEE;
 }
 
 .topic,
 .create-comment,
 .comment{
-	margin:0.6em 0;
+	margin:1.2em 0;
 	position:relative;
 }
 
 .topic h1{
-	font-size:1.8em;
+	font-size:1.6em;
 	margin:0.2em 0;
 }
 .topic ul{}
@@ -109,8 +111,9 @@ article{
 }
 .topic .img img{
 	margin:0 auto;
-	max-width:300px;
+	width:80%;
 	display:block;
+	border: 1px solid #888888;
 }
 	
 .create-comment img,
@@ -128,7 +131,7 @@ article{
 	font-family:inherit;
 	padding:0.6em;
 	margin:0;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #EEEEEE;
 	border-radius:3px;
 }
 	
@@ -153,14 +156,6 @@ article{
 	margin-bottom:0.6em;
 }
 
-.more-comments{
-	width:100%;
-	height:35px;
-	border:1px solid #DDDDDD;
-	background:#FFFFFF;
-	border-radius:3px;
-}
-
 /*Tags*/
 
 .tagsinput{}
@@ -177,7 +172,7 @@ article{
 	font-family:inherit;
 	padding:1.2em;
 	margin:1.2em 0;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	background:#FFFFFF;
 	width:100%;
