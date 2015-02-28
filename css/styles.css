@@ -35,13 +35,6 @@ a:hover{
 	
 /* Header Styles */	
 
-header{
-	border-bottom:1px solid #DDDDDD;
-	background:#FFFFFF;
-	z-index: 200;
-	position:fixed;
-}
-
 .search{
 	float:left;
 }
@@ -193,7 +186,7 @@ aside{
 	width:40%;
 }
 
-main{
+header, main{
 	width:90%;
 	margin:0 auto;
 }
