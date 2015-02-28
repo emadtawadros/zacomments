@@ -216,19 +216,13 @@
 				tags_callbacks[id]['onChange'] = settings.onChange;
 			}
 	
-			var markup = '<div id="'+id+'_tagsinput" class="tagsinput"><div id="'+id+'_addTag">';
+			var markup = '<ul id="'+id+'_tagsinput" class="tagsinput"><li id="'+id+'_addTag">';
 			
 			if (settings.interactive) {
 				markup = markup + '<input id="'+id+'_tag" value="" data-default="'+settings.defaultText+'" />';
 			}
 			
-			markup = markup + '</div><div class="tags_clear"></div></div>';
-			
-			$(markup).insertAfter(this);
-
-			$(data.holder).css('width',settings.width);
-			$(data.holder).css('min-height',settings.height);
-			$(data.holder).css('height',settings.height);
+			markup = markup + '</li></ul>';
 	
 			if ($(data.real_input).val()!='') { 
 				$.fn.tagsInput.importTags($(data.real_input),$(data.real_input).val());
