@@ -58,14 +58,11 @@ a:hover{
 	display:none;
 }
 
-#ui-id-1{
-	background:#FFFFFF;
-	font-size:0.8em;
+.ui-menu-item{
 	font-family:inherit;
-}
-#ui-id-1 li{
-	padding:0.4em;
-	border-bottom: 1px solid #EEEEEE;
+	font-size:0.8em;
+	background:#FFFFFF;
+	padding:0.6em 1.2em;
 }
 
 .logo{
@@ -108,6 +105,7 @@ article{
 .topic ul{}
 .topic ul li{
 	font-size:0.6em;
+	display:inline-block;
 }
 .topic ul li a{
 	padding:0.2em 0.6em;
@@ -174,7 +172,8 @@ article{
 	line-height: 1.2em;
 }
 .comment ul li{
-	font-size:0.2em;	
+	font-size:0.2em;
+	display:inline-block;	
 }
 
 /*Tags*/
