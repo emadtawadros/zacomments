@@ -20,7 +20,6 @@ ul,ol{
 }
 
 li{
-	display:inline-block;
 	text-transform: capitalize;
 }
 
