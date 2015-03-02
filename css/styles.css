@@ -57,10 +57,14 @@ a:hover{
 	display:none;
 }
 
+#ui-id-3{
+	border: 1px solid #EEEEEE;
+	background:#FFFFFF;
+}
+
 .ui-menu-item{
 	font-family:inherit;
 	font-size:0.8em;
-	background:#FFFFFF;
 	padding:0.6em;
 	width:100%;
 }

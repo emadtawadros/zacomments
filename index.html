@@ -484,6 +484,7 @@
 	        	
 	                $( "#searchField" ).autocomplete({
 	                    source: arr,
+						appendTo: ".search",
 	                    select: function(event, ui) {
 	                        event.preventDefault();
 	                        $(this).val(ui.item.label);
