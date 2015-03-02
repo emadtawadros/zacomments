@@ -276,9 +276,9 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
-	    
-	    	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-	    	
+	    	<div class="img">
+	    		<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+	    	</div>
 	     	<div class="comment">
 	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
 	        	<div>
@@ -385,7 +385,7 @@
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
 	            <img src={{user.picture}}>
-	            <!--<input id="lp1"></input>-->
+	            <input id="lp1"></input>
 	            <div>
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<p class="hull-comments__description">
