@@ -61,7 +61,8 @@ a:hover{
 	font-family:inherit;
 	font-size:0.8em;
 	background:#FFFFFF;
-	padding:0.6em 1.2em;
+	padding:0.6em;
+	width:100%;
 }
 
 .logo{
