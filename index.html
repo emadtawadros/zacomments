@@ -44,16 +44,14 @@
 			
 		</header>
 					
-		<div data-hull-component="maincomp"></div>   
+		<main data-hull-component="maincomp"></main>   
 	    
 	    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
 	        {{#if isAdmin}}
 	            <div data-hull-component="flaggedposts"></div>
 	        {{/if}}
-	        <main>
 		        <section data-hull-component="posts"></section> 
 				<aside data-hull-component="newposts"></aside>
-	        </main>
 	    </script>
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
@@ -236,12 +234,10 @@
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
 	        {{#if loggedIn}}
 				<div data-hull-component="createtopicform"></div>
-				<main data-hull-component="user" data-hull-id="{{id}}"></main>
+				<div data-hull-component="user" data-hull-id="{{id}}"></div>
 			{{else}}
-			<main>
 	        	<h3>You need to login to view user feed</h3>
 	    		<div data-hull-component="mylogin" data-hull-provider="facebook"></div>
-			</main>
 	        {{/if}}
 	    </script>
 	    
@@ -249,7 +245,7 @@
 	        {{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 			{{/if}}
-	        <main data-hull-component="search" data-hull-search="{{id}}"></main>
+	        <div data-hull-component="search" data-hull-search="{{id}}"></div>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'}>
@@ -272,7 +268,7 @@
 	        {{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 			{{/if}}
-	        <main data-hull-component="comment" data-hull-id="{{id}}"></main>
+	        <div data-hull-component="comment" data-hull-id="{{id}}"></div>
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
