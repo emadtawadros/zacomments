@@ -180,15 +180,6 @@ article{
 	display:inline-block;	
 }
 
-.previewImagePosted{
-	margin:0;
-}
-
-.previewImagePosted img{
-	position:static;
-}
-
-
 /*Tags*/
 
 .tagsinput{}

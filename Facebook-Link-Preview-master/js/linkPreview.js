@@ -25,7 +25,7 @@
         var selector = $(this).selector;
         var myThis = $(this);
         selector = selector.substr(1);
-        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder + opts.objectName +'" class="text"/></textarea> <div style="clear: both"></div> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif" style="margin-left: 43%; margin-top: 39%;"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> <div style="clear: both"></div> </div> <div style="clear: both"></div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton" disabled/> <div style="clear: both"></div> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div> <div id ="commentExtra" > </div>');
+        $(this).append('<div id="previewLoading' + selector + '" class="previewLoading"></div> <div> <textarea type="text" id="text'+selector+'" placeholder="'+opts.placeholder + opts.objectName +'" class="text"/></textarea> </div> <div id="preview'+selector+'" class="preview"> <div id="previewImages'+selector+'" class="previewImages"> <div id="previewImage'+selector+'" class="previewImage"><img src="Facebook-Link-Preview-master/img/loader.gif"/> </div> <input type="hidden" id="photoNumber'+selector+'" class="photoNumber" value="0" /> </div> <div id="previewContent'+selector+'" class="previewContent"> <div id="closePreview'+selector+'" title="Remove" class="closePreview" ></div> <div id="previewTitle'+selector+'" class="previewTitle"></div> <div id="previewUrl'+selector+'" class="previewUrl"></div> <div id="previewDescription'+selector+'" class="previewDescription"></div> <div id="hiddenDescription'+selector+'" class="hiddenDescription"></div> <div id="previewButtons'+selector+'" class="previewButtons" > <div id="previewPreviousImg'+selector+'" class="buttonLeftDeactive" ></div> <div id="previewNextImg'+selector+'" class="buttonRightDeactive" ></div> <div id="photoNumbers'+selector+'" class="photoNumbers" ></div> <div id="chooseThumbnail'+selector+'" class="chooseThumbnail"> Choose a thumbnail </div> </div> <input type="checkbox" id="noThumb'+selector+'" class="noThumb noThumbCb" /> <div class="nT" id="nT'+selector+'" > <span id="noThumbDiv'+selector+'" class="noThumbDiv" >No thumbnail</span> </div> </div> </div> </div> <div id="postPreview'+selector+'" class="postPreview"> <button type="button" id="postPreviewButton'+selector+'" class="postPreviewButton" disabled/> </div> <div class="previewPostedList" id="previewPostedList'+selector+'"></div> <div id ="commentExtra" > </div>');
 
 		var text;
 		var urlRegex = /(https?\:\/\/|\s)[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})(\/+[a-z0-9_.\:\;-]*)*(\?[\&\%\|\+a-z0-9_=,\.\:\;-]*)?([\&\%\|\+&a-z0-9_=,\:\;\.-]*)([\!\#\/\&\%\|\+a-z0-9_=,\:\;\.-]*)}*/i;
@@ -162,7 +162,7 @@
 					});
 					
 					myThis.find('#previewUrl'+selector).html(answer.url);
-					myThis.find('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='width: 355px; display: none;' class='inputPreview' >" + answer.description + "</textarea>");
+					myThis.find('#previewDescription'+selector).html("<span id='previewSpanDescription"+selector+"' class='previewSpanDescription' >" + answer.description + "</span><textarea id='previewInputDescription"+selector+"' class='previewInputDescription' style='display: none;' class='inputPreview' >" + answer.description + "</textarea>");
 					title = "<a href='" + answer.pageUrl + "' target='_blank'>" + myThis.find('#previewTitle'+selector).html() + "</a>";
 					url = "<a href='http://" + answer.canonicalUrl + "' target='_blank'>" + answer.canonicalUrl + "</a>";
 					fancyUrl = answer.canonicalUrl;
@@ -183,12 +183,12 @@
 					var appendImage = "";
 					for ( i = 0; i < images.length; i++) {
 						if (i === 0)
-							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto' ></img>";
+							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "></img>";
 						else
-							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='width: 130px; height: auto; display: none' ></img>";
+							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='display: none' ></img>";
 					}
 					
-					myThis.find('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' style='width: 130px; color: transparent; display:none;'>...</div>");
+					myThis.find('#previewImage'+selector).html("<a href='" + answer.pageUrl + "' target='_blank'>" + appendImage + "</a><div id='whiteImage' display:none;'>...</div>");
 					myThis.find('#photoNumbers'+selector).html("1 of " + images.length);
 					if (images.length > 1) {
 						myThis.find('#previewNextImg'+selector).removeClass('buttonRightDeactive');
@@ -423,15 +423,15 @@
 							pTP = "pTP" + imageId;
 							pDP = "pDP" + imageId;
 							imageId = "img" + imageId;
-							image = "<img id='" + imageId + "' src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' class='imgIframe' style='width: 130px; height: auto; float: left;' ></img>";
+							image = "<img id='" + imageId + "' src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' class='imgIframe' ></img>";
 							videoPlay = '<span class="videoPostPlay"></span>';
 							leftSideContent = image + videoPlay;
 						} else {
-							image = "<img src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "' style='width: 130px; height: auto; float: left;' ></img>";
+							image = "<img src='" + myThis.find('#imagePreview'+ selector + '_' + photoNumber).attr("src") + "</img>";
 							leftSideContent = '<a href="' + hrefUrl + '" target="_blank">' + image + '</a>';
 						}
 					}
-					content = '<div class="previewPosted">' + '<div class="previewTextPosted">' + urls.urls + '</div>' + videoIframe + '<div class="previewImagesPosted">' + '<div class="previewImagePosted">' + leftSideContent + '</div>' + '</div>' + '<div class="previewContentPosted">' + '<div class="previewTitlePosted" id="' + pTP + '" style="width: ' + contentWidth + 'px" ><a href="' + hrefUrl + '" target="_blank">' + title + '</a></div>' + '<div class="previewUrlPosted">' + fancyUrl + '</div>' + '<div class="previewDescriptionPosted" id="' + pDP + '" style="width: ' + contentWidth + 'px" >' + urls.description + '</div>' + '</div>' + '<div style="clear: both"></div>' + '</div>';
+					content = '<div class="previewPosted">' + '<div class="previewTextPosted">' + urls.urls + '</div>' + videoIframe + '<div class="previewImagesPosted">' + '<div class="previewImagePosted">' + leftSideContent + '</div>' + '</div>' + '<div class="previewContentPosted">' + '<div class="previewTitlePosted" id="' + pTP + '">' + '<a href="' + hrefUrl + '" target="_blank">' + title + '</a></div>' + '<div class="previewUrlPosted">' + fancyUrl + '</div>' + '<div class="previewDescriptionPosted" id="' + pDP + '">' + urls.description + '</div>' + '</div>' + '</div>';
 
                     /** Database insert */
                  /*   $.post('Facebook-Link-Preview-master/php/save.php', {
@@ -466,7 +466,7 @@
                     iframeId = iframeId[1].split("\"");
                     iframeId = iframeId[0];
                     
-                    var richComment = '<div class="previewPosted" style="">'+itemIframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+itemImage+'" class="imgIframe" style="width: 130px; height: auto; float: left;"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" style="width: 355px">'+itemTitle+'</div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'" style="width: 355px"> <span id="previewSpanDescription">'+itemDescription+'</textarea></div></div><div style="clear: both"></div></div>';
+                    var richComment = '<div class="previewPosted">'+itemIframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+itemImage+'" class="imgIframe" ><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" >'+itemTitle+'</div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'"> <span id="previewSpanDescription">'+itemDescription+'</textarea></div></div></div>';
                     if(!itemImage) {
                     	richComment = null;
                     	
@@ -533,7 +533,7 @@
                 }
                 else
                 {
-                	var richComment = '<div class="previewPosted" style=""><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+itemUrl+'" target="_blank"><img src="'+itemImage+'" style="width: 130px; height: auto; float: left;"></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+itemUrl+'" target="_blank"><span id="previewSpanTitle">'+itemTitle+'</span></a></div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+itemDescription+'</span></div><div style="clear: both"></div></div>';
+                	var richComment = '<div class="previewPosted"><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+itemUrl+'" target="_blank"><img src="'+itemImage+'"></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+itemUrl+'" target="_blank"><span id="previewSpanTitle">'+itemTitle+'</span></a></div><div class="previewUrlPosted">'+itemCanonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+itemDescription+'</span></div></div>';
                 	if(!itemImage) {
                 		richComment = null;
                 		
