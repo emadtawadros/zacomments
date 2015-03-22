@@ -464,7 +464,8 @@
 	    </script>
 	    
 	    <script type='text/handlebars' data-hull-template='test/form'>
-	      {{#if loggedIn}}
+        <div class="well">
+      {{#if loggedIn}}
         <form>
           <div class='media'>
             <div class="pull-left">
@@ -481,11 +482,13 @@
             </div>
           </div>
         </form>
-	      {{/if}}
+      {{/if}}
+    </div>
 	    </script>
 	    
 	    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
-		  {{#if loggedIn}}
+	<div class="well">
+	  {{#if loggedIn}}
 	    <form>
 	      <div class='media'>
 	        <div class="pull-left">
@@ -496,7 +499,8 @@
 	        </div>
 	      </div>
 	    </form>
-		  {{/if}}
+	  {{/if}}
+	</div>
 	    </script>
 	    
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
