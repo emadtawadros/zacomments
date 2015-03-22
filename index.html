@@ -285,7 +285,7 @@
 	    	</div>
 	     	<div class="comment">
 	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
-	        	<div>
+	        	<div class="commentpost">
 					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
 					<div>
 					<p>{{comment.description}}<p>
@@ -424,7 +424,7 @@
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
 	            <img src={{user.picture}}>
-	            <div>
+	            <div class="commentpost">
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<div class="hull-comments__description">
 				  	<p>{{description}}<p>
