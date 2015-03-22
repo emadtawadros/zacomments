@@ -19,7 +19,7 @@
                     iframeId = iframeId[1].split("\"");
                     iframeId = iframeId[0];
 
-                    selector.append('<div class="previewPosted" style=""><div class="previewTextPosted"> '+item.text+' </div> '+item.iframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+item.image+'" class="imgIframe" style="width: 130px; height: auto; float: left;"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'" style="width: 355px">'+item.title+'</div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'" style="width: 355px"> <span id="previewSpanDescription">'+item.description+'</textarea></div></div><div style="clear: both"></div></div>');
+                    selector.append('<div class="previewPosted"><div class="previewTextPosted"> '+item.text+' </div> '+item.iframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+item.image+'" class="imgIframe"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'">'+item.title+'</div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'> <span id="previewSpanDescription">'+item.description+'</textarea></div></div></div>');
 
                     $(".imgIframe").click(function() {
                         var oldId = $(this).attr("id");
@@ -44,7 +44,7 @@
 
                 }
                 else
-                    selector.append('<div class="previewPosted" style=""><div class="previewTextPosted"> '+item.text+'  </div><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+item.url+'" target="_blank"><img src="'+item.image+'" style="width: 130px; height: auto; float: left;"></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+item.url+'" target="_blank"><span id="previewSpanTitle">'+item.title+'</span></a></div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+item.description+'</span></div><div style="clear: both"></div></div>');
+                    selector.append('<div class="previewPosted"><div class="previewTextPosted"> '+item.text+'  </div><div class="previewImagesPosted"><div class="previewImagePosted"><a href="'+item.url+'" target="_blank"><img src="'+item.image+'></a></div></div><div class="previewContentPosted"><div class="previewTitlePosted" ><a href="'+item.url+'" target="_blank"><span id="previewSpanTitle">'+item.title+'</span></a></div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted"  > <span id="previewSpanDescription">'+item.description+'</span></div></div>');
          }
         }, 'json');
 
