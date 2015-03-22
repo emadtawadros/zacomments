@@ -287,10 +287,13 @@
 	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
 	        	<div>
 					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
-					<p>{{comment.description}}</p>
+					<div>
+					<p>{{comment.description}}<p>
 					{{#if extra.richComment}}
 						{{{extra.richComment}}}
 					{{/if}}
+					</div>
+
 					<ul>
 				 		<li>{{fromNow comment.updated_at}}</li>
 				 		<li>{{post.stats.comments}} comments</li>
@@ -423,12 +426,13 @@
 	            <img src={{user.picture}}>
 	            <div>
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
-				  	<p class="hull-comments__description">
-				  	{{description}}
-				  	</p>
-				  	{{#if extra.richComment}}
+				  	<div class="hull-comments__description">
+				  	<p>{{description}}<p>
+					{{#if extra.richComment}}
 				  		{{{extra.richComment}}}
 				  	{{/if}}
+				  	</div>
+
 	              	<ul class="hull-comments__actions">
 					  	<li class="muted">{{fromNow updated_at}}</li>
 	                  	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
@@ -474,7 +478,7 @@
               <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
             </div>
             <div class="media-body">
-              <input class="linkPreview" type="text" id="lp1"></input>
+              <div class="linkPreview" type="text" id="lp1"></div>
               <div>
                 <div class='pull-right'>
                   <small>
@@ -497,7 +501,7 @@
 	          <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
 	        </div>
 	        <div class="media-body">
-	              <input class="linkPreview" type="text" id="lp1"></input>
+	              <div class="linkPreview" type="text" id="lp1"></div>
 	        </div>
 	      </div>
 	    </form>
