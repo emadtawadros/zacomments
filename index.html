@@ -288,10 +288,10 @@
 	        	<div class="commentpost">
 					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
 					<div>
-					<p>{{comment.description}}<p>
-					{{#if extra.richComment}}
-						{{{extra.richComment}}}
-					{{/if}}
+						<p>{{comment.description}}<p>
+						{{#if extra.richComment}}
+							{{{extra.richComment}}}
+						{{/if}}
 					</div>
 
 					<ul>
@@ -427,10 +427,10 @@
 	            <div class="commentpost">
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<div class="hull-comments__description">
-				  	<p>{{description}}<p>
-					{{#if extra.richComment}}
-				  		{{{extra.richComment}}}
-				  	{{/if}}
+					  	<p>{{description}}<p>
+						{{#if extra.richComment}}
+					  		{{{extra.richComment}}}
+					  	{{/if}}
 				  	</div>
 
 	              	<ul class="hull-comments__actions">
@@ -470,43 +470,43 @@
 	    </script>
 	    
 	    <script type='text/handlebars' data-hull-template='test/form'>
-        <div class="well">
-      {{#if loggedIn}}
-        <form>
-          <div class='media'>
-            <div class="pull-left">
-              <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
-            </div>
-            <div class="media-body">
-              <div class="linkPreview" type="text" id="lp1"></div>
-              <div>
-                <div class='pull-right'>
-                  <small>
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      {{/if}}
-    </div>
+	        <div class="well">
+		      {{#if loggedIn}}
+		        <form>
+		          <div class='media'>
+		            <div class="pull-left">
+		              <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}" width="42" height="42">
+		            </div>
+		            <div class="media-body">
+		              <div class="linkPreview" id="lp1"></div>
+			              <div>
+			                <div class='pull-right'>
+			                  <small>
+			                  </small>
+			                </div>
+			              </div>
+		              </div>
+		          </div>
+		        </form>
+		      {{/if}}
+	    	</div>
 	    </script>
 	    
 	    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
-	<div class="well">
-	  {{#if loggedIn}}
-	    <form>
-	      <div class='media'>
-	        <div class="pull-left">
-	          <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
-	        </div>
-	        <div class="media-body">
-	              <div class="linkPreview" type="text" id="lp1"></div>
-	        </div>
-	      </div>
-	    </form>
-	  {{/if}}
-	</div>
+			<div class="well">
+			  {{#if loggedIn}}
+			    <form>
+			      <div class='media'>
+			        <div class="pull-left">
+			          <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
+			        </div>
+			        <div class="media-body">
+			              <div class="linkPreview" id="lp1"></div>
+			        </div>
+			      </div>
+			    </form>
+			  {{/if}}
+			</div>
 	    </script>
 	    
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
