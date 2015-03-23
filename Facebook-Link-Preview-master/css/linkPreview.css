@@ -177,6 +177,7 @@
 }
 
 .previewPosted{
+	margin: 0.6em 0;
 }
 
 .previewPosted a{
@@ -200,8 +201,10 @@
 }
 
 .previewContentPosted{
-	font-size: 11px;
+	font-size: inherit;
 	float: left;
+	margin-left: 0.8em;
+	display:none;
 }
 
 .previewTitlePosted, .previewTitlePosted a{
@@ -246,6 +249,6 @@
 	height: 26px;
 	width: 35px;
 	position: absolute;
-	left: 48%;
-	bottom: 50%;
+	left: 48px;
+	top: 34px;
 }
