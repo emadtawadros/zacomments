@@ -281,7 +281,7 @@
 	    		<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    	</div>
 	     	<div class="comment">
-	        	<img src="{{comment.user.picture}}" class="userImage" alt="{{comment.user.name}}">
+	        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 	        	<div class="userComment">
 					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
 					<div>
@@ -420,7 +420,7 @@
 	    <div class="media-list hull-comments__list">
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
-	            <img src={{user.picture}} class="userImage">
+	            <img src={{user.picture}} class="userImg">
 	            <div class="userComment">
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<div class="hull-comments__description">

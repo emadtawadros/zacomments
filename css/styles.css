@@ -95,7 +95,7 @@ article{
 }
 
 .topic,
-createComment,
+.createComment,
 .comment{
 	margin:1.2em 0;
 	position:relative;
@@ -152,7 +152,7 @@ createComment,
 	top:0;
 	left:0;
 }
-createComment input{
+.createComment input{
 	font-size:inherit;
 	font-family:inherit;
 	padding:0.6em;
