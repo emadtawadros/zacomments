@@ -69,23 +69,37 @@ a:hover{
 	padding:0.6em;
 }
 
-.media,
-.pull-left,
-.media-body{
+header .pull-left,
+header .media-body{
 	font-size:inherit;
 	margin-right:0.6em;
 	float:left;
 }
 
-.pull-right{
-	font-size:inherit;
-	padding:8px;
-	background-color:#008080;
-	color:#FFFFFF;
+header .media-body{
+	padding: 8px 0;
+}
+
+header .pull-right{
+	font-size:0.8em;
 	float:right;
 }
 
-.media img{
+header .pull-right a{
+	display:block;
+	background-color: #008080;
+	border-radius: 3px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	padding: 0.8em;
+}
+
+header .pull-right a:hover{
+	background-color: #004040;
+	color: #FFFFFF;
+}
+
+header .media img{
 	width:35px;
 	height:35px;
 	border-radius:3px;
