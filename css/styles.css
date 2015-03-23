@@ -69,6 +69,28 @@ a:hover{
 	padding:0.6em;
 }
 
+.media,
+.pull-left,
+.media-body{
+	font-size:inherit;
+	margin-right:0.6em;
+	float:left;
+}
+
+.pull-right{
+	font-size:inherit;
+	padding:8px;
+	background-color:#008080;
+	color:#FFFFFF;
+	float:right;
+}
+
+.media img{
+	width:35px;
+	height:35px;
+	border-radius:3px;
+}
+
 .logo{
 	float:left;
 	height:34px;
