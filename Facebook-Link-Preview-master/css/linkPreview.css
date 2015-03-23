@@ -1,7 +1,6 @@
 .preview{
 	padding: 5px;
 	color: black;
-	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 	font-size: 12px;
 	padding-bottom: 8px;
 	padding-top: 8px;
@@ -137,11 +136,10 @@
 	padding: 3px 1px;
 }
 .text{
-	height: 60px;
-	border: 1px solid #b3b3b3;
-	border-bottom: 1px solid #e6e6e6;
+	height:35px;
+	width:100%;
+	border: none;
 	resize: none;
-	font-family: Arial;
 	padding: 5px;
 	color: grey;
 }
@@ -165,14 +163,7 @@
 	background-position: left -48px;
 }
 .postPreviewButton{
-	padding: 4px 16px;
-	background-image:  url('../img/backgrounds.png');
-	background-repeat: no-repeat;
-	background-position: 0 -49px;
-	background-color: #5B74A8;
-	border-color: #29447E #29447E #1A356E;
-	border: 1px solid #1a356e;
-	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	padding: 5px;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 11px;
@@ -183,7 +174,6 @@
 	vertical-align: top;
 	white-space: nowrap;
 	color: white;
-	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 	float: right;
 }
 .postPreviewButton:active{
@@ -203,7 +193,6 @@
 	padding: 5px;
 	color: black;
 	margin-bottom: 20px;
-	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 	font-size: 12px;
 	border: 1px dashed #b3b3b3;
 	float: left;

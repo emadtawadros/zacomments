@@ -84,7 +84,7 @@
 			                {{/if}}
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 			                </ul>	
-			                <div class="img">
+			                <div class="topicImg">
 								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
 			                </div>
 						</div>
@@ -121,7 +121,7 @@
 							{{/if}}
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 							</ul>
-							<div class="img">
+							<div class="topicImg">
 								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 							</div> 
 						</div>
@@ -226,9 +226,9 @@
 								<li>{{stats.comments}} comments</li>
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 			                </ul>
-			                <div class="img">
+			                <div class="topicImg">
 								<img class="postimg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-							<div class="img">
+							<div>
 			            </div>
 			            {{/if}}
 			        {{/each}}
@@ -277,12 +277,12 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
-	    	<div class="img">
+	    	<div class="topicImg">
 	    		<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    	</div>
 	     	<div class="comment">
-	        	<img src="{{comment.user.picture}}" alt="{{comment.user.name}}">
-	        	<div class="commentpost">
+	        	<img src="{{comment.user.picture}}" class="userImage" alt="{{comment.user.name}}">
+	        	<div class="userComment">
 					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
 					<div>
 						<p>{{comment.description}}<p>
@@ -326,7 +326,7 @@
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
 				        </ul>
-				        <div class="img">
+				        <div class="topicImg">
 				        	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				        </div> 
 				    </div>
@@ -371,7 +371,7 @@
 	            {{/if}}
 	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 	            	</ul>
-	            	<div class="img">
+	            	<div class="topicImg">
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 		        	</div>
 		    	</div>
@@ -400,7 +400,7 @@
 	            {{/if}}
 	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
 	            	</ul>
-	            	<div class="img">
+	            	<div class="topicImg">
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 		        	</div>
 		    	</div>
@@ -420,8 +420,8 @@
 	    <div class="media-list hull-comments__list">
 	        {{#comments}}
 			<div class="comment" data-hull-comment-id="{{id}}">
-	            <img src={{user.picture}}>
-	            <div class="commentpost">
+	            <img src={{user.picture}} class="userImage">
+	            <div class="userComment">
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<div class="hull-comments__description">
 					  	<p>{{description}}<p>
