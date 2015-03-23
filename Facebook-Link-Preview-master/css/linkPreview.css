@@ -190,7 +190,7 @@
 	cursor: pointer;
 	position: relative;
 }
-.previewImagePosted img{
+.imgIframe{
 	width:100%;
 	float:none;
 }
