@@ -106,6 +106,21 @@ header .media img{
 	border-radius:3px;
 }
 
+.hull-identity__signin button{
+	display:block;
+	background-color: #008080;
+	border-radius: 3px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	padding: 0.6em;
+	margin: 0.3em 0;
+}
+
+.hull-identity__signin button:hover{
+	background-color: #004040;
+	color: #FFFFFF;
+}	
+	
 .logo{
 	float:left;
 	height:34px;
