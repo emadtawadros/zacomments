@@ -431,12 +431,12 @@
 				  	</div>
 
 	              	<ul class="hull-comments__actions">
+		              	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
 					  	<li class="muted">{{fromNow updated_at}}</li>
-	                  	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
-	              		{{#if isDeletable}}
+	                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+					  	{{#if isDeletable}}
 	              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
 	              		{{/if}}
-	                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
                 	</ul> 
 				</div>
 			</div>
@@ -458,8 +458,8 @@
 	    <script type='text/handlebars' data-hull-template='ratings/vote/vote'>
 	        {{#if loggedIn}}
 	        <ul class='btn-group'>
-	          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>&nbsp;{{votes.up}}</button></li>
-	          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>&nbsp;{{votes.down}}</button></li>
+	          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>{{votes.up}}</button></li>
+	          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>{{votes.down}}</button></li>
 	        </ul>
 			{{else}}
 			<div data-hull-component="login_button@hull"></div>
