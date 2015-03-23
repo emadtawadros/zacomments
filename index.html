@@ -194,19 +194,17 @@
 	    	<div class="user">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
+		        <div class="comment">
 		        {{#each feed}}
-	    			<div class="comment">
-		    			<ul>
 		            {{#ifEqual object.type "comment"}}
 		                {{#if target.name}}
-		                <li><a href="#/comment/{{object.id}}">Commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></li>
+		                <p><a href="#/comment/{{object.id}}">Commented</a> on <a href="#/post/{{target.id}}">{{target.name}}</a></p>
 		                {{/if}}
 		            {{else}}
-		                <li>Reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</li>
+		                <p>Reviewed a <a href="#/comment/{{object.reviewable_id}}">comment</a> on a post</p>
 		            {{/ifEqual}}
-		            	<ul>
-	    			</div>
 		        {{/each}}
+	    		</div>
 	    	</div>
 	    </script>
 	    
