@@ -1,19 +1,12 @@
 .preview{
-	padding: 5px;
-	color: black;
-	font-size: 12px;
-	padding-bottom: 8px;
-	padding-top: 8px;
 	display: none;
-	border: 1px solid #b3b3b3;
-	border-top: 0px;
-	border-bottom: 1px solid #e6e6e6;
-	float: left;
+	margin:0 45px;
 }
 .previewImages, .previewImage{
-	margin-right: 12px;
-	float: left;
-	color: transparent;
+}
+
+.previewImage img{
+	width:100%;
 }
 .previewButtons{
 	display: none;
@@ -131,13 +124,13 @@
 	padding: 3px 1px;
 }
 .text{
-	height:25px;
+	height:35px;
 	width:80%;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	margin:0 45px;
 	resize: none;
-	padding: 5px;
+	padding: 8px;
 	color: grey;
 }
 .closePreview{
@@ -182,13 +175,8 @@
 }
 
 .previewPosted{
-	padding: 5px;
-	color: black;
-	margin-bottom: 20px;
-	font-size: 12px;
-	border: 1px dashed #b3b3b3;
-	float: left;
 }
+
 .previewPosted a{
 	color: #3B5998;
 }
@@ -197,10 +185,13 @@
 	color: #3B5998;
 }
 .previewImagesPosted{
-	margin-right: 12px;
-	float: left;
 	cursor: pointer;
+	position: relative;
 }
+.previewImagesPosted img{
+	width:100%;
+}
+
 .previewContentPosted{
 	font-size: 11px;
 	float: left;
@@ -245,12 +236,9 @@
 }
 .videoPostPlay{
 	background-image: url('../img/play.png');
-	bottom: 5px;
 	height: 26px;
-	left: 5px;
 	width: 35px;
-	float: left;
-	z-index: 1;
-	margin-left: 5px;
-	margin-top: -31px;
+	position: absolute;
+	left: 48%;
+	bottom: 50%;
 }

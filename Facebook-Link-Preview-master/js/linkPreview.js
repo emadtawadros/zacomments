@@ -9,7 +9,7 @@
 	$.fn.linkPreview = function(options) {
 
         var defaults = {
-            placeholder: "Say something about ",
+            placeholder: "Comment on ",
             imageQuantity : -1,
             objectID: -1,
             objectName: "",
