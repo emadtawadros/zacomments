@@ -102,6 +102,7 @@
 }
 .linkPreview, #retrieveFromDatabase{
 	margin: auto;
+	position:relative;
 }
 .noThumbDiv{
 	color: #333;
@@ -153,18 +154,19 @@
 	background-position: left -48px;
 }
 .postPreviewButton{
-	padding: 5px;
 	cursor: pointer;
-	display: inline-block;
-	font-size: 11px;
-	font-weight: bold;
-	line-height: 13px;
+	font-size: inherit;
 	text-align: center;
 	text-decoration: none;
 	vertical-align: top;
 	white-space: nowrap;
-	color: white;
-	float: right;
+	position:absolute;
+	top:0;
+	right:0;
+	border: 1px solid #EEEEEE;
+	border-radius:3px;
+	background-color:#008080;
+	display:none;
 }
 .postPreviewButton:active{
 	background-image: none;

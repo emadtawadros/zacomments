@@ -99,6 +99,7 @@ article{
 .comment{
 	margin:1.2em 0;
 	position:relative;
+	clear:both;
 }
 
 .topic h1{
