@@ -166,7 +166,6 @@
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	background-color:#008080;
-	display:none;
 }
 .postPreviewButton:active{
 	background-image: none;
@@ -190,8 +189,9 @@
 	cursor: pointer;
 	position: relative;
 }
-.previewImagesPosted img{
+.previewImagePosted img{
 	width:100%;
+	float:none;
 }
 
 .previewContentPosted{
