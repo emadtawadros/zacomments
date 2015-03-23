@@ -11,8 +11,6 @@
 		<link rel="stylesheet" class="cssStatics" type="text/css" href="Facebook-Link-Preview-master/css/stylesheet.css" />
 		<link rel="stylesheet" class="cssButtons" type="text/css" href="Facebook-Link-Preview-master/css/linkPreview.css" />
 	
-	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
 		<meta property="og:site_name" content="Zacomments" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://zacomments.com" />
@@ -82,7 +80,7 @@
 			                        {{/if}}
 			                    {{/each}}
 			                {{/if}}
-								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
 			                <div class="topicImg">
 								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
@@ -119,7 +117,7 @@
 									{{/if}}
 								{{/each}}
 							{{/if}}
-								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 							</ul>
 							<div class="topicImg">
 								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -224,7 +222,7 @@
 			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			                <ul>
 								<li>{{stats.comments}} comments</li>
-								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
 			                <div class="topicImg">
 								<img class="postimg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -324,7 +322,7 @@
 				        
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
-							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Inappropriate?</a></li>
+							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
 				        <div class="topicImg">
 				        	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
@@ -369,7 +367,7 @@
 	                    {{/if}}
 	                {{/each}}
 	            {{/if}}
-	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
 	            	<div class="topicImg">
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -398,7 +396,7 @@
 	                    {{/if}}
 	                {{/each}}
 	            {{/if}}
-	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Inappropriate?</a></li>
+	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
 	            	<div class="topicImg">
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>

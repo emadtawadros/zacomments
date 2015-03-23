@@ -34,12 +34,12 @@
                         $(currentId).css({
                             'display' : 'block'
                         });
-                        $('#' + pTP).css({
+                        /**$('#' + pTP).css({
                             'width' : '495px'
                         });
                         $('#' + pDP).css({
                             'width' : '495px'
-                        });
+                        });**/
                     });
 
                 }

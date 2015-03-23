@@ -600,12 +600,12 @@
 							myThis.find(currentId).css({
 								'display' : 'block'
 							});
-							myThis.find('#' + pTP).css({
+							/**myThis.find('#' + pTP).css({
 								'width' : '495px'
 							});
 							myThis.find('#' + pDP).css({
 								'width' : '495px'
-							});
+							});**/
 						});
 					});
 
