@@ -91,7 +91,8 @@ header .pull-right a{
 	border-radius: 3px;
 	color: #FFFFFF;
 	letter-spacing: 1px;
-	padding: 0.8em;
+	padding: 0.6em;
+	margin: 0.3em 0;
 }
 
 header .pull-right a:hover{
@@ -214,10 +215,26 @@ article{
 	font-size:0.2em;
 	display:inline-block;	
 }
+.comment button{
+	padding: 0.2em 0.6em;
+	background-color: #008080;
+	border-radius: 3px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	border: none;
+	margin-left: 0.2em;
+}
+
+.comment button:hover{
+	background-color: #004040;
+	color: #FFFFFF;
+}
 
 /*Tags*/
 
-.tagsinput{}
+.tagsinput{
+	margin: 1.2em 0;
+}
 .tag{
 	padding:0.2em 0.6em;
 	background-color:#008080;
