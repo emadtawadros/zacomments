@@ -8,7 +8,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 	margin:0;
 	padding:0;
-	background:#FFFFFF;
+	background-color:#FFFFFF;
 	color:#444444;
 }
 
@@ -49,7 +49,7 @@ a:hover{
 	margin:0 0.6em 0 0;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
-	background:#FFFFFF;
+	background-color:#FFFFFF;
 	float:left;
 }
 
@@ -59,7 +59,7 @@ a:hover{
 
 #ui-id-1{
 	border: 1px solid #EEEEEE;
-	background:#FFFFFF;
+	background-color:#FFFFFF;
 	width:100%;
 }
 
@@ -95,7 +95,7 @@ article{
 }
 
 .topic,
-.create-comment,
+createComment,
 .comment{
 	margin:1.2em 0;
 	position:relative;
@@ -113,17 +113,17 @@ article{
 }
 .topic ul li a{
 	padding:0.2em 0.6em;
-	background:#008080;
+	background-color:#008080;
 	border-radius: 3px;
 	color:#FFFFFF;
 	letter-spacing:1px;
 }
 .topic ul li a:hover{
-	background:#004040;
+	background-color:#004040;
 	color:#FFFFFF;
 }
 .topic ul li:last-child a{
-	background:#FFFFFF;
+	background-color:#FFFFFF;
 	color:#008080;
 	letter-spacing:0px;
 }
@@ -134,7 +134,7 @@ article{
 .topic .topicImg{
 	border-radius:3px;
 	margin-top:0.6em;
-	background:#FCFCFC;
+	background-color:#FCFCFC;
 }
 .topic .topicImg img{
 	margin:0 auto;
@@ -142,8 +142,8 @@ article{
 	display:block;
 }
 	
-.create-comment img,
-.comment img{
+.createComment img,
+.userImg{
 	width:35px;
 	height:35px;
 	margin-right:0.6em;
@@ -152,7 +152,7 @@ article{
 	top:0;
 	left:0;
 }
-.create-comment input{
+createComment input{
 	font-size:inherit;
 	font-family:inherit;
 	padding:0.6em;
@@ -185,7 +185,7 @@ article{
 .tagsinput{}
 .tag{
 	padding:0.2em 0.6em;
-	background:#008080;
+	background-color:#008080;
 	border-radius: 3px;
 	color:#FFFFFF;
 	letter-spacing:1px;
@@ -208,7 +208,7 @@ article{
 	margin:1.2em 0;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
-	background:#FFFFFF;
+	background-color:#FFFFFF;
 	width:100%;
 }
 
