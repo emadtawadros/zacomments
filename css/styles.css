@@ -220,10 +220,11 @@ article{
 .comment span{
 	font-size:0.8em;	
 	color:#AAAAAA;
+	display:block;
 }
 .comment p{
 	font-size:0.8em;
-	margin:0.2em 0;
+	margin-top:0.3em;
 	line-height: 1.2em;
 }
 .comment ul li{
@@ -231,18 +232,15 @@ article{
 	display:inline-block;	
 }
 .comment button{
-	padding: 0.2em 0.6em;
-	background-color: #008080;
+	font-size:inherit;
+	background-color: #FFFFFF;
 	border-radius: 3px;
-	color: #FFFFFF;
-	letter-spacing: 1px;
 	border: none;
 	margin-left: 0.2em;
 }
 
 .comment button:hover{
-	background-color: #004040;
-	color: #FFFFFF;
+	background-color: #008080;
 }
 
 /*Tags*/

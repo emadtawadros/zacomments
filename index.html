@@ -225,7 +225,7 @@
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
 			                <div class="topicImg">
-								<img class="postimg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 							<div>
 			            </div>
 			            {{/if}}
@@ -319,7 +319,6 @@
 	        	<article>
 			        <div class="topic">
 				        <h1 id="postTitle">{{post.name}}</h1>
-				        
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
@@ -422,10 +421,11 @@
 	            <div class="userComment">
 	            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
 				  	<div class="hull-comments__description">
-					  	<p>{{description}}<p>
+					  	<p>{{description}}</p>
 						{{#if extra.richComment}}
 					  		{{{extra.richComment}}}
 					  	{{/if}}
+					  	
 				  	</div>
 
 	              	<ul class="hull-comments__actions">
