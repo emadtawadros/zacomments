@@ -38,11 +38,11 @@
 		
 		<header>
 			
-			<a href="#/maincomp"><img class="logo" src="css/logo.svg"/></a>
+			<a href="#/maincomp"><img class="logo" src="css/logo.svg" alt=""/></a>
 			
 			<form class="search">			
-				<input  type="text" id="searchField" id="tags"></input>
-		    	<button type="button" id="search">Search</button>
+				<input type="text" id="searchField,tags">
+				<button type="button" id="search">Search</button>
 	    	</form>
 	    	
 	    	<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
@@ -185,14 +185,14 @@
 			{{/each}}
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/post'}>
+	    <script type='text/x-handlebars' data-hull-template='maincomp/post'>
 	    	{{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 	        {{/if}}
 	        <div data-hull-component="post" data-hull-id="{{id}}"></div>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='user/user'}>
+	    <script type='text/x-handlebars' data-hull-template='user/user'>
 	    	<div class="user">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
@@ -212,7 +212,7 @@
 	    	</div>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='search/search'}>
+	    <script type='text/x-handlebars' data-hull-template='search/search'>
 	    	<section>
 		        <h3>Search Results</h3>
 		        {{#ifEqual searchResults.length 0}}
@@ -236,7 +236,7 @@
 	    	</section>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/user'}>
+	    <script type='text/x-handlebars' data-hull-template='maincomp/user'>
 	        {{#if loggedIn}}
 				<div data-hull-component="createtopicform"></div>
 				<div data-hull-component="user" data-hull-id="{{id}}"></div>
@@ -246,14 +246,14 @@
 	        {{/if}}
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/search'}>
+	    <script type='text/x-handlebars' data-hull-template='maincomp/search'>
 	        {{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 			{{/if}}
 	        <div data-hull-component="search" data-hull-search="{{id}}"></div>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'}>
+	    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'>
 	        <div data-hull-component="createtopic" data-hull-id="{{id}}"></div>
 	    </script>
 	        
@@ -269,14 +269,14 @@
 	        <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/comment'}>
+	    <script type='text/x-handlebars' data-hull-template='maincomp/comment'>
 	        {{#if loggedIn}}
 			<div data-hull-component="createtopicform"></div>
 			{{/if}}
 	        <div data-hull-component="comment" data-hull-id="{{id}}"></div>
 	    </script>
 	       
-	    <script type='text/x-handlebars' data-hull-template='comment/comment'}>
+	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
 	    	<div class="topicImg">
 	    		<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    	</div>
@@ -310,7 +310,7 @@
 	    	</form>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='post/post'}>
+	    <script type='text/x-handlebars' data-hull-template='post/post'>
 	        {{#if isAdmin}}
 	        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
 	        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
