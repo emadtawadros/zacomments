@@ -92,10 +92,10 @@
 						</section>
 		        	
 						<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 		        		
 	        		</article>
-	        		
-	        		<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+	        		        		
 	            {{/if}}
 			{{/each}}
 			
@@ -138,10 +138,10 @@
 					</section>
 
 					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					
 				</article>
-				
-				<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
-						
+										
 				{{/if}}
 			{{/each}}
 			
@@ -367,12 +367,12 @@
 			        <header>
 						<h3>Top Comments</h3>
 			        </header>
-					<div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></div>
+					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
 			        
 			        <header>
 				    	<h3>New Comments</h3>
 			        </header>
-					<div data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></div>
+					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
 					
 				</article>	    
 				    
@@ -407,10 +407,11 @@
 			    	</section>
 			    
 					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 				</article>
 				
-		        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+		       
 		            
 		        {{/each}}
 		        
@@ -443,10 +444,11 @@
 			    	</section>
 		    	
 					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 		        </article>
 		        
-		        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
+		        
 		    	
 		    	{{/each}}
 			    
