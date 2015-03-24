@@ -183,13 +183,14 @@ article{
 
 .comment span{
 	font-size:0.8em;
+	background-color:#FFFFFF;
 	color:#AAAAAA;
 	display:block;
 }
 .comment p{
 	font-size:0.8em;
 	margin:0.3em 0 0 0;
-	line-height: 1.2em;
+	line-height: 1.4em;
 }
 .comment ul li{
 	font-size:0.2em;
@@ -212,23 +213,29 @@ article{
  	margin: 0.4em 0.8em 0.4em 0;
  	border-radius: 100%;
 }
+.userComment{
+	margin-left:45px;
+	clear:both;
+}
+.tagFeed ul li a{
+	padding: 0.4em;
+	background-color: #008080;
+	color: #FFFFFF;
+	border-radius: 2px;
+}
+
+/*User page*/
 
 .userId h1{
 	float:left;
-}
-
-.userFeed{
-	clear:both;
-}
-	
+}	
 .userImg{
 	width:34px;
 	height:34px;
 	border-radius:2px;
 	position:absolute;
-}	
-.userComment{
-	margin-left:45px;
+}
+.userFeed{
 	clear:both;
 }
 
@@ -253,6 +260,14 @@ article{
 	text-transform: capitalize;
 	font-size:0.8em;
 	margin-right:0.8em;
+	background-color: #008080;
+	color: #FFFFFF;
+}
+.tag a{
+	padding: 0.4em;
+	background-color: #008080;
+	color: #FFFFFF;
+	border-radius: 2px;
 }
 
 /* Desktop-tablet size */
