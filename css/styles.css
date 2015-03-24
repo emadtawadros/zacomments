@@ -144,7 +144,7 @@ article{
 }
 .topic h1{
 	font-size:1.6em;
-	margin:0.2em 0;
+	margin:0 0 0.2em 0;
 	text-transform: capitalize;
 }
 
@@ -222,6 +222,7 @@ article{
 	background-color: #008080;
 	color: #FFFFFF;
 	border-radius: 2px;
+	display:block;
 }
 
 /*User page*/
