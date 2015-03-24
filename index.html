@@ -63,7 +63,7 @@
 	    	{{/if}}
 	    	
 	    	<header>
-				<span>Trending Buzz</span>
+				<span class="pageHeader">Trending Buzz</span>
 	    	</header>
 	    	
 	        {{#each trendingPosts}}
@@ -108,7 +108,7 @@
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
 			
 			<header>
-				<span>New Buzz</span>
+				<span class="pageHeader">New Buzz</span>
 			</header>
 	    
 			{{#each newPosts}}
@@ -191,7 +191,7 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
 	    	<header>
-		    	<h3>Flagged Posts</h3>
+		    	<span class="pageHeader">Flagged Posts</span>
 		    </header>
     		{{#each flaggedPosts}}
     		<section>
@@ -233,7 +233,7 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
 		    	<header>
-		        	<h3>Search Results</h3>
+		        	<span class="pageHeader">Search Results</span>
 		    	</header>
 		    	
 		    	<section class="topic">
@@ -262,7 +262,7 @@
 				<section data-hull-component="user" data-hull-id="{{id}}"></section>
 			{{else}}
 				<header>
-	        		<h3>You need to login to view user feed</h3>
+	        		<span class="pageHeader">You need to login to view user feed</span>
 				</header>
 	    		<div data-hull-component="mylogin" data-hull-provider="facebook"></div>
 	        {{/if}}
@@ -281,12 +281,12 @@
 	        
 	    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
 	    	<header>
-	        	<h3>Do you want to add an image to that topic?</h3>
+	        	<span class="pageHeader">Do you want to add an image to that topic?</span>
 	    	</header>
 	    	
 	    	<section>
 		    	<header>
-		        	<h3>Use Image URL Or Upload an Image</h3>
+		        	<span class="pageHeader">Use Image URL Or Upload an Image</span>
 		        </header>
 		        <form>
 			        <input type="text" id="imageURL"></input>
@@ -383,7 +383,7 @@
 	        <aside id="mainAside">
 		        
 		        <header>
-	       			<span>Topics under {{post.name}}</span>
+	       			<span class="pageHeader">Topics under {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsUnder.length 0}}
@@ -419,7 +419,7 @@
 		        {{/each}}
 		        
 		        <header>
-	       			<span>Topics related {{post.name}}</span>
+	       			<span class="pageHeader">Topics related {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsRelated.length 0}}

@@ -131,6 +131,11 @@ main,
 	
 /* Phone size */
 
+.pageHeader{
+	margin: 0.8em 0;
+	display: block;
+}
+
 article{
 	background-color: #FFFFFF;
 	margin-bottom:3.6em;
