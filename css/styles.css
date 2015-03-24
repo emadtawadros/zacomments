@@ -12,6 +12,10 @@ body{
 	color:#444444;
 }
 
+h1,h2,h3{
+	margin:0;
+}
+
 ul,ol{
 	list-style:none;
 	margin:0;
@@ -140,6 +144,10 @@ article{
 	margin-bottom:3.6em;
 }
 
+.createTopic{
+	margin:1.2em 0;
+}
+
 .topic{
 	margin-bottom:0.8em;
 }
@@ -180,10 +188,13 @@ article{
 	border-radius:2px;
 	display:block;
 }
+
+createComment{
+	margin-bottom:0.8em;
+}
 .commentFeed{
 	margin-bottom:0.8em;
 }
-
 .comment{
 	margin-top:0.8em;
 	position:relative;
@@ -191,7 +202,6 @@ article{
 
 .comment span{
 	font-size:0.8em;
-	background-color:#FFFFFF;	
 	color:#AAAAAA;
 	display:block;
 }
@@ -215,23 +225,13 @@ article{
 	background-color: #008080;
 }
 	
-.createComment img,
 .userImg{
 	width:34px;
 	height:34px;
 	margin-right:0.6em;
 	border-radius:2px;
 	position:absolute;
-}
-.createComment input{
-	font-size:inherit;
-	font-family:inherit;
-	padding:0.6em;
-	margin:0;
-	border: 1px solid #EEEEEE;
-	border-radius:2px;
-}
-	
+}	
 .userComment{
 	margin-left:45px;
 	clear:both;

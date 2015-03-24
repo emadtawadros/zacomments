@@ -59,7 +59,7 @@
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
 	        {{#if loggedIn}}
-	    		<section data-hull-component="createtopicform"></section>
+	    		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
 	    	
 	    	<header>
@@ -91,7 +91,7 @@
 							</ul>
 						</section>
 		        	
-						<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 		        		
 	        		</article>
@@ -137,7 +137,7 @@
 						</ul>
 					</section>
 
-					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 				</article>
@@ -364,7 +364,7 @@
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
 			        {{/if}}
 			        
-					<section data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
 			        
 			        <header>
 						<h3>Top Comments</h3>
@@ -410,7 +410,7 @@
 						</ul>
 			    	</section>
 			    
-					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 		        </article>
@@ -446,7 +446,7 @@
 						</ul>
 			    	</section>
 		    	
-					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 		        </article>
