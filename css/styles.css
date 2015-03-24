@@ -177,7 +177,7 @@ article{
 	background-color:#FFFFFF;
 	color:#004040;
 }
-.topic img{
+.topicImg{
 	max-width:100%;
 	max-height:500px;
 	margin: 0.8em auto;
@@ -224,7 +224,6 @@ article{
 .userImg{
 	width:34px;
 	height:34px;
-	margin-right:0.8em;
 	border-radius:2px;
 	position:absolute;
 }	

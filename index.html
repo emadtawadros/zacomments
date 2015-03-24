@@ -306,7 +306,7 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
-	    	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    	
 	     	<section class="comment">
 	        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
@@ -353,7 +353,7 @@
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
-				        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				    </section>
 
 			        <form>
