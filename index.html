@@ -36,14 +36,14 @@
 		
 		<header id="mainHeader">
 			
-			<h2>Zacomments</h2>
+			<h2 class="logo">Zacomments</h2>
+			
+			<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 			
 			<form class="search">			
 				<input type="text" id="searchField,tags">
 				<button type="button" id="search">Search</button>
 	    	</form>
-	    	
-	    	<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 			
 		</header>
 					
@@ -168,9 +168,11 @@
 		    <div class="pull-right">
 		      <a data-hull-action="logout" class="btn">Log Out</a>
 		    </div>
+		    <!--
 		    <div class="media-body">
 		      <span class="media-heading">{{me.name}}</span>
 		    </div>
+		    -->
 		  </div>
 		
 		{{else}}

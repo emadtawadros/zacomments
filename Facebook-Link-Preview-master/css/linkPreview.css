@@ -126,12 +126,12 @@
 	padding: 3px 1px;
 }
 .text{
-	height:35px;
+	height:34px;
 	width:100%;
 	border: 1px solid #EEEEEE;
 	border-radius:2px;
 	resize: none;
-	padding: 8px;
+	padding: 0.6em;
 	color: grey;
 	display:block;
 }
@@ -159,7 +159,7 @@
 	font-size: 0.6em;
 	text-transform: uppercase;
 	color: #FFFFFF;
-	height: 35px;
+	height: 34px;
 	padding:1.2em;
 	border: 1px solid #EEEEEE;
 	border-radius: 3px;
