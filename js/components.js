@@ -722,6 +722,46 @@ Hull.component('posts', {
                         });        
                     });
                     return dff.promise();
+                },
+                postsRelated: function() {
+                	var dff = $.Deferred(); 
+                	var component = this;
+                	component.api(this.options.id, 'get').then(function(comment) {
+                		var dff = $.Deferred();
+                		var result = [];
+                		var tagsProcessed = 0;
+                		var numberOfTags = 0;
+                		component.api(comment.commentable_id, 'get').then(function(topic) {
+                			if(topic.tags) {
+                				numberOfTags = topic.tags.length;
+                				$.each(topic.tags, function(tagsIndex, tagValue){
+                					component.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+                						'visibiliy': 'public',
+                						where:{
+                							'tags.value':tagValue.value
+                						}
+                					}).then(function(response){
+                						$.each(response, function(responseIndex, responseValue){
+                							if((responseValue.id != componentRef.options.id) && notAlreadyAdded(result, responseValue.id)) {
+                								result.push(responseValue);
+                							}
+                						});
+                					});
+                				});
+                				
+                				(function wait(){
+                					if(tagsProcessed == numberOfTags) {
+                						dff.resolve(result);
+                					} else {
+                						setTimeout(wait, 100);
+                					}
+                				})();
+                			} else {
+                				dff.resolve(result);
+                			}
+                		});
+                	});
+                	return dff.promise();
                 }
             },
             afterRender: function(data) {
