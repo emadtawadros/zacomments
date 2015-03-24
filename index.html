@@ -386,13 +386,14 @@
 	       			<h3>Posts under {{post.name}}</h3>
 		        </header>
 		        
+				{{#ifEqual postsUnder.length 0}}
+		        <p>No posts currently tagged with {{post.name}}</p>
+		        {{/ifEqual}}
+		        {{#each postsUnder}}
+		        
 		        <article>
-				
+			    
 					<section class="topic">
-						{{#ifEqual postsUnder.length 0}}
-				        <p>No posts currently tagged with {{post.name}}</p>
-				        {{/ifEqual}}
-				        {{#each postsUnder}}
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 						<ul>
 							<li>{{stats.comments}} comments</li>
@@ -415,20 +416,20 @@
 					
 		        </article>
 				
-		            
 		        {{/each}}
 		        
 		        <header>
 	       			<h3>Posts Related {{post.name}}</h3>
 		        </header>
 		        
+				{{#ifEqual postsRelated.length 0}}
+		        <p>No posts currently tagged with {{post.name}}</p>
+		        {{/ifEqual}}
+		        {{#each postsRelated}}
+		        
 		        <article>
-
+			        
 					<section class="topic">
-						{{#ifEqual postsRelated.length 0}}
-				        <p>No posts currently tagged with {{post.name}}</p>
-				        {{/ifEqual}}
-				        {{#each postsRelated}}
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 						<ul>
 							<li>{{stats.comments}} comments</li>
@@ -450,8 +451,6 @@
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 					
 		        </article>
-		        
-		        
 		    	
 		    	{{/each}}
 			    
