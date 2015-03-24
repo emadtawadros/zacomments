@@ -149,7 +149,6 @@ article{
 }
 .topic h1{
 	font-size:1.6em;
-	margin:0.2em 0;
 	text-transform: capitalize;
 }
 .topic ul{}
@@ -162,7 +161,8 @@ article{
 	background-color:#008080;
 	border-radius: 2px;
 	color:#FFFFFF;
-	letter-spacing:2px;
+	letter-spacing:1px;
+	display:block;
 }
 .topic ul li a:hover{
 	background-color:#004040;
@@ -171,7 +171,6 @@ article{
 .topic .report{
 	background-color:#FFFFFF;
 	color:#008080;
-	letter-spacing:0px;
 }
 .topic .report:hover{
 	background-color:#FFFFFF;
@@ -254,12 +253,13 @@ article{
 	background-color:#008080;
 	border-radius: 2px;
 	color:#FFFFFF;
-	letter-spacing:2px;
+	letter-spacing:1px;
 	text-transform: capitalize;
 	font-size:0.8em;
 	margin-right:0.8em;
 }
 .tag a{
+	display:block;
 	background-color:#008080;
 	color:#FFFFFF;
 }
