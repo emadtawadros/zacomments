@@ -183,11 +183,11 @@ article{
 .topic .topicImg{
 	border-radius:3px;
 	margin-top:0.6em;
-	background-color:#FCFCFC;
+	background-color:#F9F9F9;
 }
 .topic .topicImg img{
 	margin:0 auto;
-	width:80%;
+	width:100%;
 	display:block;
 }
 
@@ -243,6 +243,18 @@ article{
 	clear:both;
 }
 
+#loadMore,
+#loadMoreTrending{
+	font-size:0.8em;
+	font-family:inherit;
+	padding:1.2em;
+	margin-bottom:1.2em;
+	border: 1px solid #EEEEEE;
+	border-radius:3px;
+	background-color:#FFFFFF;
+	width:100%;
+}
+
 /*Tags*/
 
 .tagsinput{
@@ -264,19 +276,6 @@ article{
 .tag a:hover{
 	color:#FAC832;
 }
-
-#loadMore,
-#loadMoreTrending{
-	font-size:0.8em;
-	font-family:inherit;
-	padding:1.2em;
-	margin-bottom:1.2em;
-	border: 1px solid #EEEEEE;
-	border-radius:3px;
-	background-color:#FFFFFF;
-	width:100%;
-}
-
 
 /* Desktop-tablet size */
 
