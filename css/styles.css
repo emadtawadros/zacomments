@@ -172,14 +172,6 @@ article{
 	background-color:#004040;
 	color:#FFFFFF;
 }
-.topic ul li:last-child a{
-	background-color:#FFFFFF;
-	color:#008080;
-	letter-spacing:0px;
-}
-.topic ul li:last-child a:hover{
-	color:#004040;
-}
 .topic img{
 	max-width:100%;
 	max-height:500px;
