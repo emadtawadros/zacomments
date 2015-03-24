@@ -45,7 +45,7 @@ main,
 /* #mainHeader Styles */	
 
 .search{
-	float:right;
+	float:left;
 }
 
 .search input{}
