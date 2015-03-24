@@ -213,7 +213,7 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'>
-	    	<section class="user">
+	    	<section class="userId">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
 		    </section>
@@ -264,7 +264,7 @@
 				<header>
 	        		<span class="pageHeader">You need to login to view user feed</span>
 				</header>
-	    		<div data-hull-component="mylogin" data-hull-provider="facebook"></div>
+	    		<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 	        {{/if}}
 	    </script>
 	    
@@ -330,11 +330,13 @@
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
-	    	<form>
-		    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
-		    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
-		    	<button type="button" id="createTopic" data-hull-action="createtopic" disabled>Create</button>
-	    	</form>
+	    	<section class="createTopic">
+		    	<form>
+			    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
+			    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
+			    	<button type="button" id="createTopic" data-hull-action="createtopic" disabled>Create</button>
+		    	</form>
+	    	</section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='post/post'>
