@@ -161,9 +161,9 @@
 	color: #FFFFFF;
 	height: 35px;
 	padding:1.2em;
-	border: none;
-	border-radius:3px;
-	background-color:#008080;
+	border: 1px solid #EEEEEE;
+	border-radius: 3px;
+	background-color: #FFFFFF;
 	cursor: pointer;
 }
 .postPreviewButton:active{
@@ -196,8 +196,9 @@
 	float:none;
 }
 .imgIframe{
-	width:100%;
-	float:none;
+  	width: 130px;
+  	height: auto;
+  	float: left;
 }
 
 .previewContentPosted{
