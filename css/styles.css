@@ -12,10 +12,6 @@ body{
 	color:#444444;
 }
 
-h1,h2,h3{
-	margin:0;
-}
-
 ul,ol{
 	list-style:none;
 	margin:0;
@@ -149,6 +145,7 @@ article{
 }
 .topic h1{
 	font-size:1.6em;
+	margin:0;
 	text-transform: capitalize;
 }
 .topic ul{}

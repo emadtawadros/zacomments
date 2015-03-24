@@ -63,7 +63,7 @@
 	    	{{/if}}
 	    	
 	    	<header>
-				<h3>Trending Buzz</h3>
+				<h2>Trending Buzz</h2>
 	    	</header>
 	    	
 	        {{#each trendingPosts}}
@@ -108,7 +108,7 @@
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
 			
 			<header>
-				<h3>New Buzz</h3>
+				<h2>New Buzz</h2>
 			</header>
 	    
 			{{#each newPosts}}
@@ -367,12 +367,12 @@
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
 			        
 			        <header>
-						<h3>Top Comments</h3>
+						<span>Top Comments</span>
 			        </header>
 					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
 			        
 			        <header>
-				    	<h3>New Comments</h3>
+				    	<span>New Comments</span>
 			        </header>
 					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
 					
@@ -383,7 +383,7 @@
 	        <aside id="mainAside">
 		        
 		        <header>
-	       			<h3>Posts under {{post.name}}</h3>
+	       			<span>Posts under {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsUnder.length 0}}
@@ -419,7 +419,7 @@
 		        {{/each}}
 		        
 		        <header>
-	       			<h3>Posts Related {{post.name}}</h3>
+	       			<span>Posts Related {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsRelated.length 0}}
