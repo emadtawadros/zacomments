@@ -103,10 +103,6 @@ main,
 	padding: 0.8em;
 }
 
-.login .pull-right a:hover{
-	background-color: #EEEEEE;
-}
-
 .login .media img{
 	width:34px;
 	height:34px;
@@ -157,6 +153,7 @@ article{
 .topic ul li{
 	font-size:0.8em;
 	display:inline-block;
+	margin-right:0.8em;
 }
 .topic .report{
 	background-color:#FFFFFF;
@@ -219,6 +216,10 @@ article{
 
 .userId h1{
 	float:left;
+}
+
+.userFeed{
+	clear:both;
 }
 	
 .userImg{
