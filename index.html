@@ -63,7 +63,7 @@
 	    	{{/if}}
 	    	
 	    	<header>
-				<h2>Trending Buzz</h2>
+				<span>Trending Buzz</span>
 	    	</header>
 	    	
 	        {{#each trendingPosts}}
@@ -108,7 +108,7 @@
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
 			
 			<header>
-				<h2>New Buzz</h2>
+				<span>New Buzz</span>
 			</header>
 	    
 			{{#each newPosts}}
@@ -383,7 +383,7 @@
 	        <aside id="mainAside">
 		        
 		        <header>
-	       			<span>Posts under {{post.name}}</span>
+	       			<span>Topics under {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsUnder.length 0}}
@@ -419,7 +419,7 @@
 		        {{/each}}
 		        
 		        <header>
-	       			<span>Posts Related {{post.name}}</span>
+	       			<span>Topics related {{post.name}}</span>
 		        </header>
 		        
 				{{#ifEqual postsRelated.length 0}}
