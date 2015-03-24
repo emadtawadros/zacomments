@@ -142,14 +142,14 @@ main,
 
 article{
 	background-color: #FFFFFF;
-	padding:1.2em;
-	margin-bottom:1.2em;
+	padding:0.8em;
+	margin-bottom:0.8em;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
 }
 
 .topic{
-	margin-bottom:1.2em;
+	margin-bottom:0.8em;
 }
 .topic h1{
 	font-size:1.6em;
@@ -191,11 +191,11 @@ article{
 	display:block;
 }
 .commentFeed{
-	margin-bottom:1.2em;
+	margin-bottom:0.8em;
 }
 
 .comment{
-	margin-top:1.2em;
+	margin-top:0.8em;
 	position:relative;
 }
 
@@ -207,7 +207,7 @@ article{
 .comment p{
 	font-size:0.8em;
 	margin:0.3em 0 0 0;
-	line-height: 1.2em;
+	line-height: 0.8em;
 }
 .comment ul li{
 	font-size:0.2em;
@@ -250,8 +250,8 @@ article{
 #loadMoreTrending{
 	font-size:0.8em;
 	font-family:inherit;
-	padding:1.2em;
-	margin-bottom:1.2em;
+	padding:0.8em;
+	margin-bottom:0.8em;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	background-color:#FFFFFF;
@@ -261,7 +261,7 @@ article{
 /*Tags*/
 
 .tagsinput{
-	margin: 1.2em 0;
+	margin: 0.8em 0;
 }
 .tag{
 	padding:0.2em 0.6em;
