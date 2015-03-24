@@ -78,7 +78,7 @@
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
 			                
-							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
 							
 							<ul>
 			                {{#if tags}}
@@ -124,7 +124,7 @@
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						</ul>
 						
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						
 						<ul>
 						{{#if tags}}
@@ -196,7 +196,7 @@
     		{{#each flaggedPosts}}
     		<section>
 	    		<span data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></span>
-	    		<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+	    		<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 	    		<ul>
 	    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
 					<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
@@ -248,7 +248,7 @@
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
 			                
-							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 			            </section>
 			            {{/if}}
 			        {{/each}}
@@ -398,7 +398,7 @@
 							<li>{{stats.comments}} comments</li>
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 			            {{#if tags}}
 			                {{#each tags}}
@@ -434,7 +434,7 @@
 							<li>{{stats.comments}} comments</li>
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 			            {{#if tags}}
 			                {{#each tags}}
