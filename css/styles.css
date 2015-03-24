@@ -57,7 +57,7 @@ main,
 	font-family:inherit;
 	padding:0.6em;
 	margin:0 0.6em 0 0;
-	border: 2px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
 	border-radius:2px;
 	background-color:#FFFFFF;
 	float:left;
@@ -68,7 +68,7 @@ main,
 }
 
 #ui-id-1{
-	border: 2px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
 	background-color:#FFFFFF;
 	width:100%;
 }
@@ -235,7 +235,7 @@ article{
 	font-family:inherit;
 	padding:0.6em;
 	margin:0;
-	border: 2px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
 	border-radius:2px;
 }
 	
@@ -250,7 +250,7 @@ article{
 	font-family:inherit;
 	padding:0.8em;
 	margin-bottom:0.8em;
-	border: 2px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
 	border-radius:2px;
 	background-color:#FFFFFF;
 	width:100%;
