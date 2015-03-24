@@ -8,7 +8,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 	margin:0;
 	padding:0;
-	background-color:#FFFFFF;
+	background-color:#FCFCFC;
 	color:#444444;
 }
 
@@ -141,9 +141,10 @@ footer{
 }
 
 article{
-	padding-bottom:1em;
+	background-color: #FFFFFF;
+	padding:1em;
 	margin-bottom:1em;
-	border-bottom: 1px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
 }
 
 .topic,
@@ -286,19 +287,19 @@ footer ul li{
 @media (min-width: 960px){
 
 section{
-	width:55%;
+	width:59%;
 	float:left;
 }
 
 aside{
-	width:35%;
+	width:39%;
 	float:right;
 }
 
 header,
 main,
 footer{
-	width:1000px;
+	width:1080px;
 	margin:0 auto;
 }
 
