@@ -180,14 +180,9 @@ article{
 .topic ul li:last-child a:hover{
 	color:#004040;
 }
-.topic .topicImg{
-	border-radius:3px;
-	margin-top:0.6em;
-	background-color:#F9F9F9;
-}
-.topic .topicImg img{
-	margin:0 auto;
+.topic img{
 	width:100%;
+	margin-top:0.6em;
 	display:block;
 }
 .commentFeed{

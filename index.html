@@ -84,9 +84,8 @@
 			                {{/if}}
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
-			                <div class="topicImg">
-								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
-			                </div>
+			                
+							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
 						</section>
 		        	
 						<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
@@ -126,9 +125,8 @@
 							{{/if}}
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 							</ul>
-							<div class="topicImg">
-								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-							</div> 
+							
+							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						</section>
 
 						<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
@@ -238,9 +236,8 @@
 								<li>{{stats.comments}} comments</li>
 								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
-			                <div class="topicImg">
-								<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-							<div>
+			                
+							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 			            </section>
 			            {{/if}}
 			        {{/each}}
@@ -298,9 +295,7 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
-	    	<div class="topicImg">
-	    		<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-	    	</div>
+	    	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 	    	
 	     	<section class="comment">
 	        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
@@ -346,9 +341,7 @@
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
-				        <div class="topicImg">
-				        	<img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-				        </div> 
+				        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				    </section>
 
 			        <form>
@@ -397,9 +390,7 @@
 	            {{/if}}
 	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
-	            	<div class="topicImg">
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-		        	</div>
+					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 		    	</section>
 		    
 				<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
@@ -428,9 +419,7 @@
 	            {{/if}}
 	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
-	            	<div class="topicImg">
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-		        	</div>
+					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 		    	</section>
 		    	
 		    	<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
