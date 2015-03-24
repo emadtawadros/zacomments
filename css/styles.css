@@ -103,16 +103,12 @@ main,
 
 .login .pull-right a{
 	display:block;
-	background-color: #008080;
-	border-radius: 2px;
-	color: #FFFFFF;
 	height:34px;
 	padding: 0.6em;
 }
 
 .login .pull-right a:hover{
-	background-color: #004040;
-	color: #FFFFFF;
+	background-color: #EEEEEE;
 }
 
 .login .media img{
@@ -189,7 +185,7 @@ article{
 	display:block;
 }
 
-createComment{
+.createComment{
 	margin-bottom:0.8em;
 }
 .commentFeed{
