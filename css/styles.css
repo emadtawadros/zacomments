@@ -58,7 +58,7 @@ main,
 	padding:0.6em;
 	margin:0 0.6em 0 0;
 	border: 1px solid #EEEEEE;
-	border-radius:3px;
+	border-radius:1px;
 	background-color:#FFFFFF;
 	float:left;
 }
@@ -98,7 +98,7 @@ main,
 #mainHeader .pull-right a{
 	display:block;
 	background-color: #008080;
-	border-radius: 3px;
+	border-radius: 1px;
 	color: #FFFFFF;
 	padding: 0.6em;
 	margin: 0.3em 0;
@@ -112,14 +112,14 @@ main,
 #mainHeader .media img{
 	width:35px;
 	height:35px;
-	border-radius:3px;
+	border-radius:1px;
 }
 
 .hull-identity__signin button{
 	float:left;
 	font-size:0.8em;
 	background-color: #008080;
-	border-radius: 3px;
+	border-radius: 1px;
 	color: #FFFFFF;
 	padding: 0.6em 0.8em;
 	margin-left: 0.8em;
@@ -144,10 +144,7 @@ main,
 
 article{
 	background-color: #FFFFFF;
-	padding:0.8em;
 	margin-bottom:0.8em;
-	border: 1px solid #EEEEEE;
-	border-radius:3px;
 }
 
 .topic{
@@ -166,7 +163,7 @@ article{
 .topic ul li a{
 	padding:0.2em 0.6em;
 	background-color:#008080;
-	border-radius: 3px;
+	border-radius: 1px;
 	color:#FFFFFF;
 	letter-spacing:1px;
 }
@@ -216,7 +213,7 @@ article{
 .comment button{
 	font-size:inherit;
 	background-color: #FFFFFF;
-	border-radius: 3px;
+	border-radius: 1px;
 	border: none;
 	margin-left: 0.2em;
 }
@@ -229,7 +226,7 @@ article{
 	width:35px;
 	height:35px;
 	margin-right:0.6em;
-	border-radius:3px;
+	border-radius:1px;
 	position:absolute;
 }
 .createComment input{
@@ -238,7 +235,7 @@ article{
 	padding:0.6em;
 	margin:0;
 	border: 1px solid #EEEEEE;
-	border-radius:3px;
+	border-radius:1px;
 }
 	
 .userComment{
@@ -253,7 +250,7 @@ article{
 	padding:0.8em;
 	margin-bottom:0.8em;
 	border: 1px solid #EEEEEE;
-	border-radius:3px;
+	border-radius:1px;
 	background-color:#FFFFFF;
 	width:100%;
 }
@@ -266,7 +263,7 @@ article{
 .tag{
 	padding:0.2em 0.6em;
 	background-color:#008080;
-	border-radius: 3px;
+	border-radius: 1px;
 	color:#FFFFFF;
 	letter-spacing:1px;
 	text-transform: capitalize;
