@@ -158,18 +158,6 @@ article{
 	font-size:0.8em;
 	display:inline-block;
 }
-.topic ul li a{
-	padding:0.2em 0.8em;
-	background-color:#008080;
-	border-radius: 2px;
-	color:#FFFFFF;
-	letter-spacing:1px;
-	display:block;
-}
-.topic ul li a:hover{
-	background-color:#004040;
-	color:#FFFFFF;
-}
 .topic .report{
 	background-color:#FFFFFF;
 	color:#008080;
@@ -251,22 +239,9 @@ article{
 	margin: 0.8em 0;
 }
 .tag{
-	padding:0.2em 0.8em;
-	background-color:#008080;
-	border-radius: 2px;
-	color:#FFFFFF;
-	letter-spacing:1px;
 	text-transform: capitalize;
 	font-size:0.8em;
 	margin-right:0.8em;
-}
-.tag a{
-	background-color:#008080;
-	color:#FFFFFF;
-}
-.tag a:hover{
-	background-color:#008080;
-	color:#FAC832;
 }
 
 /* Desktop-tablet size */
