@@ -48,8 +48,6 @@ main,
 	float:left;
 }
 
-.search input{}
-
 .search input,
 .search button{
 	font-size:0.8em;
@@ -149,8 +147,9 @@ article{
 	margin:0.2em 0;
 	text-transform: capitalize;
 }
-.topic ul{}
-.topic ul li{
+
+.topic ul li,
+.tag ul li{
 	font-size:0.8em;
 	display:inline-block;
 	margin-right:0.8em;
