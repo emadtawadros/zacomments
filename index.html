@@ -72,14 +72,17 @@
 						
 		        		<section class="topic">
 			                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-			                
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
 			                <ul>
 				                <li>{{stats.comments}} comments</li>
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
-			                
-							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
-							
+						</section>
+		        	
+						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+						
+						<section>
 							<ul>
 			                {{#if tags}}
 			                    {{#each tags}}
@@ -90,9 +93,6 @@
 			                {{/if}}								
 							</ul>
 						</section>
-		        	
-						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 		        		
 	        		</article>
 	        		        		
@@ -117,15 +117,18 @@
 				<article>
 	
 					<section class="topic">
-						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-						
+						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>		
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>						
 						<ul>
 							<li>{{stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						</ul>
-						
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-						
+					</section>
+
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					
+					<section>
 						<ul>
 						{{#if tags}}
 							{{#each tags}}
@@ -136,9 +139,7 @@
 						{{/if}}							
 						</ul>
 					</section>
-
-					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+						
 					
 				</article>
 										
@@ -243,12 +244,11 @@
 			        {{#each searchResults}}
 			            {{#if name}}
 			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 			                <ul>
 								<li>{{stats.comments}} comments</li>
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
-			                
-							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 			            </section>
 			            {{/if}}
 			        {{/each}}
@@ -351,22 +351,24 @@
 		        	
 			        <section class="topic">
 				        <h1 id="postTitle">{{post.name}}</h1>
+				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
-				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				    </section>
-
-			        <form>
-				        <input type="text" id="postTags"></input>
-			        </form>
 
 			        {{#if isAdmin}}
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
 			        {{/if}}
 			        
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
+					
+					<section>
+				        <form>
+					        <input type="text" id="postTags"></input>
+				        </form>
+			        </section>
 			        
 			        <header>
 						<span>Top Comments</span>
@@ -397,11 +399,17 @@
 			    
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 							<li>{{stats.comments}} comments</li>
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+			    	</section>
+			    
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					
+					<section>
 						<ul>
 			            {{#if tags}}
 			                {{#each tags}}
@@ -411,10 +419,7 @@
 			                {{/each}}
 			            {{/if}}						
 						</ul>
-			    	</section>
-			    
-					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					</section>
 					
 		        </article>
 				
@@ -433,11 +438,17 @@
 			        
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 							<li>{{stats.comments}} comments</li>
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+			    	</section>
+		    	
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					
+					<section>
 						<ul>
 			            {{#if tags}}
 			                {{#each tags}}
@@ -447,10 +458,7 @@
 			                {{/each}}
 			            {{/if}}	
 						</ul>
-			    	</section>
-		    	
-					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					</section>
 					
 		        </article>
 		    	
