@@ -127,13 +127,14 @@
 }
 .text{
 	height:35px;
-	width:80%;
+	width:100%;
 	border: 1px solid #EEEEEE;
 	border-radius:3px;
 	margin:0 45px;
 	resize: none;
 	padding: 8px;
 	color: grey;
+	display:block;
 }
 .closePreview{
 	float: right;
