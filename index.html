@@ -68,30 +68,33 @@
 	    	
 	        {{#each trendingPosts}}
 	        	{{#if name}}
+					<article>
 						
-	        		<section class="topic">
-		                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-		                
-		                <ul>
-			                <li>{{stats.comments}} comments</li>
-							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		                </ul>	
-		                
-						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
-						
-						<ul>
-		                {{#if tags}}
-		                    {{#each tags}}
-		                        {{#if this}}
-		                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-		                        {{/if}}
-		                    {{/each}}
-		                {{/if}}								
-						</ul>
-					</section>
-	        	
-					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-		        			        		
+		        		<section class="topic">
+			                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+			                
+			                <ul>
+				                <li>{{stats.comments}} comments</li>
+								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+			                </ul>	
+			                
+							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
+							
+							<ul>
+			                {{#if tags}}
+			                    {{#each tags}}
+			                        {{#if this}}
+			                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                        {{/if}}
+			                    {{/each}}
+			                {{/if}}								
+							</ul>
+						</section>
+		        	
+						<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+		        		
+	        		</article>
+	        		
 	        		<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 	            {{/if}}
 			{{/each}}
@@ -110,29 +113,32 @@
 	    
 			{{#each newPosts}}
 				{{#if name}}
-					
-				<section class="topic">
-					<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-					
-					<ul>
-						<li>{{stats.comments}} comments</li>
-						<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-					</ul>
-					
-					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-					
-					<ul>
-					{{#if tags}}
-						{{#each tags}}
-							{{#if this}}
-								<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-							{{/if}}
-						{{/each}}
-					{{/if}}							
-					</ul>
-				</section>
+				
+				<article>
+	
+					<section class="topic">
+						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+						
+						<ul>
+							<li>{{stats.comments}} comments</li>
+							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+						</ul>
+						
+						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						
+						<ul>
+						{{#if tags}}
+							{{#each tags}}
+								{{#if this}}
+									<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+								{{/if}}
+							{{/each}}
+						{{/if}}							
+						</ul>
+					</section>
 
-				<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+				</article>
 				
 				<div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 						
@@ -378,30 +384,32 @@
 	       			<h3>Posts under {{post.name}}</h3>
 		        </header>
 				
-				<section class="topic">
-					{{#ifEqual postsUnder.length 0}}
-			        <p>No posts currently tagged with {{post.name}}</p>
-			        {{/ifEqual}}
-			        {{#each postsUnder}}
-		        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
-					<ul>
-						<li>{{stats.comments}} comments</li>
-	            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-	            	</ul>
-					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-					<ul>
-		            {{#if tags}}
-		                {{#each tags}}
-		                    {{#if this}}
-		                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-		                    {{/if}}
-		                {{/each}}
-		            {{/if}}						
-					</ul>
-		    	</section>
-		    
-				<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-									
+					<section class="topic">
+						{{#ifEqual postsUnder.length 0}}
+				        <p>No posts currently tagged with {{post.name}}</p>
+				        {{/ifEqual}}
+				        {{#each postsUnder}}
+			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+						<ul>
+							<li>{{stats.comments}} comments</li>
+		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		            	</ul>
+						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<ul>
+			            {{#if tags}}
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+			            {{/if}}						
+						</ul>
+			    	</section>
+			    
+					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					
+				</article>
+				
 		        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 		            
 		        {{/each}}
@@ -410,30 +418,34 @@
 	       			<h3>Posts Related {{post.name}}</h3>
 		        </header>
 		        
-				<section class="topic">
-					{{#ifEqual postsRelated.length 0}}
-			        <p>No posts currently tagged with {{post.name}}</p>
-			        {{/ifEqual}}
-			        {{#each postsRelated}}
-		        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
-					<ul>
-						<li>{{stats.comments}} comments</li>
-	            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-	            	</ul>
-					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-					<ul>
-		            {{#if tags}}
-		                {{#each tags}}
-		                    {{#if this}}
-		                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-		                    {{/if}}
-		                {{/each}}
-		            {{/if}}	
-					</ul>
-		    	</section>
-	    	
-				<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-							        
+		        <article>
+
+					<section class="topic">
+						{{#ifEqual postsRelated.length 0}}
+				        <p>No posts currently tagged with {{post.name}}</p>
+				        {{/ifEqual}}
+				        {{#each postsRelated}}
+			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+						<ul>
+							<li>{{stats.comments}} comments</li>
+		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		            	</ul>
+						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<ul>
+			            {{#if tags}}
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+			            {{/if}}	
+						</ul>
+			    	</section>
+		    	
+					<section data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					
+		        </article>
+		        
 		        <div data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></div>
 		    	
 		    	{{/each}}
