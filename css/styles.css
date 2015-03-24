@@ -57,8 +57,8 @@ main,
 	font-family:inherit;
 	padding:0.6em;
 	margin:0 0.6em 0 0;
-	border: 1px solid #EEEEEE;
-	border-radius:1px;
+	border: 2px solid #EEEEEE;
+	border-radius:2px;
 	background-color:#FFFFFF;
 	float:left;
 }
@@ -68,7 +68,7 @@ main,
 }
 
 #ui-id-1{
-	border: 1px solid #EEEEEE;
+	border: 2px solid #EEEEEE;
 	background-color:#FFFFFF;
 	width:100%;
 }
@@ -98,7 +98,7 @@ main,
 #mainHeader .pull-right a{
 	display:block;
 	background-color: #008080;
-	border-radius: 1px;
+	border-radius: 2px;
 	color: #FFFFFF;
 	padding: 0.6em;
 	margin: 0.3em 0;
@@ -112,14 +112,14 @@ main,
 #mainHeader .media img{
 	width:35px;
 	height:35px;
-	border-radius:1px;
+	border-radius:2px;
 }
 
 .hull-identity__signin button{
 	float:left;
 	font-size:0.8em;
 	background-color: #008080;
-	border-radius: 1px;
+	border-radius: 2px;
 	color: #FFFFFF;
 	padding: 0.6em 0.8em;
 	margin-left: 0.8em;
@@ -144,7 +144,7 @@ main,
 
 article{
 	background-color: #FFFFFF;
-	margin-bottom:0.8em;
+	margin-bottom:3.6em;
 }
 
 .topic{
@@ -163,9 +163,9 @@ article{
 .topic ul li a{
 	padding:0.2em 0.6em;
 	background-color:#008080;
-	border-radius: 1px;
+	border-radius: 2px;
 	color:#FFFFFF;
-	letter-spacing:1px;
+	letter-spacing:2px;
 }
 .topic ul li a:hover{
 	background-color:#004040;
@@ -183,7 +183,8 @@ article{
 .topic img{
 	max-width:100%;
 	max-height:500px;
-	margin: 0.6em auto 0 auto;
+	margin: 0.6em auto;
+	border-radius:2px
 	display:block;
 }
 .commentFeed{
@@ -213,7 +214,7 @@ article{
 .comment button{
 	font-size:inherit;
 	background-color: #FFFFFF;
-	border-radius: 1px;
+	border-radius: 2px;
 	border: none;
 	margin-left: 0.2em;
 }
@@ -226,7 +227,7 @@ article{
 	width:35px;
 	height:35px;
 	margin-right:0.6em;
-	border-radius:1px;
+	border-radius:2px;
 	position:absolute;
 }
 .createComment input{
@@ -234,8 +235,8 @@ article{
 	font-family:inherit;
 	padding:0.6em;
 	margin:0;
-	border: 1px solid #EEEEEE;
-	border-radius:1px;
+	border: 2px solid #EEEEEE;
+	border-radius:2px;
 }
 	
 .userComment{
@@ -249,8 +250,8 @@ article{
 	font-family:inherit;
 	padding:0.8em;
 	margin-bottom:0.8em;
-	border: 1px solid #EEEEEE;
-	border-radius:1px;
+	border: 2px solid #EEEEEE;
+	border-radius:2px;
 	background-color:#FFFFFF;
 	width:100%;
 }
@@ -263,9 +264,9 @@ article{
 .tag{
 	padding:0.2em 0.6em;
 	background-color:#008080;
-	border-radius: 1px;
+	border-radius: 2px;
 	color:#FFFFFF;
-	letter-spacing:1px;
+	letter-spacing:2px;
 	text-transform: capitalize;
 	font-size:0.6em;
 	margin-right:0.6em;
