@@ -190,6 +190,9 @@ article{
 	width:100%;
 	display:block;
 }
+.commentFeed{
+	margin-bottom:1.2em;
+}
 
 .comment{
 	margin-top:1.2em;
