@@ -145,14 +145,15 @@ article{
 	padding:1em;
 	margin-bottom:1em;
 	border: 1px solid #EEEEEE;
+	border-radius:3px;
 }
 
-.topic,
-.createComment,
+.topic{
+	margin-bottom:1.2em;
+}
 .comment{
-	margin:1.2em 0;
+	margin-top:1.2em;
 	position:relative;
-	clear:both;
 }
 
 .topic h1{
