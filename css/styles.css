@@ -286,19 +286,19 @@ footer ul li{
 @media (min-width: 960px){
 
 section{
-	width:59%;
+	width:55%;
 	float:left;
 }
 
 aside{
-	width:39%;
+	width:35%;
 	float:right;
 }
 
 header,
 main,
 footer{
-	width:960px;
+	width:1000px;
 	margin:0 auto;
 }
 
