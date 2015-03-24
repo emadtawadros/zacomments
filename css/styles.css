@@ -24,11 +24,13 @@ li{
 }
 
 a{
+	background-color:#FFFFFF;
 	color:#008080;
 	text-decoration: none;
 }
 
 a:hover{
+	background-color:#FFFFFF;
 	color:#004040;
 }
 
@@ -172,11 +174,19 @@ article{
 	background-color:#004040;
 	color:#FFFFFF;
 }
+.topic .report{
+	background-color:#FFFFFF;
+	color:#008080;
+	letter-spacing:0px;
+}
+.topic .report:hover{
+	background-color:#FFFFFF;
+	color:#004040;
+}
 .topic img{
 	max-width:100%;
 	max-height:500px;
-	margin: 0 auto;
-	margin-top:0.6em;
+	margin: 0.6em auto 0 auto;
 	display:block;
 }
 .commentFeed{
@@ -189,7 +199,8 @@ article{
 }
 
 .comment span{
-	font-size:0.8em;	
+	font-size:0.8em;
+	background-color:#FFFFFF;	
 	color:#AAAAAA;
 	display:block;
 }
@@ -263,9 +274,11 @@ article{
 	margin-right:0.6em;
 }
 .tag a{
+	background-color:#008080;
 	color:#FFFFFF;
 }
 .tag a:hover{
+	background-color:#008080;
 	color:#FAC832;
 }
 

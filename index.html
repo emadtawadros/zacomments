@@ -75,7 +75,7 @@
 			                
 			                <ul>
 				                <li>{{stats.comments}} comments</li>
-								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
 			                
 							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
@@ -118,7 +118,7 @@
 						
 						<ul>
 							<li>{{stats.comments}} comments</li>
-							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						</ul>
 						
 						<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -238,7 +238,7 @@
 			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			                <ul>
 								<li>{{stats.comments}} comments</li>
-								<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>
 			                
 							<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -343,7 +343,7 @@
 				        <h1 id="postTitle">{{post.name}}</h1>
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
-							<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
+							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
 				        <img src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				    </section>
@@ -385,7 +385,7 @@
 		        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 					<ul>
 						<li>{{stats.comments}} comments</li>
-	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+	            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
 					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 					<ul>
@@ -416,7 +416,7 @@
 		        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 					<ul>
 						<li>{{stats.comments}} comments</li>
-	            		<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+	            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 	            	</ul>
 					<img src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 					<ul>
@@ -458,7 +458,7 @@
 		              	<ul class="hull-comments__actions">
 			              	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
 						  	<li class="muted">{{fromNow updated_at}}</li>
-		                  	<li><a href="#" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		                  	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						  	{{#if isDeletable}}
 		              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
 		              		{{/if}}
