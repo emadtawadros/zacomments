@@ -159,7 +159,7 @@ article{
 }
 
 .topic{
-	margin-bottom:0.8em;
+	margin-bottom:0.6em;
 }
 .topic h1{
 	font-size:1.6em;
@@ -183,7 +183,7 @@ article{
 .topicImg{
 	max-width:100%;
 	max-height:500px;
-	margin: 0 auto 0.8em auto;
+	margin: 0 auto 0.6em auto;
 	border-radius:2px;
 	display:block;
 }
