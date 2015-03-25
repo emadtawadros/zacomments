@@ -183,7 +183,7 @@ article{
 .topicImg{
 	max-width:100%;
 	max-height:500px;
-	margin: 0.8em auto;
+	margin: 0 auto 0.8em auto;
 	border-radius:2px;
 	display:block;
 }
@@ -235,10 +235,12 @@ article{
 	margin-left:45px;
 	clear:both;
 }
+
+.tagFeed{
+	margin-bottom:0.6em;
+}
 .tagFeed li a{
-	color: #AAAAAA;
-	font-size:0.8em;
-	margin-right:0.4em;
+	color: inherit;
 }
 .tagFeed li a:before{
 	content:"#";
