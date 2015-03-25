@@ -167,10 +167,9 @@ article{
 	text-transform: capitalize;
 }
 
-.topic ul li,
-.tagFeed ul li{
+.topic ul li{
 	font-size:0.8em;
-	margin-right:0.8em;
+	margin-right:0.4em;
 }
 .topic .report{
 	background-color:#FFFFFF;
@@ -234,12 +233,13 @@ article{
 	margin-left:45px;
 	clear:both;
 }
-.tagFeed ul li a{
-  	padding: 0.4em 0.8em;
-	background-color: #008080;
-	color: #FFFFFF;
-	border-radius: 2px;
-	display:block;
+.tagFeed ul li{
+	font-size:0.8em;
+	margin-right:0.4em;
+	color: #AAAAAA;
+}
+.tagFeed ul li:before{
+	content:"#";
 }
 
 /*User page*/
