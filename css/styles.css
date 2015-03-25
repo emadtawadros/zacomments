@@ -18,10 +18,12 @@ ul,ol{
 	margin:0;
 	padding:0;
 	clear:both;
+	display: inline-block;
 }
 
 li{
 	text-transform: capitalize;
+	display: inline-block;
 }
 
 a{
@@ -169,7 +171,6 @@ article{
 .topic ul li,
 .tagFeed ul li{
 	font-size:0.8em;
-	display:inline-block;
 	margin-right:0.8em;
 }
 .topic .report{
@@ -205,6 +206,10 @@ article{
 	color:#AAAAAA;
 	display:block;
 }
+.comment time{
+	font-size: 0.8em;
+	margin-left: 0.8em;
+}
 .comment p{
 	font-size:0.8em;
 	margin:0.3em 0 0 0;
@@ -212,7 +217,6 @@ article{
 }
 .comment ul li{
 	font-size:0.6em;
-	display:inline-block;	
 }
 .comment button{
 	font-size:inherit;
