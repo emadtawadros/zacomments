@@ -64,6 +64,15 @@
 					<article>
 		        		<section class="topic">
 			                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+			                {{#if tags}}
+							<ul class="tagFeed">
+			                    {{#each tags}}
+			                        {{#if this}}
+			                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                        {{/if}}
+			                    {{/each}}
+							</ul>
+							{{/if}}
 							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
 			                <ul>
 				                <li>{{stats.comments}} comments</li>
@@ -71,18 +80,7 @@
 			                </ul>	
 						</section>
 						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-		                {{#if tags}}
-						<section class="tagFeed">
-						<ul>
-		                    {{#each tags}}
-		                        {{#if this}}
-		                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-		                        {{/if}}
-		                    {{/each}}
-							</ul>
-						</section>
-		                {{/if}}								
+						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>								
 	        		</article>    		
 	            {{/if}}
 			{{/each}}
@@ -99,7 +97,16 @@
 				{{#if name}}
 				<article>
 					<section class="topic">
-						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>		
+						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+						{{#if tags}}
+						<ul class="tagFeed">
+							{{#each tags}}
+								{{#if this}}
+									<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+								{{/if}}
+							{{/each}}				
+						</ul>
+						{{/if}}	
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>						
 						<ul>
 							<li>{{stats.comments}} comments</li>
@@ -108,17 +115,6 @@
 					</section>
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					<section class="tagFeed">
-						<ul>
-						{{#if tags}}
-							{{#each tags}}
-								{{#if this}}
-									<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-								{{/if}}
-							{{/each}}
-						{{/if}}							
-						</ul>
-					</section>
 				</article>					
 				{{/if}}
 			{{/each}}
@@ -353,6 +349,15 @@
 		        <article>
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			        	{{#if tags}}
+						<ul class="tagFeed">
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}			
+						</ul>
+						{{/if}}
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 							<li>{{stats.comments}} comments</li>
@@ -361,17 +366,6 @@
 			    	</section>
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					<section class="tagFeed">
-						<ul>
-			            {{#if tags}}
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-			            {{/if}}						
-						</ul>
-					</section>
 		        </article>
 		        {{/each}}
 		        <header>
@@ -384,6 +378,15 @@
 		        <article>
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			        	{{#if tags}}
+						<ul class="tagFeed">
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+						</ul>
+						{{/if}}
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 							<li>{{stats.comments}} comments</li>
@@ -392,17 +395,6 @@
 			    	</section>
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					<section class="tagFeed">
-						<ul>
-			            {{#if tags}}
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-			            {{/if}}	
-						</ul>
-					</section>
 		        </article>
 		    	{{/each}}
 			</aside>
