@@ -19,7 +19,7 @@
                     iframeId = iframeId[1].split("\"");
                     iframeId = iframeId[0];
 
-                    selector.append('<div class="previewPosted"><div class="previewTextPosted"> '+item.text+' </div> '+item.iframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+item.image+'" class="imgIframe"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'">'+item.title+'</div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'> <span id="previewSpanDescription">'+item.description+'</textarea></div></div></div>');
+                    selector.append('<div class="previewPosted"><div class="previewTextPosted"> '+item.text+' </div> '+item.iframe+' <div class="previewImagesPosted"><div class="previewImagePosted"><img id="img_'+iframeId+'" src="'+item.image+'" class="imgIframe"><span class="videoPostPlay"></span></div></div><div class="previewContentPosted"><div class="previewTitlePosted" id="pTP_'+iframeId+'">'+item.title+'</div><div class="previewUrlPosted">'+item.canonicalUrl+'</div><div class="previewDescriptionPosted" id="pDP_'+iframeId+'> <span id="previewSpanDescription">'+item.description+'</input></div></div></div>');
 
                     $(".imgIframe").click(function() {
                         var oldId = $(this).attr("id");
