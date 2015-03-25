@@ -29,24 +29,19 @@
 		        readKey: "98ec71562a7174440c4b628f1871282e333dd4e7df76994e3ebc269f49bea6bc356b567e8db69b5a0735d3bd3221cf31ebf5c4c780e61a5388f1550616536c286ecbdad69994dd51c183333c05e7fbe0f51ed695301c7470f6e3cceb2ca5db9c3d81593f41dd26419d5e96460f44380c"    // required for doing analysis
 		    });
 		</script>
-		
 	</head>
 	
 	<body>
 		
 		<header id="mainHeader">
-			
 			<h2 class="logo"><a href="http://zacomments.azurewebsites.net/">Zacomments</a></h2>
-			
 			<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
-			
 			<form class="search">			
 				<input type="text" id="searchField">
 				<button type="button" id="search">Search</button>
 	    	</form>
-			
 		</header>
-					
+				
 		<main data-hull-component="maincomp"></main>   
 	    
 	    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
@@ -61,15 +56,12 @@
 	        {{#if loggedIn}}
 	    		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
-	    	
 	    	<header>
 				<span class="pageHeader">Trending Buzz</span>
 	    	</header>
-	    	
 	        {{#each trendingPosts}}
 	        	{{#if name}}
 					<article>
-						
 		        		<section class="topic">
 			                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
@@ -78,10 +70,8 @@
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
 						</section>
-		        	
 						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-						
 						<section class="tagFeed">
 							<ul>
 			                {{#if tags}}
@@ -93,29 +83,21 @@
 			                {{/if}}								
 							</ul>
 						</section>
-		        		
-	        		</article>
-	        		        		
+	        		</article>    		
 	            {{/if}}
 			{{/each}}
-			
 	       <footer>
 		       <button type="button" id="loadMoreTrending" data-hull-action="loadMoreTrending">Load more posts</button>
 	       </footer>
-	       		
 	    </script>
 	    		    			
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
-			
 			<header>
 				<span class="pageHeader">New Buzz</span>
 			</header>
-	    
 			{{#each newPosts}}
 				{{#if name}}
-				
 				<article>
-	
 					<section class="topic">
 						<h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>		
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>						
@@ -124,10 +106,8 @@
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						</ul>
 					</section>
-
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					
 					<section class="tagFeed">
 						<ul>
 						{{#if tags}}
@@ -139,54 +119,48 @@
 						{{/if}}							
 						</ul>
 					</section>
-						
-				</article>
-										
+				</article>					
 				{{/if}}
 			{{/each}}
-			
 			<footer>
 				<button type="button" id="loadMore" data-hull-action="loadMore">Load more posts</button>
 			</footer>
-			
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='mylogin/mylogin'>
-	    {{#if authHasFailed}}
-		  <p class="alert alert-error">
-		    There was an error signing in your account. Maybe you did not approve the app?
-		  </p>
-	    {{/if}}
-		
-		{{#if matchingProviders}}
-		  <div class='media'>
-		    {{#if me.picture}}
-		    <div class="pull-left">
-		      <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
-		    </div>
+		    {{#if authHasFailed}}
+			  <p class="alert alert-error">
+			    There was an error signing in your account. Maybe you did not approve the app?
+			  </p>
 		    {{/if}}
-		    <div class="pull-right">
-		      <a data-hull-action="logout" class="btn">Log Out</a>
-		    </div>
-		    <!--
-		    <div class="media-body">
-		      <span class="media-heading">{{me.name}}</span>
-		    </div>
-		    -->
-		  </div>
-		
-		{{else}}
-		  {{#if loggedOut}}
-		    <div class="hull-identity__signin">
-		      {{#loggedOut}}
-		        <button data-hull-action="login" data-hull-provider="{{.}}" class="btn btn-small btn-{{.}}">
-		          <i class="icon-{{.}}"></i>
-		          Sign In with {{classify .}}
-		        </button>
-		      {{/loggedOut}}
-		    </div>
-		  {{/if}}
-		{{/if}}
+			{{#if matchingProviders}}
+			  <div class='media'>
+			    {{#if me.picture}}
+			    <div class="pull-left">
+			      <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
+			    </div>
+			    {{/if}}
+			    <div class="pull-right">
+			      <a data-hull-action="logout" class="btn">Log Out</a>
+			    </div>
+			    <!--
+			    <div class="media-body">
+			      <span class="media-heading">{{me.name}}</span>
+			    </div>
+			    -->
+			  </div>
+			{{else}}
+			  {{#if loggedOut}}
+			    <div class="hull-identity__signin">
+			      {{#loggedOut}}
+			        <button data-hull-action="login" data-hull-provider="{{.}}" class="btn btn-small btn-{{.}}">
+			          <i class="icon-{{.}}"></i>
+			          Sign In with {{classify .}}
+			        </button>
+			      {{/loggedOut}}
+			    </div>
+			  {{/if}}
+			{{/if}}
 	    </script>	
 	    
 	    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
@@ -213,12 +187,10 @@
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
 			{{else}}
-	    
 	    	<section class="userId">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
 		    </section>
-		    
 	        <section class="userFeed">
 	        {{#each feed}}
 	            {{#ifEqual object.type "comment"}}
@@ -236,11 +208,9 @@
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
 			{{/if}}
-    
 	    	<header>
 	        	<span class="pageHeader">Search Results</span>
 	    	</header>
-	    	
 	    	<section class="topic">
 	        {{#ifEqual searchResults.length 0}}
 	        	<p>No results were found</p>
@@ -280,21 +250,16 @@
 	    </script>
 	        
 	    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
-	    	<header>
-	        	<span class="pageHeader">Do you want to add an image to that topic?</span>
-	    	</header>
-	    	
-	    	<section>
-		    	<header>
-		        	<span class="pageHeader">Use Image URL Or Upload an Image</span>
-		        </header>
+    		<header>
+	        	<span class="pageHeader">Use Image URL Or Upload an Image</span>
+	        </header>
+	        <section>
 		        <form>
 			        <input type="text" id="imageURL"></input>
 			        <button type="button" id="updateImage" data-hull-action="updateimage">Update Image</button>
 		        </form>
-		        
-		        <div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
-		        <button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
+				<button type="button" id="skipimageupload" data-hull-action="skipimageupload">No thanks</button>
+				<div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
 		    </section>
 	    </script>
 	    
@@ -306,11 +271,8 @@
 	        {{#if loggedIn}}
 			<section data-hull-component="createtopicform"></section>
 			{{/if}}
-			
 			<section class="topic">
-	    
 		    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-		    	
 		     	<section class="comment">
 		        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 		        	<div class="userComment">
@@ -321,7 +283,6 @@
 								{{{extra.richComment}}}
 							{{/if}}
 						</div>
-	
 						<ul>
 					 		<li>{{fromNow comment.updated_at}}</li>
 					 		<li>{{post.stats.comments}} comments</li>
@@ -330,9 +291,7 @@
 					 	</ul>
 		        	</div>
 				</section>
-				
 			</section
-			
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
@@ -350,15 +309,11 @@
 	        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
 	        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
 	        {{/if}}
-	        
 	        <section id="mainSection">
-		        
 		        {{#if loggedIn}}
 					<section data-hull-component="createtopicform"></section>
 				{{/if}}
-		        
 	        	<article>
-		        	
 			        <section class="topic">
 				        <h1 id="postTitle">{{post.name}}</h1>
 				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
@@ -367,46 +322,35 @@
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
 				    </section>
-
 			        {{#if isAdmin}}
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
 			        {{/if}}
-			        
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
-					
 					<section>
 				        <form>
 					        <input type="text" id="postTags"></input>
 				        </form>
 			        </section>
-			        
 			        <header>
 						<span>Top Comments</span>
 			        </header>
 					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
-			        
 			        <header>
 				    	<span>New Comments</span>
 			        </header>
 					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
-					
 				</article>	    
-				    
-		    </section>
-		        
+		    </section> 
+		    
 	        <aside id="mainAside">
-		        
 		        <header>
 	       			<span class="pageHeader">Topics under {{post.name}}</span>
 		        </header>
-		        
 				{{#ifEqual postsUnder.length 0}}
 		        <p>No topics at the moment.</p>
 		        {{/ifEqual}}
 		        {{#each postsUnder}}
-		        
 		        <article>
-			    
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -415,10 +359,8 @@
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
 			    	</section>
-			    
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					
 					<section class="tagFeed">
 						<ul>
 			            {{#if tags}}
@@ -430,22 +372,16 @@
 			            {{/if}}						
 						</ul>
 					</section>
-					
 		        </article>
-				
 		        {{/each}}
-		        
 		        <header>
 	       			<span class="pageHeader">Topics related {{post.name}}</span>
 		        </header>
-		        
 				{{#ifEqual postsRelated.length 0}}
 		        <p>No topics at the moment.</p>
 		        {{/ifEqual}}
 		        {{#each postsRelated}}
-		        
 		        <article>
-			        
 					<section class="topic">
 			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
@@ -454,10 +390,8 @@
 		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 		            	</ul>
 			    	</section>
-		    	
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
 					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					
 					<section class="tagFeed">
 						<ul>
 			            {{#if tags}}
@@ -469,15 +403,11 @@
 			            {{/if}}	
 						</ul>
 					</section>
-					
 		        </article>
-		    	
 		    	{{/each}}
-			    
 			</aside>
-	    
 	    </script>
-	        
+	    
 	    <script type='text/handlebars' data-hull-template='test/test'>
 		    {{#if comments}}
 		    <section class="commentFeed" class="media-list hull-comments__list">
@@ -491,9 +421,7 @@
 							{{#if extra.richComment}}
 						  		{{{extra.richComment}}}
 						  	{{/if}}
-						  	
 					  	</div>
-	
 		              	<ul class="hull-comments__actions">
 			              	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
 						  	<li class="muted">{{fromNow updated_at}}</li>
@@ -505,14 +433,11 @@
 					</div>
 				</section>
 				{{/comments}}
-				
-			
 		    	{{^comments}}
 		    	<footer>
 					<p>No more comments</p>
 		    	</footer>
 				{{/comments}}
-		    	
 				{{#ifEqual options.showLoadMoreButton true}}
 		        <button type="button" id="loadMore" data-hull-action="loadMore">Load more comments</button>
 				{{/ifEqual}}
@@ -573,7 +498,6 @@
 		<script src="//d3f5pyioow99x0.cloudfront.net/0.8/hull.js"></script>
 	    <script src="js/jquery.tagsinput.js"></script>
 		<script src="js/components.js"></script>
-		
 		<script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreview.js" ></script>
 		<script type="text/javascript" src="Facebook-Link-Preview-master/js/linkPreviewRetrieve.js" ></script>
 
@@ -764,6 +688,5 @@
 	        
 	        })();
  		</script>
- 		
  	</body>
 </html>
