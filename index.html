@@ -205,95 +205,29 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
-	    	<section id="mainSection">
-		        {{#if loggedIn}}
-					<section data-hull-component="createtopicform"></section>
-				{{/if}}
-		    	<header>
-		        	<span class="pageHeader">Search Results</span>
-		    	</header>
-		    	<section class="topic">
-		        {{#ifEqual searchResults.length 0}}
-		        	<p>No results were found</p>
-		        {{else}}
-			        {{#each searchResults}}
-			            {{#if name}}
-			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-			                <ul>
-								<li>{{stats.comments}} comments</li>
-								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-			                </ul>
-			            </section>
-			            {{/if}}
-			        {{/each}}
-		        {{/ifEqual}}
-		        </section>
-	        </section>
-	        <aside id="mainAside">
-		        <header>
-	       			<span class="pageHeader">Topics under {{post.name}}</span>
-		        </header>
-				{{#ifEqual postsUnder.length 0}}
-		        <p>No topics at the moment.</p>
-		        {{/ifEqual}}
-		        {{#each postsUnder}}
-		        <article>
-					<section class="topic">
-			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+	        {{#if loggedIn}}
+				<section data-hull-component="createtopicform"></section>
+			{{/if}}
+	    	<header>
+	        	<span class="pageHeader">Search Results</span>
+	    	</header>
+	    	<section class="topic">
+	        {{#ifEqual searchResults.length 0}}
+	        	<p>No results were found</p>
+	        {{else}}
+		        {{#each searchResults}}
+		            {{#if name}}
+		                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-						<ul>
+		                <ul>
 							<li>{{stats.comments}} comments</li>
-		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		            	</ul>
-			    	</section>
-					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					<section class="tagFeed">
-						<ul>
-			            {{#if tags}}
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-			            {{/if}}						
-						</ul>
-					</section>
-		        </article>
+							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		                </ul>
+		            </section>
+		            {{/if}}
 		        {{/each}}
-		        <header>
-	       			<span class="pageHeader">Topics related {{post.name}}</span>
-		        </header>
-				{{#ifEqual postsRelated.length 0}}
-		        <p>No topics at the moment.</p>
-		        {{/ifEqual}}
-		        {{#each postsRelated}}
-		        <article>
-					<section class="topic">
-			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-						<ul>
-							<li>{{stats.comments}} comments</li>
-		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		            	</ul>
-			    	</section>
-					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
-					<section class="tagFeed">
-						<ul>
-			            {{#if tags}}
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-			            {{/if}}	
-						</ul>
-					</section>
-		        </article>
-		    	{{/each}}
-			</aside>
+	        {{/ifEqual}}
+	        </section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'>
