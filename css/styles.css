@@ -39,7 +39,9 @@ a:hover{
 	position:fixed;
 	background-color:white;
 	padding:0.8em 0;
-	width:100%;
+	width:inherit;
+	top: 0;
+	z-index: 1;
 }
 main{
 	margin-top:5em;
