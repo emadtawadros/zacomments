@@ -186,7 +186,7 @@
 	    <script type='text/x-handlebars' data-hull-template='user/user'>
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
-			{{else}}
+			{{/if}}
 	    	<section class="userId">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
