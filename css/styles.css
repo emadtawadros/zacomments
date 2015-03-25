@@ -261,14 +261,14 @@ article{
 	text-transform: capitalize;
 	font-size:0.8em;
 	margin-right:0.8em;
-	background-color: #008080;
-	color: #FFFFFF;
-}
-.tag a{
 	padding: 0.4em;
 	background-color: #008080;
 	color: #FFFFFF;
 	border-radius: 2px;
+}
+.tag a{
+	background-color: #008080;
+	color: #FFFFFF;
 }
 
 /* Desktop-tablet size */
