@@ -277,16 +277,16 @@
 		        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 		        	<div class="userComment">
 						<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
+						<time>{{fromNow comment.updated_at}}</time>
 						<div>
 							<p>{{comment.description}}<p>
 							{{#if extra.richComment}}
 								{{{extra.richComment}}}
 							{{/if}}
 						</div>
+						<ul data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></ul>
 						<ul>
-					 		<li>{{fromNow comment.updated_at}}</li>
 					 		<li>{{post.stats.comments}} comments</li>
-					 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
 					 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
 					 	</ul>
 		        	</div>
@@ -416,15 +416,15 @@
 		            <img src={{user.picture}} class="userImg">
 		            <div class="userComment">
 		            	<span><a href="#/user/{{user.id}}">{{user.name}}</a></span>
+		            	<time class="muted">{{fromNow updated_at}}</time>
 					  	<div class="hull-comments__description">
 						  	<p>{{description}}</p>
 							{{#if extra.richComment}}
 						  		{{{extra.richComment}}}
 						  	{{/if}}
 					  	</div>
+					  	<ul data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></ul>
 		              	<ul class="hull-comments__actions">
-			              	<li data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></li>
-						  	<li class="muted">{{fromNow updated_at}}</li>
 		                  	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 						  	{{#if isDeletable}}
 		              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
