@@ -235,7 +235,7 @@ article{
 	clear:both;
 }
 .tagFeed ul li a{
-	padding: 0.4em;
+  	padding: 0.4em 0.8em;
 	background-color: #008080;
 	color: #FFFFFF;
 	border-radius: 2px;
