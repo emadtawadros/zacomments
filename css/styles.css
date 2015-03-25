@@ -7,9 +7,10 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	margin:0;
-	padding:0;
+	padding:0.8em;
 	background-color:#FFFFFF;
 	color:#444444;
+	width:100%;
 }
 
 ul,ol{
@@ -34,12 +35,13 @@ a:hover{
 	color:#004040;
 }
 
-#mainHeader,
-main,
+#mainHeader{
+	position:fixed;
+}
+main{
+	margin-top:5em;
+}
 #mainFooter{
-	width:100%;
-	padding:0.8em;
-	clear:both;
 }
 	
 /* #mainHeader Styles */	
@@ -284,6 +286,11 @@ article{
 /* Desktop-tablet size */
 
 @media (min-width: 960px){
+	
+	body{
+		width:1080px;
+		margin:0 auto;
+	}
 
 	#mainSection{
 		width:64%;
@@ -295,13 +302,6 @@ article{
 		float:right;
 	}
 	
-	#mainHeader,
-	main,
-	#mainFooter{
-		width:1080px;
-		margin:0 auto;
-	}
-
 }
 
 
