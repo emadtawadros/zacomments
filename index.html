@@ -272,19 +272,23 @@
 		     	<section class="comment">
 		        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 		        	<div class="userComment">
-						<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
-						<time>{{fromNow comment.updated_at}}</time></span>
+						<span>
+							<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
+							<time>{{fromNow comment.updated_at}}</time>
+						</span>
 						<div>
 							<p>{{comment.description}}<p>
 							{{#if extra.richComment}}
 								{{{extra.richComment}}}
 							{{/if}}
 						</div>
-						<ul data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></ul>
-						<ul>
-					 		<li>{{post.stats.comments}} comments</li>
-					 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
-					 	</ul>
+						<section>
+							<ul data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></ul>
+							<ul>
+						 		<li>{{post.stats.comments}} comments</li>
+						 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
+						 	</ul>
+						</section>
 		        	</div>
 				</section>
 			</section
@@ -407,21 +411,25 @@
 				<section class="comment" data-hull-comment-id="{{id}}">
 		            <img src={{user.picture}} class="userImg">
 		            <div class="userComment">
-		            	<span><a href="#/user/{{user.id}}">{{user.name}}</a>
-		            	<time class="muted">{{fromNow updated_at}}</time></span>
+		            	<span>
+			            	<a href="#/user/{{user.id}}">{{user.name}}</a>
+			            	<time class="muted">{{fromNow updated_at}}</time>
+		            	</span>
 					  	<div class="hull-comments__description">
 						  	<p>{{description}}</p>
 							{{#if extra.richComment}}
 						  		{{{extra.richComment}}}
 						  	{{/if}}
 					  	</div>
-					  	<ul data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></ul>
-		              	<ul class="hull-comments__actions">
-		                  	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-						  	{{#if isDeletable}}
-		              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
-		              		{{/if}}
-	                	</ul> 
+					  	<section>
+						  	<ul data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></ul>
+			              	<ul class="hull-comments__actions">
+			                  	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+							  	{{#if isDeletable}}
+			              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
+			              		{{/if}}
+		                	</ul> 
+					  	</section>
 					</div>
 				</section>
 				{{/comments}}
