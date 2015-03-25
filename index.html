@@ -415,9 +415,13 @@
 						  		{{{extra.richComment}}}
 						  	{{/if}}
 					  	</div>
-					  	<div class="hull-comments__actions">
-					  		<ul data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></ul>
-					  	</div>
+					  	<ul data-hull-component="ratings/vote@hull" data-hull-id="{{id}}"></ul>
+		              	<ul class="hull-comments__actions">
+		                  	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+						  	{{#if isDeletable}}
+		              		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
+		              		{{/if}}
+	                	</ul> 
 					</div>
 				</section>
 				{{/comments}}
@@ -437,12 +441,6 @@
 	        {{#if loggedIn}}
 	        <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>{{votes.up}}</button></li>
 	        <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>{{votes.down}}</button></li>
-          	<ul class="hull-comments__actions">
-              	<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-			  	{{#if isDeletable}}
-          		<li><a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a></li>
-          		{{/if}}
-        	</ul>
 			{{/if}}
 	    </script>
 	    
