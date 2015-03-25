@@ -140,7 +140,6 @@
 						</ul>
 					</section>
 						
-					
 				</article>
 										
 				{{/if}}
@@ -207,13 +206,14 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/post'>
-	    	{{#if loggedIn}}
-			<section data-hull-component="createtopicform"></section>
-	        {{/if}}
 	        <section data-hull-component="post" data-hull-id="{{id}}"></section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'>
+	        {{#if loggedIn}}
+				<section data-hull-component="createtopicform"></section>
+			{{else}}
+	    
 	    	<section class="userId">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
@@ -233,32 +233,35 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
-		    	<header>
-		        	<span class="pageHeader">Search Results</span>
-		    	</header>
-		    	
-		    	<section class="topic">
-		        {{#ifEqual searchResults.length 0}}
-		        	<p>No results were found</p>
-		        {{else}}
-			        {{#each searchResults}}
-			            {{#if name}}
-			                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-			                <ul>
-								<li>{{stats.comments}} comments</li>
-								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-			                </ul>
-			            </section>
-			            {{/if}}
-			        {{/each}}
-		        {{/ifEqual}}
-		        </section>
+	        {{#if loggedIn}}
+				<section data-hull-component="createtopicform"></section>
+			{{/if}}
+    
+	    	<header>
+	        	<span class="pageHeader">Search Results</span>
+	    	</header>
+	    	
+	    	<section class="topic">
+	        {{#ifEqual searchResults.length 0}}
+	        	<p>No results were found</p>
+	        {{else}}
+		        {{#each searchResults}}
+		            {{#if name}}
+		                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+		                <ul>
+							<li>{{stats.comments}} comments</li>
+							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		                </ul>
+		            </section>
+		            {{/if}}
+		        {{/each}}
+	        {{/ifEqual}}
+	        </section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'>
 	        {{#if loggedIn}}
-				<section data-hull-component="createtopicform"></section>
 				<section data-hull-component="user" data-hull-id="{{id}}"></section>
 			{{else}}
 				<header>
@@ -269,9 +272,6 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/search'>
-	        {{#if loggedIn}}
-			<section data-hull-component="createtopicform"></section>
-			{{/if}}
 	        <section data-hull-component="search" data-hull-search="{{id}}"></section>
 	    </script>
 	    
@@ -299,34 +299,40 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/comment'>
-	        {{#if loggedIn}}
-			<section data-hull-component="createtopicform"></section>
-			{{/if}}
 	        <section data-hull-component="comment" data-hull-id="{{id}}"></section>
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
-	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-	    	
-	     	<section class="comment">
-	        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
-	        	<div class="userComment">
-					<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
-					<div>
-						<p>{{comment.description}}<p>
-						{{#if extra.richComment}}
-							{{{extra.richComment}}}
-						{{/if}}
-					</div>
-
-					<ul>
-				 		<li>{{fromNow comment.updated_at}}</li>
-				 		<li>{{post.stats.comments}} comments</li>
-				 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
-				 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
-				 	</ul>
-	        	</div>
-			</section>
+	        {{#if loggedIn}}
+			<section data-hull-component="createtopicform"></section>
+			{{/if}}
+			
+			<section class="topic">
+	    
+		    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+		    	
+		     	<section class="comment">
+		        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
+		        	<div class="userComment">
+						<span><a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a></span>
+						<div>
+							<p>{{comment.description}}<p>
+							{{#if extra.richComment}}
+								{{{extra.richComment}}}
+							{{/if}}
+						</div>
+	
+						<ul>
+					 		<li>{{fromNow comment.updated_at}}</li>
+					 		<li>{{post.stats.comments}} comments</li>
+					 		<li data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></li>
+					 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
+					 	</ul>
+		        	</div>
+				</section>
+				
+			</section
+			
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
@@ -346,6 +352,10 @@
 	        {{/if}}
 	        
 	        <section id="mainSection">
+		        
+		        {{#if loggedIn}}
+					<section data-hull-component="createtopicform"></section>
+				{{/if}}
 		        
 	        	<article>
 		        	
@@ -516,8 +526,6 @@
 	          <li>Upvote<button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>{{votes.up}}</button></li>
 	          <li>Downvote<button class="btn btn-small {{outputIf myVote -1 'btn-success'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>{{votes.down}}</button></li>
 	        </ul>
-			{{else}}
-			<section data-hull-component="login_button@hull"></section>
 			{{/if}}
 	    </script>
 	    
