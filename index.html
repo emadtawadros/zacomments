@@ -45,9 +45,9 @@
 		<main data-hull-component="maincomp"></main>   
 	    
 	    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
-	        <!--{{#if isAdmin}}-->
+	        {{#if isAdmin}}
 	            <section data-hull-component="flaggedposts"></section>
-	        <!--{{/if}}-->
+	        {{/if}}
 		        <section id="mainSection" data-hull-component="posts"></section> 
 				<aside id="mainAside" data-hull-component="newposts"></aside>
 	    </script>
@@ -305,10 +305,10 @@
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='post/post'>
-	        <!--{{#if isAdmin}}-->
+	        {{#if isAdmin}}
 	        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
 	        	<button type="button" id="updateImage" data-hull-action="updateImage">Upload Image</button>
-	        <!--{{/if}}-->
+	        {{/if}}
 	        <section id="mainSection">
 		        {{#if loggedIn}}
 					<section data-hull-component="createtopicform"></section>
@@ -322,9 +322,9 @@
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
 				    </section>
-			        <!--{{#if isAdmin}}-->
+			        {{#if isAdmin}}
 			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
-			        <!--{{/if}}-->
+			        {{/if}}
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
 					<section>
 				        <form>
