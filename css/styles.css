@@ -73,7 +73,7 @@ main{
 #ui-id-1{
 	border: 1px solid #EEEEEE;
 	background-color:#FFFFFF;
-	width:100%;
+	position:absolute;
 }
 
 .ui-menu-item{
