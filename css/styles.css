@@ -168,6 +168,7 @@ article{
 }
 
 .topic ul li{
+	color:#AAAAAA;
 	font-size:0.8em;
 	margin-right:0.4em;
 }
@@ -214,6 +215,7 @@ article{
 	line-height: 1.4em;
 }
 .comment ul li{
+	color:#AAAAAA;
 	font-size:0.6em;
 	margin-right: 0.2em;
 }
@@ -233,12 +235,12 @@ article{
 	margin-left:45px;
 	clear:both;
 }
-.tagFeed ul li{
+.tagFeed ul li a{
+	color: #AAAAAA;
 	font-size:0.8em;
 	margin-right:0.4em;
-	color: #AAAAAA;
 }
-.tagFeed ul li:before{
+.tagFeed ul li a:before{
 	content:"#";
 }
 
