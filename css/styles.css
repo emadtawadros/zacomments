@@ -77,9 +77,9 @@ main{
 }
 
 .ui-menu-item{
-	font-family:inherit;
 	font-size:0.8em;
 	padding:0.8em;
+	display:block;
 }
 	
 .logo{
