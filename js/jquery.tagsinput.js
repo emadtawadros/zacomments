@@ -200,6 +200,7 @@
 			}
 			
 			var data = jQuery.extend({
+				appendTo: ".createTopic",
 				pid:id,
 				real_input: '#'+id,
 				holder: '#'+id+'_tagsinput',
