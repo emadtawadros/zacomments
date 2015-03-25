@@ -39,6 +39,7 @@ a:hover{
 	position:fixed;
 	background-color:white;
 	padding:0.8em 0;
+	width:100%;
 }
 main{
 	margin-top:5em;
@@ -81,6 +82,8 @@ main{
 .logo{
 	float:left;
 	display:block;
+	font-size: 1.2em;
+	margin: 0.4em 0.8em 0.4em 0;
 }
 	
 .login{
@@ -287,20 +290,16 @@ article{
 /* Desktop-tablet size */
 
 @media (min-width: 960px){
-	
-	body,
-	#mainHeader,
-	main,
-	#mainFooter{
+	body{
 		width:1080px;
 		margin:0 auto;
+		padding:0;
 	}
 
 	#mainSection{
 		width:64%;
 		float:left;
 	}
-	
 	#mainAside{
 		width:34%;
 		float:right;
