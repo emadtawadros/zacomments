@@ -235,12 +235,12 @@ article{
 	margin-left:45px;
 	clear:both;
 }
-.tagFeed ul li a{
+.tagFeed li a{
 	color: #AAAAAA;
 	font-size:0.8em;
 	margin-right:0.4em;
 }
-.tagFeed ul li a:before{
+.tagFeed li a:before{
 	content:"#";
 }
 
