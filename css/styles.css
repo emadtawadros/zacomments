@@ -89,10 +89,6 @@ main{
 	margin: 0.4em 0.8em 0.4em 0;
 }
 	
-.login{
-	float:right;
-}
-
 .login .pull-left,
 .login .media-body,
 .login .pull-right{
@@ -114,13 +110,13 @@ main{
 }
 
 .hull-identity__signin button{
-	float:left;
+	float:right;
 	font-size:0.8em;
 	background-color: #008080;
 	border-radius: 2px;
 	color: #FFFFFF;
 	padding: 0.8em 0.8em;
-	margin-left: 0.8em;
+	margin-right: 0.8em;
 	border:none;
 }
 
