@@ -198,6 +198,35 @@
 	            {{/ifEqual}}
 	        {{/each}}
     		</section>
+    		
+    		<header>
+    			<span class="pageHeader">Topics {{feed.0.actor.name}} is interested in</span>
+		        </header>
+			{{#ifEqual interestedTopics.length 0}}
+		        	<p>He is not interested in anything!</p>
+		        {{/ifEqual}}
+		        
+		        {{#each interestedTopics}}
+		        <article>
+					<section class="topic">
+			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+			        	{{#if tags}}
+						<ul class="tagFeed">
+			                {{#each tags}}
+			                    {{#if this}}
+			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                    {{/if}}
+			                {{/each}}
+						</ul>
+						{{/if}}
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<ul>
+							<li>{{stats.comments}} comments</li>
+		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		            	</ul>
+			    	</section>
+		        </article>
+		    	{{/each}}
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
