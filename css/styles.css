@@ -103,13 +103,13 @@ main{
 
 .login .pull-right a{
 	display:block;
-	height:34px;
+	height:36px;
 	padding: 0.8em;
 }
 
 .login .media img{
-	width:34px;
-	height:34px;
+	width:36px;
+	height:36px;
 	border-radius:2px;
 }
 
@@ -252,8 +252,8 @@ article{
 	float:left;
 }	
 .userImg{
-	width:34px;
-	height:34px;
+	width:36px;
+	height:36px;
 	border-radius:2px;
 	position:absolute;
 }
@@ -294,7 +294,7 @@ article{
 
 /* Desktop-tablet size */
 
-@media (min-width: 960px){
+@media only screen and (min-width: 960px){
 	body{
 		width:1080px;
 		margin:0 auto;

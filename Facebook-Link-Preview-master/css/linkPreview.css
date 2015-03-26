@@ -126,14 +126,13 @@
 	padding: 3px 1px;
 }
 .text{
-	height:34px;
-	width:100%;
+	font-size:0.8em;
 	border: 1px solid #EEEEEE;
 	border-radius:2px;
-	resize: none;
+	margin-left: 46px;
 	padding: 0.8em;
 	color: grey;
-	display:block;
+	float:left;
 }
 .closePreview{
 	float: right;
@@ -156,11 +155,10 @@
 }
 .postPreviewButton{
 	font-family: inherit;
-	font-size: 0.6em;
+	font-size: 0.8em;
 	text-transform: uppercase;
-	color: #FFFFFF;
-	height: 34px;
-	padding:1.2em;
+	color: inherit;
+	padding:0.8em;
 	border: 1px solid #EEEEEE;
 	border-radius: 3px;
 	background-color: #FFFFFF;
@@ -171,9 +169,6 @@
 	background: #4f6aa3;
 }
 .postPreview{
-	position:absolute;
-	top:0;
-	right:0;
 }
 
 .previewPosted{
