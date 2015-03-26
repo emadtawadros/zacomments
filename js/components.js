@@ -233,6 +233,28 @@ Hull.component('posts', {
                         });        
                     });
                     return dff.promise();
+                },
+                interestedTopics: function() {
+                	var result = [];
+                	var dff = $.Deferred(); 
+                	var component = this;
+                	component.api('/following/' + component.options.id, 'put').then(function(response) {
+                        	component.api('app/following_activity', 'get', {
+                        		where: {
+                        			'actor_id': component.options.id,
+                        			'obj_type': { $in: ['Comment'] }
+                        		},
+                            limit: 100
+                        }).then(function(response) {
+                        	$.each(response, function(actionIndex, actionValue) {
+                        		if(actionValue.object.commentable) {
+                        			result.push(actionValue.object.commentable);
+                        		}
+                        	});
+                            dff.resolve(result);
+                        });        
+                    });
+                    return dff.promise();	
                 }
             },
             beforeRender: function(data, errors) {
