@@ -54,6 +54,7 @@ main{
 
 .search{
 	float:left;
+	margin-right: 0.8em;
 }
 
 .search input,
@@ -110,14 +111,13 @@ main{
 }
 
 .hull-identity__signin button{
-	float:right;
+	font-family: inherit;
 	font-size:0.8em;
-	background-color: #008080;
+	padding: 0.8em;
+	border: 1px solid #EEEEEE;
 	border-radius: 2px;
+	background-color: #008080;
 	color: #FFFFFF;
-	padding: 0.8em 0.8em;
-	margin-right: 0.8em;
-	border:none;
 }
 
 .hull-identity__signin button:hover{
@@ -272,20 +272,12 @@ article{
 /*Tags*/
 
 .tagsinput{
-	margin: 0.8em 0;
+	margin-bottom:0.8em;
 }
 .tag{
 	text-transform: capitalize;
 	font-size:0.8em;
 	margin-right:0.8em;
-	padding: 0.4em;
-	background-color: #008080;
-	color: #FFFFFF;
-	border-radius: 2px;
-}
-.tag a{
-	background-color: #008080;
-	color: #FFFFFF;
 }
 
 /* Desktop-tablet size */
