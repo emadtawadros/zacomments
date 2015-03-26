@@ -85,9 +85,13 @@ main{
 	
 .logo{
 	float:left;
-	display:block;
-	font-size: 1.2em;
 	margin: 0.4em 0.8em 0.4em 0;
+	display: block;
+	text-indent: -9999px;
+	width: 100px;
+	height: 82px;
+	background: url(logo.svg);
+	background-size: 100px 82px;
 }
 	
 .login .pull-left,
