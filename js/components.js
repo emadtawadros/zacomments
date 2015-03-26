@@ -727,7 +727,6 @@ Hull.component('posts', {
                 	var dff = $.Deferred(); 
                 	var component = this;
                 	component.api(this.options.id, 'get').then(function(comment) {
-                		var dff = $.Deferred();
                 		var result = [];
                 		var tagsProcessed = 0;
                 		var numberOfTags = 0;
