@@ -129,10 +129,8 @@
 	font-size:0.8em;
 	border: 1px solid #EEEEEE;
 	border-radius:2px;
-	margin-left: 46px;
+	margin-left: 48px;
 	padding: 0.8em;
-	color: grey;
-	float:left;
 }
 .closePreview{
 	float: right;
@@ -155,13 +153,13 @@
 }
 .postPreviewButton{
 	font-family: inherit;
-	font-size: 0.8em;
-	text-transform: uppercase;
-	color: inherit;
-	padding:0.8em;
+	width: 37px;
+	height: 37px;
+	padding:13px;
 	border: 1px solid #EEEEEE;
 	border-radius: 3px;
 	background-color: #FFFFFF;
+	color: inherit;
 	cursor: pointer;
 }
 .postPreviewButton:active{
@@ -169,6 +167,7 @@
 	background: #4f6aa3;
 }
 .postPreview{
+	display:inline-block;
 }
 
 .previewPosted{
