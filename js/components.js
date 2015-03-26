@@ -248,7 +248,7 @@ Hull.component('posts', {
                         }).then(function(response) {
                         	$.each(response, function(actionIndex, actionValue) {
                         		if(actionValue.object.commentable) {
-                        			if(notAlreadyAdded(result, actionValue.id)) {
+                        			if(notAlreadyAdded(result, actionValue.object.commentable.id)) {
                         				result.push(actionValue.object.commentable);
                         			}
                         		}
