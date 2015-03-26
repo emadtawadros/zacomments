@@ -741,10 +741,11 @@ Hull.component('posts', {
                 						}
                 					}).then(function(response){
                 						$.each(response, function(responseIndex, responseValue){
-                							if((responseValue.id != componentRef.options.id) && notAlreadyAdded(result, responseValue.id)) {
+                							if((responseValue.id != component.options.id) && notAlreadyAdded(result, responseValue.id)) {
                 								result.push(responseValue);
                 							}
                 						});
+                						tagsProcessed++;
                 					});
                 				});
                 				
