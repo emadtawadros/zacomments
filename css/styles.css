@@ -216,10 +216,15 @@ article{
 	margin-right: 0.2em;
 }
 .comment button{
+	width: 12px;
+	height: 12px;
+	background: url(down.svg);
+	background-size: 12px 12px;
 	font-size:inherit;
 	background-color: #FFFFFF;
 	border: none;
 }
+.comment button:
 
 .userId img{
  	width: 46px;
@@ -275,9 +280,10 @@ article{
 	margin-bottom:0.8em;
 }
 .tag{
-	text-transform: capitalize;
 	font-size:0.8em;
+	text-transform: capitalize;
 	margin-right:0.8em;
+	color:#AAAAAA;
 }
 
 /* Desktop-tablet size */
