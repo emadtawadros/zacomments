@@ -850,9 +850,9 @@ Hull.component('posts', {
                     		var listOfTags = tagsText.split(',');
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
-                    			component.$el.find('.imageRadio').fadeIn();
+                    			component.$el.find('#imageRadio').fadeIn();
                     		} else {
-                    			component.$el.find('.imageRadio').fadeOut();
+                    			component.$el.find('#imageRadio').fadeOut();
                     		}
                     		console.log(numberofTags);
                     	}
