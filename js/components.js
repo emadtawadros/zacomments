@@ -851,10 +851,9 @@ Hull.component('posts', {
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
                     			component.$el.find('#imageRadio').fadeIn();
-                    		} else {
-                    			component.$el.find('#imageRadio').fadeOut();
                     		}
-                    		console.log(numberofTags);
+                    	}  else {
+                    		component.$el.find('#imageRadio').fadeOut();
                     	}
                     }
                 });
