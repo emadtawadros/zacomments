@@ -818,7 +818,7 @@ Hull.component('posts', {
             refreshEvents: ['model.hull.me.change'],
 
             afterRender: function (data) {
-        
+            	var component = this;
                 var mappedTopics = $.map(rawAllTopics, function(elementOfArray, indexInArray){
                     if(elementOfArray.name){
                         var datum = {
@@ -849,6 +849,11 @@ Hull.component('posts', {
                     	if(tagsText) {
                     		var listOfTags = tagsText.split(',');
                     		var numberOfTags = listOfTags.length;
+                    		if(numberOfTags > 0) {
+                    			component.$el.find('.imageRadio').fadeIn();
+                    		} else {
+                    			component.$el.find('.imageRadio').fadeOut();
+                    		}
                     		console.log(numberofTags);
                     	}
                     }
@@ -856,7 +861,6 @@ Hull.component('posts', {
                 
                 this.$el.find('.tagsinput').hide();
                 
-                var component = this;
                 this.$el.find('#newEntityField').keyup(function(e) {
 		if(trim($(this).val()) !== "") {
 			component.$el.find('.tagsinput').slideDown();
