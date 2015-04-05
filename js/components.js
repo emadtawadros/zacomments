@@ -845,8 +845,12 @@ Hull.component('posts', {
                     'maxChars' : 0,
                     'placeholderColor' : '#666666',
                     'onChange' : function(param) {
-                    	console.log(param);
-                    	alert("tags changed");
+                    	var tagsText = $('.tagsinput').prev().val();
+                    	if(tagsText) {
+                    		var listOfTags = tagsFieldText.split(',');
+                    		var numberOfTags = listOfTags.length;
+                    		console.log(numberofTags);
+                    	}
                     }
                 });
                 
