@@ -359,9 +359,11 @@
 		    	<form>
 			    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
 			    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
-			    	<input type="radio" name="imageSelection" value="url">Use image URL<br>
-				<input type="radio" name="imageSelection" value="upload">Upload an image<br>
-				<input type="radio" name="imageSelection" value="none">No image
+			    	<div id="imageRadio" style="display:none">
+				    	<input type="radio" name="imageSelection" value="url">Use image URL<br>
+					<input type="radio" name="imageSelection" value="upload">Upload an image<br>
+					<input type="radio" name="imageSelection" value="none">No image
+				</div>
 			    	<button type="button" id="createTopic" data-hull-action="createtopic" disabled>Create</button>
 		    	</form>
 	    	</section>
