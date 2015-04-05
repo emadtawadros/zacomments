@@ -847,7 +847,7 @@ Hull.component('posts', {
                     'onChange' : function(param) {
                     	var tagsText = $('.tagsinput').prev().val();
                     	if(tagsText) {
-                    		var listOfTags = tagsFieldText.split(',');
+                    		var listOfTags = tagsText.split(',');
                     		var numberOfTags = listOfTags.length;
                     		console.log(numberofTags);
                     	}
