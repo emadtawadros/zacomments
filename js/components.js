@@ -843,7 +843,11 @@ Hull.component('posts', {
                     'removeWithBackspace' : true,
                     'minChars' : 0,
                     'maxChars' : 0,
-                    'placeholderColor' : '#666666'
+                    'placeholderColor' : '#666666',
+                    'onChange' : function(param) {
+                    	console.log(param);
+                    	alert("tags changed");
+                    }
                 });
                 
                 this.$el.find('.tagsinput').hide();
