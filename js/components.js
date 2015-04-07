@@ -884,6 +884,10 @@ Hull.component('posts', {
                 		component.$el.find('#imageUploader').hide();
                 	}
                 });
+                
+                this.sandbox.on('hull.uploads.image.finished', function(image) {
+                	component.options.imageID = image.id;
+                });
             },
             actions: {
                 createtopic: function() {
