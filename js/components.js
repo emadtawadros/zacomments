@@ -908,14 +908,37 @@ Hull.component('posts', {
                             	if(tagsText) {
                             		var tagsPromise = processTags(tagsText);
                                 	tagsPromise.done(function(result){
-                                    		component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                                        		"public": "true",
-                                        		"name": newConversationName,
-                                        		"tags": result
-                                    		}).then(function(response) {
-                                        		console.log(response);
-                                        		window.location.href = '#/createtopic/' + response.id;
-                                    		});
+                                		//todo
+                                		var imageOption = component.$el.find('input[type="radio"]').attr("value");
+                                		switch(imageOption) {
+                                			case "url":
+                                				var newUrl = component.$el.find('#imageURL').val();
+                                				component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                                					"public": "true",
+                                					"name": newConversationName,
+                                					"tags": result,
+                                					"picture": null,
+                                					"extra": {
+                                						"fallbackUrl": newUrl
+                                					}
+                                				}).then(function(response) {
+                                					console.log(response);
+                                					window.location.href = '#/post/' + response.id;
+                                				});
+                                				break;
+                        				case "upload":
+                        					break;
+                					case "none":
+                						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                							"public": "true",
+                							"name": newConversationName,
+                							"tags": result
+                						}).then(function(response) {
+                							console.log(response);
+                							window.location.href = '#/post/' + response.id;
+                						});
+                						break;
+                                		}
                                 	});
                         	} else {
                         		component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
