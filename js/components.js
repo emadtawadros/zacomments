@@ -885,6 +885,10 @@ Hull.component('posts', {
                 	}
                 });
                 
+                this.sandbox.on('hull.upload.image.add', function(image) {                  
+			alert(image);
+		});
+		
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
                 	component.options.imageID = image.id;
                 });
