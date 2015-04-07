@@ -869,6 +869,21 @@ Hull.component('posts', {
 			component.$el.find('#createTopic').attr("disabled", "disabled");
 		}
                 });
+                
+                this.$el.find('input[type="radio"]').click(function(){
+                	if($(this).attr("value")=="url"){
+                		component.$el.find('#imageURL').show();
+                		component.$el.find('#imageUploader').hide();
+                	}
+                	if($(this).attr("value")=="upload"){
+                		component.$el.find('#imageURL').hide();
+                		component.$el.find('#imageUploader').show();
+                	}
+                	if($(this).attr("value")=="none"){
+                		component.$el.find('#imageURL').hide();
+                		component.$el.find('#imageUploader').hide();
+                	}
+                });
             },
             actions: {
                 createtopic: function() {
