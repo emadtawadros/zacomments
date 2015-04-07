@@ -935,6 +935,14 @@ Hull.component('posts', {
                                 				});
                                 				break;
                         				case "upload":
+                        					component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+                							"public": "true",
+                							"name": newConversationName,
+                							"tags": result
+                						}).then(function(response) {
+                							console.log(response);
+                							window.location.href = '#/createtopic/' + response.id;
+                						});
                         					break;
                 					case "none":
                 						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
