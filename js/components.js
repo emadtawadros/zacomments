@@ -940,11 +940,13 @@ Hull.component('posts', {
                         						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post', {
                         							"public": "true",
 	                							"name": newConversationName,
-	                							"tags": result,
-	                							"picture": component.options.imageID
+	                							"tags": result
                         						}).then(function(response) {
-                        							console.log(response);
-                        							window.location.href = '#/post/' + response.id;
+                        							component.api(response.id, 'put',{
+                        								"picture": component.options.imageID
+                        							}).then(function(secondResponse) {
+                        								window.location.href = '#/post/'+ response.id;
+                        							});    
                         						});
                         					} else {
                         						alert("please upload and image. Or wait for the upload to finish.");
