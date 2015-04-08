@@ -945,7 +945,7 @@ Hull.component('posts', {
                         							component.api(response.id, 'put',{
                         								"picture": component.options.imageID
                         							}).then(function(secondResponse) {
-                        								window.location.href = '#/post/'+ response.id;
+                        								window.location.href = '#/post/'+ secondResponse.id;
                         							});    
                         						});
                         					} else {
