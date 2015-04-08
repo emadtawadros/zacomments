@@ -816,7 +816,9 @@ Hull.component('posts', {
         Hull.component('createtopicform', {
             templates: ['createtopicform'],
             refreshEvents: ['model.hull.me.change'],
-
+	    initialize: function(data) {
+	    	this.options.imageID = "0";
+	    },
             afterRender: function (data) {
             	var component = this;
 	
