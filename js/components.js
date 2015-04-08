@@ -918,7 +918,7 @@ Hull.component('posts', {
                             		var tagsPromise = processTags(tagsText);
                                 	tagsPromise.done(function(result){
                                 		//todo
-                                		var imageOption = component.$el.find('input[type="radio"]').attr("value");
+                                		var imageOption = component.$el.find('input[type="radio"]:checked').val();
                                 		switch(imageOption) {
                                 			case "url":
                                 				var newUrl = component.$el.find('#imageURL').val();
