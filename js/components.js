@@ -940,7 +940,9 @@ Hull.component('posts', {
                         						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post', {
                         							"public": "true",
 	                							"name": newConversationName,
-	                							"tags": result
+	                							"tags": result,
+	                							"picture": component.options.imageID
+
                         						}).then(function(response) {
                         							component.api(response.id, 'put',{
                         								"picture": component.options.imageID
