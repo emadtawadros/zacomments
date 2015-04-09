@@ -643,9 +643,9 @@ Hull.component('posts', {
             },
             afterRender: function (data) {
             	var component = this;
-                var isTagsEditable = false;
+                var hasElevatedAccess = false;
                 if((data.loggedIn && data.isAdmin) || (data.loggedIn && data.me.id == data.post.actor.id)) {
-                            isTagsEditable = true; 
+                            hasElevatedAccess = true; 
                             component.$el.find('#editableTags').show();
                             component.$el.find('#updateImage').show();
                 }
@@ -654,7 +654,7 @@ Hull.component('posts', {
         
                 console.log("after render");
                 console.log(data);
-                if(isTagsEditable) {
+                if(hasElevatedAccess) {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
 	                    'autocomplete_url': arr,
@@ -676,10 +676,8 @@ Hull.component('posts', {
 	                       tagsElement.addTag(tagValue.label);
 	                   });
 	                }
-                }
-
-                if(data.loggedIn && data.isAdmin) {
-                	var postTitle = this.$el.find('#postTitle');
+	                
+	                var postTitle = this.$el.find('#postTitle');
 	                postTitle.editable({
 	                	type: 'text',
 	                	title: 'Enter new title',
