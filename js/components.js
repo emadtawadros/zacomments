@@ -644,36 +644,39 @@ Hull.component('posts', {
             afterRender: function (data) {
             	var component = this;
                 var isTagsEditable = false;
-                if(data.loggedIn && data.isAdmin) {
+                if((data.loggedIn && data.isAdmin) || (data.loggedIn && data.me.id == data.post.actor.id)) {
                             isTagsEditable = true; 
+                            component.$el.find('#editableTags').show();
                 }
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
         
                 console.log("after render");
                 console.log(data);
-                var tagsElement = this.$el.find('#postTags');
-                tagsElement.tagsInput({
-                    'autocomplete_url': arr,
-                    'autocomplete': {select: function(event, ui){
-                        tagsElement.addTag(ui.item.label);
-                        tagsElement.removeTag(ui.item.value);
-                    }},
-                    'height':'100px',
-                    'width':'300px',
-                    'interactive':isTagsEditable,
-                    'defaultText':'add more tags',
-                    'removeWithBackspace' : true,
-                    'minChars' : 0,
-                    'maxChars' : 0,
-                    'placeholderColor' : '#666666'
-                });
-                if(this.data.post.attributes.tags) {
-                   $.each(this.data.post.attributes.tags, function (tagIndex, tagValue) {
-                       tagsElement.addTag(tagValue.label);
-                   });
+                if(isTagsEditable) {
+	                var tagsElement = this.$el.find('#postTags');
+	                tagsElement.tagsInput({
+	                    'autocomplete_url': arr,
+	                    'autocomplete': {select: function(event, ui){
+	                        tagsElement.addTag(ui.item.label);
+	                        tagsElement.removeTag(ui.item.value);
+	                    }},
+	                    'height':'100px',
+	                    'width':'300px',
+	                    'interactive':true,
+	                    'defaultText':'add more tags',
+	                    'removeWithBackspace' : true,
+	                    'minChars' : 0,
+	                    'maxChars' : 0,
+	                    'placeholderColor' : '#666666'
+	                });
+	                if(this.data.post.attributes.tags) {
+	                   $.each(this.data.post.attributes.tags, function (tagIndex, tagValue) {
+	                       tagsElement.addTag(tagValue.label);
+	                   });
+	                }
                 }
-                
+
                 if(data.loggedIn && data.isAdmin) {
                 	var postTitle = this.$el.find('#postTitle');
 	                postTitle.editable({
