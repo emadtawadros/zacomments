@@ -388,6 +388,8 @@
 					        <input type="text" id="postTags"></input>
 				        </form>
 				        
+			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+
 				        {{#if post.tags}}
 				        	<ul class="tagFeed">
 			                    	{{#each post.tags}}
@@ -404,9 +406,7 @@
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
 				        </ul>
 				    </section>
-			        {{#if isAdmin}}
-			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
-			        {{/if}}
+
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
 			        <header>
 						<span>Top Comments</span>
