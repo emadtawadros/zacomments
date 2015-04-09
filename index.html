@@ -387,6 +387,17 @@
 				        <form>
 					        <input type="text" id="postTags"></input>
 				        </form>
+				        
+				        {{#if post.tags}}
+				        	<ul class="tagFeed">
+			                    	{{#each post.tags}}
+			                        	{{#if this}}
+			                        		<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                        	{{/if}}
+			                    	{{/each}}
+						</ul>
+					{{/if}}
+					
 				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
