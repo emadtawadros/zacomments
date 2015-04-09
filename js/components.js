@@ -647,6 +647,7 @@ Hull.component('posts', {
                 if((data.loggedIn && data.isAdmin) || (data.loggedIn && data.me.id == data.post.actor.id)) {
                             isTagsEditable = true; 
                             component.$el.find('#editableTags').show();
+                            component.$el.find('#updateImage').show();
                 }
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
