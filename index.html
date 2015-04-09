@@ -384,12 +384,15 @@
 	        	<article>
 			        <section class="topic">
 				        <h1 id="postTitle">{{post.name}}</h1>
-				        <form>
-					        <input type="text" id="postTags"></input>
-				        </form>
 				        
-			        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
-
+				        <div id="editableTags" style="display:none">
+					        <form>
+						        <input type="text" id="postTags"></input>
+					        </form>
+					        
+				        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+					</div>
+					
 				        {{#if post.tags}}
 				        	<ul class="tagFeed">
 			                    	{{#each post.tags}}
