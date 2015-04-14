@@ -946,11 +946,7 @@ Hull.component('posts', {
 	                							"picture": component.options.imageID
 
                         						}).then(function(response) {
-                        							component.api(response.id, 'put',{
-                        								"picture": component.options.imageID
-                        							}).then(function(secondResponse) {
-                        								window.location.href = '#/post/'+ secondResponse.id;
-                        							});    
+                        							window.location.href = '#/post/'+ response.id;
                         						});
                         					} else {
                         						alert("please upload and image. Or wait for the upload to finish.");
