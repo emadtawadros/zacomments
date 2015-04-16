@@ -1006,16 +1006,13 @@ Hull.component('posts', {
         
                 setTimeout(function() {
                     Backbone.history.start();
-                    if(window.location.search) { //This is a reuslt of a FB share
-                    	router.navigate('/' + window.location.search.substring(1).split('&')[0].replace('=', '/'));
-                    } else {
-                    	router.navigate('/maincomp');
-                    }
+                    router.navigate('/maincomp');
+
                 }, 200);
         
             },  
             beforeRender: function(data) {
-            	if(window.location.search) {
+            	if(window.location.search) { //This is a result of FB share
             		window.location.href = '#/' + window.location.search.substring(1).split('&')[0].replace('=', '/');
             	} else {
             		data.currentView = this.currentView;
