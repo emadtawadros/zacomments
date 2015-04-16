@@ -84,7 +84,7 @@ Hull.component('posts', {
                 },
                 shareToFB: function(event, action) {
                 	var redirectURI = "http://zacomments.azurewebsites.net/?post=" + action.data.id;
-                	Hull.share({
+                	this.api.share({
                 		provider:'facebook', //share on Facebook
                 		method: 'share', //Facebook allows more than one sharing dialog, choose the one you want.
                 		anonymous: true, //Allow anonymous sharing, I.E. without requring a login beforehand? Default: false.
