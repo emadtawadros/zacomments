@@ -1,3 +1,20 @@
+<?php
+
+$params = array();
+if(count($_GET) > 0) {
+    $params = $_GET;
+} else {
+    $params = $_POST;
+}
+// defaults
+if($params['type'] == "") $params['type'] = "restaurant";
+if($params['locale'] == "") $params['locale'] = "en_US";
+if($params['title'] == "") $params['title'] = "default title";
+if($params['image'] == "") $params['image'] = "thumb";
+if($params['description'] == "") $params['description'] = "default description";
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
