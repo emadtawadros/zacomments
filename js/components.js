@@ -1015,7 +1015,11 @@ Hull.component('posts', {
         
             },  
             beforeRender: function(data) {
-                data.currentView = this.currentView;
+            	if(window.location.search) {
+            		window.location.href = '#/' + window.location.search.substring(1).split('&')[0].replace('=', '/');
+            	} else {
+            		data.currentView = this.currentView;
+            	}
                 return data;
             },
             afterRender: function() {
