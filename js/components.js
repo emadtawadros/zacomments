@@ -1006,7 +1006,11 @@ Hull.component('posts', {
         
                 setTimeout(function() {
                     Backbone.history.start();
-                    router.navigate('/maincomp');
+                    if(window.location.search) { //This is a reuslt of a FB share
+                    	router.navigate('/' + window.location.search.substring(1).split('&')[0].replace('=', '/'));
+                    } else {
+                    	router.navigate('/maincomp');
+                    }
                 }, 200);
         
             },  
