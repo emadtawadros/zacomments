@@ -32,7 +32,7 @@ if($params['description'] == "") $params['description'] = "default description";
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://zacomments.azurewebsites.net" />
 		<meta property="og:title" content="Zacomments" />
-		<meta property="og:description" content="Your Zacomments all belong to us." />
+		<meta property="og:description" content="<?php echo $params['description']; ?>" />
 		
 		<meta name="viewport" content="width=device-width">
 		
