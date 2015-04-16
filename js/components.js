@@ -83,14 +83,15 @@ Hull.component('posts', {
                     
                 },
                 shareToFB: function(event, action) {
+                	var redirectURI = "http://zacomments.azurewebsites.net/?post=" + action.data.id;
                 	Hull.share({
                 		provider:'facebook', //share on Facebook
                 		method: 'share', //Facebook allows more than one sharing dialog, choose the one you want.
                 		anonymous: true, //Allow anonymous sharing, I.E. without requring a login beforehand? Default: false.
                 		params:{
-                			redirect_uri: 'http://zacomments.azurewebsites.net/?post=' + action.data.id, //Where to redirect the user in the popup after he shared. Mandatory
+                			redirect_uri: redirectURI, //Where to redirect the user in the popup after he shared. Mandatory
                 			display: 'popup', //popup || iframe. Optional. Default: Smart depending on connection status and device. Iframe for desktop, Popup for mobile
-                			href: 'http://zacomments.azurewebsites.net/?post=' + action.data.id //Params passed to the sharing dialog.
+                			href: redirectURI //Params passed to the sharing dialog.
         			}
                 	});
                 }
