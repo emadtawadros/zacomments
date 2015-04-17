@@ -215,11 +215,14 @@ Hull.component('posts', {
         	},
         	deleteItem: function(event, action) {
         		event.preventDefault();
-        		var id = action.data.id;
-        		this.api(id, 'delete').then(function(response) {
-        			console.log(response);
-        		});
-                    window.location.href = '#/maincomp';
+        		var isCertain = confirm('Are you sure you want to delete this topic?');
+        		if (isCertain) {
+        			var id = action.data.id;
+        			this.api(id, 'delete').then(function(response) {
+        				console.log(response);
+        			});
+        			window.location.href = '#/maincomp';	
+        		}
                 },
         	actions:
         	{
@@ -715,10 +718,13 @@ Hull.component('posts', {
             actions: {
             	flag:    'flagItem',
                 deleteTopic: function() {
-                    Hull.api(this.options.id, 'delete').then(function(response) {
-                    console.log(response);
-                    });
-                    window.location.href = '#/maincomp';
+                	var isCertain = confirm('Are you sure you want to delete this topic?');
+                	if (isCertain) {
+                		Hull.api(this.options.id, 'delete').then(function(response) {
+                			console.log(response);
+                		});
+                		window.location.href = '#/maincomp';
+                	}
                 },
                 back: function() {
                     window.location.href = '#/maincomp';
