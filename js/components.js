@@ -91,7 +91,7 @@ Hull.component('posts', {
                 		params:{
                 			redirect_uri: redirectURI, //Where to redirect the user in the popup after he shared. Mandatory
                 			display: 'popup', //popup || iframe. Optional. Default: Smart depending on connection status and device. Iframe for desktop, Popup for mobile
-                			href: "http://zacomments.azurewebsites.net/?post=5524af4e899b86e964000c1b" //Params passed to the sharing dialog.
+                			href: redirectURI //Params passed to the sharing dialog.
         			}
                 	});
                 }
