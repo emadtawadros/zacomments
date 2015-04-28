@@ -111,7 +111,9 @@
 							{{/each}}				
 						</ul>
 						{{/if}}	
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>						
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>	
+						<div data-hull-component="share/button@hull" data-hull-text="{{name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{id}}" data-hull-providers='facebook,twitter'></div>
+
 						<ul>
 							<li>{{stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
