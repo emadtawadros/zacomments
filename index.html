@@ -409,6 +409,8 @@
 					{{/if}}
 					
 				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+				        <div data-hull-component="share/button@hull" data-hull-text="{{post.name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{post.id}}" data-hull-providers='facebook,twitter'></div>
+
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{post.id}}">Report</a></li>
