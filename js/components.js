@@ -49,7 +49,7 @@ Hull.component('posts', {
                             }
                             else {    //We need to fetch more data from Keen
                                 console.log("fetching more data from Keen");
-                                componenet.options.trendingDaysLimit += 5;
+                                componenet.options.trendingDaysLimit += 30;
                                 componenet.render();
                             }
                         });    //end of keen response
