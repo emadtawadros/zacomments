@@ -4,8 +4,8 @@ Hull.component('posts', {
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
         
-                this.options.trendingDaysLimit = 30;    //3 days
-                this.options.trendingLimit = 9;    //10 posts
+                this.options.trendingDaysLimit = 60;    //3 days
+                this.options.trendingLimit = 10;    //10 posts
             }, //initialize
             datasources: {
                 trendingPosts: function loadTrendingPosts() {
@@ -49,7 +49,7 @@ Hull.component('posts', {
                             }
                             else {    //We need to fetch more data from Keen
                                 console.log("fetching more data from Keen");
-                                componenet.options.trendingDaysLimit += 9;
+                                componenet.options.trendingDaysLimit += 5;
                                 componenet.render();
                             }
                         });    //end of keen response
@@ -78,7 +78,7 @@ Hull.component('posts', {
                 	
                 	this.$el.find('#loadMoreTrending').attr("disabled", "disabled");
 
-                        this.options.trendingLimit += 9;
+                        this.options.trendingLimit += 10;
                         this.render();
                     
                 },
@@ -111,7 +111,7 @@ Hull.component('posts', {
         				
         				},
         	initialize: function(){
-        		this.options.limit = 9;
+        		this.options.limit = 5;
         	},
         	afterRender: function() {
         		this.$el.find('#loadMore').removeAttr('dissabled');
@@ -128,7 +128,7 @@ Hull.component('posts', {
         		flag: 'flagItem',
         		loadMore: function() {
         			this.$el.find('#loadMore').attr("disabled", "disabled");
-        			this.options.limit += 9;
+        			this.options.limit += 10;
         			this.render();
         			}	
         	}
@@ -243,7 +243,7 @@ Hull.component('posts', {
                                 'actor_id': component.options.id,
                                 'obj_type': { $in: ['Comment', 'Review'] }
                             },
-                            limit: 100
+                            limit: 1000
                         }).then(function(response) {
                             dff.resolve(response);
                         });        
@@ -260,7 +260,7 @@ Hull.component('posts', {
                         			'actor_id': component.options.id,
                         			'obj_type': { $in: ['Comment'] }
                         		},
-                            limit: 100
+                            limit: 1000
                         }).then(function(response) {
                         	$.each(response, function(actionIndex, actionValue) {
                         		if(actionValue.object.commentable) {
@@ -405,13 +405,13 @@ Hull.component('posts', {
             delete:  'deleteComment',
             flag:    'flagItem',
             loadMore: function() {
-                this.options.limit += 9;
+                this.options.limit += 10;
                 this.render();
                 }
             },  
             options: {
             focus: false,
-            perPage: 9,
+            perPage: 10,
             page: 1
             },
             
@@ -432,7 +432,7 @@ Hull.component('posts', {
             },
             
             initialize: function() {
-            this.options.limit = 9;
+            this.options.limit = 5;
             var query = {};
             
             if (this.options.startPage) {
@@ -599,7 +599,7 @@ Hull.component('posts', {
                         where:{
                           'tags.value':this.options.id,
                         },
-                        limit: 100
+                        limit: 1000
                      });
                 },
                 postsRelated: function() {
