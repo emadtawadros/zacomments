@@ -674,10 +674,16 @@ Hull.component('posts', {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
 	                    'autocomplete_url': arr,
-	                    'autocomplete': {select: function(event, ui){
-	                        tagsElement.addTag(ui.item.label);
-	                        tagsElement.removeTag(ui.item.value);
-	                    }},
+	                    'autocomplete': {
+	                    	select: function(event, ui) {
+		                        tagsElement.addTag(ui.item.label);
+		                        tagsElement.removeTag(ui.item.value);
+	                    	},
+	                    	messages: {
+	                    		noResults: '',
+	                    		results: function() {}
+	                    	}
+	                    },
 	                    'height':'100px',
 	                    'width':'300px',
 	                    'interactive':true,
