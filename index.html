@@ -68,23 +68,24 @@
 			                <h1 data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
 			                {{#if tags}}
 							<ul class="tagFeed">
-			                    {{#each tags}}
-			                        {{#if this}}
-			                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                        {{/if}}
-			                    {{/each}}
+			                    		{{#each tags}}
+			                        		{{#if this}}
+			                        			<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+			                        		{{/if}}
+			                    		{{/each}}
 							</ul>
-							{{/if}}
-							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
+					{{/if}}
+					<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/> 
+					<div data-hull-component="share/button@hull" data-hull-text="{{name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{id}}" data-hull-providers='facebook,twitter'></div>
+
 			                <ul>
 				                <li>{{stats.comments}} comments</li>
 								<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
 			                </ul>	
-						</section>
-						<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-						<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>								
-	        		</article>
-	        		<div data-hull-component="share/button@hull" data-hull-text="{{name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{id}}" data-hull-providers='facebook,twitter'></div>
+					</section>
+					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
+					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>								
+	        			</article>
 
 	            {{/if}}
 			{{/each}}
@@ -301,63 +302,65 @@
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
 	        {{#if loggedIn}}
 			<section data-hull-component="createtopicform"></section>
-			{{/if}}
-			<section class="topic">
-		    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+		{{/if}}
+		<section class="topic">
+			<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+		    	<article>
 		     	<section class="comment">
 		        	<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 		        	<div class="userComment">
-						<span>
-							<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
-							<time>{{fromNow comment.updated_at}}</time>
-						</span>
-						<div>
-							<p>{{comment.description}}<p>
-							{{#if extra.richComment}}
-								{{{extra.richComment}}}
-							{{/if}}
-						</div>
-						<section>
-							<ul data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></ul>
-							<ul>
-						 		<li>{{post.stats.comments}} comments</li>
-						 		<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
-						 	</ul>
-						</section>
-						<div data-hull-component="share/button@hull" data-hull-text="{{comment.description}}" data-hull-url="http://zacomments.azurewebsites.net/?comment={{comment.id}}" data-hull-providers='facebook,twitter'></div>
+					<span>
+					<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
+					<time>{{fromNow comment.updated_at}}</time>
+					</span>
+					<div>
+					<p>{{comment.description}}<p>
+					{{#if extra.richComment}}
+						{{{extra.richComment}}}
+					{{/if}}
+					</div>
+					<section>
+						<ul data-hull-component="ratings/vote@hull" data-hull-id="{{comment.id}}"></ul>
+						<ul>
+							<li>{{post.stats.comments}} comments</li>
+						 	<li>on<a href="#/post/{{post.id}}">{{post.name}}</a></li>
+						 </ul>
+					</section>
+					<div data-hull-component="share/button@hull" data-hull-text="{{comment.description}}" data-hull-url="http://zacomments.azurewebsites.net/?comment={{comment.id}}" data-hull-providers='facebook,twitter'></div>
 
 		        	</div>
-				</section>
-			</section
+			</section>
+			</article>
+		</section
 			
-			<header>
-	       			<span class="pageHeader">Topics related {{post.name}}</span>
-		        </header>
-			{{#ifEqual postsRelated.length 0}}
-		        	<p>No topics at the moment.</p>
-		        {{/ifEqual}}
-		        
-		        {{#each postsRelated}}
-		        <article>
-					<section class="topic">
-			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
-			        	{{#if tags}}
-						<ul class="tagFeed">
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-						</ul>
-						{{/if}}
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-						<ul>
-							<li>{{stats.comments}} comments</li>
-		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		            	</ul>
-			    	</section>
-		        </article>
-		    	{{/each}}
+		<header>
+       			<span class="pageHeader">Topics related {{post.name}}</span>
+	        </header>
+		{{#ifEqual postsRelated.length 0}}
+	        	<p>No topics at the moment.</p>
+	        {{/ifEqual}}
+	        
+	        {{#each postsRelated}}
+	        <article>
+				<section class="topic">
+		        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+		        	{{#if tags}}
+					<ul class="tagFeed">
+		                {{#each tags}}
+		                    {{#if this}}
+		                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+		                    {{/if}}
+		                {{/each}}
+					</ul>
+					{{/if}}
+					<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+					<ul>
+						<li>{{stats.comments}} comments</li>
+	            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+	            	</ul>
+		    	</section>
+	        </article>
+	    	{{/each}}
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
