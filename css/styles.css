@@ -297,7 +297,7 @@ article .btn-twitter{
 	clear:both;
 }
 
-.dropup,.dropdown{
+button.dropup,button.dropdown{
 	border: 1px solid black;
 	cursor: pointer;
 	border-radius: 6px;
@@ -309,7 +309,7 @@ article .btn-twitter{
 	letter-spacing: 1px;
 }
 
-.dropup:hover, .dropdown:hover{
+button.dropup:hover, button.dropdown:hover{
 	background-color: rgba(163,163,163,1);
 }
 
