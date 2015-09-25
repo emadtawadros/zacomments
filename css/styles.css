@@ -65,8 +65,12 @@ main{
 	font-family:inherit;
 	padding:0.8em;
 	border: 1px solid #EEEEEE;
-	border-radius:2px;
+	border-radius:5px;
 	background-color:#FFFFFF;
+}
+
+.search input{
+	width: 55em;	
 }
 
 .search span{
@@ -89,7 +93,7 @@ main{
 	float:left;
 	display:block;
 	font-size: 1.2em;
-	margin: 0.4em 0.8em 0.4em 0;
+	margin: 0.4em 5em 0.4em 10em;
 }
 	
 .login .pull-left,
