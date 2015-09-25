@@ -866,10 +866,16 @@ Hull.component('posts', {
         	var tagsField = this.$el.find('#tagsField');
                 tagsField.tagsInput({
                     'autocomplete_url': mappedTopics,
-                    'autocomplete': {select: function(event, ui){
-                        tagsField.addTag(ui.item.label);
-                        tagsField.removeTag(ui.item.value);
-                    }},
+                    'autocomplete': {
+                    	select: function(event, ui){
+	                        tagsField.addTag(ui.item.label);
+	                        tagsField.removeTag(ui.item.value);
+                    	},
+                    	messages: {
+                    		noResults: '',
+                    		results: function() {}
+                    	}	
+                    },
                     'height':'100px',
                     'width':'300px',
                     'interactive':true,
