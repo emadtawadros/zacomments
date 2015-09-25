@@ -148,6 +148,22 @@ article{
 	margin-bottom:3.6em;
 }
 
+article .btn-facebook{
+	float: right;
+    	background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
+    	text-indent: -9999px;
+    	height: 32px;
+    	width: 32px;
+}
+
+article .btn-twitter{
+	float: right;
+    	background: url("http://zacomments.com/zacomments/images/tweet.png") no-repeat;
+    	text-indent: -9999px;
+    	height: 32px;
+    	width: 32px;
+}
+
 .createTopic{
 	margin:1.2em 0;
 }
