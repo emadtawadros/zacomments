@@ -111,7 +111,7 @@ Hull.component('posts', {
         				
         				},
         	initialize: function(){
-        		this.options.limit = 5;
+        		this.options.limit = 10;
         	},
         	afterRender: function() {
         		this.$el.find('#loadMore').removeAttr('dissabled');
