@@ -248,11 +248,17 @@ article{
 	margin-bottom:0.6em;
 }
 .tagFeed li a{
-	color: inherit;
+	color: black;
+	background-color: rgba(179, 102,32,1);
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+	letter-spacing: 1px;
+	border: 1px solid black;
 }
-.tagFeed li a:before{
+/*.tagFeed li a:before{
 	content:"#";
-}
+}*/
 
 /*User page*/
 
