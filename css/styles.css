@@ -313,6 +313,14 @@ button.dropup:hover, button.dropdown:hover{
 	background-color: rgba(163,163,163,1);
 }
 
+button.btn-success{
+	background-color: green;
+}
+
+button.btn-fail{
+	background-color: red;	
+}
+
 #loadMore,
 #loadMoreTrending{
 	font-size:0.8em;
