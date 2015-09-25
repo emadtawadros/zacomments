@@ -48,6 +48,7 @@ a:hover{
 }
 main{
 	margin-top:5em;
+	overflow: hidden;
 }
 #mainFooter{
 }
