@@ -297,6 +297,22 @@ article .btn-twitter{
 	clear:both;
 }
 
+.dropup,.dropdown{
+	border: 1px solid black;
+	cursor: pointer;
+	border-radius: 6px;
+	color: black;
+	background-color: rgba(187,187,187,1);
+	font-size: 15px;
+	margin-top: 5px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+}
+
+.dropup:hover, .dropdown:hover{
+	background-color: rgba(163,163,163,1);
+}
+
 #loadMore,
 #loadMoreTrending{
 	font-size:0.8em;
