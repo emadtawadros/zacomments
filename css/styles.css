@@ -126,7 +126,11 @@ main{
 	background-color: #004040;
 	color: #FFFFFF;
 }	
-	
+
+.login hull-component{
+	float: right;
+	margin-right: 20em;
+}	
 /* Phone size */
 
 .pageHeader{
