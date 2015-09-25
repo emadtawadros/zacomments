@@ -245,7 +245,7 @@ article{
 }
 
 .tagFeed{
-	margin-bottom:0.6em;
+	padding: 8px;
 }
 .tagFeed li a{
 	color: black;
@@ -255,6 +255,9 @@ article{
 	padding: 5px 5px 5px 5px;
 	letter-spacing: 1px;
 	border: 1px solid black;
+}
+.tagFeed li a:hover{
+	background-color: rgba(109, 63,20,1);
 }
 /*.tagFeed li a:before{
 	content:"#";
