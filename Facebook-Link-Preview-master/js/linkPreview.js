@@ -183,7 +183,7 @@
 					var appendImage = "";
 					for ( i = 0; i < images.length; i++) {
 						if (i === 0)
-							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "></img>";
+							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "'></img>";
 						else
 							appendImage += "<img id='imagePreview"+ selector + "_" + i + "' src='" + images[i] + "' style='display: none' ></img>";
 					}
