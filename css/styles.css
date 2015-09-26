@@ -274,6 +274,8 @@ article .btn-twitter{
 	padding: 5px 5px 5px 5px;
 	letter-spacing: 1px;
 	border: 1px solid black;
+	display: inline-block;
+	margin-bottom: 10px;
 }
 .tagFeed li a:hover{
 	background-color: rgba(109, 63,20,1);
