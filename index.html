@@ -550,7 +550,7 @@
 	    
 	    <script type='text/handlebars' data-hull-template='test/form'>
 		      {{#if loggedIn}}
-		        <form style="overflow:hidden">
+		        <form>
 		          <div class='media'>
 		            <div class="pull-left">
 		              <img class="media-object img-rounded, userImg" src="{{me.picture}}" alt="{{me.name}}">
@@ -571,7 +571,7 @@
 	    
 	    <script type='text/handlebars' data-hull-template='commentbox/commentbox'>
 			  {{#if loggedIn}}
-			    <form>
+			    <form  style="overflow:hidden">
 			      <div class='media'>
 			        <div class="pull-left">
 			          <img class="media-object img-rounded, userImg" src="{{me.picture}}" alt="{{me.name}}">
