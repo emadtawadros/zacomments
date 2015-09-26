@@ -134,7 +134,7 @@ main{
 
 .login {
 	float: right;
-	margin-right: 20em;
+	display: inline-block;
 }	
 /* Phone size */
 
