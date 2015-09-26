@@ -475,7 +475,7 @@ Hull.component('posts', {
            
             var component = this;
             this.$el.find(".imgIframe, .videoPostPlay").click(function() {
-            	var oldId = $(this).attr("id");
+            	var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
                 var currentId = oldId.substring(4);
                 console.log("old " + oldId);
                 console.log("current " + currentId);
