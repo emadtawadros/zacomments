@@ -474,7 +474,7 @@ Hull.component('posts', {
             tab.slideUp();
            
             var component = this;
-            this.$el.find(".imgIframe").click(function() {
+            this.$el.find(".imgIframe, .videoPostPlay").click(function() {
             	var oldId = $(this).attr("id");
                 var currentId = oldId.substring(4);
                 console.log("old " + oldId);
