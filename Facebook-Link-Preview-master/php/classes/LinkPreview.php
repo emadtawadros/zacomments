@@ -47,7 +47,7 @@ class LinkPreview
 
         if (preg_match(Regex::$urlRegex, $text, $match)) {
 
-            $title = "";
+            $title = "emad";
             $description = "";
             $videoIframe = "";
             $video = "no";
