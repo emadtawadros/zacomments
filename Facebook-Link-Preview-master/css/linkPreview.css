@@ -1,12 +1,22 @@
 .preview{
+	padding: 5px;
+	width: 499px;
+	color: black;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size: 12px;
+	padding-bottom: 8px;
+	padding-top: 8px;
 	display: none;
-	margin:0 45px;
+	border: 1px solid #b3b3b3;
+	border-top: 0px;
+	border-bottom: 1px solid #e6e6e6;
+	float: left;
 }
 .previewImages, .previewImage{
-}
-
-.previewImage img{
-	width:100%;
+	width: 130px;
+	margin-right: 12px;
+	float: left;
+	color: transparent;
 }
 .previewButtons{
 	display: none;
@@ -15,6 +25,7 @@
 }
 .previewContent{
 	font-size: 11px;
+	width: 355px;
 	float: left;
 }
 .previewTitle{
@@ -99,11 +110,15 @@
 	float: left;
 }
 .previewLoading{
-	display:none;
+	float: right;
+	margin-bottom: 2px;
+	margin-right: 14px;
+	border: 1px solid transparent;
+	height: 12px;
 }
 .linkPreview, #retrieveFromDatabase{
 	margin: auto;
-	position:relative;
+	width: 525px;
 }
 .noThumbDiv{
 	color: #333;
@@ -117,6 +132,7 @@
 }
 .nT{
 	float: left;
+	width: 270px;
 	margin-top: 3px;
 	cursor: pointer;
 }
@@ -126,11 +142,14 @@
 	padding: 3px 1px;
 }
 .text{
-	font-size:0.8em;
-	border: 1px solid #EEEEEE;
-	border-radius:2px;
-	margin-left: 48px;
-	padding: 0.8em;
+	width: 499px;
+	height: 60px;
+	border: 1px solid #b3b3b3;
+	border-bottom: 1px solid #e6e6e6;
+	resize: none;
+	font-family: Arial;
+	padding: 5px;
+	color: grey;
 }
 .closePreview{
 	float: right;
@@ -152,28 +171,51 @@
 	background-position: left -48px;
 }
 .postPreviewButton{
-	font-family: inherit;
-	width: 37px;
-	height: 37px;
-	padding:13px;
-	border: 1px solid #EEEEEE;
-	border-radius: 3px;
-	background-color: #FFFFFF;
-	color: inherit;
+	padding: 4px 16px;
+	background-image:  url('../img/backgrounds.png');
+	background-repeat: no-repeat;
+	background-position: 0 -49px;
+	background-color: #5B74A8;
+	border-color: #29447E #29447E #1A356E;
+	border: 1px solid #1a356e;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
 	cursor: pointer;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 13px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	color: white;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	float: right;
 }
 .postPreviewButton:active{
 	background-image: none;
 	background: #4f6aa3;
 }
 .postPreview{
-	display:inline-block;
+	background: #f2f2f2;
+	padding: 2px;
+	border: 1px solid #b3b3b3;
+	border-top: 0px;
+	width: 505px;
+	margin-bottom: 20px;
+	margin-top: -1px;
 }
 
 .previewPosted{
-	margin: 0.6em 0;
+	padding: 5px;
+	width: 499px;
+	color: black;
+	margin-bottom: 20px;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size: 12px;
+	border: 1px dashed #b3b3b3;
+	float: left;
 }
-
 .previewPosted a{
 	color: #3B5998;
 }
@@ -182,25 +224,17 @@
 	color: #3B5998;
 }
 .previewImagesPosted{
+	width: 130px;
+	margin-right: 12px;
+	float: left;
 	cursor: pointer;
-	position: relative;
 }
-.previewImagePoster a img{
-	width:100%;
-	float:none;
-}
-.imgIframe{
-  	width: 130px;
-  	height: auto;
-  	float: left;
+.previewContentPosted{
+	font-size: 11px;
+	width: 355px;
+	float: left;
 }
 
-.previewContentPosted{
-	font-size: inherit;
-	float: left;
-	margin-left: 0.8em;
-	display:none;
-}
 
 .previewTitlePosted, .previewTitlePosted a{
 	font-weight: bold;
@@ -241,10 +275,12 @@
 }
 .videoPostPlay{
 	background-image: url('../img/play.png');
+	bottom: 5px;
 	height: 26px;
+	left: 5px;
 	width: 35px;
-	position: absolute;
-	left: 48px;
-	top: 34px;
-	display:none;
+	float: left;
+	z-index: 1;
+	margin-left: 5px;
+	margin-top: -31px;
 }
