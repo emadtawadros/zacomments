@@ -486,6 +486,9 @@ Hull.component('posts', {
                 component.$el.find(oldId).css({
                 	'display' : 'none'
                 });
+                component.$el.find(".videoPostPlay").css({
+                	'display' : 'none'
+                });
                 component.$el.find(currentId).css({
                     'display' : 'block'
                 });
