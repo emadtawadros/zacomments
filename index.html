@@ -463,12 +463,12 @@
 		    
 	        <aside id="mainAside">
 	        	<ul class="nav nav-tabs">
-	        		<li class="active"><a data-toggle="tab" href="#tagged">Tagged</a></li>
-	        		<li><a data-toggle="tab" href="#related">Related</a></li>
+	        		<li class="active"><a data-toggle="tab" href="#related">Related</a></li>
+	        		<li><a data-toggle="tab" href="#tagged">Tagged</a></li>
 	        	</ul>
 	        	
 	        	<div class="tab-content">
-	        		<div id="tagged" class="tab-pane fade in active">
+	        		<div id="tagged" class="tab-pane fade">
 		        		<header>
 		       				<span class="pageHeader">Topics tagged with {{post.name}}</span>
 			        	</header>
@@ -500,7 +500,7 @@
 			        	{{/each}}
 	        		</div>
 	        		
-	        		<div id="related" class="tab-pane fade">
+	        		<div id="related" class="tab-pane fade in active">
 	        			<header>
 	       					<span class="pageHeader">Topics related {{post.name}}</span>
 		        		</header>
