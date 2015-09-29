@@ -297,6 +297,7 @@ article .btn-twitter{
 }
 .userFeed{
 	clear:both;
+	float:left;
 }
 
 button.dropup,button.dropdown{
