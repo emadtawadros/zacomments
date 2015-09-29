@@ -673,6 +673,9 @@ Hull.component('posts', {
         
                 console.log("after render");
                 console.log(data);
+                
+                component.$el.find('#commentstabs').tabulous();
+                
                 if(hasElevatedAccess) {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
