@@ -446,14 +446,20 @@
 				    </section>
 
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{post.id}}"></section>
-			        <header>
-						<span>Top Comments</span>
-			        </header>
-					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
-			        <header>
-				    	<span>New Comments</span>
-			        </header>
-					<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
+			        <div id="commentstabs">
+			        	<ul>
+				        	<li><a href="#topcomments" title="">Top Comments</a></li>
+				        	<li><a href="#newcomments" title="">newcomments</a></li>
+			        	</ul>
+			        	<div id="commentstabscontainer">
+			        		<div id="topcomments">
+			        			<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
+			        		</div>
+			        		<div id="newcomments">
+			        			<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
+			        		</div>
+			        	</div>
+			        </div>
 				</article>	    
 		    </section> 
 		    
