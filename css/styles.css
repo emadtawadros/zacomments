@@ -78,6 +78,9 @@ main{
 	display:none;
 }
 
+.search input.ui-autocomplete-loading { background:url('https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif
+') no-repeat right center }
+
 #ui-id-1{
 	border: 1px solid #EEEEEE;
 	background-color:#FFFFFF;
@@ -367,8 +370,7 @@ button.btn-fail{
 	}
 	
 }
-.ui-autocomplete-loading { background:url('https://f.cloud.github.com/assets/6652042/2208623/dcefa538-9981-11e3-895e-5a09c35c265d.gif
-') no-repeat right center }
+
 
 
 
