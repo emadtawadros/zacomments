@@ -744,7 +744,7 @@ Hull.component('posts', {
                 	
                    this.$el.find('#updateTags').attr("disabled", "disabled");
                                         
-                    var tagsText = this.$el.find('.tagsinput').prev().val(); 
+                    var tagsText = this.$el.find('.tagsinput:eq(1)').prev().val(); //Selecting the second tagsinput because the first would be the create topic one. Remove if moved to separate form
                     var tagsPromise = processTags(tagsText);
                     var postID = this.options.id;
                     tagsPromise.done(function(result){
