@@ -151,7 +151,7 @@
 	background-repeat: no-repeat;
 	background-position: left -48px;
 }
-.postPreviewButton{
+/*.postPreviewButton{
 	font-family: inherit;
 	width: 37px;
 	height: 37px;
@@ -165,7 +165,7 @@
 .postPreviewButton:active{
 	background-image: none;
 	background: #4f6aa3;
-}
+}*/
 .postPreview{
 	display:inline-block;
 }
