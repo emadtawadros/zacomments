@@ -52,7 +52,7 @@
 		var pTP = "";
 		var pDP = "";
 		var fancyUrl = '';
-		var allowPosting = false;
+		var allowPosting = true;
 		var isCrawling = false;
 
 		var textText = "";
@@ -106,7 +106,7 @@
 		
 		var crawlText = function () {
 			
-			allowPosting = true;
+			//allowPosting = true;
 			
 			//var oldText = trim($(this).val());
 			if(trim(myThis.find('#text'+selector).val()) !== "") {
@@ -125,7 +125,7 @@
 				myThis.find('#previewLoading'+selector).html("<img src='Facebook-Link-Preview-master/img/loader.gif' />");
 				myThis.find('#photoNumber'+selector).val(0);
 				
-				allowPosting = false;
+				//allowPosting = false;
 				isCrawling = true;
 				
 				$.post('Facebook-Link-Preview-master/php/textCrawler.php', {
@@ -392,7 +392,7 @@
 					if (firstPosting === false) {
 						firstPosting = true;
 					}
-					allowPosting = true;
+					//allowPosting = true;
 					isCrawling = false;
 				}, "json");
 			}
