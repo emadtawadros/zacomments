@@ -356,8 +356,8 @@ button.btn-fail{
 
 @media only screen and (min-width: 960px){
 	body{
-		width:1080px;
-		margin:0 auto;
+		width:80%;
+		margin:auto;
 		padding:0;
 	}
 
