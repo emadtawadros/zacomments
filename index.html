@@ -620,7 +620,6 @@
 	    </script>
 	    
 		<script>
-	        var arr;
 	        var rawAllTopics;
 	        
 	        window.fbAsyncInit = function() {
@@ -653,16 +652,6 @@
 	            }).then(function(response) {
 	            	console.log("Number of items "  + response.length);
 			rawAllTopics = response;
-			
-	                arr = $.map(response, function(elementOfArray, indexInArray){
-	                    if(elementOfArray.name){
-	                        var datum = {
-	                        label: elementOfArray.name,
-	                        value: elementOfArray.id
-	                        }
-	                        return datum;
-	                    }
-	                });
 	        	
 	                $( "#searchField" ).autocomplete({
 	                    source: function(request, response) {
@@ -770,34 +759,20 @@
 	        
 	                $.each(textTags, function (indexTextTag, valueTextTag) {
 	                    if(valueTextTag.length >0) {
-	                        var temp = $.grep(arr, function (elementArr, indexArr){
-	                                        return elementArr.label == valueTextTag;
-	                                    });
-	                                    if(temp[0]){
-	                                        //Tag has anID
-	                                        tagsWithID.push(temp[0]);
-	                                        console.log("existing tag");
-	                                        console.log(++tagsFinished);
-	                                    } else {
-	                                        console.log("laaag");
-	                                        console.log(valueTextTag);
-	                                        //Tag does not have ID, create new Entity
-	                                    Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
-	                                        'visibiliy': 'public',
-	                                        where:{
-	                                            'name': {
-	                                                '$regex': '^' + valueTextTag  + '$', '$options': 'i'
-	                                            }
-	                                        }
-	                                    }).then(function(response) {
-	                                        console.log("EEEH");
-	                                        console.log(response);
-	                                        if(response.length == 0) {
-	                                            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-	                                                "public": "true",
+	                    	Hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
+	                    		'visibiliy': 'public',
+	                    		where:{
+	                    			'name': {
+	                    				'$regex': '^' + valueTextTag  + '$', '$options': 'i'
+	                    			}
+	                    		}
+	                    	}).then(function(response) {
+	                    		if(response.length == 0) {
+	                    			Hull.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+	                    				"public": "true",
 	                                                "name": valueTextTag
-	                                            }).then(function(response) {
-	                                                console.log("Tag Created");
+	                    			}).then(function(response) {
+	                    				console.log("Tag Created");
 	                                                var datum = {
 	                                                    label: valueTextTag,
 	                                                    value: response.id
@@ -805,19 +780,17 @@
 	                                            tagsWithID.push(datum);
 	                                            console.log("new tag");
 	                                            console.log(++tagsFinished);
-	                                           });
-	                                        } else {
-	                                        	var datum = {
-	                                                    label: valueTextTag,
-	                                                    value: response[0].id
-	                                                }
-	                                                tagsWithID.push(datum);
-	                                            	tagsFinished ++;
-	                                             	alert("A tag with the same name already exists!");
-	                                             	$('.createbuzz').children().removeAttr("disabled");
-	                                        }
-	                                    });
-	                                    }
+	                    			});
+	                    		} else {
+	                    			var datum = {
+	                    				label: valueTextTag,
+	                    				value: response[0].id
+	                    			}
+	                    			tagsWithID.push(datum);
+	                    			tagsFinished ++;
+	                    			$('.createbuzz').children().removeAttr("disabled");
+	                    		}
+	                    	});
 	                    } else {
 	                        tagsFinished ++;
 	                    }       
