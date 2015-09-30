@@ -677,6 +677,7 @@ Hull.component('posts', {
                 if(hasElevatedAccess) {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
+	                    'autocomplete_url': "saksaka",
 	                    'autocomplete': {
 	                    	source: function(request, response) {
 	                    		var searchTokens = request.term.split(/[ ,]+/);
