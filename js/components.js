@@ -878,30 +878,42 @@ Hull.component('posts', {
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
                 	component.options.imageID = image.id;
                 });
-                
-                var mappedTopics = $.map(rawAllTopics, function(elementOfArray, indexInArray){
-                    if(elementOfArray.name){
-                        var datum = {
-                            label: elementOfArray.name,
-                            value: elementOfArray.id
-                        }
-                        return datum;
-                    }
-                });
         
         	var tagsField = this.$el.find('#tagsField');
                 tagsField.tagsInput({
-                    'autocomplete_url': mappedTopics,
-                    'autocomplete': {
-                    	select: function(event, ui){
-	                        tagsField.addTag(ui.item.label);
-	                        tagsField.removeTag(ui.item.value);
-                    	},
-                    	messages: {
-                    		noResults: '',
-                    		results: function() {}
-                    	}	
-                    },
+                	'autocomplete_url': "saksaka",
+                	'autocomplete': {
+                		source: function(request, response) {
+                			var searchTokens = request.term.split(/[ ,]+/);
+		                    	component.api('52e138eaf0f1b0ac30000bad/conversations', 'get',{
+		                    		'visibiliy': 'public',
+		                                where:{
+		                                    'name': {
+		                                        '$regex': '.*('+ searchTokens.join('|') +').*', '$options': 'i'
+		                                    }
+		                                }
+		                    	}).then(function(hullresponse){
+		                    		var searchresponse = $.map(hullresponse, function(elementOfArray, indexInArray){
+		                    			if(elementOfArray.name){
+		                    				var datum = {
+		                             				label: elementOfArray.name,
+		                             				value: elementOfArray.id
+		                             			}
+		                             			return datum;
+		                             		}
+		                    		});
+		                    		response(searchresponse);
+		                    	});
+                		},
+	                    	select: function(event, ui) {
+		                        tagsElement.addTag(ui.item.label);
+		                        tagsElement.removeTag(ui.item.value);
+	                    	},
+	                    	messages: {
+	                    		noResults: '',
+	                    		results: function() {}
+	                    	}
+	                    },
                     'height':'100px',
                     'width':'300px',
                     'interactive':true,
