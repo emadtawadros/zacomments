@@ -6,11 +6,11 @@
 
 body{
 	font-family: 'Roboto', sans-serif;
-	margin:0;
+	margin:auto;
 	padding:0.8em;
 	background-color:#FFFFFF;
 	color:#444444;
-	width:100%;
+	width:80%;
 }
 
 ul,ol{
@@ -352,17 +352,12 @@ button.btn-fail{
 	color:#AAAAAA;
 }
 
-body{
-	width:80%;
-	margin:auto;
-	padding:0;
-}
 /* Desktop-tablet size */
 	
 @media only screen and (min-width: 960px){
 	body{
-		width:80%;
-		margin:auto;
+		width:1080px;
+		margin:0 auto;
 		padding:0;
 	}
 
