@@ -677,8 +677,29 @@ Hull.component('posts', {
                 if(hasElevatedAccess) {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
-	                    'autocomplete_url': arr,
 	                    'autocomplete': {
+	                    	source: function(request, response) {
+	                    		var searchTokens = request.term.split(/[ ,]+/);
+		                    	component.api('52e138eaf0f1b0ac30000bad/conversations', 'get',{
+		                                'visibiliy': 'public',
+		                                where:{
+		                                    'name': {
+		                                        '$regex': '.*('+ searchTokens.join('|') +').*', '$options': 'i'
+		                                    }
+		                                }
+		                    	}).then(function(hullresponse){
+		                             	var searchresponse = $.map(hullresponse, function(elementOfArray, indexInArray){
+		                             		if(elementOfArray.name){
+		                             			var datum = {
+		                             				label: elementOfArray.name,
+		                             				value: elementOfArray.id
+		                             			}
+		                             			return datum;
+		                             		}
+		                             	});
+		                             	response(searchresponse);
+		                    	});
+	                    	},
 	                    	select: function(event, ui) {
 		                        tagsElement.addTag(ui.item.label);
 		                        tagsElement.removeTag(ui.item.value);
