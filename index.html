@@ -318,7 +318,7 @@
 	    </script>
 	       
 	    <script type='text/x-handlebars' data-hull-template='comment/comment'>
-	    <section id="mainSection">
+	    <section>
 		        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
 			{{/if}}
@@ -364,22 +364,22 @@
 		        {{#each postsRelated}}
 		        <article>
 					<section class="topic">
-			        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
-			        	{{#if tags}}
-						<ul class="tagFeed">
-			                {{#each tags}}
-			                    {{#if this}}
-			                        <li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
-			                    {{/if}}
-			                {{/each}}
-						</ul>
+				        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
+				        	{{#if tags}}
+							<ul class="tagFeed">
+					                	{{#each tags}}
+					                    	{{#if this}}
+					                        	<li><a href="#/post/{{this.value}}">{{this.label}}</a></li>
+					                    	{{/if}}
+					                	{{/each}}
+							</ul>
 						{{/if}}
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
 						<ul>
 							<li>{{stats.comments}} comments</li>
-		            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		            	</ul>
-			    	</section>
+			            			<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+			            		</ul>
+			    		</section>
 		        </article>
 		    	{{/each}}
 	    	</aside>
