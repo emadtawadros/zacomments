@@ -93,7 +93,9 @@ main{
 	display:block;
 	z-index: 1500;
 }
-	
+ul.ui-autocomplete {
+    z-index: 1100;
+}	
 .logo{
 	float:left;
 	display:block;
