@@ -953,7 +953,7 @@ Hull.component('posts', {
                 
                 this.$el.find('input[type="radio"]').click(function(){
                 	if($(this).attr("value")=="url"){
-                		component.$el.find('#imageURL').show();
+                		component.$el.find('#imageURL').css('display', 'block');
                 		component.$el.find('#imageUploader').hide();
                 	}
                 	if($(this).attr("value")=="upload"){
