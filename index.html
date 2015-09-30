@@ -807,9 +807,14 @@
 	                                            console.log(++tagsFinished);
 	                                           });
 	                                        } else {
-	                                            tagsFinished ++;
-	                                             alert("A tag with the same name already exists!");
-	                                             $('.createbuzz').children().removeAttr("disabled");
+	                                        	var datum = {
+	                                                    label: valueTextTag,
+	                                                    value: response[0].id
+	                                                }
+	                                                tagsWithID.push(datum);
+	                                            	tagsFinished ++;
+	                                             	alert("A tag with the same name already exists!");
+	                                             	$('.createbuzz').children().removeAttr("disabled");
 	                                        }
 	                                    });
 	                                    }
