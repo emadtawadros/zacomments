@@ -264,9 +264,9 @@ Hull.component('posts', {
                         }).then(function(response) {
                         	$.each(response, function(actionIndex, actionValue) {
                         		if(actionValue.object.type == "comment") {
-                        			//if(notAlreadyAdded(result, actionValue.object.commentable_id)) {
+                        			if(notAlreadyAdded(result, actionValue.object.commentable_id)) {
                         				result.push(actionValue.object.object);
-                        		//	}
+                        			}
                         		}
                         	});
                             dff.resolve(result);
