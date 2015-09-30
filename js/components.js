@@ -906,8 +906,8 @@ Hull.component('posts', {
 		                    	});
                 		},
 	                    	select: function(event, ui) {
-		                        tagsElement.addTag(ui.item.label);
-		                        tagsElement.removeTag(ui.item.value);
+		                        tagsField.addTag(ui.item.label);
+		                        tagsField.removeTag(ui.item.value);
 	                    	},
 	                    	messages: {
 	                    		noResults: '',
