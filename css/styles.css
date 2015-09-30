@@ -91,6 +91,7 @@ main{
 .ui-menu-item{
 	font-size:0.8em;
 	display:block;
+	z-index: 10;
 }
 	
 .logo{
