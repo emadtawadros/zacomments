@@ -268,22 +268,65 @@ article .btn-twitter{
 }
 
 .tagFeed{
-	padding: 8px;
+	margin:0;
+	padding:0;
+	position:absolute;
+	right:24px;
+	bottom:-12px;
+	list-style:none;
 }
-.tagFeed li a{
-	color: black;
-	background-color: rgba(179, 102,32,1);
-	font-size: 15px;
-	border-radius: 5px;
-	padding: 5px 5px 5px 5px;
-	letter-spacing: 1px;
-	border: 1px solid black;
-	display: inline-block;
-	margin-bottom: 10px;
+.tagFeed li, .tagfeed a{
+	float:left;
+	height:24px;
+	line-height:24px;
+	position:relative;
+	font-size:11px;
 }
-.tagFeed li a:hover{
-	background-color: rgba(109, 63,20,1);
+.tagfeed a{
+	margin-left:20px;
+	padding:0 10px 0 12px;
+	background:#0089e0;
+	color:#fff;
+	text-decoration:none;
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;	
+	border-bottom-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	-webkit-border-top-right-radius:4px;	
+	border-top-right-radius:4px;
 }
+.tagfeed a:before{
+	content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-12px;
+	width:0;
+	height:0;
+	border-color:transparent #0089e0 transparent transparent;
+	border-style:solid;
+	border-width:12px 12px 12px 0;
+}
+.tagfeed a:after{
+	content:"";
+	position:absolute;
+	top:10px;
+	left:0;
+	float:left;
+	width:4px;
+	height:4px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	background:#fff;
+	-moz-box-shadow:-1px -1px 2px #004977;
+	-webkit-box-shadow:-1px -1px 2px #004977;
+	box-shadow:-1px -1px 2px #004977;
+}
+.tagfeed a:hover{background:#555;}	
+
+.tagfeed a:hover:before{border-color:transparent #555 transparent transparent;}
+
 /*.tagFeed li a:before{
 	content:"#";
 }*/
