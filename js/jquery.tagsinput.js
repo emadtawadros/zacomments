@@ -262,6 +262,7 @@
 				});
 
 				if (settings.autocomplete_url != undefined) {
+					autocomplete_options = {source: settings.autocomplete.source};
 					for (attrname in settings.autocomplete) {
 						autocomplete_options[attrname] = settings.autocomplete[attrname];
 					}
