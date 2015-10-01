@@ -283,7 +283,7 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='maincomp/user'>
 	        {{#if loggedIn}}
-				<section data-hull-component="user" data-hull-id="{{id}}"></section>
+				<section class="loading" data-hull-component="user" data-hull-id="{{id}}"></section>
 			{{else}}
 				<header>
 	        		<span class="pageHeader">You need to login to view user feed</span>
