@@ -972,6 +972,8 @@ Hull.component('posts', {
             },
             actions: {
                 createtopic: function() {
+                
+                    this.$el.find("#createTopic").addClass("active");
                 	
                     this.$el.find('.createbuzz').children().attr("disabled", "disabled");
                     
