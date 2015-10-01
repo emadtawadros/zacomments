@@ -1101,10 +1101,5 @@ Hull.component('posts', {
             		data.currentView = this.currentView;
             	}
                 return data;
-            },
-            afterRender: function() {
-                var tab = this.$el.parent().find('.loading:first');
-                tab.slideUp();
-               
-            }               
+            }            
         });
