@@ -423,10 +423,10 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='post/post'>
 	        {{#if isAdmin}}
-	        	<button type="button" id="deleteTopic" data-hull-action="deleteTopic">Delete Topic</button>
+	        	<button type="button" id="deleteTopic" class="btn btn-default btn-danger" data-hull-action="deleteTopic">Delete Topic</button>
 	        {{/if}}
 	        
-	        <button type="button" id="updateImage" data-hull-action="updateImage" style="display:none">Upload Image</button>
+	        <button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Upload Image</button>
 
 	        <section id="mainSection">
 		        {{#if loggedIn}}
@@ -441,7 +441,7 @@
 						        <input type="text" id="postTags"></input>
 					        </form>
 					        
-				        	<button type="button" id="updateTags" data-hull-action="updateTags">Update Tags</button>
+				        	<button type="button" id="updateTags" class="btn btn-default" data-hull-action="updateTags">Update Tags</button>
 					</div>
 					
 				        {{#if post.tags}}
