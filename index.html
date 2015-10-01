@@ -598,8 +598,8 @@
 	        
 	    <script type='text/handlebars' data-hull-template='ratings/vote/vote'>
 	        {{#if loggedIn}}
-	        <li><button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>Upvote {{votes.up}}</button></li>
-	        <li><button class="btn btn-small {{outputIf myVote -1 'btn-fail'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>Downvote {{votes.down}}</button></li>
+	        <li><button class="btn btn-small {{outputIf myVote 1 'btn-success'}} dropup" data-hull-action='{{outputIf myVote 1 'unvote' 'upvote'}}'>icon-thumbs-up icon-large {{votes.up}}</button></li>
+	        <li><button class="btn btn-small {{outputIf myVote -1 'btn-fail'}} dropdown" data-hull-action='{{outputIf myVote -1 'unvote' 'downvote'}}'>icon-thumbs-down {{votes.down}}</button></li>
 			{{/if}}
 	    </script>
 	    
