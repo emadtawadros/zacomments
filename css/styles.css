@@ -373,7 +373,7 @@ button.btn-fail{
 		float:left;
 	}
 	#mainSection.loading{
-		background: url('https://www.burnscowboyshop.com/App_Themes/desktop/images/horizontal-loading.gif') no-repeat right center;
+		background: url("http://zacomments.com/zacomments/images/circle-loader.gif") no-repeat center;
 	}
 	#mainAside{
 		width:34%;
