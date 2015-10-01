@@ -286,7 +286,7 @@ article .btn-twitter{
 	margin-bottom: 10px;
 }
 .tagFeed li a:hover{
-	background-color: grey;
+	background-color: rgba(234,234,234,1);
 }
 /*.tagFeed li a:before{
 	content:"#";
