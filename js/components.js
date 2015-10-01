@@ -1006,6 +1006,7 @@ Hull.component('posts', {
                                 					}
                                 				}).then(function(response) {
                                 					console.log(response);
+                                					component.$el.find("#createTopicModal").modal("toggle");
                                 					window.location.href = '#/post/' + response.id;
                                 				});
                                 				break;
@@ -1018,6 +1019,7 @@ Hull.component('posts', {
 	                							"picture": component.options.imageID
 
                         						}).then(function(response) {
+                        							component.$el.find("#createTopicModal").modal("toggle");
                         							window.location.href = '#/post/'+ response.id;
                         						});
                         					} else {
@@ -1031,6 +1033,7 @@ Hull.component('posts', {
                 							"tags": result
                 						}).then(function(response) {
                 							console.log(response);
+                							component.$el.find("#createTopicModal").modal("toggle");
                 							window.location.href = '#/post/' + response.id;
                 						});
                 						break;
@@ -1042,6 +1045,7 @@ Hull.component('posts', {
                                 		"name": newConversationName
                                     	}).then(function(response) {
                                 		console.log(response);
+                                		component.$el.find("#createTopicModal").modal("toggle");
                                 		window.location.href = '#/createtopic/' + response.id;
                                 	});
                         	}
