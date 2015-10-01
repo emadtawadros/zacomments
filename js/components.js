@@ -58,8 +58,7 @@ Hull.component('posts', {
                 }
             },
             afterRender: function() {
-                var tab = this.$el.parent().find('.loading:first');
-                tab.slideUp();
+		this.$el.removeClass("loading");
                 
                 this.$el.find('#loadMoreTrending').removeAttr('dissabled');
 
