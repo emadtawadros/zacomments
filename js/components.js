@@ -991,7 +991,7 @@ Hull.component('posts', {
                             	if(tagsText) {
                             		var tagsPromise = processTags(tagsText);
                                 	tagsPromise.done(function(result){
-                                		//todo
+                                		var createTopicModal = component.$el.find("#createTopicModal");
                                 		var imageOption = component.$el.find('input[type="radio"]:checked').val();
                                 		switch(imageOption) {
                                 			case "url":
@@ -1033,8 +1033,10 @@ Hull.component('posts', {
                 							"tags": result
                 						}).then(function(response) {
                 							console.log(response);
-                							component.$el.find("#createTopicModal").modal("toggle");
-                							//window.location.href = '#/post/' + response.id;
+                							createTopicModal.on('hidden', function() {
+                								window.location.href = '#/post/' + response.id;
+									})
+									createTopicModal.modal("toggle");
                 						});
                 						break;
                                 		}
