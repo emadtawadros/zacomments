@@ -757,8 +757,8 @@ Hull.component('posts', {
                 	if (isCertain) {
                 		Hull.api(this.options.id, 'delete').then(function(response) {
                 			console.log(response);
+                			window.location.href = '#/maincomp';
                 		});
-                		window.location.href = '#/maincomp';
                 	}
                 },
                 back: function() {
