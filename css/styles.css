@@ -372,6 +372,9 @@ button.btn-fail{
 		width:64%;
 		float:left;
 	}
+	#mainSection.loading{
+		background: url('https://www.burnscowboyshop.com/App_Themes/desktop/images/horizontal-loading.gif') no-repeat right center;
+	}
 	#mainAside{
 		width:34%;
 		float:right;
