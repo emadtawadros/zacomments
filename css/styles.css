@@ -372,7 +372,7 @@ button.btn-fail{
 
 .has-spinner.active .spinner {
   opacity: 1;
-  width: 100px; 
+  width: auto; 
 }
 
 /* Desktop-tablet size */
