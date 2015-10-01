@@ -372,7 +372,7 @@ button.btn-fail{
 		width:64%;
 		float:left;
 	}
-	#mainSection.loading{
+	.loading{
 		background: url("http://zacomments.com/zacomments/images/circle-loader.gif") no-repeat center;
 		height: 100px;
 	}
