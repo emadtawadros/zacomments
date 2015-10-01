@@ -280,6 +280,9 @@ Hull.component('posts', {
             beforeRender: function(data, errors) {
                 console.log(data);
             },
+            afterRender: function(){
+            	this.$el.removeClass("loading");
+            },
             actions: {
                 back: function() {
                     window.location.href = '#/maincomp';
