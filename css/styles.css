@@ -96,6 +96,8 @@ main{
 }
 ul.ui-autocomplete {
     z-index: 1100;
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
 }	
 .logo{
 	float:left;
