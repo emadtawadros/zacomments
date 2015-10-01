@@ -57,7 +57,7 @@
 				<input type="text" id="searchField">
 				<button type="button" id="search">Search</button>
 	    	</form>
-	    	<button type="button" id="Create" data-toggle="modal" data-target="#myModal">Create</button>
+	    	<button type="button" id="Create" data-toggle="modal" data-target="#createTopicModal">Create</button>
 	    	<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 		</header>
 				
@@ -385,37 +385,35 @@
 	    </script>
 	    		     
 	    <script type='text/handlebars' data-hull-template='createtopicform/createtopicform'>
-			      <!-- Modal -->
-		  <div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Create Topic</h4>
-		        </div>
-		        <div class="modal-body">
-	    	<section class="createTopic ui-front">
-	    	<input type="text" placeholder="Topic title" id="newEntityField"></input>
-	    	<input type="text" placeholder="Add some tags" id="tagsField"></input>
-	    	<div id="imageRadio" style="display:none">
-		    	<input type="radio" name="imageSelection" value="url">Use image URL<br>
-		    	<input type="text" id="imageURL" style="display:none"></input>
-			<input type="radio" name="imageSelection" value="upload">Upload an image<br>
-			<div id= "imageUploader" style="display:none">
-				<div data-hull-component="uploads/image@hull" data-hull-id="me"></div>
-			</div>
-			<input type="radio" name="imageSelection" value="none">No image
-		</div>
-	    	</section>		        </div>
-		        <div class="modal-footer">
-		       	  <button type="button" id="createTopic" class="btn btn-default" data-hull-action="createtopic" disabled>Create</button>
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
-		      </div>
-		      
-		    </div>
+	    	<div class="modal fade" id="createTopicModal" role="dialog">
+	    		<div class="modal-dialog">
+		      		<!-- Modal content-->
+		      		<div class="modal-content">
+		        		<div class="modal-header">
+		          			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		          			<h4 class="modal-title">Create Topic</h4>
+		        		</div>
+		        		<div class="modal-body">
+	    					<section class="createTopic ui-front">
+		    					<input type="text" placeholder="Topic title" id="newEntityField"></input>
+		    					<input type="text" placeholder="Add some tags" id="tagsField"></input>
+		    					<div id="imageRadio" style="display:none">
+			    					<input type="radio" name="imageSelection" value="url">Use image URL<br>
+			    					<input type="text" id="imageURL" style="display:none"></input>
+								<input type="radio" name="imageSelection" value="upload">Upload an image<br>
+								<div id= "imageUploader" style="display:none">
+									<div data-hull-component="uploads/image@hull" data-hull-id="me"></div>
+								</div>
+								<input type="radio" name="imageSelection" value="none">No image
+							</div>
+    						</section>
+    					</div>
+		        		<div class="modal-footer">
+		       	  			<button type="button" id="createTopic" class="btn btn-default" data-hull-action="createtopic" disabled>Create</button>
+		          			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        		</div>
+	      			</div>
+		    	</div>
 		  </div>
 	    </script>
 	    
