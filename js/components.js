@@ -1034,7 +1034,7 @@ Hull.component('posts', {
                 						}).then(function(response) {
                 							console.log(response);
                 							component.$el.find("#createTopicModal").modal("toggle");
-                							window.location.href = '#/post/' + response.id;
+                							//window.location.href = '#/post/' + response.id;
                 						});
                 						break;
                                 		}
