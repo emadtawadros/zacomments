@@ -988,10 +988,10 @@ Hull.component('posts', {
                             console.log("regular expression result");
                             console.log(response);
                             if(response.length == 0) {
+                            	var createTopicModal = component.$el.find("#createTopicModal");
                             	if(tagsText) {
                             		var tagsPromise = processTags(tagsText);
                                 	tagsPromise.done(function(result){
-                                		var createTopicModal = component.$el.find("#createTopicModal");
                                 		var imageOption = component.$el.find('input[type="radio"]:checked').val();
                                 		switch(imageOption) {
                                 			case "url":
@@ -1006,8 +1006,10 @@ Hull.component('posts', {
                                 					}
                                 				}).then(function(response) {
                                 					console.log(response);
-                                					component.$el.find("#createTopicModal").modal("toggle");
-                                					window.location.href = '#/post/' + response.id;
+                							createTopicModal.on('hidden.bs.modal', function() {
+                								window.location.href = '#/post/' + response.id;
+									})
+									createTopicModal.modal("toggle");
                                 				});
                                 				break;
                         				case "upload":
@@ -1019,8 +1021,10 @@ Hull.component('posts', {
 	                							"picture": component.options.imageID
 
                         						}).then(function(response) {
-                        							component.$el.find("#createTopicModal").modal("toggle");
-                        							window.location.href = '#/post/'+ response.id;
+                								createTopicModal.on('hidden.bs.modal', function() {
+                									window.location.href = '#/post/' + response.id;
+										})
+										createTopicModal.modal("toggle");
                         						});
                         					} else {
                         						alert("please upload and image. Or wait for the upload to finish.");
@@ -1047,8 +1051,10 @@ Hull.component('posts', {
                                 		"name": newConversationName
                                     	}).then(function(response) {
                                 		console.log(response);
-                                		component.$el.find("#createTopicModal").modal("toggle");
-                                		window.location.href = '#/createtopic/' + response.id;
+                                		createTopicModal.on('hidden.bs.modal', function() {
+                					window.location.href = '#/post/' + response.id;
+						})
+						createTopicModal.modal("toggle");
                                 	});
                         	}
                             } else {
