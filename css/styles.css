@@ -182,8 +182,7 @@ article .btn-twitter{
 	margin:1.2em 0;
 }
 
-.createTopic input,
-.createTopic button{
+.createTopic input{
 	font-size:0.8em;
 	font-family:inherit;
 	padding:0.8em;
@@ -191,7 +190,7 @@ article .btn-twitter{
 	border-radius:2px;
 	background-color:#FFFFFF;
 }
-/*
+
 .createTopic span{
 	display:none;
 }*/
