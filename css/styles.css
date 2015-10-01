@@ -92,7 +92,6 @@ main{
 	font-size:0.8em;
 	display:block;
 	z-index: 1500;
-	margin-top: -2px;
 }
 ul.ui-autocomplete {
     z-index: 1100;
