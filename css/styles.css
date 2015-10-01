@@ -92,6 +92,7 @@ main{
 	font-size:0.8em;
 	display:block;
 	z-index: 1500;
+	padding: 0;
 }
 ul.ui-autocomplete {
     z-index: 1100;
