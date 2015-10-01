@@ -1033,7 +1033,7 @@ Hull.component('posts', {
                 							"tags": result
                 						}).then(function(response) {
                 							console.log(response);
-                							createTopicModal.on('hidden', function() {
+                							createTopicModal.on('hidden.bs.modal', function() {
                 								window.location.href = '#/post/' + response.id;
 									})
 									createTopicModal.modal("toggle");
