@@ -560,12 +560,15 @@
                 			{
                 				alert("It seems you already commented on this topic today!");
                 			} else {
+                				var commentButton = opts.component.$el.find('#postPreviewButton' + selector);
+	                			commentButton.addClass("active disabled");
                 				opts.component.api(opts.objectID + '/comments', 'post', {
                 					"description": itemText,
                 					"extra": {
                 						"richComment": richComment
                 					}
                 				}).then(function(comment) {
+                					commentButton.removeClass("active disabled");
                 					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
 							opts.component.toggleLoading();
 							opts.component.focusAfterRender = true;
