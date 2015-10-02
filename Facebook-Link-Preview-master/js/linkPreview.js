@@ -399,7 +399,10 @@
 		}
 
 		myThis.find('#postPreview'+selector).click(function() {
-
+			
+			var commentButton = opts.component.$el.find('#postPreviewButton' + selector);
+	                commentButton.addClass("active disabled");
+	                
 			imageId = "";
 			pTP = "";
 			pDP = "";
@@ -489,9 +492,8 @@
 	                	if(response.length>=1)
 	                	{
 	                		alert("It seems you already commented on this topic today!");
+	                		commentButton.removeClass("active disabled");
 	                	} else {
-	                		var commentButton = opts.component.$el.find('#postPreviewButton' + selector);
-	                		commentButton.addClass("active disabled");
 	                		opts.component.api(opts.objectID + '/comments', 'post', {
 	                			"description": itemText,
 	                			"extra": {
@@ -559,6 +561,7 @@
                 			if(response.length>=1)
                 			{
                 				alert("It seems you already commented on this topic today!");
+                				commentButton.removeClass("active disabled");
                 			} else {
                 				var commentButton = opts.component.$el.find('#postPreviewButton' + selector);
 	                			commentButton.addClass("active disabled");
