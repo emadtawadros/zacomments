@@ -3,7 +3,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 *{box-sizing: border-box;}
-
 body{
 	font-family: 'Roboto', sans-serif;
 	margin:auto;
@@ -160,13 +159,11 @@ article{
 
 article .btn-facebook{
 	float: right;
-    	/*background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
-    	text-indent: -9999px;*/
+    	background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
+    	text-indent: -9999px;
     	height: 32px;
     	width: 32px;
   	margin-right: 10px;
-  	font-family: FontAwesome;
-	content: "";
 }
 
 article .btn-twitter{
