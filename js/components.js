@@ -769,7 +769,7 @@ Hull.component('posts', {
                 updateTags: function() {
                    var component = this;
                 	
-                   this.$el.find('#updateTags').attr("disabled", "disabled");
+                   this.$el.find('#updateTags').addClass("active disabled");
                                         
                     var tagsText = this.$el.find('.tagsinput:eq(1)').prev().val(); //Selecting the second tagsinput because the first would be the create topic one. Remove if moved to separate form
                     var tagsPromise = processTags(tagsText);
@@ -778,7 +778,7 @@ Hull.component('posts', {
                         Hull.api(postID, 'put',{
                             "tags": result
                         }).then(function(response) {
-                            component.$el.find('#updateTags').removeAttr("disabled");
+                            component.$el.find('#updateTags').removeClass("active disabled");
                             
                             console.log(response);
                             window.location.href = '#/post/'+ component.options.id;
