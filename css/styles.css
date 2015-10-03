@@ -159,20 +159,18 @@ article{
 
 article .btn-facebook{
 	float: right;
-    	background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
-    	text-indent: -9999px;
     	height: 32px;
-    	width: 32px;
+    	width: 70px;
   	margin-right: 10px;
+  	color: #3b5998;
 }
 
 article .btn-twitter{
 	float: right;
-    	background: url("http://zacomments.com/zacomments/images/tweet.png") no-repeat;
-    	text-indent: -9999px;
     	height: 32px;
-    	width: 32px;
+    	width: 70px;
     	margin-right: 10px;
+    	color: #4099FF;
 }
 
 .createTopic{
