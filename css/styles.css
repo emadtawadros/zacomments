@@ -160,12 +160,13 @@ article{
 
 article .btn-facebook{
 	float: right;
-    	background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
-    	text-indent: -9999px;
+    	/*background: url("http://zacomments.com/zacomments/images/facebook_share.png") no-repeat;
+    	text-indent: -9999px;*/
     	height: 32px;
     	width: 32px;
   	margin-right: 10px;
-
+  	font-family: FontAwesome;
+	content: "\f082";
 }
 
 article .btn-twitter{
