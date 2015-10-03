@@ -75,7 +75,7 @@ Hull.component('posts', {
             	flag:    'flagItem',
                 loadMoreTrending: function() {
                 	
-                	this.$el.find('#loadMoreTrending').addclass("active disabled");
+                	this.$el.find('#loadMoreTrending').addClass("active disabled");
 
                         this.options.trendingLimit += 10;
                         this.render();
