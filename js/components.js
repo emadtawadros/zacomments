@@ -60,7 +60,7 @@ Hull.component('posts', {
             afterRender: function() {
 		this.$el.removeClass("loading");
                 
-                this.$el.find('#loadMoreTrending').removeAttr('dissabled');
+                this.$el.find('#loadMoreTrending').removeClass("active disabled");
 
             },
             flagItem: function (event, action) {
@@ -75,7 +75,7 @@ Hull.component('posts', {
             	flag:    'flagItem',
                 loadMoreTrending: function() {
                 	
-                	this.$el.find('#loadMoreTrending').attr("disabled", "disabled");
+                	this.$el.find('#loadMoreTrending').addclass("active disabled");
 
                         this.options.trendingLimit += 10;
                         this.render();
@@ -113,7 +113,7 @@ Hull.component('posts', {
         		this.options.limit = 10;
         	},
         	afterRender: function() {
-        		this.$el.find('#loadMore').removeAttr('dissabled');
+        			this.$el.find('#loadMore').removeClass("active disabled");
         	},
         	flagItem: function (event, action) {
         		event.preventDefault();
@@ -126,7 +126,7 @@ Hull.component('posts', {
         	actions: {
         		flag: 'flagItem',
         		loadMore: function() {
-        			this.$el.find('#loadMore').attr("disabled", "disabled");
+        			this.$el.find('#loadMore').addClass("active disabled");
         			this.options.limit += 10;
         			this.render();
         			}	
