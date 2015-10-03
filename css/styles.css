@@ -166,7 +166,7 @@ article .btn-facebook{
     	width: 32px;
   	margin-right: 10px;
   	font-family: FontAwesome;
-	content: "\f082";
+	content: "";
 }
 
 article .btn-twitter{
