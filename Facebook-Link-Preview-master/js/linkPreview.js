@@ -624,6 +624,8 @@
 					video = '';
 				}, "json");
 				text = "";
+			} else {
+				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
 			}
 		});
 
