@@ -248,13 +248,13 @@
 							"margin-right" : "-206px"
 						});
 						myThis.find('#previewTitle'+selector).css({
-							"width" : "70%"
+							"width" : "495px"
 						});
 						myThis.find('#previewDescription'+selector).css({
-							"width" : "70%"
+							"width" : "495px"
 						});
 						myThis.find('#previewInputDescription'+selector).css({
-							"width" : "70%"
+							"width" : "495px"
 						});
 						contentWidth = 495;
 						myThis.find('#previewButtons'+selector).hide();
