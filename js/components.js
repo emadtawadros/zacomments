@@ -848,26 +848,31 @@ Hull.component('posts', {
             },
             afterRender: function(data) {
                 console.log(data);
-                this.$el.find(".imgIframe").click(function() {
-                    var oldId = $(this).attr("id");
-                    var currentId = oldId.substring(4);
-                    pTP = "pTP_" + currentId;
-                    pDP = "pDP_" + currentId;
-                    oldId = "#" + oldId;
-                    currentId = "#" + currentId;
-                    $(oldId).css({
-                    'display' : 'none'
-                    });
-                    $(currentId).css({
-                    'display' : 'block'
-                    });
-                    $('#' + pTP).css({
-                    'width' : '495px'
-                    });
-                    $('#' + pDP).css({
-                    'width' : '495px'
-                    });
-                });
+	            this.$el.find(".imgIframe, .videoPostPlay").click(function() {
+	            	var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
+	                var currentId = oldId.substring(4);
+	                console.log("old " + oldId);
+	                console.log("current " + currentId);
+	                pTP = "pTP_" + currentId;
+	                pDP = "pDP_" + currentId;
+	                oldId = "#" + oldId;
+	                currentId = "#" + currentId;
+	                component.$el.find(oldId).css({
+	                	'display' : 'none'
+	                });
+	                component.$el.find(oldId).next(".videoPostPlay").css({
+	                	'display' : 'none'
+	                });
+	                component.$el.find(currentId).css({
+	                    'display' : 'block'
+	                });
+	                component.$el.find('#' + pTP).css({
+	                    'width' : '495px'
+	                });
+	                component.$el.find('#' + pDP).css({
+	                    'width' : '495px'
+	                });
+	            });
             }        
         });
         
