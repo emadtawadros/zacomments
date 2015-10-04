@@ -158,7 +158,9 @@
 			  <div class='media'>
 			    {{#if me.picture}}
 			    <div class="pull-left">
-			      <img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
+			    <a href="#/user/{{me.id}}">
+			    	<img class="media-object img-rounded" src="{{me.picture}}" alt="{{me.name}}">
+			    </a>
 			    </div>
 			    {{/if}}
 			    <div class="pull-right">
