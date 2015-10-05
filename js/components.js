@@ -410,6 +410,7 @@ Hull.component('posts', {
             delete:  'deleteComment',
             flag:    'flagItem',
             loadMore: function() {
+            	this.$el.find('#loadMore').addClass("active disabled");
                 this.options.limit += 10;
                 this.render();
                 }
