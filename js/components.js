@@ -929,10 +929,14 @@ Hull.component('posts', {
 		                        tagsField.removeTag(ui.item.value);
 	                    	},
 	                    	search: function(event, ui) {
-	                    		alert("search started");
+	                    		var currentClass = event.target.getAttribute("class");
+	                    		currentClass += " ui-autocomplete-loading";
+	                    		event.target.setAttribute("class", currentClass);
 	                    	},
 	                    	response: function(event, ui) {
-	                    		alert("response came");
+	                    		var currentClass = event.target.getAttribute("class");
+	                    		var classes = currentClass.split(" ");
+	                    		event.target.setAttribute("class", classes[0]);
 	                    	},
 	                    	messages: {
 	                    		noResults: '',
