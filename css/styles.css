@@ -145,6 +145,13 @@ ul.ui-autocomplete {
 	float: right;
 	display: inline-block;
 }	
+.login p{
+	font-size: 15px;
+    	margin-right: 10%;
+    	text-align: center;
+    	color: orange;
+    	font-weight: bold;
+}
 /* Phone size */
 
 .pageHeader{
