@@ -892,6 +892,7 @@ Hull.component('posts', {
 		});
 		
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
+                	component.options.imageID = image.id;
 			component.$el.find('input[name=file]').removeClass("btn btn-default disabled")
                 });
         
