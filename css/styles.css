@@ -149,7 +149,7 @@ ul.ui-autocomplete {
 	font-size: 15px;
     	margin-right: 10%;
     	text-align: center;
-    	color: orange;
+    	color: rgba(250, 200, 50, 1);
     	font-weight: bold;
 }
 /* Phone size */
