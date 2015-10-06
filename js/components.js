@@ -928,6 +928,12 @@ Hull.component('posts', {
 		                        tagsField.addTag(ui.item.label);
 		                        tagsField.removeTag(ui.item.value);
 	                    	},
+	                    	search: function(event, ui) {
+	                    		alert("search started");
+	                    	},
+	                    	response: function(event, ui) {
+	                    		alert("response came");
+	                    	},
 	                    	messages: {
 	                    		noResults: '',
 	                    		results: function() {}
