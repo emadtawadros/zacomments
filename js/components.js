@@ -712,6 +712,16 @@ Hull.component('posts', {
 		                        tagsElement.addTag(ui.item.label);
 		                        tagsElement.removeTag(ui.item.value);
 	                    	},
+	                    	search: function(event, ui) {
+	                    		var currentClass = event.target.getAttribute("class");
+	                    		currentClass += " ui-autocomplete-loading";
+	                    		event.target.setAttribute("class", currentClass);
+	                    	},
+	                    	response: function(event, ui) {
+	                    		var currentClass = event.target.getAttribute("class");
+	                    		var classes = currentClass.split(" ");
+	                    		event.target.setAttribute("class", classes[0]);
+	                    	},
 	                    	messages: {
 	                    		noResults: '',
 	                    		results: function() {}
