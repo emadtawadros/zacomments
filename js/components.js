@@ -888,11 +888,11 @@ Hull.component('posts', {
             	var component = this;
 		
 		this.sandbox.on('hull.upload.image.add', function(image) {
-			component.$el.find('input[name=file]').addClass("disabled")
+			component.$el.find('input[name=file]').addClass("btn btn-default disabled")
 		});
 		
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
-			component.$el.find('input[name=file]').removeClass("disabled")
+			component.$el.find('input[name=file]').removeClass("btn btn-default disabled")
                 });
         
         	var tagsField = this.$el.find('#tagsField');
