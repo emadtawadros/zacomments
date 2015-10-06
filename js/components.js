@@ -298,8 +298,8 @@ Hull.component('posts', {
             afterRender: function() {
                 var component = this;
                 
-		this.sandbox.on('hull.upload.image.add', function(image) {                  
-			component.$el.children().attr("disabled", "disabled");
+		this.sandbox.on('hull.upload.image.add', function(image) {
+			component.$el.find('input[name=file]').addClass("btn btn-default disabled")
 		});
                 
                 this.sandbox.on('hull.uploads.image.finished', function(image) {                  
