@@ -886,9 +886,13 @@ Hull.component('posts', {
 	    },
             afterRender: function (data) {
             	var component = this;
-	
+		
+		this.sandbox.on('hull.upload.image.add', function(image) {
+			component.$el.find('input[name=file]').addClass("disabled")
+		});
+		
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
-                	component.options.imageID = image.id;
+			component.$el.find('input[name=file]').removeClass("disabled")
                 });
         
         	var tagsField = this.$el.find('#tagsField');
