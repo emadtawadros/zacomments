@@ -357,6 +357,9 @@ button.btn-fail{
   transition: opacity 0.25s, width 0.25s;
 }
 
+.hull-upload__dropzone{
+	display: none;
+}
 .has-spinner.active .spinner {
   opacity: 1;
   width: auto; 
