@@ -500,10 +500,10 @@ Hull.component('posts', {
                      'width': 'auto'
                 });
                 component.$el.find('#' + pTP).css({
-                    'width' : '495px'
+                    'width' : 'auto'
                 });
                 component.$el.find('#' + pDP).css({
-                    'width' : '495px'
+                    'width' : 'auto'
                 });
             });
                     
