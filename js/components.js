@@ -496,7 +496,8 @@ Hull.component('posts', {
                 	'display' : 'none'
                 });
                 component.$el.find(currentId).css({
-                    'display' : 'block'
+                    'display' : 'block',
+                     'width': 'auto'
                 });
                 component.$el.find('#' + pTP).css({
                     'width' : '495px'
