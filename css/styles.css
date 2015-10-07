@@ -395,6 +395,14 @@ button.btn-fail{
 	}
 	
 }
+@media only screen and (min-device-width: 480px){
+	body{
+		width: 100%;
+		margin: 0px;
+		padding:0;
+	}
+}
+
 
 
 
