@@ -262,7 +262,6 @@ Hull.component('posts', {
                             limit: 1000
                         }).then(function(response) {
                         	$.each(response, function(actionIndex, actionValue) {
-                        		component.options.commentMojo++;
                         		if(actionValue.object.type == "comment") {
                         			component.options.commentMojo++;
                         			if(actionValue.object.stats.reviews) {
