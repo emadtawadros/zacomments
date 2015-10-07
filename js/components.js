@@ -283,7 +283,7 @@ Hull.component('posts', {
                 }
             },
             initialize: function() {
-            	this.opitons.commentMojo = 0;	
+            	this.options.commentMojo = 0;	
             },
             beforeRender: function(data, errors) {
                 console.log(data);
