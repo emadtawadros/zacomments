@@ -219,9 +219,10 @@
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
 		        <br>
-		        <h2>Comment Mojo {{options.commentMojo}}</h2>
+		        <h2>Comment Mojo: {{options.commentMojo}}</h2>
 		 </section>
 	        <section class="userFeed">
+	        <h1>Activity</h1>
 	        {{#each feed}}
 	            {{#ifEqual object.type "comment"}}
 	                {{#if target.name}}
