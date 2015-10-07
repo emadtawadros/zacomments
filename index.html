@@ -210,11 +210,15 @@
 	    <script type='text/x-handlebars' data-hull-template='user/user'>
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
-			{{/if}}
-	    	<section class="userId">
+		{{/if}}
+		{{#ifEqual feed.length 0}}
+			<h1>Nothing to see here!</h1>
+			<p>Seems that this users hasn't been active....yet</p>
+		{{else}}
+		<section class="userId">
 		    	<img src={{feed.0.actor.picture}}>
 		        <h1>{{feed.0.actor.name}}</h1>
-		    </section>
+		 </section>
 	        <section class="userFeed">
 	        {{#each feed}}
 	            {{#ifEqual object.type "comment"}}
@@ -257,6 +261,7 @@
 			        </article>
 		    	{{/each}}
 	    	</aside>
+		{{/ifEqual}}
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
