@@ -262,7 +262,12 @@ Hull.component('posts', {
                             limit: 1000
                         }).then(function(response) {
                         	$.each(response, function(actionIndex, actionValue) {
+                        		component.options.commentMojo++;
                         		if(actionValue.object.type == "comment") {
+                        			component.options.commentMojo++;
+                        			if(actionValue.object.stats.reviews) {
+                        				component.options.commentMojo += actionValue.object.stats.reviews.updown;
+                        			}
                         			if(notAlreadyAdded(result, actionValue.object.commentable_id)) {
                         				if(null != actionValue.object.object)
                         				{
@@ -276,6 +281,9 @@ Hull.component('posts', {
                     });
                     return dff.promise();	
                 }
+            },
+            initialize: function() {
+            	this.opitons.commentMojo = 0;	
             },
             beforeRender: function(data, errors) {
                 console.log(data);
