@@ -178,7 +178,9 @@ article .btn-twitter{
     	margin-right: 10px;
     	color: #4099FF;
 }
-
+.previewImagePosted img{
+	width: 100%;
+}
 .createTopic{
 	margin:1.2em 0;
 }
