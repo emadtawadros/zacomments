@@ -69,10 +69,6 @@ main{
 	background-color:#FFFFFF;
 }
 
-.search input{
-	width: 90%;	
-}
-
 .search span{
 	display:none;
 }
