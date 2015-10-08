@@ -59,9 +59,10 @@ Hull.component('posts', {
             },
             afterRender: function() {
 		this.$el.removeClass("loading");
-                
                 this.$el.find('#loadMoreTrending').removeClass("active disabled");
-
+                $("img").on("contextmenu",function(){
+                	return false;
+                });
             },
             flagItem: function (event, action) {
             	event.preventDefault();
@@ -289,6 +290,9 @@ Hull.component('posts', {
             },
             afterRender: function(){
             	this.$el.removeClass("loading");
+            	$("img").on("contextmenu",function(){
+            		return false;
+                });
             },
             actions: {
                 back: function() {
@@ -362,7 +366,9 @@ Hull.component('posts', {
                 console.log(error);
             },
             afterRender: function(data) {
-            	console.log(data);
+            	$("img").on("contextmenu",function(){
+                	return false;
+                });
             },
             actions: {
                 back: function() {
@@ -676,6 +682,9 @@ Hull.component('posts', {
             },
             afterRender: function (data) {
             	var component = this;
+            	$("img").on("contextmenu",function(){
+                	return false;
+                });
                 var hasElevatedAccess = false;
                 if((data.loggedIn && data.isAdmin) || (data.loggedIn && data.me.id == data.post.actor.id)) {
                             hasElevatedAccess = true; 
@@ -867,6 +876,9 @@ Hull.component('posts', {
             },
             afterRender: function(data) {
             	var component = this;
+            	$("img").on("contextmenu",function(){
+                	return false;
+                });
                 console.log(data);
 	            this.$el.find(".imgIframe, .videoPostPlay").click(function() {
 	            	var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
