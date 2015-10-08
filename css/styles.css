@@ -193,7 +193,9 @@ article .btn-twitter{
 .createTopic span{
 	display:none;
 }*/
-
+.create.mobile{
+	display: none;
+}
 .topic{
 	margin-bottom:0.6em;
 }
@@ -409,6 +411,9 @@ button.btn-fail{
 	}
 	main{
 		margin-top:10%;
+	}
+	.create.desktop{
+		display: none;
 	}
 }
 
