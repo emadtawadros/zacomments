@@ -984,15 +984,13 @@ Hull.component('posts', {
                     }
                 });
                 
-                this.$el.find('.tagsinput').hide();
-                
                 this.$el.find('#newEntityField').keyup(function(e) {
-		if(trim($(this).val()) !== "") {
-			component.$el.find('#tagsSection').slideDown();
-		} else {
-			component.$el.find('#tagsSection').slideUp();
-			component.$el.find('#createTopic').attr("disabled", "disabled");
-		}
+			if(trim($(this).val()) !== "") {
+				component.$el.find('#tagsSection').slideDown();
+			} else {
+				component.$el.find('#tagsSection').slideUp();
+				component.$el.find('#createTopic').attr("disabled", "disabled");
+			}
                 });
                 
                 this.$el.find('input[type="radio"]').click(function(){
