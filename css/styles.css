@@ -56,6 +56,7 @@ main{
 .search{
 	float:left;
 	margin-right: 0.8em;
+	display: inline-block;
 }
 
 .search input,
@@ -101,7 +102,6 @@ ul.ui-autocomplete {
 	float:left;
 	display:block;
 	font-size: 1.2em;
-	margin: 0.4em 5em 0.4em 2%;
 	background: url("logo.svg");
 }
 	
