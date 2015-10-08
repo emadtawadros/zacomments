@@ -76,9 +76,7 @@
 	        {{#if loggedIn}}
 	    		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
-	    	<header>
-				<span class="pageHeader">Trending Buzz</span>
-	    	</header>
+	    	<h3>Trending Topics</h3>
 	        {{#each trendingPosts}}
 	        	{{#if name}}
 					<article>
@@ -113,9 +111,7 @@
 	    </script>
 	    		    			
 		<script type='text/x-handlebars' data-hull-template='newposts/newposts'>
-			<header>
-				<span class="pageHeader">New Buzz</span>
-			</header>
+			<h3>New Topics</h3>
 			{{#each newPosts}}
 				{{#if name}}
 				<article>
