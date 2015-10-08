@@ -974,10 +974,12 @@ Hull.component('posts', {
                     		var listOfTags = tagsText.split(',');
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
-                    			component.$el.find('#imageRadio').fadeIn();
+                    			component.$el.find('#imageSection').fadeIn();
+                    			component.$el.find('#createTopic').removeAttr("disabled");
                     		}
                     	}  else {
-                    		component.$el.find('#imageRadio').fadeOut();
+                    		component.$el.find('#imageSection').fadeOut();
+                    		component.$el.find('#createTopic').attr("disabled", "disabled");
                     	}
                     }
                 });
@@ -986,10 +988,9 @@ Hull.component('posts', {
                 
                 this.$el.find('#newEntityField').keyup(function(e) {
 		if(trim($(this).val()) !== "") {
-			component.$el.find('.tagsinput').slideDown();
-			component.$el.find('#createTopic').removeAttr("disabled");
+			component.$el.find('#tagsSection').slideDown();
 		} else {
-			component.$el.find('.tagsinput').slideUp();
+			component.$el.find('#tagsSection').slideUp();
 			component.$el.find('#createTopic').attr("disabled", "disabled");
 		}
                 });
