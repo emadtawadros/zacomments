@@ -418,6 +418,12 @@ button.btn-fail{
 	.create.mobile{
 	display: inline;
 	}
+	#mainSection{
+		width:100%;
+	}
+	#mainAside{
+		width:100%;
+	}
 }
 
 
