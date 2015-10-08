@@ -915,7 +915,9 @@ Hull.component('posts', {
 	    	this.options.imageID = "0";
 	    },
             afterRender: function (data) {
-            	$('.create').css('visibility', 'visible');
+            	$('.create').each(function(index){
+            		$(this).css('visibility', 'visible');
+            	});
             	var component = this;
 		
 		this.sandbox.on('hull.upload.image.add', function(image) {
