@@ -405,7 +405,10 @@ button.btn-fail{
 		display: none;
 	}
 	#mainHeader{
-	height: 10%;
+		height: 10%;
+	}
+	main{
+		margin-top:10%;
 	}
 }
 
