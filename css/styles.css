@@ -385,7 +385,7 @@ button.btn-fail{
 	}
 
 	#mainSection{
-		width:64%;
+		width:60%;
 		float:left;
 	}
 	.loading{
@@ -393,7 +393,7 @@ button.btn-fail{
 		height: 100px;
 	}
 	#mainAside{
-		width:34%;
+		width:30%;
 		float:right;
 		margin-top: 1%;
 	}
