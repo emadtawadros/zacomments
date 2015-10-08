@@ -98,7 +98,8 @@ ul.ui-autocomplete {
 	float:left;
 	display:block;
 	font-size: 1.2em;
-	background: url("logo.svg");
+	/*background: url("logo.svg");*/
+	color: rgba(158, 144, 168, 1);
 }
 	
 .login .pull-left,
