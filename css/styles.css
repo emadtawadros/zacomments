@@ -326,10 +326,14 @@ button.dropup:hover, button.dropdown:hover{
 	background-color: rgba(163,163,163,1);
 }
 
-button.btn-success{
-    color: rgba(182, 194, 162, 1);
-    background-color: rgba(84, 120, 58, 1);
-    border-color: rgba(105,102,72,1);
+.btn-success{
+	color: rgba(182, 194, 162, 1);
+    	background-color: rgba(84, 120, 58, 1);
+    	border-color: rgba(105,102,72,1);
+}
+
+.btn-small.btn-success{
+	color: rgba(84, 120, 58, 1);
 }
 
 button.btn-fail{
