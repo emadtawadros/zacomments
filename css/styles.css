@@ -327,7 +327,9 @@ button.dropup:hover, button.dropdown:hover{
 }
 
 button.btn-success{
-	color: green;
+    color: rgba(182, 194, 162, 1);
+    background-color: rgba(84, 120, 58, 1);
+    border-color: rgba(105,102,72,1);
 }
 
 button.btn-fail{
