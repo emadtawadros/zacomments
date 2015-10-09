@@ -336,10 +336,12 @@ button.dropup:hover, button.dropdown:hover{
 	color: rgba(84, 120, 58, 1);
 }
 
-button.btn-fail{
-	color: red;	
+.btn-fail{
+	color: rgba(150,68,59,1);	
 }
-
+.btn-primary{
+	background-color: rgba(0,121,180,1);
+}
 /*#loadMore,
 #loadMoreTrending{
 	font-size:0.8em;
