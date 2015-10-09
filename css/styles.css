@@ -336,7 +336,7 @@ button.dropup:hover, button.dropdown:hover{
 	color: rgba(84, 120, 58, 1);
 }
 
-.btn-fail{
+.btn-small.btn-fail{
 	color: rgba(150,68,59,1);	
 }
 .btn-primary{
