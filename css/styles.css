@@ -429,7 +429,7 @@ button.dropup:hover, button.dropdown:hover{
 		display: inline;	
 	}
 	.ui-menu-item{
-		padding-top: 1%;
+		padding-top: 5%;
 	}
 	#mainHeader{
 		height: 10%;
