@@ -73,6 +73,10 @@ main{
 	display:none;
 }
 
+#searchButtonMobile{
+	display: none;	
+}
+
 .ui-autocomplete-loading {
 	background: url('https://www.burnscowboyshop.com/App_Themes/desktop/images/horizontal-loading.gif') no-repeat right center;
 }
@@ -420,6 +424,12 @@ button.dropup:hover, button.dropdown:hover{
 @media only screen and (min-device-width: 320px) and (max-device-width : 480px){
 	.search{
 		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	.ui-menu-item{
+		padding-top: 1%;
 	}
 	#mainHeader{
 		height: 10%;
