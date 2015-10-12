@@ -908,6 +908,47 @@ Hull.component('posts', {
             }        
         });
         
+        Hull.component('mobileSearchForm', {
+        	templates: ['mobileSearchForm'],
+        	afterRender: function(data) {
+        		var component = this;
+        		this.$el.find('#searchFieldMobile').autocomplete({
+	                    source: function(request, response) {
+	                    	var searchTokens = request.term.split(/[ ,]+/);
+	                    	component.api('52e138eaf0f1b0ac30000bad/conversations', 'get',{
+                                'visibiliy': 'public',
+                                where:{
+                                    'name': {
+                                        '$regex': '.*('+ searchTokens.join('|') +').*', '$options': 'i'
+                                    }
+                                }
+                             }).then(function(hullresponse){
+                             	var searchresponse = $.map(hullresponse, function(elementOfArray, indexInArray){
+                             		if(elementOfArray.name){
+                             			var datum = {
+                             				label: elementOfArray.name,
+                             				value: elementOfArray.id
+                             			}
+                             			return datum;
+                             		}
+                             	});
+                             	response(searchresponse);
+                             });
+	                    },
+			    appendTo: ".searchFormMobile",
+	                    select: function(event, ui) {
+	                    	event.preventDefault();
+	                    	$(this).val(ui.item.label);
+	                    	var mobileSearchModal = component.$el.find("#mobileSearchModal");
+	    			mobileSearchModal.on('hidden.bs.modal', function() {
+	                        	window.location.href = '#/post/' + ui.item.value;
+				})
+				createTopicModal.modal("toggle");
+	                    }
+	                });
+        	}
+        });
+
         Hull.component('createtopicform', {
             templates: ['createtopicform'],
             refreshEvents: ['model.hull.me.change'],
