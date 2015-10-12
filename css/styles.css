@@ -329,11 +329,11 @@ button.dropup:hover, button.dropdown:hover{
 .btn-success, .btn-warning{
 	color: rgba(227,229,224,1);
 }
-.btn-success{
+.btn-success, .btn-success:focus{
     	background-color: rgba(84, 120, 58, 1);
     	border-color: rgba(105,102,72,1);
 }
-.btn-warning{
+.btn-warning, .btn-warning-focus{
 	background-color: rgba(89, 71, 108, 1);
 	border-color: rgba(134,156,104,1);
 }
@@ -344,7 +344,7 @@ button.dropup:hover, button.dropdown:hover{
 .btn-small.btn-fail{
 	color: rgba(150,68,59,1);	
 }
-.btn-primary{
+.btn-primary, .btn-primary-focus{
 	background-color: rgba(0,121,180,1);
 }
 /*#loadMore,
