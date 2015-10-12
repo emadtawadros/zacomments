@@ -943,7 +943,7 @@ Hull.component('posts', {
 	    			mobileSearchModal.on('hidden.bs.modal', function() {
 	                        	window.location.href = '#/post/' + ui.item.value;
 				})
-				createTopicModal.modal("toggle");
+				mobileSearchModal.modal("toggle");
 	                    }
 	                });
         	}
