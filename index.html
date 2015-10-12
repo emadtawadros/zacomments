@@ -59,6 +59,7 @@
 				<button type="button" id="search"><i class="icon-search"></i></button>
 	    	</form>
 	    	<button type="button" id="Create" class="btn btn-default btn-warning create desktop" data-toggle="modal" data-target="#createTopicModal" style="visibility: hidden">Create Topic</button>
+	    	<button type="button" id="searchButtonMobile" data-toggle="modal" data-target="#mobileSearchModal"><i class="icon-search"></i></button>
 	    	<button type="button" id="mobileCreate" class="btn btn-default btn-warning create mobile" data-toggle="modal" data-target="#createTopicModal" style="visibility: hidden"><i class="icon-plus"></i></button>
 	    	<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 		</header>
@@ -67,16 +68,18 @@
 	    
 	    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
 	        {{#if isAdmin}}
-	            <section data-hull-component="flaggedposts"></section>
+	            	<section data-hull-component="flaggedposts"></section>
 	        {{/if}}
-		        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
-				<aside id="mainAside" data-hull-component="newposts"></aside>
+	       	{{#if loggedIn}}
+	       		<section class="createTopic" data-hull-component="createtopicform"></section>
+	    	{{/if}}
+	    	
+        	<section data-hull-component="mobileSearchForm"></section>
+	        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
+		<aside id="mainAside" data-hull-component="newposts"></aside>
 	    </script>
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
-	        {{#if loggedIn}}
-	    		<section class="createTopic" data-hull-component="createtopicform"></section>
-	    	{{/if}}
 	    	<h3>Topics With Recent Activity</h3>
 	        {{#each trendingPosts}}
 	        	{{#if name}}
@@ -208,6 +211,8 @@
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
 		{{/if}}
+		<section data-hull-component="mobileSearchForm"></section>
+
 		{{#ifEqual feed.length 0}}
 			<h1>Nothing to see here!</h1>
 			<p>Seems that this users hasn't been active....yet</p>
@@ -337,7 +342,8 @@
 	    {{#if loggedIn}}
 	    	<section data-hull-component="createtopicform"></section>
 	    {{/if}}
-	    
+	    <section data-hull-component="mobileSearchForm"></section>
+
 	    <section id="mainSection">
 	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 		<article>
@@ -463,6 +469,7 @@
 	        {{/if}}
 	        
 	        <button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Change Image</button>
+		<section data-hull-component="mobileSearchForm"></section>
 
 	        <section id="mainSection">
 		        {{#if loggedIn}}
