@@ -59,7 +59,8 @@ main{
 }
 
 .search input,
-.search button{
+.search button,
+.searchFormMobile input{
 	font-size:0.8em;
 	font-family:inherit;
 	padding:0.8em;
@@ -68,7 +69,7 @@ main{
 	background-color:#FFFFFF;
 }
 
-.search span{
+.search span, .searchFormMobile span{
 	display:none;
 }
 
