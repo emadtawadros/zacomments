@@ -908,8 +908,8 @@ Hull.component('posts', {
             }        
         });
         
-        Hull.component('mobileSearchForm', {
-        	templates: ['mobileSearchForm'],
+        Hull.component('mobilesearchform', {
+        	templates: ['mobilesearchform'],
         	afterRender: function(data) {
         		var component = this;
         		this.$el.find('#searchFieldMobile').autocomplete({
