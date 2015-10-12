@@ -74,7 +74,7 @@
 	       		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
 	    	
-        	<section data-hull-component="mobileSearchForm"></section>
+        	<section data-hull-component="mobilesearchform"></section>
 	        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
 		<aside id="mainAside" data-hull-component="newposts"></aside>
 	    </script>
@@ -211,7 +211,7 @@
 	        {{#if loggedIn}}
 				<section data-hull-component="createtopicform"></section>
 		{{/if}}
-		<section data-hull-component="mobileSearchForm"></section>
+		<section data-hull-component="mobilesearchform"></section>
 
 		{{#ifEqual feed.length 0}}
 			<h1>Nothing to see here!</h1>
@@ -342,7 +342,7 @@
 	    {{#if loggedIn}}
 	    	<section data-hull-component="createtopicform"></section>
 	    {{/if}}
-	    <section data-hull-component="mobileSearchForm"></section>
+	    <section data-hull-component="mobilesearchform"></section>
 
 	    <section id="mainSection">
 	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
@@ -448,7 +448,7 @@
 		  </div>
 	    </script>
 	    
-	    <script type='text/handlebars' data-hull-template='mobileSearchForm/mobileSearchForm'>
+	    <script type='text/handlebars' data-hull-template='mobilesearchform/mobilesearchform'>
 	    	  <div class="modal fade" id="mobileSearchModal" role="dialog">
 	    		<div class="modal-dialog">
 		      		<!-- Modal content-->
@@ -469,7 +469,7 @@
 	        {{/if}}
 	        
 	        <button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Change Image</button>
-		<section data-hull-component="mobileSearchForm"></section>
+		<section data-hull-component="mobilesearchform"></section>
 
 	        <section id="mainSection">
 		        {{#if loggedIn}}
