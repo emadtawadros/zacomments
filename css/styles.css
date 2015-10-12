@@ -333,7 +333,7 @@ button.dropup:hover, button.dropdown:hover{
     	background-color: rgba(84, 120, 58, 1);
     	border-color: rgba(105,102,72,1);
 }
-.btn-warning, .btn-warning-focus{
+.btn-warning, .btn-warning:focus{
 	background-color: rgba(89, 71, 108, 1);
 	border-color: rgba(134,156,104,1);
 }
@@ -344,7 +344,7 @@ button.dropup:hover, button.dropdown:hover{
 .btn-small.btn-fail{
 	color: rgba(150,68,59,1);	
 }
-.btn-primary, .btn-primary-focus{
+.btn-primary, .btn-primary:focus{
 	background-color: rgba(0,121,180,1);
 }
 /*#loadMore,
