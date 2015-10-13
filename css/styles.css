@@ -12,6 +12,9 @@ body{
 	width:80%;
 }
 
+#mobileView{
+	display: none;
+}
 ul,ol{
 	list-style:none;
 	margin:0;
@@ -463,6 +466,12 @@ button.dropup:hover, button.dropdown:hover{
 		padding-top: 1.5%;
 		margin: 0px 0px;
 		width: 100%;
+	}
+	#mobileView{
+		display: block;
+	}
+	#desktopView{
+		display: none;
 	}
 }
 
