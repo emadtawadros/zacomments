@@ -180,6 +180,7 @@ ul.ui-autocomplete {
 	float: right;
 	background-image: url('../Facebook-Link-Preview-master/img/close.png');
 	background-repeat: no-repeat;
+	background-color: black;
 	background-position: left 0px;
 	height: 15px;
 	width: 15px;
