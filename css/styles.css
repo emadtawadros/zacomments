@@ -44,7 +44,7 @@ a:hover{
 	left: 0px;
 }
 main{
-	margin-top:5%;
+	padding-top:5%;
 	overflow: hidden;
 }
 #mainFooter{
@@ -106,7 +106,10 @@ ul.ui-autocomplete {
 	/*background: url("logo.svg");*/
 	color: rgba(157, 186, 127, 1);
 }
-	
+.logo h3{
+	margin: 0px 0px;
+	height: 100%;
+}	
 .login .pull-left,
 .login .media-body,
 .login .pull-right{
@@ -435,7 +438,7 @@ button.dropup:hover, button.dropdown:hover{
 		height: 10%;
 	}
 	main{
-		margin-top:15%;
+		padding-top:15%;
 	}
 	.create.desktop{
 		display: none;
