@@ -366,6 +366,10 @@ button.dropup:hover, button.dropdown:hover{
 .btn-primary, .btn-primary:focus{
 	background-color: rgba(0,121,180,1);
 }
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: rgba(89, 71, 108, 1);
+	border-color: rgba(121,102,158,1);
+}
 /*#loadMore,
 #loadMoreTrending{
 	font-size:0.8em;
