@@ -114,7 +114,9 @@ ul.ui-autocomplete {
 .login .media-body,
 .login .pull-right{
 	font-size:0.8em;
-	margin-left:0.8em;
+	margin: 0px 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 	float:left;
 }
 
