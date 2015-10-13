@@ -189,6 +189,11 @@ Hull.component('posts', {
 	
 	  afterRender: function() {
 	    this.authHasFailed = false;
+	  },
+	  actions: {
+	  	close: function(){
+	  		this.$el.hide();
+	  	}
 	  }
 	});
 	
