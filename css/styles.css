@@ -176,6 +176,15 @@ ul.ui-autocomplete {
     	text-align: center;
     	font-weight: bold;
 }
+.login .close{
+	float: right;
+	background-image: url('../Facebook-Link-Preview-master/img/close.png');
+	background-repeat: no-repeat;
+	background-position: left 0px;
+	height: 15px;
+	width: 15px;
+	cursor: pointer;
+}
 /* Phone size */
 
 .pageHeader{
