@@ -124,7 +124,12 @@ ul.ui-autocomplete {
 .logo h3{
 	margin: 0px 0px;
 	height: 100%;
-}	
+}
+.login{
+	background-color: rgba(227,229,224,1);
+    	border-radius: 5px;
+    	text-align: center;
+}
 .login .pull-left,
 .login .media-body,
 .login .pull-right{
