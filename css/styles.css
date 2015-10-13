@@ -43,6 +43,13 @@ a:hover{
 	z-index: 1;
 	left: 0px;
 }
+.containerDiv{
+	position: relative;
+}
+.verticallyCentered{
+	top: 50%;
+    	transform: translate(0, 15%);
+}
 main{
 	padding-top:5%;
 	overflow: hidden;
