@@ -126,7 +126,7 @@ ul.ui-autocomplete {
 	height: 100%;
 }
 .login{
-	background-color: rgba(227,229,224,1);
+	background-color: rgba(157, 186, 127, 1);
     	border-radius: 5px;
     	text-align: center;
 }
@@ -156,8 +156,7 @@ ul.ui-autocomplete {
 	font-family: inherit;
 	font-size:0.8em;
 	padding: 0.8em;
-	border: 1px solid #EEEEEE;
-	border-radius: 2px;
+	border-radius: 5px;
 	background-color: #008080;
 	color: #FFFFFF;
 }
@@ -175,7 +174,6 @@ ul.ui-autocomplete {
 	font-size: 15px;
     	margin-right: 10%;
     	text-align: center;
-    	color: rgba(250, 200, 50, 1);
     	font-weight: bold;
 }
 /* Phone size */
