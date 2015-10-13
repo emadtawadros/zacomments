@@ -45,6 +45,8 @@ a:hover{
 }
 .verticallyCentered{
 	padding-top: 0.5%;
+	margin: auto;
+	width: 65%;
 }
 main{
 	padding-top:5%;
@@ -456,6 +458,11 @@ button.dropup:hover, button.dropdown:hover{
 	}
 	#mainAside{
 		width:100%;
+	}
+	.verticallyCentered{
+		padding-top: 1.5%;
+		margin: 0px 0px;
+		width: 100%;
 	}
 }
 
