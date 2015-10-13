@@ -481,6 +481,9 @@ button.dropup:hover, button.dropdown:hover{
 	#mobileView{
 		display: block;
 	}
+	.logo p{
+		text-indent: 0px;
+	}
 }
 
 
