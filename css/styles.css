@@ -435,7 +435,10 @@ button.dropup:hover, button.dropdown:hover{
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width : 480px){
-	.search{
+	.search,
+	.desktopOnly,
+	#desktopView,
+	.create.desktop{
 		display: none;
 	}
 	#searchButtonMobile{
@@ -449,9 +452,6 @@ button.dropup:hover, button.dropdown:hover{
 	}
 	main{
 		padding-top:15%;
-	}
-	.create.desktop{
-		display: none;
 	}
 	.create.mobile{
 	display: inline;
@@ -469,9 +469,6 @@ button.dropup:hover, button.dropdown:hover{
 	}
 	#mobileView{
 		display: block;
-	}
-	#desktopView{
-		display: none;
 	}
 }
 
