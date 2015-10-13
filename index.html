@@ -75,10 +75,26 @@
 	       	{{#if loggedIn}}
 	       		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
-	    	
-        	<section data-hull-component="mobilesearchform"></section>
-	        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
-		<aside id="mainAside" data-hull-component="newposts"></aside>
+	    	<section data-hull-component="mobilesearchform"></section>
+
+	    	<div id="mobileView">
+	    		<ul class="nav nav-tabs">
+	    			<li class="active"><a data-toggle="tab" href="#newTopics">New</a></li>
+				<li><a data-toggle="tab" href="#hotTopics">Hot</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="newTopics" class="tab-pane fade in active">
+					<section data-hull-component="newposts"></section>
+				</div>
+			        <div id="hotTopics" class="tab-pane fade">
+			        	<section class="loading" data-hull-component="posts"></section> 
+			        </div>
+			</div>
+		</div>
+		<div id="desktopView">
+		        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
+			<aside id="mainAside" data-hull-component="newposts"></aside>
+		</div>
 	    </script>
 	            
 	    <script type='text/x-handlebars' data-hull-template='posts/posts'>
