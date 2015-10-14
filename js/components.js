@@ -207,7 +207,7 @@ Hull.component('posts', {
 	  			password: password
 	  		}).then(function(user){
 	  			this.$el.find('#signupButton').removeClass("active disabled");
-	  			console.log(component.api.currentUser(););
+	  			console.log(component.api.currentUser());
 	  		});
 	  	}
 	  }
