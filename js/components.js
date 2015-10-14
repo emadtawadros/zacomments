@@ -200,6 +200,9 @@ Hull.component('posts', {
 	  	expandSignup: function() {
 	  		this.$el.find('#signupForm').show();
 	  	},
+	  	toggleEmailLogin: function(){
+	  		this.$el.find('#emailLoginSection').show();
+	  	},
 	  	signup: function() {
 	  		var component = this;
 	  		var email = this.$el.find('#emailField').val();
