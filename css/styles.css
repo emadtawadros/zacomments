@@ -128,6 +128,7 @@ ul.ui-autocomplete {
 .login{
 	background-color: rgba(157, 186, 127, 1);
     	border-radius: 5px;
+    	border: 1px solid rgba(84, 120, 58, 1);
     	text-align: center;
 }
 .login .pull-left,
@@ -159,6 +160,7 @@ ul.ui-autocomplete {
 	border-radius: 5px;
 	background-color: #008080;
 	color: #FFFFFF;
+	margin-bottom: 3px;
 }
 
 .hull-identity__signin button:hover{
