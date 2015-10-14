@@ -68,7 +68,8 @@ main{
 
 .search input,
 .search button,
-.searchFormMobile input{
+.searchFormMobile input,
+.login input{
 	font-size:0.8em;
 	font-family:inherit;
 	padding:0.8em;
