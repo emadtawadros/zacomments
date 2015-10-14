@@ -198,10 +198,10 @@ Hull.component('posts', {
 	  		this.$el.hide();
 	  	},
 	  	expandSignup: function() {
-	  		this.$el.find('#signupForm').show();
+	  		this.$el.find('#signupForm').toggle();
 	  	},
 	  	toggleEmailLogin: function(){
-	  		this.$el.find('#emailLoginSection').show();
+	  		this.$el.find('#emailLoginSection').toggle();
 	  	},
 	  	signup: function() {
 	  		var component = this;
