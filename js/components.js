@@ -202,7 +202,7 @@ Hull.component('posts', {
 	  		var component = this;
 	  		var email = this.$el.find('#emailField').val();
 	  		var password = this.$el.find('#passwordField').val();
-	  		this.api.signup({
+	  		Hull.signup({
 	  			email: email,
 	  			password: password
 	  		}).then(function(user){
