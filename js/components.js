@@ -193,6 +193,9 @@ Hull.component('posts', {
 	  actions: {
 	  	close: function(){
 	  		this.$el.hide();
+	  	},
+	  	expandSignup: function() {
+	  		this.$el.find('#signupForm').show();
 	  	}
 	  }
 	});
