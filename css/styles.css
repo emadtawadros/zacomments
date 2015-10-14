@@ -464,7 +464,8 @@ button.dropup:hover, button.dropdown:hover{
 	.search,
 	.desktopOnly,
 	#desktopView,
-	.create.desktop{
+	.create.desktop,
+	.login .pull-right a.desktopOnly{
 		display: none;
 	}
 	#searchButtonMobile{
