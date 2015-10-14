@@ -212,10 +212,10 @@ Hull.component('posts', {
 	  			this.$el.find('#signupButton').addClass("active disabled");
 		  		Hull.signup({
 		  			email: email,
-		  			password: password
+		  			password: password,
+		  			name: username
 		  		}).then(function(user){
 		  			component.$el.find('#signupButton').removeClass("active disabled");
-		  			console.log(component.api.currentUser());
 		  		}, function(error){
 		  			component.$el.find('#signupButton').removeClass("active disabled");
 		  			alert(error.message);
