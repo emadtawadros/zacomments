@@ -190,6 +190,9 @@ Hull.component('posts', {
 	  afterRender: function() {
 	    this.authHasFailed = false;
 	  },
+	  trim: function (str) {
+            return str.replace(/^\s+|\s+$/g, "");
+	  },
 	  actions: {
 	  	close: function(){
 	  		this.$el.hide();
@@ -198,17 +201,21 @@ Hull.component('posts', {
 	  		this.$el.find('#signupForm').show();
 	  	},
 	  	signup: function() {
-	  		this.$el.find('#signupButton').addClass("active disabled");
 	  		var component = this;
 	  		var email = this.$el.find('#emailField').val();
 	  		var password = this.$el.find('#passwordField').val();
-	  		Hull.signup({
-	  			email: email,
-	  			password: password
-	  		}).then(function(user){
-	  			this.$el.find('#signupButton').removeClass("active disabled");
-	  			console.log(component.api.currentUser());
-	  		});
+	  		if((trim(email) !==="") && (trim(password)!=== "")){
+	  			this.$el.find('#signupButton').addClass("active disabled");
+		  		Hull.signup({
+		  			email: email,
+		  			password: password
+		  		}).then(function(user){
+		  			this.$el.find('#signupButton').removeClass("active disabled");
+		  			console.log(component.api.currentUser());
+		  		}, function(error){
+		  			alert(error.message);
+		  		});	
+	  		}
 	  	}
 	  }
 	});
