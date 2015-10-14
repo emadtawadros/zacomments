@@ -192,6 +192,7 @@ ul.ui-autocomplete {
 .login input{
 	display: block;
 	margin: auto;
+	margin-bottom: 3px;
 }
 /* Phone size */
 
