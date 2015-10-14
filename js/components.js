@@ -220,6 +220,21 @@ Hull.component('posts', {
 		  			alert(error.message);
 		  		});	
 	  		}
+	  	},
+	  	login: function(){
+	  		var component = this;
+	  		var email = this.$el.find('#emailLoginField').val();
+	  		var password = this.$el.find('#passwordLoginField').val();
+	  		if((trim(email) !=="") && (trim(password)!== "")){
+	  			Hull.login({
+	  				login: email,
+	  				password: password
+	  			}).then(function (me) {
+	  					console.log("You're logged in as ", me.email);
+	  				}, function (error) {
+	  					alert(error.message);
+	  				});	
+	  		}
 	  	}
 	  }
 	});
