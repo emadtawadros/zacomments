@@ -189,6 +189,10 @@ ul.ui-autocomplete {
 	width: 15px;
 	cursor: pointer;
 }
+.login input{
+	display: block;
+	margin: auto;
+}
 /* Phone size */
 
 .pageHeader{
