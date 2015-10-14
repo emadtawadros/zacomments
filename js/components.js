@@ -205,9 +205,10 @@ Hull.component('posts', {
 	  	},
 	  	signup: function() {
 	  		var component = this;
+	  		var username = this.$el.find('#usernameField').val();
 	  		var email = this.$el.find('#emailField').val();
 	  		var password = this.$el.find('#passwordField').val();
-	  		if((trim(email) !=="") && (trim(password)!== "")){
+	  		if((trim(username) !== "") && (trim(email) !=="") && (trim(password)!== "")){
 	  			this.$el.find('#signupButton').addClass("active disabled");
 		  		Hull.signup({
 		  			email: email,
