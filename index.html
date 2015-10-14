@@ -183,7 +183,7 @@
 			    </div>
 			    {{/if}}
 			    <div class="pull-right">
-			      <a data-hull-action="logout" class="btn btn-default btn-sm">Log Out</a>
+			      <a data-hull-action="logout" class="btn btn-default btn-sm desktopOnly">Log Out</a>
 			    </div>
 			    <!--
 			    <div class="media-body">
@@ -194,7 +194,7 @@
 			{{else}}
 			  {{#if loggedOut}}
 			    <div class="close" data-hull-action="close"></div>
-			    <p>Don't be a stalker! Sign in and be part of the action!</p>
+			    <p>Don't be a stalker! Sign in and join the action!</p>
 			    <div class="hull-identity__signin">
 			      {{#loggedOut}}
 			        <button data-hull-action="login" data-hull-provider="{{.}}" class="btn btn-default btn-sm btn-{{.}}">
