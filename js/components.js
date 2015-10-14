@@ -221,19 +221,22 @@ Hull.component('posts', {
 		  		});	
 	  		}
 	  	},
-	  	login: function(){
+	  	signin: function(){
 	  		var component = this;
 	  		var email = this.$el.find('#emailLoginField').val();
 	  		var password = this.$el.find('#passwordLoginField').val();
 	  		if((trim(email) !=="") && (trim(password)!== "")){
+	  			component.$el.find('#emailSigninButton').addClass("active disabled");
 	  			Hull.login({
 	  				login: email,
 	  				password: password
 	  			}).then(function (me) {
-	  					console.log("You're logged in as ", me.email);
-	  				}, function (error) {
-	  					alert(error.message);
-	  				});	
+	  				component.$el.find('#emailSigninButton').removeClass("active disabled");
+	  				console.log("You're logged in as ", me.email);
+	  			}, function (error) {
+	  				component.$el.find('#emailSigninButton').removeClass("active disabled");
+	  				alert(error.message);
+	  			});	
 	  		}
 	  	}
 	  }
