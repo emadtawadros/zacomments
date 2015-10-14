@@ -196,6 +196,19 @@ Hull.component('posts', {
 	  	},
 	  	expandSignup: function() {
 	  		this.$el.find('#signupForm').show();
+	  	},
+	  	signup: function() {
+	  		this.$el.find('#signupButton').addClass("active disabled");
+	  		var component = this;
+	  		var email = this.$el.find('#emailField').val();
+	  		var password = this.$el.find('#passwordField').val();
+	  		this.api.signup({
+	  			email: email,
+	  			password: password
+	  		}).then(function(user){
+	  			this.$el.find('#signupButton').removeClass("active disabled");
+	  			console.log(component.api.currentUser(););
+	  		});
 	  	}
 	  }
 	});
