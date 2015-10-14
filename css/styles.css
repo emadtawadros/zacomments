@@ -372,7 +372,7 @@ button.dropup,button.dropdown{
 }
 
 button.dropup:hover, button.dropdown:hover{
-	background-color: rgba(163,163,163,1);
+	color: rgba(163,163,163,1);
 }
 
 .btn-success, .btn-warning{
