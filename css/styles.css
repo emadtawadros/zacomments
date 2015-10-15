@@ -156,20 +156,6 @@ ul.ui-autocomplete {
 .hull-identity__signin{
 	display: inline-block;
 }
-.hull-identity__signin button{
-	font-family: inherit;
-	font-size:0.8em;
-	padding: 0.8em;
-	border-radius: 5px;
-	background-color: #008080;
-	color: #FFFFFF;
-	margin-bottom: 3px;
-}
-
-.hull-identity__signin button:hover{
-	background-color: #004040;
-	color: #FFFFFF;
-}	
 
 .login {
 	float: right;
