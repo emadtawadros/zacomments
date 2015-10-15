@@ -208,18 +208,26 @@ Hull.component('posts', {
 	  		var username = this.$el.find('#usernameField').val();
 	  		var email = this.$el.find('#emailField').val();
 	  		var password = this.$el.find('#passwordField').val();
-	  		if((trim(username) !== "") && (trim(email) !=="") && (trim(password)!== "")){
-	  			this.$el.find('#signupButton').addClass("active disabled");
-		  		Hull.signup({
-		  			email: email,
-		  			password: password,
-		  			name: username
-		  		}).then(function(user){
-		  			component.$el.find('#signupButton').removeClass("active disabled");
-		  		}, function(error){
-		  			component.$el.find('#signupButton').removeClass("active disabled");
-		  			alert(error.message);
-		  		});	
+	  		var confirmPassword = this.$el.find('#confirmPasswordField').val();
+	  		if((trim(password) !== "") && (trim(confirmPassword) !== "") && (trim(password) === trim(confirmPassword)))
+	  		{
+	  			if((trim(username) !== "") && (trim(email) !=="")){
+		  			this.$el.find('#signupButton').addClass("active disabled");
+			  		Hull.signup({
+			  			email: email,
+			  			password: password,
+			  			name: username
+			  		}).then(function(user){
+			  			component.$el.find('#signupButton').removeClass("active disabled");
+			  		}, function(error){
+			  			component.$el.find('#signupButton').removeClass("active disabled");
+			  			alert(error.message);
+			  		});
+	  			} else{
+	  				alert("Please fill in all fields!");
+	  			}
+	  		} else {
+	  			alert("Passwords don't match, try again.")
 	  		}
 	  	},
 	  	signin: function(){
