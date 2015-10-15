@@ -270,7 +270,7 @@ Hull.component('posts', {
         		this.api(id + '/flag?all=1', 'delete').then(function(response) {
         			console.log(response);
         		});
-        		window.location.href = '#/maincomp';
+        		window.location.href = '#/main';
         	},
         	deleteItem: function(event, action) {
         		event.preventDefault();
@@ -280,7 +280,7 @@ Hull.component('posts', {
         			this.api(id, 'delete').then(function(response) {
         				console.log(response);
         			});
-        			window.location.href = '#/maincomp';	
+        			window.location.href = '#/main';	
         		}
                 },
         	actions:
@@ -355,7 +355,7 @@ Hull.component('posts', {
             },
             actions: {
                 back: function() {
-                    window.location.href = '#/maincomp';
+                    window.location.href = '#/main';
                 }
             }
         });
@@ -431,7 +431,7 @@ Hull.component('posts', {
             },
             actions: {
                 back: function() {
-                    window.location.href = '#/maincomp';
+                    window.location.href = '#/main';
                 }       
             }
         });
@@ -846,12 +846,12 @@ Hull.component('posts', {
                 	if (isCertain) {
                 		Hull.api(this.options.id, 'delete').then(function(response) {
                 			console.log(response);
-                			window.location.href = '#/maincomp';
+                			window.location.href = '#/main';
                 		});
                 	}
                 },
                 back: function() {
-                    window.location.href = '#/maincomp';
+                    window.location.href = '#/main';
                 },
                 updateTags: function() {
                    var component = this;
@@ -1225,8 +1225,8 @@ Hull.component('posts', {
             }
         });
         
-         Hull.component('maincomp', {
-            templates: ['maincomp', 'post', 'user', 'search', 'createtopic', 'comment'],
+         Hull.component('main', {
+            templates: ['main', 'post', 'user', 'search', 'createtopic', 'comment'],
             refreshEvents: ['model.hull.me.change'],
             initialize: function(){
                 var HullagramRouter = Backbone.Router.extend({
@@ -1237,7 +1237,7 @@ Hull.component('posts', {
             
                 var router  = new HullagramRouter();
                 router.on('route:view', function(view, id, action) {
-                    var tpl = action || view || 'maincomp';
+                    var tpl = action || view || 'main';
                     this.currentView = tpl;
                     this.render(tpl, { id: id });
                 }, this);
@@ -1248,7 +1248,7 @@ Hull.component('posts', {
         
                 setTimeout(function() {
                     Backbone.history.start();
-                    router.navigate('/maincomp');
+                    router.navigate('/main');
 
                 }, 200);
         
