@@ -585,7 +585,8 @@ Hull.component('posts', {
             	this.checkButtonStatus();
             	this.$el.find('.hull-comments__description').readmore({
             		speed: 75,
-	  		lessLink: '<a href="#">Read less</a>'
+	  		lessLink: '<a href="#">Read less</a>',
+	  		collapsedHeight: 100
             	});
             },
             deleteComment: function(event, action) {
