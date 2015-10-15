@@ -11,10 +11,6 @@ body{
 	color:#444444;
 	width:80%;
 }
-
-#mobileView{
-	display: none;
-}
 ul,ol{
 	list-style:none;
 	margin:0;
@@ -467,7 +463,6 @@ button.dropup:hover, button.dropdown:hover{
 @media only screen and (min-device-width: 320px) and (max-device-width : 480px){
 	.search,
 	.desktopOnly,
-	#desktopView,
 	.create.desktop,
 	.login .pull-right a.desktopOnly{
 		display: none;
@@ -497,9 +492,6 @@ button.dropup:hover, button.dropdown:hover{
 		padding-top: 1.5%;
 		margin: 0px 0px;
 		width: 100%;
-	}
-	#mobileView{
-		display: block;
 	}
 	.logo p{
 		text-indent: 0px;
