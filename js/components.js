@@ -463,7 +463,7 @@ Hull.component('posts', {
 		}
             },
 
-            refreshEvents: ['model.hull.me.change', 'shown.bs.tab'],
+            refreshEvents: ['model.hull.me.change'],
             
             requiredOptions: ['id'],
             
@@ -588,6 +588,9 @@ Hull.component('posts', {
 	  		lessLink: '<a href="#">Read less</a>',
 	  		collapsedHeight: 100
             	});
+            	this.sandbox.on('shown.bs.tab', function(e) {
+            		console.log(e);
+                });
             },
             deleteComment: function(event, action) {
             event.preventDefault();
