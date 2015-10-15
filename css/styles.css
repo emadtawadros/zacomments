@@ -185,6 +185,7 @@ ul.ui-autocomplete {
 }
 .login .btn{
 	color: rgba(89, 71, 108, 1);
+	margin-bottom: 3px;
 }
 .login .btn-facebook{
 	color: #3b5998;
