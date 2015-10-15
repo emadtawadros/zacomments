@@ -474,8 +474,8 @@
                     	
                     }
                     
-                    var start = opts.component.sandbox.util.moment().startOf('day').toDate().toISOString();
-                    var end = opts.component.sandbox.util.moment().endOf('day').toDate().toISOString();
+                    var start = opts.component.sandbox.util.moment().startOf('hour').toDate().toISOString();
+                    var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
                     var currentUser = opts.component.sandbox.currentUser();
                     
                     //See if the user already commented on this post today
@@ -543,8 +543,8 @@
                 		
                 	}
                 	
-                	var start = opts.component.sandbox.util.moment().startOf('day').toDate().toISOString();
-			var end = opts.component.sandbox.util.moment().endOf('day').toDate().toISOString();
+                	var start = opts.component.sandbox.util.moment().startOf('hour').toDate().toISOString();
+			var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
 			var currentUser = opts.component.sandbox.currentUser();
 
                 	//See if the user already commented on this post today
