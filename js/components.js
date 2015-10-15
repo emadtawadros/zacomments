@@ -463,7 +463,7 @@ Hull.component('posts', {
 		}
             },
 
-            refreshEvents: ['model.hull.me.change'],
+            refreshEvents: ['model.hull.me.change', 'shown.bs.tab'],
             
             requiredOptions: ['id'],
             
