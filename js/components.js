@@ -583,7 +583,7 @@ Hull.component('posts', {
             		this.focusAfterRender = false;
             	}
             	this.checkButtonStatus();
-            	this.$el.find('.hull-comments__description').readmore({
+            	this.$el.find('.commentDescription').readmore({
             		speed: 75,
 	  		lessLink: '<a href="#">Read less</a>',
 	  		collapsedHeight: 100
