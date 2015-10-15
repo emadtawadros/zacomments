@@ -66,9 +66,9 @@
 			</div>
 		</header>
 				
-		<main data-hull-component="maincomp"></main>   
+		<main data-hull-component="main"></main>   
 	    
-	    <script type='text/handlebars' data-hull-template='maincomp/maincomp'>
+	    <script type='text/handlebars' data-hull-template='main/main'>
 	        {{#if isAdmin}}
 	            	<section data-hull-component="flaggedposts"></section>
 	        {{/if}}
@@ -236,7 +236,7 @@
 			{{/each}}
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/post'>
+	    <script type='text/x-handlebars' data-hull-template='main/post'>
 	        <section data-hull-component="post" data-hull-id="{{id}}"></section>
 	    </script>
 	    
@@ -328,7 +328,7 @@
 	        </section>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/user'>
+	    <script type='text/x-handlebars' data-hull-template='main/user'>
 	        {{#if loggedIn}}
 				<section class="loading" data-hull-component="user" data-hull-id="{{id}}"></section>
 			{{else}}
@@ -339,11 +339,11 @@
 	        {{/if}}
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/search'>
+	    <script type='text/x-handlebars' data-hull-template='main/search'>
 	        <section data-hull-component="search" data-hull-search="{{id}}"></section>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/createtopic'>
+	    <script type='text/x-handlebars' data-hull-template='main/createtopic'>
 	        <section data-hull-component="createtopic" data-hull-id="{{id}}"></section>
 	    </script>
 	        
@@ -367,7 +367,7 @@
 		    </section>
 	    </script>
 	    
-	    <script type='text/x-handlebars' data-hull-template='maincomp/comment'>
+	    <script type='text/x-handlebars' data-hull-template='main/comment'>
 	        <section data-hull-component="comment" data-hull-id="{{id}}"></section>
 	    </script>
 	       
