@@ -547,45 +547,47 @@ Hull.component('posts', {
             },
             
             afterRender: function(data) {
-            
-            var tab = this.$el.parent().find('.loading');
-            tab.slideUp();
-           
-            var component = this;
-            this.$el.find(".imgIframe, .videoPostPlay").click(function() {
-            	var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
-                var currentId = oldId.substring(4);
-                console.log("old " + oldId);
-                console.log("current " + currentId);
-                pTP = "pTP_" + currentId;
-                pDP = "pDP_" + currentId;
-                oldId = "#" + oldId;
-                currentId = "#" + currentId;
-                component.$el.find(oldId).css({
-                	'display' : 'none'
-                });
-                component.$el.find(oldId).next(".videoPostPlay").css({
-                	'display' : 'none'
-                });
-                component.$el.find(currentId).css({
-                    'display' : 'block',
-                     'width': 'auto'
-                });
-                component.$el.find('#' + pTP).css({
-                    'width' : 'auto'
-                });
-                component.$el.find('#' + pDP).css({
-                    'width' : 'auto'
-                });
-            });
-                    
-            if(this.options.focus || this.focusAfterRender) {
-            this.$el.find('input,textarea').focus();
-            this.focusAfterRender = false;
-            }
-            this.checkButtonStatus();
+            	var tab = this.$el.parent().find('.loading');
+            	tab.slideUp();
+            	
+            	var component = this;
+            	this.$el.find(".imgIframe, .videoPostPlay").click(function() {
+            		var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
+	                var currentId = oldId.substring(4);
+	                console.log("old " + oldId);
+	                console.log("current " + currentId);
+	                pTP = "pTP_" + currentId;
+	                pDP = "pDP_" + currentId;
+	                oldId = "#" + oldId;
+	                currentId = "#" + currentId;
+	                component.$el.find(oldId).css({
+	                	'display' : 'none'
+	                });
+	                component.$el.find(oldId).next(".videoPostPlay").css({
+	                	'display' : 'none'
+	                });
+	                component.$el.find(currentId).css({
+	                    'display' : 'block',
+	                     'width': 'auto'
+	                });
+	                component.$el.find('#' + pTP).css({
+	                    'width' : 'auto'
+	                });
+	                component.$el.find('#' + pDP).css({
+	                    'width' : 'auto'
+	                });
+            	});
+            	
+            	if(this.options.focus || this.focusAfterRender) {
+            		this.$el.find('input,textarea').focus();
+            		this.focusAfterRender = false;
+            	}
+            	this.checkButtonStatus();
+            	this.$el.find('.hull-comments__description').readmore({
+            		speed: 75,
+	  		lessLink: '<a href="#">Read less</a>'
+            	});
             },
-            
             deleteComment: function(event, action) {
             event.preventDefault();
             var id = action.data.id;
