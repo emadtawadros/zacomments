@@ -182,10 +182,10 @@ ul.ui-autocomplete {
 	margin: auto;
 	margin-bottom: 3px;
 }
-.login btn-facebook{
+.login .btn-facebook{
 	color: #3b5998;
 }
-.login btn-twitter{
+.login .btn-twitter{
 	color: #4099FF;
 }
 /* Phone size */
