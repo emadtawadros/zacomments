@@ -588,7 +588,7 @@ Hull.component('posts', {
 	  		lessLink: '<a href="#">Read less</a>',
 	  		collapsedHeight: 100
             	});
-            	this.sandbox.on('shown.bs.tab', function(e) {
+            	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             		console.log(e);
                 });
             },
