@@ -77,7 +77,7 @@
 	    	{{/if}}
 	    	<section data-hull-component="mobilesearchform"></section>
 		<div id="mobileNavigator">
-			<ul style="display:flex;margin-bottom: 10px;">
+			<ul style="display:flex;margin-bottom: 10px;margin-top:10px">
 				<li><a href="#" id="newTopicsNavigator" class="selected">New</a></li>
 				<li><a href="#" id="trendingTopicsNavigator" class="unselected">Trending</a></li>
 			</ul>
@@ -781,20 +781,6 @@
 	    				}
 	    			}
 			});
-	                
-	                $('#trendingTopicsNavigator').click(function(){
-	                	$('#mainSection').show();
-	                	$('#mainAside').hide();
-	                	$('#newTopicsNavigator').addClass('unselected').removeClass('selected');
-	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
-
-	                });
-	                $('#newTopicsNavigator').click(function(){
-	                	$('#mainAside').show();
-	                	$('#newTopicsNavigator').addClass('selected').removeClass('unselected');
-	                	$('#mainSection').hide();
-	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
-	                });
 	            }); //get conversations
 	            
 	            console.log("Flagged items");
