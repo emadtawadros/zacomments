@@ -58,7 +58,9 @@ Hull.component('posts', {
                 }
             },
             beforeRender: function(data){
-            	this.$el.hide();
+            	if($("#mobileNavigator").is(':visible')){ //Meaning that we're in mobile
+            		this.$el.hide();
+            	}
             },
             afterRender: function() {
 		this.$el.removeClass("loading");
