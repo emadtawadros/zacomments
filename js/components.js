@@ -1314,8 +1314,9 @@ Hull.component('posts', {
         
                 setTimeout(function() {
                     Backbone.history.start();
-                    //router.navigate('/main');
-
+                    if(Backbone.history.location.hash ==="") { //navigate to main on first launch
+                    	router.navigate('/main');
+                    }
                 }, 200);
         
             },  
