@@ -57,6 +57,9 @@ Hull.component('posts', {
                     return dff.promise();
                 }
             },
+            beforeRender: function(){
+            	console.log("eshta");
+            },
             afterRender: function() {
 		this.$el.removeClass("loading");
                 this.$el.find('#loadMoreTrending').removeClass("active disabled");
