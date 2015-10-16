@@ -588,7 +588,8 @@ Hull.component('posts', {
 	  		lessLink: '<a href="#">Read less</a>',
 	  		collapsedHeight: 100
             	});
-            	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+            	this.$el.closest('.tab-content').siblings('.nav-tabs').find('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+            		//this crazines is to handle showing readmore for comments that are originally hidden by tabs
             		console.log(e);
                 });
             },
