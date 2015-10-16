@@ -190,7 +190,8 @@ ul.ui-autocomplete {
 }
 
 #mobileNavigator a:active,
-#mobileNavigator a:visited{
+#mobileNavigator a:visited,
+#mobileNavigator a:focus{
 	text-decoration: none;
 }
 #mobileNavigator a.selected{
