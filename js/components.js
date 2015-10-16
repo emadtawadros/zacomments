@@ -727,18 +727,16 @@ Hull.component('posts', {
         	templates: ['imagepolicy'],
         	datasources: {
         		post: ':id'
-        	},
-        	initialize: function(data) {
-        		
-        	},
-        	beforeRender: function(data, errors) {
-        		
-        	},
+        	}
         	afterRender: function(data) {
         		var imagePolicyModal = this.$el.find("#imagepolicymodal");
         		imagePolicyModal.modal("toggle");
+        		imagePolicyModal.on('hidden.bs.modal', function() {
+        			window.history.back();
+        		})
         	}
         });
+        
         Hull.component('post', {
             templates: ['post'],
             datasources: {
