@@ -59,6 +59,18 @@ Hull.component('posts', {
             },
             beforeRender: function(data){
             	if($("#mobileNavigator").is(':visible')){ //Meaning that we're in mobile
+            		$('#trendingTopicsNavigator').click(function(){
+            			$('#mainSection').show();
+	                	$('#mainAside').hide();
+	                	$('#newTopicsNavigator').addClass('unselected').removeClass('selected');
+	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
+            		});
+	                $('#newTopicsNavigator').click(function(){
+	                	$('#mainAside').show();
+	                	$('#newTopicsNavigator').addClass('selected').removeClass('unselected');
+	                	$('#mainSection').hide();
+	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
+	                });
             		this.$el.hide();
             	}
             },
