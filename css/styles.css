@@ -78,7 +78,8 @@ main{
 	display:none;
 }
 
-#searchButtonMobile{
+#searchButtonMobile,
+#mobileNavigator{
 	display: none;	
 }
 
@@ -489,6 +490,9 @@ button.dropup:hover, button.dropdown:hover{
 	}
 	#searchButtonMobile{
 		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
 	}
 	.ui-menu-item{
 		padding-top: 5%;
