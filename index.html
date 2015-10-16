@@ -783,12 +783,16 @@
 			});
 	                
 	                $('#trendingTopicsNavigator').click(function(){
-	                	$('#mainSection').show().addClass('selected').removeClass('unselected');
-	                	$('#mainAside').hide().addClass('unselected').removeClass('selected');
+	                	$('#mainSection').show();
+	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
+	                	$('#mainAside').hide();
+	                	$('#newTopicsNavigator').addClass('unselected').removeClass('selected');
 	                });
 	                $('#newTopicsNavigator').click(function(){
-	                	$('#mainAside').show().addClass('selected').removeClass('unselected');
-	                	$('#mainSection').hide().addClass('unselected').removeClass('selected');
+	                	$('#mainAside').show();
+	                	$('#newTopicsNavigator').addClass('selected').removeClass('unselected');
+	                	$('#mainSection').hide();
+	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
 	                });
 	            }); //get conversations
 	            
