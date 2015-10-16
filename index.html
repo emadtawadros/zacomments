@@ -76,7 +76,12 @@
 	       		<section class="createTopic" data-hull-component="createtopicform"></section>
 	    	{{/if}}
 	    	<section data-hull-component="mobilesearchform"></section>
-
+		<div id="mobileNavigator">
+			<ul> 
+				<li><a href="#" id="trendingTopicsNavigator">Trending</a></li>
+				<li><a href="#" id="newTopicsNavigator">New</a></li>
+			</ul>
+		</div>
 		<div id="desktopView">
 		        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
 			<aside id="mainAside" data-hull-component="newposts"></aside>
@@ -777,6 +782,14 @@
 	    			}
 			});
 	                
+	                $('#trendingTopicsNavigator').click(function(){
+	                	$('#mainSection').show();
+	                	$('mainAside').hide();
+	                });
+	                $('#newTopicsNavigator').click(function(){
+	                	$('#mainAside').show();
+	                	$('mainSection').hide();
+	                });
 	            }); //get conversations
 	            
 	            console.log("Flagged items");
