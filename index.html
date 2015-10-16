@@ -77,9 +77,9 @@
 	    	{{/if}}
 	    	<section data-hull-component="mobilesearchform"></section>
 		<div id="mobileNavigator">
-			<ul> 
+			<ul style="display:flex"> 
 				<li><a href="#" id="trendingTopicsNavigator">Trending</a></li>
-				<li><a href="#" id="newTopicsNavigator">New</a></li>
+				<li><a href="#" id="newTopicsNavigator" class="selected">New</a></li>
 			</ul>
 		</div>
 		<div id="desktopView">
@@ -784,9 +784,10 @@
 	                
 	                $('#trendingTopicsNavigator').click(function(){
 	                	$('#mainSection').show();
-	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
 	                	$('#mainAside').hide();
 	                	$('#newTopicsNavigator').addClass('unselected').removeClass('selected');
+	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
+
 	                });
 	                $('#newTopicsNavigator').click(function(){
 	                	$('#mainAside').show();
