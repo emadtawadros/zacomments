@@ -58,7 +58,7 @@ Hull.component('posts', {
                 }
             },
             beforeRender: function(data){
-            	console.log("eshta");
+            	this.$el.hide();
             },
             afterRender: function() {
 		this.$el.removeClass("loading");
