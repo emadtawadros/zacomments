@@ -723,6 +723,21 @@ Hull.component('posts', {
             }
         });
         
+        Hull.component('imagepolicy', {
+        	templates: ['imagepolicy'],
+        	datasources: {
+        		post: ':id'
+        	},
+        	initialize: function(data) {
+        		
+        	},
+        	beforeRender: function(data, errors) {
+        		
+        	},
+        	afterRender: function(data) {
+        		
+        	}
+        });
         Hull.component('post', {
             templates: ['post'],
             datasources: {
@@ -1278,7 +1293,7 @@ Hull.component('posts', {
         });
         
          Hull.component('main', {
-            templates: ['main', 'post', 'user', 'search', 'createtopic', 'comment'],
+            templates: ['main', 'post', 'user', 'search', 'createtopic', 'comment', 'imagepolicy'],
             refreshEvents: ['model.hull.me.change'],
             initialize: function(){
                 var HullagramRouter = Backbone.Router.extend({
