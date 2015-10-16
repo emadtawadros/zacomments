@@ -1254,7 +1254,7 @@ Hull.component('posts', {
         
                 setTimeout(function() {
                     Backbone.history.start();
-                    router.navigate('/main');
+                    //router.navigate('/main');
 
                 }, 200);
         
