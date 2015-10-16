@@ -106,7 +106,7 @@
 					{{/if}}
 					{{#ifcond picture '||' extra.fallbackUrl}}
 						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-						<div class="imageInfo"><a href="#" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+						<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
 					{{/ifcond}}
 					<div data-hull-component="share/button@hull" data-hull-text="{{name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{id}}" data-hull-providers='twitter,facebook' style="clear:both;"></div>
 
@@ -232,6 +232,10 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='main/post'>
 	        <section data-hull-component="post" data-hull-id="{{id}}"></section>
+	    </script>
+	    
+	    <script type='text/x-handlebars' data-hull-template='main/imagepolicy'>
+	        <section data-hull-component="imagepolicy" data-hull-id="{{id}}"></section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='user/user'>
@@ -485,6 +489,19 @@
 		        			<form class="searchFormMobile">
 							<input type="text"  placeholder="Search Topics..." id="searchFieldMobile" style="width: 100%">
 						</form>
+    					</div>
+	      			</div>
+		    	</div>
+		  </div>
+	    </script>
+	    
+	    <script type='text/x-handlebars' data-hull-template='imagepolicy/imagepolicy'>
+	    	<div class="modal fade" id="imagepolicymodal" role="dialog">
+	    		<div class="modal-dialog">
+		      		<!-- Modal content-->
+		      		<div class="modal-content">
+		        		<div class="modal-body">
+						<h1>this is the image policy for {{post.name}}</h1>
     					</div>
 	      			</div>
 		    	</div>
