@@ -590,8 +590,12 @@ Hull.component('posts', {
             	});
             	this.$el.closest('.tab-content').siblings('.nav-tabs').find('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             		//this crazines is to handle showing readmore for comments that are originally hidden by tabs
-            		console.log(e);
-                });
+            		component.$el.find('.commentDescription').readmore({
+            			speed: 75,
+		  		lessLink: '<a href="#">Read less</a>',
+		  		collapsedHeight: 100
+            		});
+            	});
             },
             deleteComment: function(event, action) {
             event.preventDefault();
