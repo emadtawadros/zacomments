@@ -57,7 +57,7 @@ Hull.component('posts', {
                     return dff.promise();
                 }
             },
-            beforeRender: function(){
+            beforeRender: function(data){
             	console.log("eshta");
             },
             afterRender: function() {
