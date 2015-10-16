@@ -286,7 +286,9 @@ article .btn-twitter{
 	border-radius:2px;
 	display:block;
 }
-
+.imageInfo{
+	float: right;
+}
 .createComment{
 	margin-bottom:0.8em;
 }
