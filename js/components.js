@@ -727,7 +727,7 @@ Hull.component('posts', {
         	templates: ['imagepolicy'],
         	datasources: {
         		post: ':id'
-        	}
+        	},
         	afterRender: function(data) {
         		var imagePolicyModal = this.$el.find("#imagepolicymodal");
         		imagePolicyModal.modal("toggle");
