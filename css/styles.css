@@ -189,6 +189,9 @@ ul.ui-autocomplete {
 	color: #4099FF;
 }
 
+#mobileNavigator a:active{
+	text-decoration: none;
+}
 #mobileNavigator a.selected{
 	border: 1px solid black;
 	border-bottom: none;
