@@ -188,8 +188,15 @@ ul.ui-autocomplete {
 .login .btn-twitter{
 	color: #4099FF;
 }
-/* Phone size */
 
+#mobileNavigator a.selected{
+	border: 1px solid black;
+	border-bottom: none;
+}
+#mobileNavigator a.unselected{
+	border: none;
+	border-bottom: 1px solid black;
+}
 .pageHeader{
 	margin: 0.8em 0;
 	display: block;
