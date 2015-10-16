@@ -783,12 +783,12 @@
 			});
 	                
 	                $('#trendingTopicsNavigator').click(function(){
-	                	$('#mainSection').show();
-	                	$('#mainAside').hide();
+	                	$('#mainSection').show().addClass('selected').removeClass('unselected');
+	                	$('#mainAside').hide().addClass('unselected').removeClass('selected');
 	                });
 	                $('#newTopicsNavigator').click(function(){
-	                	$('#mainAside').show();
-	                	$('#mainSection').hide();
+	                	$('#mainAside').show().addClass('selected').removeClass('unselected');
+	                	$('#mainSection').hide().addClass('unselected').removeClass('selected');
 	                });
 	            }); //get conversations
 	            
