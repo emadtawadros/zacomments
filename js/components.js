@@ -738,6 +738,7 @@ Hull.component('posts', {
         	},
         	actions: {
         		back: function() {
+        			var imagePolicyModal = this.$el.find("#imagepolicymodal");
         			imagePolicyModal.modal("toggle");
         		}
         	}
