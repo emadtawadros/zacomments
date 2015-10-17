@@ -96,6 +96,7 @@ Hull.component('posts', {
 	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
 	                });
             		this.$el.hide();
+            		$('#trendingTopicsNavigator').removeClass('active disabled');
             	}
             },
             afterRender: function() {
