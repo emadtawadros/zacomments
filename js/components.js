@@ -735,6 +735,11 @@ Hull.component('posts', {
         		imagePolicyModal.on('hidden.bs.modal', function() {
         			window.history.back();
         		})
+        	},
+        	actions: {
+        		back: function() {
+        			imagePolicyModal.modal("toggle");
+        		}
         	}
         });
         
