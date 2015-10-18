@@ -304,7 +304,13 @@ Hull.component('posts', {
         					}
         				}
         			});
+        		},
+        		allFlagged: function() {
+        			return this.api('/app/flagged', 'get');
         		}
+        	},
+        	beforeRender: function(data, errors) {
+        		console.log(errors);	
         	},
         	unflagItem: function (event, action) {
         		event.preventDefault();
