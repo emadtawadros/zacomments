@@ -85,12 +85,12 @@ Hull.component('posts', {
             	if($("#mobileNavigator").is(':visible')){ //Meaning that we're in mobile
             		$('#trendingTopicsNavigator').click(function(){
             			$('#hotTopics').show();
-	                	$('#mainAside').hide();
+	                	$('#newTopics').hide();
 	                	$('#newTopicsNavigator').addClass('unselected').removeClass('selected');
 	                	$('#trendingTopicsNavigator').addClass('selected').removeClass('unselected');
             		});
 	                $('#newTopicsNavigator').click(function(){
-	                	$('#mainAside').show();
+	                	$('#newTopics').show();
 	                	$('#newTopicsNavigator').addClass('selected').removeClass('unselected');
 	                	$('#hotTopics').hide();
 	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
