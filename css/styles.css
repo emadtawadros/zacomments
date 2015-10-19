@@ -475,7 +475,7 @@ button.dropup:hover, button.dropdown:hover{
 		background: url("http://zacomments.com/zacomments/images/circle-loader.gif") no-repeat center;
 		height: 100px;
 	}
-	#mainAside{
+	.mainAside{
 		width:30%;
 		float:right;
 		margin-top: 1%;
