@@ -302,18 +302,21 @@
 				        	<h1><a href="#/post/{{id}}">{{name}}</a></h1>
 				        	{{#if tags}}
 							<ul class="tagFeed">
-				                {{#each tags}}
-				                    {{#if this}}
-				                        <li><a href="#/post/{{this.value}}"><i class="icon-tag icon-large"></i>{{this.label}}</a></li>
-				                    {{/if}}
-				                {{/each}}
+				                		{{#each tags}}
+				                    			{{#if this}}
+				                        			<li><a href="#/post/{{this.value}}"><i class="icon-tag icon-large"></i>{{this.label}}</a></li>
+				                    			{{/if}}
+				                		{{/each}}
 							</ul>
-							{{/if}}
+						{{/if}}
+						{{#ifcond picture '||' extra.fallbackUrl}}
 							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-							<ul>
-								<li>{{stats.comments}} comments</li>
-			            				<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-			            			</ul>
+							<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+						{{/ifcond}}
+						<ul>
+							<li>{{stats.comments}} comments</li>
+		            				<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
+		            			</ul>
 				    	</section>
 			        </article>
 		    	{{/each}}
