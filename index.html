@@ -215,10 +215,10 @@
 	    </script>	
 	    
 	    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
-	    	<header>
-		    	<span class="pageHeader">Flagged Posts</span>
-		    </header>
 		<section class=mainSection">
+			<header>
+		    		<span class="pageHeader">Flagged Posts</span>
+			</header>
 	    		{{#each flaggedPosts}}
 		    		<section>
 			    		<span data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></span>
@@ -226,6 +226,20 @@
 			    		<ul>
 			    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
 							<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
+			    		</ul>
+		    		</section>
+			{{/each}}
+		</section>
+		<section>
+			<header>
+		    		<span class="pageHeader">Flagged Comments</span>
+			</header>
+	    		{{#each allFlagged}}
+	    		<a href="#/comment/{{id}}">Comment</a> on <a href="#/post/{{commentable_id}}">{{object.name}}</a>
+		    		<section>
+			    		<ul>
+			    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
+						<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
 			    		</ul>
 		    		</section>
 			{{/each}}
@@ -836,17 +850,6 @@
 	    			}
 			});
 	            }); //get conversations
-	            
-	            console.log("Flagged items");
-	            Hull.api('/52e138eaf0f1b0ac30000bad/conversations', {
-	            	'where': {
-	            		'meta.flags': {
-	            			'$gt': 0
-	            		}
-	            	}
-	            }).then(function(response){
-	            	console.log(response);
-	            });
 	        
 	        }); //Hull.init
 	        
