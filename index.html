@@ -423,9 +423,9 @@
 	   </section>
 	   
 	    <div class="mainAside">
-	    	<header>
-	    		<span class="pageHeader">Topics related {{post.name}}</span>
-	        </header>
+	    	<h3>
+	    		<span class="pageHeader">Topics related to {{post.name}}</span>
+	        </h3>
 		{{#ifEqual postsRelated.length 0}}
 	        	<p>No topics at the moment.</p>
 	        {{/ifEqual}}
@@ -659,9 +659,9 @@
 	        		</div>
 	        		
 	        		<div id="related" class="tab-pane fade in active">
-	        			<header>
-	       					<span class="pageHeader">Topics related {{post.name}}</span>
-		        		</header>
+	        			<h3>
+	       					<span class="pageHeader">Topics related to {{post.name}}</span>
+		        		</h3>
 					{{#ifEqual postsRelated.length 0}}
 			        		<p>No topics at the moment.</p>
 			        	{{/ifEqual}}
