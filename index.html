@@ -215,7 +215,7 @@
 	    </script>	
 	    
 	    <script type='text/x-handlebars' data-hull-template='flaggedposts/flaggedposts'>
-		<section class=mainSection">
+		<section class=mainSection" style="flat:left;">
 			<header>
 		    		<span class="pageHeader">Flagged Posts</span>
 			</header>
@@ -230,12 +230,14 @@
 		    		</section>
 			{{/each}}
 		</section>
-		<section>
+		<section class="mainAside">
 			<header>
 		    		<span class="pageHeader">Flagged Comments</span>
 			</header>
 	    		{{#each allFlagged}}
+	    		<div style="display:block;">
 	    		<a href="#/comment/{{id}}">Comment</a> on <a href="#/post/{{commentable_id}}">{{object.name}}</a>
+	    		</div>
 	    		{{description}}
 	    		{{#if extra.richComment}}
 	    			{{{extra.richComment}}}
