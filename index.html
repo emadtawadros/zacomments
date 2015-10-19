@@ -594,9 +594,11 @@
 			                    	{{/each}}
 						</ul>
 					{{/if}}
-					
-				        <img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
-				        <div data-hull-component="share/button@hull" data-hull-text="{{post.name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{post.id}}" data-hull-providers='twitter, facebook'></div>
+					{{#ifcond post.picture '||' post.extra.fallbackUrl}}
+						<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+						<div class="imageInfo"><a href="#/imagepolicy/{{post.id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+					{{/ifcond}}
+				        <div data-hull-component="share/button@hull" data-hull-text="{{post.name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{post.id}}" data-hull-providers='twitter, facebook' style="clear:both;"></div>
 
 				        <ul>
 					        <li>{{post.stats.comments}} comments</li>
@@ -649,7 +651,11 @@
 				                			{{/each}}			
 									</ul>
 								{{/if}}
-								<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+								
+								{{#ifcond picture '||' extra.fallbackUrl}}
+									<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+									<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+								{{/ifcond}}
 								<ul>
 									<li>{{stats.comments}} comments</li>
 			            					<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
@@ -681,7 +687,10 @@
 				                			{{/each}}
 									</ul>
 								{{/if}}
-								<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+								{{#ifcond picture '||' extra.fallbackUrl}}
+									<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+									<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+								{{/ifcond}}
 								<ul>
 									<li>{{stats.comments}} comments</li>
 			            					<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
