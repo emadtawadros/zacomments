@@ -395,6 +395,30 @@ Hull.component('posts', {
         
         Hull.component('user', {
             templates: ['user'],
+            helpers: {
+            	ifcond: function (v1, operator, v2, options) {
+            		switch (operator) {
+			        case '==':
+			            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			        case '===':
+			            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			        case '<':
+			            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			        case '<=':
+			            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			        case '>':
+			            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			        case '>=':
+			            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			        case '&&':
+			            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			        case '||':
+			            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			        default:
+			            return options.inverse(this);
+    			}
+		}
+            },
             datasources: {
                 feed: function() {
                     var dff = $.Deferred(); 
@@ -504,6 +528,30 @@ Hull.component('posts', {
         
         Hull.component('search', {
             templates: ['search'],
+            helpers: {
+            	ifcond: function (v1, operator, v2, options) {
+            		switch (operator) {
+            			case '==':
+			            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			        case '===':
+			            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			        case '<':
+			            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			        case '<=':
+			            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			        case '>':
+			            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			        case '>=':
+			            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			        case '&&':
+			            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			        case '||':
+			            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			        default:
+			            return options.inverse(this);
+    			}
+		}
+            },
             initialize: function() {
                 console.log(this.options.search);
             },
@@ -807,6 +855,30 @@ Hull.component('posts', {
         
         Hull.component('post', {
             templates: ['post'],
+            helpers: {
+            	ifcond: function (v1, operator, v2, options) {
+            		switch (operator) {
+			        case '==':
+			            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			        case '===':
+			            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			        case '<':
+			            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			        case '<=':
+			            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			        case '>':
+			            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			        case '>=':
+			            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			        case '&&':
+			            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			        case '||':
+			            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			        default:
+			            return options.inverse(this);
+    			}
+		}
+            },
             datasources: {
                 post: ':id',
                 postsUnder: function() {
@@ -1014,6 +1086,30 @@ Hull.component('posts', {
         
         Hull.component('comment', {
             templates: ['comment'],
+            helpers: {
+            	ifcond: function (v1, operator, v2, options) {
+            		switch (operator) {
+			        case '==':
+			            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			        case '===':
+			            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			        case '<':
+			            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			        case '<=':
+			            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			        case '>':
+			            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			        case '>=':
+			            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			        case '&&':
+			            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			        case '||':
+			            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			        default:
+			            return options.inverse(this);
+    			}
+		}
+            },
             datasources: {
                 comment: ':id',
                 post: function() {
