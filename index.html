@@ -83,7 +83,7 @@
 			</ul>
 		</div>
 		<div id="desktopView">
-		        <section id="mainSection" class="loading" data-hull-component="posts"></section> 
+		        <section id="hotTopics" class="loading mainSection" data-hull-component="posts"></section> 
 			<aside id="mainAside" data-hull-component="newposts"></aside>
 		</div>
 	    </script>
@@ -218,16 +218,18 @@
 	    	<header>
 		    	<span class="pageHeader">Flagged Posts</span>
 		    </header>
-    		{{#each flaggedPosts}}
-    		<section>
-	    		<span data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></span>
-	    		<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-	    		<ul>
-	    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
-					<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
-	    		</ul>
-    		</section>
+		<section class=mainSection">
+	    		{{#each flaggedPosts}}
+		    		<section>
+			    		<span data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></span>
+			    		<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+			    		<ul>
+			    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
+							<li><a href="#" class='link text-error' data-hull-action="deleteItem" data-hull-id="{{id}}">Delete</a></li>
+			    		</ul>
+		    		</section>
 			{{/each}}
+		</section>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='main/post'>
@@ -375,7 +377,7 @@
 	    {{/if}}
 	    <section data-hull-component="mobilesearchform"></section>
 
-	    <section id="mainSection">
+	    <section class="mainSection">
 	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
 		<article>
 			<section class="comment">
@@ -548,7 +550,7 @@
 	        <button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Change Image</button>
 		<section data-hull-component="mobilesearchform"></section>
 
-	        <section id="mainSection">
+	        <section class="mainSection">
 		        {{#if loggedIn}}
 					<section data-hull-component="createtopicform"></section>
 				{{/if}}
