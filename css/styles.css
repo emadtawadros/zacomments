@@ -395,6 +395,7 @@ button.dropup:hover, button.dropdown:hover{
 }
 .btn-warning:hover{
 	background-color: rgba(121,102,158,1)
+	border-color: rgba(89, 71, 108, 1);
 }
 .btn-success, .btn-success:focus{
     	background-color: rgba(84, 120, 58, 1);
