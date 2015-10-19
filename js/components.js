@@ -313,22 +313,24 @@ Hull.component('posts', {
         		console.log(errors);	
         	},
         	unflagItem: function (event, action) {
+        		var component = this;
         		event.preventDefault();
         		var id = action.data.id;
         		this.api(id + '/flag?all=1', 'delete').then(function(response) {
         			console.log(response);
+        			component.refresh();
         		});
-        		window.location.href = '#/main';
         	},
         	deleteItem: function(event, action) {
         		event.preventDefault();
+        		var component = this;
         		var isCertain = confirm('Are you sure you want to delete this topic?');
         		if (isCertain) {
         			var id = action.data.id;
         			this.api(id, 'delete').then(function(response) {
         				console.log(response);
+        				component.refresh();
         			});
-        			window.location.href = '#/main';	
         		}
                 },
         	actions:
