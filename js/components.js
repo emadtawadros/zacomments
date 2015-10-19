@@ -142,6 +142,30 @@ Hull.component('posts', {
         
         Hull.component('newposts', {
         	templates: ['newposts'],
+        	helpers: {
+	            	ifcond: function (v1, operator, v2, options) {
+	            		switch (operator) {
+				        case '==':
+				            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+				        case '===':
+				            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+				        case '<':
+				            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+				        case '<=':
+				            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+				        case '>':
+				            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+				        case '>=':
+				            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+				        case '&&':
+				            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+				        case '||':
+				            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+				        default:
+				            return options.inverse(this);
+	    			}
+			}
+        	},
         	datasources: {
         		newPosts: function() {
         			return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
