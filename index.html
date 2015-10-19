@@ -397,7 +397,10 @@
 	    <section data-hull-component="mobilesearchform"></section>
 
 	    <section class="mainSection">
-	    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+	    	{{#ifcond post.picture '||' post.extra.fallbackUrl}}
+		    	<img class="topicImg" src="{{imageUrl post.picture 'large' post.extra.fallbackUrl}}"/>
+		    	<div class="imageInfo"><a href="#/imagepolicy/{{post.id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+		{{/ifcond}}
 		<article>
 			<section class="comment">
 				<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
@@ -446,7 +449,11 @@
 					                {{/each}}
 				                </ul>
 			                {{/if}}
-					<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+			                
+			                {{#ifcond picture '||' extra.fallbackUrl}}
+						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+						<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+					{{/ifcond}}
 					<ul>
 						<li>{{stats.comments}} comments</li>
 			            		<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
