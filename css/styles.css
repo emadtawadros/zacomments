@@ -467,7 +467,7 @@ button.dropup:hover, button.dropdown:hover{
 		padding:0;
 	}
 
-	#mainSection{
+	.mainSection{
 		width:60%;
 		float:left;
 	}
@@ -507,12 +507,6 @@ button.dropup:hover, button.dropdown:hover{
 	}
 	.create.mobile{
 	display: inline;
-	}
-	#mainSection{
-		width:100%;
-	}
-	#mainAside{
-		width:100%;
 	}
 	.verticallyCentered{
 		padding-top: 1.5%;
