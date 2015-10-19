@@ -326,27 +326,27 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='search/search'>
 	        {{#if loggedIn}}
-				<section data-hull-component="createtopicform"></section>
-			{{/if}}
-	    	<header>
-	        	<span class="pageHeader">Search Results</span>
-	    	</header>
+	        	<section data-hull-component="createtopicform"></section>
+		{{/if}}
+	    	<h3>Search Results</h3>
 	    	<section class="topic">
-	        {{#ifEqual searchResults.length 0}}
-	        	<p>No results were found</p>
-	        {{else}}
-		        {{#each searchResults}}
-		            {{#if name}}
-		                <h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
-		                <ul>
+		        {{#ifEqual searchResults.length 0}}
+		        	<p>No results were found</p>
+		        {{else}}
+		        	{{#each searchResults}}
+		        		{{#if name}}
+			                	<h1 class="post" data-postID="{{id}}"><a href="#/post/{{id}}">{{name}}</a></h1>
+		                		{{#ifcond picture '||' extra.fallbackUrl}}
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+							<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+						{{/ifcond}}
+			                	<ul>
 							<li>{{stats.comments}} comments</li>
 							<li><a href="#" class="report" class='link text-error' data-hull-action="flag" data-hull-id="{{id}}">Report</a></li>
-		                </ul>
-		            </section>
-		            {{/if}}
-		        {{/each}}
-	        {{/ifEqual}}
+			                	</ul>
+			            	{{/if}}
+			        {{/each}}
+		        {{/ifEqual}}
 	        </section>
 	    </script>
 	    
