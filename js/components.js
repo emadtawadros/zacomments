@@ -299,7 +299,7 @@ Hull.component('posts', {
         		flaggedPosts: function() {
         			return this.api('/52e138eaf0f1b0ac30000bad/conversations', {
         				'where': {
-        					'meta.flags': {
+        					'stats.flags': {
         						'$gt': 0
         					}
         				}
