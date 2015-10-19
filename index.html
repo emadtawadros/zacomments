@@ -236,6 +236,10 @@
 			</header>
 	    		{{#each allFlagged}}
 	    		<a href="#/comment/{{id}}">Comment</a> on <a href="#/post/{{commentable_id}}">{{object.name}}</a>
+	    		{{description}}
+	    		{{#if extra.richComment}}
+	    			{{{extra.richComment}}}
+	    		{{/if}}
 		    		<section>
 			    		<ul>
 			    			<li><a href="#" class='link text-error' data-hull-action="unflag" data-hull-id="{{id}}">Unflag</a></li>
