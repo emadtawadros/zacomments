@@ -141,8 +141,11 @@
 								{{/if}}
 							{{/each}}				
 						</ul>
-						{{/if}}	
-						<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>	
+						{{/if}}
+						{{#ifcond picture '||' extra.fallbackUrl}}
+							<img class="topicImg" src="{{imageUrl picture 'original' extra.fallbackUrl}}"/>
+							<div class="imageInfo"><a href="#/imagepolicy/{{id}}" title="Images Policy"><i class="icon-info-sign"></i></a></div>
+						{{/ifcond}}
 						<div data-hull-component="share/button@hull" data-hull-text="{{name}}" data-hull-url="http://zacomments.azurewebsites.net/?post={{id}}" data-hull-providers='twitter, facebook'></div>
 
 						<ul>
