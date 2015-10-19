@@ -84,7 +84,7 @@
 		</div>
 		<div id="desktopView">
 		        <section id="hotTopics" class="loading mainSection" data-hull-component="posts"></section> 
-			<aside id="mainAside" data-hull-component="newposts"></aside>
+			<aside class="mainAside" id="newTopics" data-hull-component="newposts"></aside>
 		</div>
 	    </script>
 	            
@@ -283,7 +283,7 @@
 	        {{/each}}
     		</section>
     		
-    		<aside id="mainAside">
+    		<aside class="mainAside">
 	    		<h1>
 	    			<span class="pageHeader">Topics {{feed.0.actor.name}} is interested in</span>
 			</h1>
@@ -420,7 +420,7 @@
 		</article>
 	   </section>
 	   
-	    <div id="mainAside">
+	    <div class="mainAside">
 	    	<header>
 	    		<span class="pageHeader">Topics related {{post.name}}</span>
 	        </header>
@@ -617,7 +617,7 @@
 				</article>	    
 		    </section> 
 		    
-	        <aside id="mainAside">
+	        <aside class="mainAside">
 	        	<ul class="nav nav-tabs">
 	        		<li class="active"><a data-toggle="tab" href="#related">Related</a></li>
 	        		<li><a data-toggle="tab" href="#tagged">Tagged</a></li>
