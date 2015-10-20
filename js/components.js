@@ -1426,6 +1426,7 @@ Hull.component('posts', {
 	                                				});	
                                 				} else{
                                 					alert("URL field can't be empty!");
+                                					component.$el.find("#createTopic").removeClass("active disabled");
                                 				}
                                 				break;
                         				case "upload":
