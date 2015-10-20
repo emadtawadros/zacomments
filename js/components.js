@@ -1299,6 +1299,7 @@ Hull.component('posts', {
                 this.sandbox.on('hull.uploads.image.finished', function(image) {
                 	component.options.imageID = image.id;
 			component.$el.find('input[name=file]').removeClass("btn btn-default disabled")
+			component.$el.find('#finishedUploadIcon').show();
                 });
     		component.$el.find('#agreeToPolicyBox').click(function(){
     			if($(this).attr("checked")) { //button already checked, uncheck it
