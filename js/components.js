@@ -1265,8 +1265,10 @@ Hull.component('posts', {
     		component.$el.find('#agreeToPolicyBox').click(function(){
     			if($(this).attr("checked")) { //button already checked, uncheck it
     				$(this).attr("checked", false);
+    				component.$el.find('#createTopic').attr("disabled", "disabled");
     			} else{ //it's unchecked, check it
     				$(this).attr("checked", true);
+    				component.$el.find('#createTopic').removeAttr("disabled");
     			}	
     		});
                     				
