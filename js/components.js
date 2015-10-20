@@ -1364,17 +1364,19 @@ Hull.component('posts', {
                 		component.$el.find('#imageURL').css('display', 'block');
                 		component.$el.find('#imageUploader').hide();
                 		component.$el.find('#iAgreeSection').css('display', 'block');
+                		component.$el.find('#createTopic').attr("disabled", "disabled");
                 	}
                 	if($(this).attr("value")=="upload"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').show();
                 		component.$el.find('#iAgreeSection').css('display', 'block');
+                		component.$el.find('#createTopic').attr("disabled", "disabled");
                 	}
                 	if($(this).attr("value")=="none"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').hide();
                 		component.$el.find('#iAgreeSection').hide();
-
+                		component.$el.find('#createTopic').removeAttr("disabled");
                 	}
                 });
                 
