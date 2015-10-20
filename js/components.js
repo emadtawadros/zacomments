@@ -959,6 +959,7 @@ Hull.component('posts', {
                             hasElevatedAccess = true; 
                             component.$el.find('#editableTags').show();
                             component.$el.find('#updateImage').show();
+                            component.$el.find('#adminIcon').show();
                 }
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
