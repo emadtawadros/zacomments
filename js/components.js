@@ -1319,9 +1319,17 @@ Hull.component('posts', {
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
                     			component.$el.find('#imageSection').fadeIn(function(){
+                    				var agreeCheckBox = component.$el.find('#agreeToPolicyBox');
+                    				agreeCheckBox.click(function(){
+                    					if($(this).attr("checked")) { //button already checked, uncheck it
+                    						$(this).attr("checked", false);
+                    					} else{ //it's unchecked, check it
+                    						$(this).attr("checked", true);
+                    					}	
+                    				});
                     				var imageSelection = component.$el.find('input[name=imageSelection]:checked').val();
 	                    			if(imageSelection === "url" || imageSelection==="upload") {
-	                    				if(component.$el.find('#agreeToPolicyBox').checked) {
+	                    				if(agreeCheckBox.checked) {
 	                    					component.$el.find('#createTopic').removeAttr("disabled");
 	                    				}
 	                    			} else if(imageSelection === "none") {
