@@ -1418,13 +1418,23 @@ Hull.component('posts', {
                                 				var newUrl = component.$el.find('#imageURL').val();
                                 				var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
                                 				if(newUrl !== "" && userAgreement){
+                                					var agreementEntry = {
+			                                			date: Hull.util.moment().toDate(),
+			                                			userID: Hull.currentUser().id,
+			                                			userName: Hull.currentUser().name,
+			                                			imageUrl: newUrl,
+			                                			agreed: true
+                                					};
+                                					var agreements = [];
+                                					agreements.push(userAgreement);
                                 					component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
 	                                					"public": "true",
 	                                					"name": newConversationName,
 	                                					"tags": result,
 	                                					"picture": null,
 	                                					"extra": {
-	                                						"fallbackUrl": newUrl
+	                                						"fallbackUrl": newUrl,
+	                                						"agreements": agreements
 	                                					}
 	                                				}).then(function(response) {
 	                                					console.log(response);
@@ -1441,12 +1451,23 @@ Hull.component('posts', {
                         				case "upload":
                         					var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
                         					if(component.options.imageID && userAgreement) {
+                        						var agreementEntry = {
+                        							date: Hull.util.moment().toDate(),
+			                                			userID: Hull.currentUser().id,
+			                                			userName: Hull.currentUser().name,
+			                                			imageId: component.options.imageID,
+			                                			agreed: true
+                                					};
+                                					var agreements = [];
+                                					agreements.push(userAgreement);
                         						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post', {
                         							"public": "true",
 	                							"name": newConversationName,
 	                							"tags": result,
-	                							"picture": component.options.imageID
-
+	                							"picture": component.options.imageID,
+	                							"extra": {
+	                                						"agreements": agreements
+	                							}
                         						}).then(function(response) {
                 								createTopicModal.on('hidden.bs.modal', function() {
                 									window.location.href = '#/post/' + response.id;
