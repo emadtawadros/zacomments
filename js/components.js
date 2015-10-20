@@ -1416,8 +1416,8 @@ Hull.component('posts', {
                                 		switch(imageOption) {
                                 			case "url":
                                 				var newUrl = component.$el.find('#imageURL').val();
-                                				var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
-                                				if(newUrl !== "" && userAgreement){
+                                				var userAgrees = component.$el.find('#agreeToPolicyBox').attr("checked");
+                                				if(newUrl !== "" && userAgrees){
                                 					var agreementEntry = {
 			                                			date: Hull.util.moment().toDate(),
 			                                			userID: Hull.currentUser().id,
@@ -1426,7 +1426,7 @@ Hull.component('posts', {
 			                                			agreed: true
                                 					};
                                 					var agreements = [];
-                                					agreements.push(userAgreement);
+                                					agreements.push(agreementEntry);
                                 					component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
 	                                					"public": "true",
 	                                					"name": newConversationName,
@@ -1449,8 +1449,8 @@ Hull.component('posts', {
                                 				}
                                 				break;
                         				case "upload":
-                        					var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
-                        					if(component.options.imageID && userAgreement) {
+                        					var userAgrees = component.$el.find('#agreeToPolicyBox').attr("checked");
+                        					if(component.options.imageID && userAgrees) {
                         						var agreementEntry = {
                         							date: Hull.util.moment().toDate(),
 			                                			userID: Hull.currentUser().id,
@@ -1459,7 +1459,7 @@ Hull.component('posts', {
 			                                			agreed: true
                                 					};
                                 					var agreements = [];
-                                					agreements.push(userAgreement);
+                                					agreements.push(agreementEntry);
                         						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post', {
                         							"public": "true",
 	                							"name": newConversationName,
