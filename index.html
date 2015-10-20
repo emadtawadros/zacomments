@@ -572,11 +572,6 @@
 	    </script>
 
 	    <script type='text/x-handlebars' data-hull-template='post/post'>
-	        {{#if isAdmin}}
-	        	<button type="button" id="deleteTopic" class="btn btn-default btn-danger" data-hull-action="deleteTopic">Delete Topic</button>
-	        {{/if}}
-	        
-	        <button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Change Image</button>
 		<section data-hull-component="mobilesearchform"></section>
 
 	        <section class="mainSection">
@@ -593,6 +588,10 @@
 					        </form>
 					        
 				        	<button type="button" id="updateTags" class="btn btn-default has-spinner" data-hull-action="updateTags"><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Update Tags</button>
+						<button type="button" id="updateImage" class="btn btn-default" data-hull-action="updateImage" style="display:none">Change Image</button>
+					        {{#if isAdmin}}
+					        	<button type="button" id="deleteTopic" class="btn btn-default btn-danger" data-hull-action="deleteTopic">Delete Topic</button>
+					        {{/if}}
 					</div>
 					
 				        {{#if post.tags}}
