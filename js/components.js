@@ -494,7 +494,15 @@ Hull.component('posts', {
             },
             afterRender: function() {
                 var component = this;
-                
+    		component.$el.find('#agreeToPolicyBox').click(function(){
+		    	if($(this).attr("checked")) { //button already checked, uncheck it
+		    		$(this).attr("checked", false);
+		    		component.$el.find('#updateImage').attr("disabled", "disabled");
+		    	} else{ //it's unchecked, check it
+		    		$(this).attr("checked", true);
+		    		component.$el.find('#updateImage').removeAttr("disabled");
+		    	}	
+    		});
 		this.sandbox.on('hull.upload.image.add', function(image) {
 			component.$el.find('input[name=file]').addClass("btn btn-default disabled")
 		});
