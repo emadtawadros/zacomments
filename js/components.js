@@ -1319,7 +1319,7 @@ Hull.component('posts', {
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
                     			component.$el.find('#imageSection').fadeIn(function(){
-                    				var imageSelection = component.$el.find('input[type="radio"]').attr("value");
+                    				var imageSelection = component.$el.find('input[name=imageSelection]:checked').val();
 	                    			if(imageSelection === "url" || imageSelection==="upload") {
 	                    				if(component.$el.find('#agreeToPolicyBox').checked) {
 	                    					component.$el.find('#createTopic').removeAttr("disabled");
