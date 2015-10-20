@@ -1365,18 +1365,21 @@ Hull.component('posts', {
                 		component.$el.find('#imageUploader').hide();
                 		component.$el.find('#iAgreeSection').css('display', 'block');
                 		component.$el.find('#createTopic').attr("disabled", "disabled");
+                		component.$el.find('#agreeToPolicyBox').attr("checked", false);
                 	}
                 	if($(this).attr("value")=="upload"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').show();
                 		component.$el.find('#iAgreeSection').css('display', 'block');
                 		component.$el.find('#createTopic').attr("disabled", "disabled");
+                		component.$el.find('#agreeToPolicyBox').attr("checked", false);
                 	}
                 	if($(this).attr("value")=="none"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').hide();
                 		component.$el.find('#iAgreeSection').hide();
                 		component.$el.find('#createTopic').removeAttr("disabled");
+                		component.$el.find('#agreeToPolicyBox').attr("checked", false);
                 	}
                 });
                 
@@ -1412,7 +1415,8 @@ Hull.component('posts', {
                                 		switch(imageOption) {
                                 			case "url":
                                 				var newUrl = component.$el.find('#imageURL').val();
-                                				if(newUrl !== ""){
+                                				var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
+                                				if(newUrl !== "" && userAgreement){
                                 					component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
 	                                					"public": "true",
 	                                					"name": newConversationName,
@@ -1434,7 +1438,8 @@ Hull.component('posts', {
                                 				}
                                 				break;
                         				case "upload":
-                        					if(component.options.imageID) {
+                        					var userAgreement = component.$el.find('#agreeToPolicyBox').attr("checked");
+                        					if(component.options.imageID && userAgreement) {
                         						component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post', {
                         							"public": "true",
 	                							"name": newConversationName,
