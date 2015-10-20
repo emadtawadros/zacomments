@@ -514,14 +514,18 @@ Hull.component('posts', {
                 updateimage: function() {
                 	var component = this;
                 	var newUrl = this.$el.find('#imageURL').val();
-                	component.api(component.options.id, 'put',{
-                		"picture": null,
-                		"extra": {
-                			"fallbackUrl": newUrl
-                		}
-                	}).then(function() {
-                		window.location.href = '#/post/'+ component.options.id;
-                    }); 
+                	if(newUrl !== ""){
+                		component.api(component.options.id, 'put',{
+	                		"picture": null,
+	                		"extra": {
+	                			"fallbackUrl": newUrl
+	                		}
+	                	}).then(function() {
+	                		window.location.href = '#/post/'+ component.options.id;
+	                    }); 	
+                	} else{
+                		alert("Image URL can't be empty!")	
+                	}
                 }
             }
         });
@@ -1404,21 +1408,25 @@ Hull.component('posts', {
                                 		switch(imageOption) {
                                 			case "url":
                                 				var newUrl = component.$el.find('#imageURL').val();
-                                				component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
-                                					"public": "true",
-                                					"name": newConversationName,
-                                					"tags": result,
-                                					"picture": null,
-                                					"extra": {
-                                						"fallbackUrl": newUrl
-                                					}
-                                				}).then(function(response) {
-                                					console.log(response);
-                							createTopicModal.on('hidden.bs.modal', function() {
-                								window.location.href = '#/post/' + response.id;
-									})
-									createTopicModal.modal("toggle");
-                                				});
+                                				if(newUrl !== ""){
+                                					component.api('/52e138eaf0f1b0ac30000bad/conversations', 'post',{
+	                                					"public": "true",
+	                                					"name": newConversationName,
+	                                					"tags": result,
+	                                					"picture": null,
+	                                					"extra": {
+	                                						"fallbackUrl": newUrl
+	                                					}
+	                                				}).then(function(response) {
+	                                					console.log(response);
+	                							createTopicModal.on('hidden.bs.modal', function() {
+	                								window.location.href = '#/post/' + response.id;
+										})
+										createTopicModal.modal("toggle");
+	                                				});	
+                                				} else{
+                                					alert("URL field can't be empty!");
+                                				}
                                 				break;
                         				case "upload":
                         					if(component.options.imageID) {
