@@ -523,6 +523,9 @@ button.dropup:hover, button.dropdown:hover{
 	.mainAside{
 		clear: both;
 	}
+	body{
+		width:100%;
+	}
 }
 
 
