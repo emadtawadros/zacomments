@@ -507,12 +507,29 @@ Hull.component('posts', {
 			component.$el.find('input[name=file]').addClass("btn btn-default disabled")
 		});
                 
-                this.sandbox.on('hull.uploads.image.finished', function(image) {                  
-                    component.api(component.options.id, 'put',{
-                            "picture": image.id
-                        }).then(function() {
-                        window.location.href = '#/post/'+ component.options.id;
-                    });                    
+                this.sandbox.on('hull.uploads.image.finished', function(image) {
+                	var userAgrees = component.$el.find('#agreeToPolicyBox').attr("checked");
+                	if(userAgrees){
+                		var agreementEntry = {
+					date: Hull.util.moment().toDate(),
+	        			userID: Hull.currentUser().id,
+	        			userName: Hull.currentUser().name,
+	        			imageId: image.id,
+	        			agreed: true
+				};
+				var agreements = component.data.topic.attributes.extra.agreements;
+				agreements.push(agreementEntry);
+				component.api(component.options.id, 'put',{
+					"picture": image.id,
+					"extra": {
+						"agreements": agreements
+					}
+				}).then(function() {
+					window.location.href = '#/post/'+ component.options.id;
+				});   
+                	} else{
+                		alert("Please accept the image policy then reupload");
+                	}
                 });
             },
             actions: {
@@ -522,11 +539,22 @@ Hull.component('posts', {
                 updateimage: function() {
                 	var component = this;
                 	var newUrl = this.$el.find('#imageURL').val();
-                	if(newUrl !== ""){
+                	var userAgrees = component.$el.find('#agreeToPolicyBox').attr("checked");
+                	if(newUrl !== "" && userAgrees){
+                		var agreementEntry = {
+                			date: Hull.util.moment().toDate(),
+                			userID: Hull.currentUser().id,
+                			userName: Hull.currentUser().name,
+                			imageUrl: newUrl,
+                			agreed: true
+				};
+				var agreements = component.data.topic.attributes.extra.agreements;
+				agreements.push(agreementEntry);
                 		component.api(component.options.id, 'put',{
 	                		"picture": null,
 	                		"extra": {
-	                			"fallbackUrl": newUrl
+	                			"fallbackUrl": newUrl,
+	                			"agreements": agreements
 	                		}
 	                	}).then(function() {
 	                		window.location.href = '#/post/'+ component.options.id;
