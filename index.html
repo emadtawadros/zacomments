@@ -370,23 +370,18 @@
 	    </script>
 	        
 	    <script type='text/x-handlebars' data-hull-template='createtopic/createtopic'>
-    		<header>
-	        	<span class="pageHeader">Use Image URL...</span>
-	        </header>
-	        <section>
-		        <form>
-			        <input type="text" id="imageURL"></input>
-			        <button type="button" class="btn btn-default" id="updateImage" data-hull-action="updateimage">Update Image</button>
-		        </form>
-		        <header>
-	        		<span class="pageHeader">Or Upload an Image...</span>
-	        	</header>
-			<div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
-			<header>
-	        		<span class="pageHeader">Or remove image completely...</span>
-	        	</header>
-			<button type="button" class="btn btn-default" id="skipimageupload" data-hull-action="skipimageupload">Remove Image</button>
-		    </section>
+    		<h3>Use Image URL...</h3>
+	        <form>
+		        <input type="text" id="imageURL"></input>
+		        <button type="button" class="btn btn-default" id="updateImage" data-hull-action="updateimage">Update Image</button>
+	        </form>
+	        <h3>Or Upload an Image...</h3>
+		<div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
+		<div id="iAgreeSection" style="display:none;">
+			<input type="checkbox" name="agreeToPolicy" id="agreeToPolicyBox" value="No"> I agree that I do not own this image and that all the rights are reserved for its rightful owners. I also agree that the image will be displayed on ZaComments for commentary purposes only, no copyright infringement is intended.<br>
+		</div>
+		<h3>Or remove image completely...</h3>
+		<button type="button" class="btn btn-default" id="skipimageupload" data-hull-action="skipimageupload">Remove Image</button>
 	    </script>
 	    
 	    <script type='text/x-handlebars' data-hull-template='main/comment'>
