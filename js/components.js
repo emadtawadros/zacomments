@@ -1329,7 +1329,7 @@ Hull.component('posts', {
                     				var agreeCheckBox = component.$el.find('#agreeToPolicyBox');
                     				var imageSelection = component.$el.find('input[name=imageSelection]:checked').val();
 	                    			if(imageSelection === "url" || imageSelection==="upload") {
-	                    				if(agreeCheckBox.checked) {
+	                    				if(agreeCheckBox.attr("checked")) {
 	                    					component.$el.find('#createTopic').removeAttr("disabled");
 	                    				}
 	                    			} else if(imageSelection === "none") {
