@@ -529,6 +529,7 @@ Hull.component('posts', {
 				});   
                 	} else{
                 		alert("Please accept the image policy then reupload");
+                		component.$el.find('input[name=file]').removeClass("disabled")
                 	}
                 });
             },
