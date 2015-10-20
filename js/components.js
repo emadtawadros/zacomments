@@ -1341,14 +1341,18 @@ Hull.component('posts', {
                 	if($(this).attr("value")=="url"){
                 		component.$el.find('#imageURL').css('display', 'block');
                 		component.$el.find('#imageUploader').hide();
+                		component.$el.find('#agreeToPolicyBox').css('display', 'block');
                 	}
                 	if($(this).attr("value")=="upload"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').show();
+                		component.$el.find('#agreeToPolicyBox').css('display', 'block');
                 	}
                 	if($(this).attr("value")=="none"){
                 		component.$el.find('#imageURL').hide();
                 		component.$el.find('#imageUploader').hide();
+                		component.$el.find('#agreeToPolicyBox').hide();
+
                 	}
                 });
                 
