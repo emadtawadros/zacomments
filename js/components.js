@@ -1318,15 +1318,16 @@ Hull.component('posts', {
                     		var listOfTags = tagsText.split(',');
                     		var numberOfTags = listOfTags.length;
                     		if(numberOfTags > 0) {
-                    			component.$el.find('#imageSection').fadeIn();
-                    			var imageSelection = component.$el.find('input[type="radio"]').attr("value");
-                    			if(imageSelection === "url" || imageSelection==="upload") {
-                    				if(component.$el.find('#agreeToPolicyBox').checked) {
-                    					component.$el.find('#createTopic').removeAttr("disabled");
-                    				}
-                    			} else if(imageSelection === "none") {
-                    				component.$el.find('#createTopic').removeAttr("disabled");
-                    			}
+                    			component.$el.find('#imageSection').fadeIn(function(){
+                    				var imageSelection = component.$el.find('input[type="radio"]').attr("value");
+	                    			if(imageSelection === "url" || imageSelection==="upload") {
+	                    				if(component.$el.find('#agreeToPolicyBox').checked) {
+	                    					component.$el.find('#createTopic').removeAttr("disabled");
+	                    				}
+	                    			} else if(imageSelection === "none") {
+	                    				component.$el.find('#createTopic').removeAttr("disabled");
+	                    			}	
+                    			});
                     		}
                     	}  else {
                     		component.$el.find('#imageSection').fadeOut();
