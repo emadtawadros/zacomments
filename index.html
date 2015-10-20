@@ -373,11 +373,11 @@
     		<h3>Use Image URL...</h3>
 	        <form>
 		        <input type="text" id="imageURL"></input>
-		        <button type="button" class="btn btn-default" id="updateImage" data-hull-action="updateimage">Update Image</button>
+		        <button type="button" class="btn btn-default" id="updateImage" data-hull-action="updateimage" disabled>Update Image</button>
 	        </form>
 	        <h3>Or Upload an Image...</h3>
 		<div data-hull-component="uploads/image@hull" data-hull-id="{{topic.id}}"></div>
-		<div id="iAgreeSection" style="display:none;">
+		<div id="iAgreeSection">
 			<input type="checkbox" name="agreeToPolicy" id="agreeToPolicyBox" value="No"> I agree that I do not own this image and that all the rights are reserved for its rightful owners. I also agree that the image will be displayed on ZaComments for commentary purposes only, no copyright infringement is intended.<br>
 		</div>
 		<h3>Or remove image completely...</h3>
