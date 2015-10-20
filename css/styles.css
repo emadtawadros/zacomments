@@ -520,6 +520,9 @@ button.dropup:hover, button.dropdown:hover{
 	.logo p{
 		text-indent: 0px;
 	}
+	.mainAside{
+		clear: both;
+	}
 }
 
 
