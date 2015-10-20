@@ -1258,7 +1258,14 @@ Hull.component('posts', {
                 	component.options.imageID = image.id;
 			component.$el.find('input[name=file]').removeClass("btn btn-default disabled")
                 });
-        
+    		component.$el.find('#agreeToPolicyBox').click(function(){
+    			if($(this).attr("checked")) { //button already checked, uncheck it
+    				$(this).attr("checked", false);
+    			} else{ //it's unchecked, check it
+    				$(this).attr("checked", true);
+    			}	
+    		});
+                    				
         	var tagsField = this.$el.find('#tagsField');
                 tagsField.tagsInput({
                 	'autocomplete_url': "saksaka",
@@ -1320,13 +1327,6 @@ Hull.component('posts', {
                     		if(numberOfTags > 0) {
                     			component.$el.find('#imageSection').fadeIn(function(){
                     				var agreeCheckBox = component.$el.find('#agreeToPolicyBox');
-                    				agreeCheckBox.click(function(){
-                    					if($(this).attr("checked")) { //button already checked, uncheck it
-                    						$(this).attr("checked", false);
-                    					} else{ //it's unchecked, check it
-                    						$(this).attr("checked", true);
-                    					}	
-                    				});
                     				var imageSelection = component.$el.find('input[name=imageSelection]:checked').val();
 	                    			if(imageSelection === "url" || imageSelection==="upload") {
 	                    				if(agreeCheckBox.checked) {
