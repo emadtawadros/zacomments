@@ -95,7 +95,9 @@ Hull.component('posts', {
 	                	$('#hotTopics').hide();
 	                	$('#trendingTopicsNavigator').addClass('unselected').removeClass('selected');
 	                });
-            		this.$el.hide();
+	                if($('#newTopicsNavigator').hasClass('selected')) { //firstload
+	                	this.$el.hide();
+	                }
             		$('#trendingTopicsNavigator').removeClass('active disabled');
             	}
             },
