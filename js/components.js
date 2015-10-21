@@ -1482,6 +1482,8 @@ Hull.component('posts', {
 	                								window.location.href = '#/post/' + response.id;
 										})
 										createTopicModal.modal("toggle");
+	                                				}, function(error){
+	                                					alert(error.message);
 	                                				});	
                                 				} else{
                                 					alert("URL field can't be empty!");
@@ -1513,6 +1515,8 @@ Hull.component('posts', {
                 									window.location.href = '#/post/' + response.id;
 										})
 										createTopicModal.modal("toggle");
+                        						}, function(error){
+                        							alert(error.message);
                         						});
                         					} else {
                         						alert("please upload and image. Or wait for the upload to finish.");
@@ -1529,6 +1533,8 @@ Hull.component('posts', {
                 								window.location.href = '#/post/' + response.id;
 									})
 									createTopicModal.modal("toggle");
+                						}, function(error){
+                							alert(error.message);
                 						});
                 						break;
                                 		}
@@ -1543,6 +1549,8 @@ Hull.component('posts', {
                 					window.location.href = '#/post/' + response.id;
 						})
 						createTopicModal.modal("toggle");
+                                	}, function(error){
+                                		alert(error.message);
                                 	});
                         	}
                             } else {
