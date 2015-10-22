@@ -989,6 +989,7 @@ Hull.component('posts', {
                 console.log("Before render errors:" + errors);
             },
             afterRender: function (data) {
+            	this.$el.removeClass("loading");
             	var component = this;
             	$("img").on("contextmenu",function(){
                 	return false;
@@ -1208,6 +1209,7 @@ Hull.component('posts', {
                 }
             },
             afterRender: function(data) {
+            	this.$el.removeClass("loading");
             	var component = this;
             	$("img").on("contextmenu",function(){
                 	return false;
