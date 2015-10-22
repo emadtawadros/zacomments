@@ -41,6 +41,7 @@ a:hover{
 	top: 0;
 	z-index: 1;
 	left: 0px;
+	box-shadow: 0px 0px 10px #888888
 }
 .verticallyCentered{
 	padding-top: 0.5%;
