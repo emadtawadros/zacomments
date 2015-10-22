@@ -393,7 +393,23 @@ button.dropup:hover, button.dropdown:hover{
 .btn-success, .btn-warning{
 	color: rgba(227,229,224,1);
 }
-.btn-warning:hover, .btn-warning.disabled{
+.btn-warning:hover,
+.btn-warning.disabled,
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active{
 	background-color: rgba(121,102,158,1);
 	border-color: rgba(89, 71, 108, 1);
 }
