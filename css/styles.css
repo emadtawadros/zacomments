@@ -32,6 +32,9 @@ a:hover{
 	color:#004040;
 	text-decoration: none;
 }
+a:focus{
+	text-decoration: none;
+}
 
 #mainHeader{
 	position:fixed;
