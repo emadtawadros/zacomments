@@ -564,7 +564,7 @@ Hull.component('posts', {
 	                    }); 	
                 	} else{
                 		var n = noty({
-                			layout: 'center',
+                			layout: 'topcenter',
                 			theme: 'relax',
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
@@ -573,7 +573,7 @@ Hull.component('posts', {
                 				open: {height: 'toggle'}, // jQuery animate function property object
                 				close: {height: 'toggle'}, // jQuery animate function property object
                 				easing: 'swing', // easing
-                				speed: 500 // opening & closing animation speed
+                				speed: 300 // opening & closing animation speed
                 				}
                 		});
                 	}
