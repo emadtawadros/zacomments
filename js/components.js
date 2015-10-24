@@ -567,7 +567,7 @@ Hull.component('posts', {
                 		var n = component.$el.find('#updateImage').noty({
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
-                			timeout: 300,
+                			timeout: 3000,
                 			animation: {
                 				open: {height: 'toggle'}, // jQuery animate function property object
                 				close: {height: 'toggle'}, // jQuery animate function property object
