@@ -563,7 +563,16 @@ Hull.component('posts', {
 	                		window.location.href = '#/post/'+ component.options.id;
 	                    }); 	
                 	} else{
-                		alert("Image URL can't be empty!")	
+                		alert("Image URL can't be empty!");
+                		var n = noty({
+                			text: 'Please fill in the new image URL!',
+                			animation: {
+                				open: 'animated bounceInLeft', // Animate.css class names
+                				close: 'animated bounceOutLeft', // Animate.css class names
+                				easing: 'swing', // unavailable - no need
+                				speed: 500 // unavailable - no need
+                				}
+                		});
                 	}
                 }
             }
