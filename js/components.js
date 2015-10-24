@@ -564,7 +564,7 @@ Hull.component('posts', {
 	                    }); 	
                 	} else{
                 		var n = noty({
-                			layout: 'topcenter',
+                			layout: 'center',
                 			theme: 'relax',
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
