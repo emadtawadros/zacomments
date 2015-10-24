@@ -564,7 +564,7 @@ Hull.component('posts', {
 	                    }); 	
                 	} else{
                 		alert("Image URL can't be empty!");
-                		var n = noty({
+                		var n = component.$el.find('#updateImage').noty({
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
                 			timeout: 300,
