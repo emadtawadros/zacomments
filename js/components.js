@@ -566,6 +566,8 @@ Hull.component('posts', {
                 		alert("Image URL can't be empty!");
                 		var n = noty({
                 			text: 'Please fill in the new image URL!',
+                			type: 'warning',
+                			timeout: 300,
                 			animation: {
                 				open: {height: 'toggle'}, // jQuery animate function property object
                 				close: {height: 'toggle'}, // jQuery animate function property object
