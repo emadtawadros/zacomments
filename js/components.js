@@ -567,10 +567,10 @@ Hull.component('posts', {
                 		var n = noty({
                 			text: 'Please fill in the new image URL!',
                 			animation: {
-                				open: 'animated bounceInLeft', // Animate.css class names
-                				close: 'animated bounceOutLeft', // Animate.css class names
-                				easing: 'swing', // unavailable - no need
-                				speed: 500 // unavailable - no need
+                				open: {height: 'toggle'}, // jQuery animate function property object
+                				close: {height: 'toggle'}, // jQuery animate function property object
+                				easing: 'swing', // easing
+                				speed: 500 // opening & closing animation speed
                 				}
                 		});
                 	}
