@@ -564,11 +564,12 @@ Hull.component('posts', {
 	                    }); 	
                 	} else{
                 		var n = noty({
-                			layout: 'center',
+                			layout: 'topCenter',
                 			theme: 'relax',
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
                 			timeout: 3000,
+                			killer: true,
                 			animation: {
                 				open: {height: 'toggle'}, // jQuery animate function property object
                 				close: {height: 'toggle'}, // jQuery animate function property object
