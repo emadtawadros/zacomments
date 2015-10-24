@@ -563,9 +563,8 @@ Hull.component('posts', {
 	                		window.location.href = '#/post/'+ component.options.id;
 	                    }); 	
                 	} else{
-                		alert("Image URL can't be empty!");
                 		var n = noty({
-                			layout: 'top',
+                			layout: 'center',
                 			theme: 'relax',
                 			text: 'Please fill in the new image URL!',
                 			type: 'warning',
