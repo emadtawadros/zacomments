@@ -278,12 +278,6 @@
 		        <br>
 		        <h2>Comment Mojo: {{options.commentMojo}}</h2>
 		 </section>
-		 <div id="mobileNavigator">
-			<ul style="display:flex;margin-bottom: 10px;margin-top:10px">
-				<li><a id="feedNavigator" class="selected">Feed</a></li>
-				<li><a id="interestsNavigator" class="unselected">Interests</a></li>
-			</ul>
-		</div>
 	        <section class="userFeed">
 	        <h1>Activity</h1>
 	        {{#each feed}}
@@ -361,11 +355,15 @@
 	    
 	    <script type='text/x-handlebars' data-hull-template='main/user'>
 	        {{#if loggedIn}}
-				<section class="loading" data-hull-component="user" data-hull-id="{{id}}"></section>
-			{{else}}
-				<header>
-	        		<span class="pageHeader">You need to login to view user page</span>
-				</header>
+		        <div id="mobileNavigator">
+				<ul style="display:flex;margin-bottom: 10px;margin-top:10px">
+					<li><a id="feedNavigator" class="selected">Feed</a></li>
+					<li><a id="interestsNavigator" class="unselected">Interests</a></li>
+				</ul>
+			</div>
+			<section class="loading" data-hull-component="user" data-hull-id="{{id}}"></section>
+		{{else}}
+			<h3>You need to login to view user page</h3>
 	    		<div class="login" data-hull-component="mylogin" data-hull-provider="facebook,twitter"></div>
 	        {{/if}}
 	    </script>
