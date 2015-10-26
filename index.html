@@ -279,7 +279,7 @@
 		        <h2>Comment Mojo: {{options.commentMojo}}</h2>
 		 </section>
 	        <section class="userFeed">
-	        <h1>Activity</h1>
+	        <h1 class="desktopOnly">Activity</h1>
 	        {{#each feed}}
 	            {{#ifEqual object.type "comment"}}
 	                {{#if target.name}}
@@ -292,7 +292,7 @@
     		</section>
     		
     		<aside class="mainAside">
-	    		<h1>
+	    		<h1 class="desktopOnly">
 	    			<span class="pageHeader">Topics {{feed.0.actor.name}} is interested in</span>
 			</h1>
 			{{#ifEqual interestedTopics.length 0}}
