@@ -474,7 +474,20 @@ Hull.component('posts', {
             	this.options.commentMojo = 0;	
             },
             beforeRender: function(data, errors) {
-                console.log(data);
+            	if($("#mobileNavigator").is(':visible')){ //Meaning that we're in mobile
+            		$('#interestsNavigator').click(function(){
+            			$('.mainAside').show();
+	                	$('.userFeed').hide();
+	                	$('#feedNavigator').addClass('unselected').removeClass('selected');
+	                	$('#interestsNavigator').addClass('selected').removeClass('unselected');
+            		});
+	                $('#feedNavigator').click(function(){
+	                	$('.userFeed').show();
+	                	$('#feedNavigator').addClass('selected').removeClass('unselected');
+	                	$('.mainAside').hide();
+	                	$('#interestsNavigator').addClass('unselected').removeClass('selected');
+	                });
+            	}
             },
             afterRender: function(){
             	this.$el.removeClass("loading");
