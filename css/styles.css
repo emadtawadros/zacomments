@@ -51,6 +51,7 @@ a:focus{
     height: 100%;
     display: inline-block;
     position: absolute;
+    margin-left:5%;
 }
 .horizontallyCentered{
 	margin: auto;
@@ -174,6 +175,7 @@ ul.ui-autocomplete {
 	float: right;
 	display: inline-block;
 	position: absolute;
+	margin-left:5%;
 }	
 .login p{
 	font-size: 15px;
