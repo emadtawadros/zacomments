@@ -487,6 +487,7 @@ Hull.component('posts', {
 	                	$('.mainAside').hide();
 	                	$('#interestsNavigator').addClass('unselected').removeClass('selected');
 	                });
+	                $('#feedNavigator').removeClass('active disabled');
             	}
             },
             afterRender: function(){
