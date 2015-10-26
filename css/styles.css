@@ -110,7 +110,8 @@ ul.ui-autocomplete {
     position: absolute;
 }	
 .logo{
-	background-image: url("http://zacomments.com/zacomments/images/banner.png") no-repeat;
+	background-image: url("http://zacomments.com/zacomments/images/banner.png");
+	background-repeat: no-repeat;
 	display:block;
 	font-size: 1.2em;
 	/*background: url("logo.svg");*/
