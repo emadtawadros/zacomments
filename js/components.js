@@ -487,7 +487,6 @@ Hull.component('posts', {
 	                	$('.mainAside').hide();
 	                	$('#interestsNavigator').addClass('unselected').removeClass('selected');
 	                });
-	                $('.mainAside').hide();
 	                $('#feedNavigator').removeClass('active disabled');
             	}
             },
@@ -496,6 +495,9 @@ Hull.component('posts', {
             	$("img").on("contextmenu",function(){
             		return false;
                 });
+                if($("#mobileNavigator").is(':visible')){ //Meaning that we're in mobile
+			$('.mainAside').hide();
+                }
             },
             actions: {
                 back: function() {
