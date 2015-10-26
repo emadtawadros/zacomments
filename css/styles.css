@@ -51,7 +51,6 @@ a:focus{
     height: 100%;
     display: inline-block;
     position: absolute;
-    margin-left:5%;
 }
 .horizontallyCentered{
 	margin: auto;
@@ -560,9 +559,6 @@ fieldset[disabled] .btn-warning.active{
 	}
 	.create.mobile{
 	display: inline;
-	}
-	.headerToolbar{
-		margin-left: 0px;
 	}
 	.horizontallyCentered{
 		margin: 0px 0px;
