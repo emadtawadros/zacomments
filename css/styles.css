@@ -55,6 +55,7 @@ a:focus{
 .horizontallyCentered{
 	margin: auto;
 	width: 65%;
+	height: 100%;
 }
 .verticallyCentered{
 	padding-top: 1%;
@@ -121,7 +122,7 @@ ul.ui-autocomplete {
 	background-image: url("http://zacomments.com/zacomments/images/banner.png");
 	background-repeat: no-repeat;
 	font-size: 1.2em;
-	height: 64px;
+	height: 100%;
 	width: 24%;
 	/*background: url("logo.svg");*/
 	color: rgba(157, 186, 127, 1);
