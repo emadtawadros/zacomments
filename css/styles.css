@@ -174,8 +174,6 @@ ul.ui-autocomplete {
 .login {
 	float: right;
 	display: inline-block;
-	position: absolute;
-	margin-left:5%;
 }	
 .login p{
 	font-size: 15px;
