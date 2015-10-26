@@ -556,9 +556,11 @@ fieldset[disabled] .btn-warning.active{
 	display: inline;
 	}
 	.horizontallyCentered{
-		padding-top: 1.5%;
 		margin: 0px 0px;
 		width: 100%;
+	}
+	.verticallyCentered{
+		padding-top: 3%;
 	}
 	.logo p{
 		text-indent: 0px;
