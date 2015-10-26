@@ -538,7 +538,14 @@ fieldset[disabled] .btn-warning.active{
 		width: 60%;
 	}
 }
-
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	.logo{
+		width: 292px;
+		height: 80%;
+	}
+}
+/*phones*/
 @media only screen and (min-device-width: 320px) and (max-device-width : 480px){
 	.search,
 	.desktopOnly,
