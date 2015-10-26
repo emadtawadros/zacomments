@@ -110,6 +110,7 @@ ul.ui-autocomplete {
     position: absolute;
 }	
 .logo{
+	background-image: url("http://zacomments.com/zacomments/images/banner.png");
 	float:left;
 	display:block;
 	font-size: 1.2em;
@@ -117,6 +118,7 @@ ul.ui-autocomplete {
 	color: rgba(157, 186, 127, 1);
 }
 .logo p{
+	text-indent: -999px;
 	font-size: 0.8em;
 	margin-bottom: 0px;
 	text-indent: 10px;
@@ -124,6 +126,7 @@ ul.ui-autocomplete {
 	color: rgba(227,229,224,1);
 }
 .logo h3{
+	text-indent: -999px;
 	margin: 0px 0px;
 	height: 100%;
 }
