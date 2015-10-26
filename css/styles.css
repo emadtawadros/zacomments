@@ -532,7 +532,8 @@ fieldset[disabled] .btn-warning.active{
 		width: 292px;
 	}
 	.headerToolbar{
-		margin-left: 2%;	
+		margin-left: 2%;
+		width: 60%;
 	}
 }
 
