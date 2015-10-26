@@ -562,8 +562,8 @@ fieldset[disabled] .btn-warning.active{
 	.verticallyCentered{
 		padding-top: 3%;
 	}
-	.logo p{
-		text-indent: 0px;
+	.logo{
+		background-image: url("http://zacomments.com/zacomments/images/mobileBanner.png");
 	}
 	.mainAside{
 		clear: both;
