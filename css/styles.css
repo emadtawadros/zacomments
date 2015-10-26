@@ -517,7 +517,9 @@ fieldset[disabled] .btn-warning.active{
 		float:right;
 		margin-top: 1%;
 	}
-	
+	.horizontallyCentered{
+		width: 100%;
+	}
 }
 
 /* iPads (portrait) ----------- */
