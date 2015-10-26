@@ -525,7 +525,7 @@ fieldset[disabled] .btn-warning.active{
 	.mainAside{
 		clear: both;
 	}
-	.verticallyCentered{
+	.horizontallyCentered{
 		width: 90%;
 	}
 }
@@ -555,7 +555,7 @@ fieldset[disabled] .btn-warning.active{
 	.create.mobile{
 	display: inline;
 	}
-	.verticallyCentered{
+	.horizontallyCentered{
 		padding-top: 1.5%;
 		margin: 0px 0px;
 		width: 100%;
