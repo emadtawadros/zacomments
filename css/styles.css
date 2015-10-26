@@ -529,7 +529,13 @@ fieldset[disabled] .btn-warning.active{
 		clear: both;
 	}
 	.horizontallyCentered{
-		width: 90%;
+		width: 100%;
+	}
+	.logo{
+		width: 292px;
+	}
+	.headerToolbar{
+		margin-left: 2%;	
 	}
 }
 
