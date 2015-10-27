@@ -44,7 +44,6 @@ Hull.component('posts', {
                             timeframe: timeFrame
                         });
                 
-                      //Get the result of the query and alert it.
                         metric.getResponse(function(response){
                             var numberOfDeletedItems = 0;
                             if(response.result.length >= componenet.options.trendingLimit) {
@@ -289,13 +288,52 @@ Hull.component('posts', {
 			  			component.$el.find('#signupButton').removeClass("active disabled");
 			  		}, function(error){
 			  			component.$el.find('#signupButton').removeClass("active disabled");
-			  			alert(error.message);
+		                		var n = noty({
+		                			layout: 'topCenter',
+		                			theme: 'relax',
+		                			text: 'Somebody is already using that email!',
+		                			type: 'warning',
+		                			timeout: 3000,
+		                			killer: true,
+		                			animation: {
+		                				open: {height: 'toggle'}, // jQuery animate function property object
+		                				close: {height: 'toggle'}, // jQuery animate function property object
+		                				easing: 'swing', // easing
+		                				speed: 300 // opening & closing animation speed
+		                			}
+		                		});
 			  		});
 	  			} else{
-	  				alert("Please fill in all fields!");
+	  				var n = noty({
+	                			layout: 'topCenter',
+	                			theme: 'relax',
+	                			text: 'Oops! Looks like you missed a field!',
+	                			type: 'warning',
+	                			timeout: 3000,
+	                			killer: true,
+	                			animation: {
+	                				open: {height: 'toggle'}, // jQuery animate function property object
+	                				close: {height: 'toggle'}, // jQuery animate function property object
+	                				easing: 'swing', // easing
+	                				speed: 300 // opening & closing animation speed
+	                			}
+	                		});
 	  			}
 	  		} else {
-	  			alert("Passwords don't match, try again.")
+	        		var n = noty({
+	        			layout: 'topCenter',
+	        			theme: 'relax',
+	        			text: 'Password do not match! Type fast much?',
+	        			type: 'warning',
+	        			timeout: 3000,
+	        			killer: true,
+	        			animation: {
+	        				open: {height: 'toggle'}, // jQuery animate function property object
+	        				close: {height: 'toggle'}, // jQuery animate function property object
+	        				easing: 'swing', // easing
+	        				speed: 300 // opening & closing animation speed
+	        			}
+	        		});
 	  		}
 	  	},
 	  	signin: function(){
@@ -312,7 +350,20 @@ Hull.component('posts', {
 	  				console.log("You're logged in as ", me.email);
 	  			}, function (error) {
 	  				component.$el.find('#emailSigninButton').removeClass("active disabled");
-	  				alert(error.message);
+	                		var n = noty({
+	                			layout: 'topCenter',
+	                			theme: 'relax',
+	                			text: "Looks like there is something wrong with the credentials you entered. We think it's you not us.",
+	                			type: 'warning',
+	                			timeout: 3000,
+	                			killer: true,
+	                			animation: {
+	                				open: {height: 'toggle'}, // jQuery animate function property object
+	                				close: {height: 'toggle'}, // jQuery animate function property object
+	                				easing: 'swing', // easing
+	                				speed: 300 // opening & closing animation speed
+	                			}
+	                		});
 	  			});	
 	  		}
 	  	}
@@ -547,7 +598,20 @@ Hull.component('posts', {
 					window.location.href = '#/post/'+ component.options.id;
 				});   
                 	} else{
-                		alert("Please accept the image policy then reupload");
+	        		var n = noty({
+	        			layout: 'topCenter',
+	        			theme: 'relax',
+	        			text: 'Y U no accept image policy?!',
+	        			type: 'warning',
+	        			timeout: 3000,
+	        			killer: true,
+	        			animation: {
+	        				open: {height: 'toggle'}, // jQuery animate function property object
+	        				close: {height: 'toggle'}, // jQuery animate function property object
+	        				easing: 'swing', // easing
+	        				speed: 300 // opening & closing animation speed
+	        			}
+	        		});
                 		component.$el.find('input[name=file]').removeClass("disabled")
                 	}
                 });
@@ -1515,10 +1579,36 @@ Hull.component('posts', {
 										})
 										createTopicModal.modal("toggle");
 	                                				}, function(error){
-	                                					alert(error.message);
-	                                				});	
+						                		var n = noty({
+						                			layout: 'topCenter',
+						                			theme: 'relax',
+						                			text: 'Oops! Something went wrong from our side. Please try again.',
+						                			type: 'warning',
+						                			timeout: 3000,
+						                			killer: true,
+						                			animation: {
+						                				open: {height: 'toggle'}, // jQuery animate function property object
+						                				close: {height: 'toggle'}, // jQuery animate function property object
+						                				easing: 'swing', // easing
+						                				speed: 300 // opening & closing animation speed
+						                			}
+						                		});
+                							});	
                                 				} else{
-                                					alert("URL field can't be empty!");
+                                					var n = noty({
+                                						layout: 'topCenter',
+					                			theme: 'relax',
+					                			text: 'Looks like your forgot the image URL!',
+					                			type: 'warning',
+					                			timeout: 3000,
+					                			killer: true,
+					                			animation: {
+					                				open: {height: 'toggle'}, // jQuery animate function property object
+					                				close: {height: 'toggle'}, // jQuery animate function property object
+					                				easing: 'swing', // easing
+					                				speed: 300 // opening & closing animation speed
+					                			}
+					                		});
                                 					component.$el.find("#createTopic").removeClass("active disabled");
                                 				}
                                 				break;
@@ -1548,10 +1638,36 @@ Hull.component('posts', {
 										})
 										createTopicModal.modal("toggle");
                         						}, function(error){
-                        							alert(error.message);
+						                		var n = noty({
+						                			layout: 'topCenter',
+						                			theme: 'relax',
+						                			text: 'Oops! Something went wrong from our side. Please try again.',
+						                			type: 'warning',
+						                			timeout: 3000,
+						                			killer: true,
+						                			animation: {
+						                				open: {height: 'toggle'}, // jQuery animate function property object
+						                				close: {height: 'toggle'}, // jQuery animate function property object
+						                				easing: 'swing', // easing
+						                				speed: 300 // opening & closing animation speed
+						                			}
+						                		});
                         						});
                         					} else {
-                        						alert("please upload and image. Or wait for the upload to finish.");
+                        						var n = noty({
+					                			layout: 'topCenter',
+					                			theme: 'relax',
+					                			text: 'Too fast! The image is not fully uploaded yet!',
+					                			type: 'warning',
+					                			timeout: 3000,
+					                			killer: true,
+					                			animation: {
+					                				open: {height: 'toggle'}, // jQuery animate function property object
+					                				close: {height: 'toggle'}, // jQuery animate function property object
+					                				easing: 'swing', // easing
+					                				speed: 300 // opening & closing animation speed
+					                			}
+					                		});
                         					}
                         					break;
                 					case "none":
@@ -1566,7 +1682,20 @@ Hull.component('posts', {
 									})
 									createTopicModal.modal("toggle");
                 						}, function(error){
-                							alert(error.message);
+                							var n = noty({
+					                			layout: 'topCenter',
+					                			theme: 'relax',
+					                			text: 'Oops! Something went wrong from our side. Please try again.',
+					                			type: 'warning',
+					                			timeout: 3000,
+					                			killer: true,
+					                			animation: {
+					                				open: {height: 'toggle'}, // jQuery animate function property object
+					                				close: {height: 'toggle'}, // jQuery animate function property object
+					                				easing: 'swing', // easing
+					                				speed: 300 // opening & closing animation speed
+					                			}
+					                		});
                 						});
                 						break;
                                 		}
@@ -1582,11 +1711,37 @@ Hull.component('posts', {
 						})
 						createTopicModal.modal("toggle");
                                 	}, function(error){
-                                		alert(error.message);
+                                		var n = noty({
+		                			layout: 'topCenter',
+		                			theme: 'relax',
+		                			text: 'Oops! Something went wrong from our side. Please try again.',
+		                			type: 'warning',
+		                			timeout: 3000,
+		                			killer: true,
+		                			animation: {
+		                				open: {height: 'toggle'}, // jQuery animate function property object
+		                				close: {height: 'toggle'}, // jQuery animate function property object
+		                				easing: 'swing', // easing
+		                				speed: 300 // opening & closing animation speed
+		                			}
+		                		});
                                 	});
                         	}
                             } else {
-                                alert("A topic with the same name already exsits!");
+                		var n = noty({
+                			layout: 'topCenter',
+                			theme: 'relax',
+                			text: "Looks like there's an existing topic with the same name. Please choose a different name",
+                			type: 'warning',
+                			timeout: 3000,
+                			killer: true,
+                			animation: {
+                				open: {height: 'toggle'}, // jQuery animate function property object
+                				close: {height: 'toggle'}, // jQuery animate function property object
+                				easing: 'swing', // easing
+                				speed: 300 // opening & closing animation speed
+                			}
+                		});
                                 component.$el.find("#createTopic").removeClass("active disabled");
                             }
                         });
