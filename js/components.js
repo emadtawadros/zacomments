@@ -1285,13 +1285,32 @@ Hull.component('posts', {
             actions: {
             	flag:    'flagItem',
                 deleteTopic: function() {
-                	var isCertain = confirm('Are you sure you want to delete this topic?');
-                	if (isCertain) {
-                		Hull.api(this.options.id, 'delete').then(function(response) {
-                			console.log(response);
-                			window.location.href = '#/main';
-                		});
-                	}
+                	var component = this;
+	        	var n = noty({
+	        		text: 'Are you sure you want to delete this topic?',
+	        		layout: 'topCenter',
+        			theme: 'relax',
+        			type: 'warning',
+        			animation: {
+        				open: {height: 'toggle'}, // jQuery animate function property object
+        				close: {height: 'toggle'}, // jQuery animate function property object
+        				easing: 'swing', // easing
+        				speed: 300 // opening & closing animation speed
+        			},
+				buttons: [
+					{addClass: 'btn btn-danger', text: 'Yes', onClick: function($noty) {
+						Hull.api(component.options.id, 'delete').then(function(response) {
+							$noty.close();
+							window.location.href = '#/main';
+						});
+						}
+					},
+					{addClass: 'btn btn-default', text: 'I changed my mind', onClick: function($noty) {
+							$noty.close();
+						}
+					}
+				]
+			});
                 },
                 back: function() {
                     window.location.href = '#/main';
