@@ -108,12 +108,32 @@ Hull.component('posts', {
                 });
             },
             flagItem: function (event, action) {
+            	var component = this;
             	event.preventDefault();
             	var id = action.data.id;
-            	var isCertain = confirm('Do you want to report this content as inappropriate ?');
-            	if (isCertain) {
-            		this.sandbox.flag(id);
-            	}
+            	var n = noty({
+			text: 'Are you sure you want to report this topic? Please report only inappropriate, spam or duplicate topics.',
+			layout: 'topCenter',
+			theme: 'relax',
+			type: 'warning',
+			animation: {
+				open: {height: 'toggle'}, // jQuery animate function property object
+				close: {height: 'toggle'}, // jQuery animate function property object
+				easing: 'swing', // easing
+				speed: 300 // opening & closing animation speed
+			},
+			buttons: [
+				{addClass: 'btn btn-success', text: 'Yes', onClick: function($noty) {
+					$noty.close();
+					component.sandbox.flag(id);
+					}
+				},
+				{addClass: 'btn btn-default', text: 'I changed my mind', onClick: function($noty) {
+						$noty.close();
+					}
+				}
+			]
+		});
             },
             actions: {
             	flag:    'flagItem',
