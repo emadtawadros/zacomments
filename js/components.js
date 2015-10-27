@@ -964,14 +964,38 @@ Hull.component('posts', {
             	});
             },
             deleteComment: function(event, action) {
-            event.preventDefault();
-            var id = action.data.id;
-            var $parent = action.el
-            .addClass('is-removing')
-            .parents('[data-hull-comment-id="'+ id +'"]');
-            this.api(id, 'delete').then(function () {$parent.remove();});
+            	var component = this;
+            	var n = noty({
+        		text: 'Are you sure you want to delete your comment?',
+        		layout: 'topCenter',
+			theme: 'relax',
+			type: 'warning',
+			animation: {
+				open: {height: 'toggle'}, // jQuery animate function property object
+				close: {height: 'toggle'}, // jQuery animate function property object
+				easing: 'swing', // easing
+				speed: 300 // opening & closing animation speed
+			},
+			buttons: [
+				{addClass: 'btn btn-danger', text: 'Yes', onClick: function($noty) {
+					event.preventDefault();
+	            			var id = action.data.id;
+	            			var $parent = action.el
+	            			.addClass('is-removing')
+	            			.parents('[data-hull-comment-id="'+ id +'"]');
+            				component.api(id, 'delete').then(function () {
+            					$parent.remove();
+            					$noty.close();
+            				});
+					}
+				},
+				{addClass: 'btn btn-default', text: 'I changed my mind', onClick: function($noty) {
+						$noty.close();
+					}
+				}
+			]
+		});
             },
-            
             toggleLoading: function () {
             this.$el.toggleClass('is-loading');
             this.$find('input,textarea,button').attr('disabled', this.$el.hasClass('is-loading'));
