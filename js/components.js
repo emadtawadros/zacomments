@@ -1541,7 +1541,7 @@ Hull.component('posts', {
 			component.$el.find('#finishedUploadIcon').show();
                 });
                 var agreementCheckBox = component.$el.find('#agreeToPolicyBox');
-                if($._data(agreementCheckBox.get(0), 'events').click == null){ //bind click event once. In case of multiple renders
+                if(!($._data(agreementCheckBox.get(0), 'events').click)){ //bind click event once. In case of multiple renders
     			agreementCheckBox.click(function(){
     				if($(this).attr("checked")) { //button already checked, uncheck it
     					$(this).attr("checked", false);
