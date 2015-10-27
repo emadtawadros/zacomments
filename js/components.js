@@ -1540,16 +1540,18 @@ Hull.component('posts', {
 			component.$el.find('input[name=file]').removeClass("btn btn-default disabled")
 			component.$el.find('#finishedUploadIcon').show();
                 });
-    		component.$el.find('#agreeToPolicyBox').click(function(){
-    			if($(this).attr("checked")) { //button already checked, uncheck it
-    				$(this).attr("checked", false);
-    				component.$el.find('#createTopic').attr("disabled", "disabled");
-    			} else{ //it's unchecked, check it
-    				$(this).attr("checked", true);
-    				component.$el.find('#createTopic').removeAttr("disabled");
-    			}	
-    		});
-                    				
+                var agreementCheckBox = component.$el.find('#agreeToPolicyBox');
+                if($._data(agreementCheckBox.get(0), 'events').click == null){ //bind click event once. In case of multiple renders
+    			agreementCheckBox.click(function(){
+    				if($(this).attr("checked")) { //button already checked, uncheck it
+    					$(this).attr("checked", false);
+    					component.$el.find('#createTopic').attr("disabled", "disabled");
+    				} else{ //it's unchecked, check it
+    					$(this).attr("checked", true);
+    					component.$el.find('#createTopic').removeAttr("disabled");
+    				}	
+    			});	
+                }
         	var tagsField = this.$el.find('#tagsField');
                 tagsField.tagsInput({
                 	'autocomplete_url': "saksaka",
