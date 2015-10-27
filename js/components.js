@@ -184,12 +184,23 @@ Hull.component('posts', {
         			this.$el.find('#loadMore').removeClass("active disabled");
         	},
         	flagItem: function (event, action) {
+        		var component = this;
         		event.preventDefault();
         		var id = action.data.id;
-        		var isCertain = confirm('Do you want to report this content as inappropriate ?');
-        		if (isCertain) {
-        			this.sandbox.flag(id);
-        		}
+	        	var n = noty({
+	        		text: 'Are you sure you want to report this topic? Please report only inappropriate, spam or duplicate topics.',
+				buttons: [
+					{addClass: 'btn btn-success', text: 'Yes', onClick: function($noty) {
+						$noty.close();
+						component.sandbox.flag(id);
+						}
+					},
+					{addClass: 'btn btn-danger', text: 'I changed my mind', onClick: function($noty) {
+							$noty.close();
+						}
+					}
+				]
+			});
         	},
         	actions: {
         		flag: 'flagItem',
