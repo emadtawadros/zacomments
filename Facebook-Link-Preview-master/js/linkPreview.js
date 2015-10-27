@@ -490,7 +490,20 @@
                 	}).then(function(response) {
 	                	if(response.length>=1)
 	                	{
-	                		alert("It seems you already commented on this topic today!");
+	                		var n = noty({
+	                			layout: 'topCenter',
+	                			theme: 'relax',
+	                			text: "Our records show that you recently commented on this topic. The world is filled with other topics to comment on!",
+	                			type: 'warning',
+	                			timeout: 3000,
+	                			killer: true,
+	                			animation: {
+	                				open: {height: 'toggle'}, // jQuery animate function property object
+	                				close: {height: 'toggle'}, // jQuery animate function property object
+	                				easing: 'swing', // easing
+	                				speed: 300 // opening & closing animation speed
+	                			}
+	                		});
 	                		opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
 	                	} else {
 	                		opts.component.api(opts.objectID + '/comments', 'post', {
@@ -559,7 +572,20 @@
                 		}).then(function(response) {
                 			if(response.length>=1)
                 			{
-                				alert("It seems you already commented on this topic today!");
+		                		var n = noty({
+		                			layout: 'topCenter',
+		                			theme: 'relax',
+		                			text: "Our records show that you recently commented on this topic. The world is filled with other topics to comment on!",
+		                			type: 'warning',
+		                			timeout: 3000,
+		                			killer: true,
+		                			animation: {
+		                				open: {height: 'toggle'}, // jQuery animate function property object
+		                				close: {height: 'toggle'}, // jQuery animate function property object
+		                				easing: 'swing', // easing
+		                				speed: 300 // opening & closing animation speed
+		                			}
+		                		});
                 				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
                 			} else {
                 				opts.component.api(opts.objectID + '/comments', 'post', {
