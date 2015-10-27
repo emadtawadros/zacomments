@@ -204,7 +204,7 @@ Hull.component('posts', {
 						component.sandbox.flag(id);
 						}
 					},
-					{addClass: 'btn btn-danger', text: 'I changed my mind', onClick: function($noty) {
+					{addClass: 'btn btn-default', text: 'I changed my mind', onClick: function($noty) {
 							$noty.close();
 						}
 					}
@@ -450,14 +450,32 @@ Hull.component('posts', {
         	deleteItem: function(event, action) {
         		event.preventDefault();
         		var component = this;
-        		var isCertain = confirm('Are you sure you want to delete this topic?');
-        		if (isCertain) {
-        			var id = action.data.id;
-        			this.api(id, 'delete').then(function(response) {
-        				console.log(response);
-        				component.refresh();
-        			});
-        		}
+	        	var n = noty({
+	        		text: 'Are you sure you want to delete this topic?',
+	        		layout: 'topCenter',
+        			theme: 'relax',
+        			type: 'warning',
+        			animation: {
+        				open: {height: 'toggle'}, // jQuery animate function property object
+        				close: {height: 'toggle'}, // jQuery animate function property object
+        				easing: 'swing', // easing
+        				speed: 300 // opening & closing animation speed
+        			},
+				buttons: [
+					{addClass: 'btn btn-danger', text: 'Yes', onClick: function($noty) {
+						var id = action.data.id;
+        					component.api(id, 'delete').then(function(response) {
+        						$noty.close();
+        						component.refresh();
+        					});
+						}
+					},
+					{addClass: 'btn btn-default', text: 'I changed my mind', onClick: function($noty) {
+							$noty.close();
+						}
+					}
+				]
+			});
                 },
         	actions:
         	{
