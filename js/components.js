@@ -1668,6 +1668,7 @@ Hull.component('posts', {
 					                				speed: 300 // opening & closing animation speed
 					                			}
 					                		});
+					                		component.$el.find("#createTopic").removeClass("active disabled");
                         					}
                         					break;
                 					case "none":
