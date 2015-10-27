@@ -1614,7 +1614,7 @@ Hull.component('posts', {
                                 				break;
                         				case "upload":
                         					var userAgrees = component.$el.find('#agreeToPolicyBox').attr("checked");
-                        					if(component.options.imageID && userAgrees) {
+                        					if((component.options.imageID !== "0") && userAgrees) {
                         						var agreementEntry = {
                         							date: Hull.util.moment().toDate(),
 			                                			userID: Hull.currentUser().id,
