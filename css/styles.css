@@ -520,6 +520,9 @@ fieldset[disabled] .btn-warning.active{
 	.horizontallyCentered{
 		width: 98%;
 	}
+	#mainHeader{
+		height: 8%;
+	}
 }
 
 /* iPads (portrait) ----------- */
