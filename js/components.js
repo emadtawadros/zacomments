@@ -189,6 +189,15 @@ Hull.component('posts', {
         		var id = action.data.id;
 	        	var n = noty({
 	        		text: 'Are you sure you want to report this topic? Please report only inappropriate, spam or duplicate topics.',
+	        		layout: 'topCenter',
+        			theme: 'relax',
+        			type: 'warning',
+        			animation: {
+        				open: {height: 'toggle'}, // jQuery animate function property object
+        				close: {height: 'toggle'}, // jQuery animate function property object
+        				easing: 'swing', // easing
+        				speed: 300 // opening & closing animation speed
+        			},
 				buttons: [
 					{addClass: 'btn btn-success', text: 'Yes', onClick: function($noty) {
 						$noty.close();
