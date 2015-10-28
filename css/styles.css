@@ -11,6 +11,13 @@ body{
 	color:#444444;
 	width:80%;
 }
+footer{
+	clear: both;
+	margin: auto;
+	width: 90%;
+	text-align: center;
+	padding-top: 5px;
+}
 ul{
 	list-style:none;
 	margin:0;
