@@ -126,7 +126,7 @@ ul.ui-autocomplete {
     position: absolute;
 }	
 .logo{
-	background-image: url("http://zacomments.com/zacomments/images/banner.png");
+	background-image: url("http://zacomments.com/images/banner.png");
 	background-repeat: no-repeat;
 	font-size: 1.2em;
 	height: 100%;
@@ -516,7 +516,7 @@ fieldset[disabled] .btn-warning.active{
 		float:left;
 	}
 	.loading{
-		background: url("http://zacomments.com/zacomments/images/circle-loader.gif") no-repeat center;
+		background: url("http://zacomments.com/images/circle-loader.gif") no-repeat center;
 		height: 100px;
 	}
 	.mainAside{
@@ -588,7 +588,7 @@ fieldset[disabled] .btn-warning.active{
 		padding-top: 3%;
 	}
 	.logo{
-		background-image: url("http://zacomments.com/zacomments/images/mobileBanner.png");
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
 	}
 	.mainAside{
 		clear: both;
