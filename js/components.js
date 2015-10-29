@@ -29,7 +29,7 @@ Hull.component('posts', {
                 tab.slideDown();
         
                 this.options.trendingDaysLimit = 365;    //3 days
-                this.options.trendingLimit = 10;    //10 posts
+                this.options.trendingLimit = 30;    //10 posts
             }, //initialize
             datasources: {
                 trendingPosts: function loadTrendingPosts() {
@@ -198,7 +198,7 @@ Hull.component('posts', {
         				
         				},
         	initialize: function(){
-        		this.options.limit = 10;
+        		this.options.limit = 30;
         	},
         	afterRender: function() {
         			this.$el.find('#loadMore').removeClass("active disabled");
