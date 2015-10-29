@@ -71,7 +71,6 @@ Hull.component('posts', {
                                 })();
                             }
                             else {    //We need to fetch more data from Keen
-                                console.log("fetching more data from Keen");
                                 componenet.options.trendingDaysLimit += 30;
                                 componenet.render();
                             }
@@ -387,7 +386,6 @@ Hull.component('posts', {
 	  				password: password
 	  			}).then(function (me) {
 	  				component.$el.find('#emailSigninButton').removeClass("active disabled");
-	  				console.log("You're logged in as ", me.email);
 	  			}, function (error) {
 	  				component.$el.find('#emailSigninButton').removeClass("active disabled");
 	                		var n = noty({
@@ -427,15 +425,12 @@ Hull.component('posts', {
         		}
         	},
         	beforeRender: function(data, errors) {
-        		console.log(errors);	
         	},
         	afterRender: function(data) {
         		var component = this;
         		this.$el.find(".imgIframe, .videoPostPlay").click(function() {
 	            		var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
 		                var currentId = oldId.substring(4);
-		                console.log("old " + oldId);
-		                console.log("current " + currentId);
 		                pTP = "pTP_" + currentId;
 		                pDP = "pDP_" + currentId;
 		                oldId = "#" + oldId;
@@ -463,7 +458,6 @@ Hull.component('posts', {
         		event.preventDefault();
         		var id = action.data.id;
         		this.api(id + '/flag?all=1', 'delete').then(function(response) {
-        			console.log(response);
         			component.refresh();
         		});
         	},
@@ -748,14 +742,12 @@ Hull.component('posts', {
 		}
             },
             initialize: function() {
-                console.log(this.options.search);
             },
             datasources: {
                 searchResults: function() {
                 var searchString = ''+ this.options.search;
         //searchString.replace(/(the|it is|we all|an?|by|to|you|[mh]e|she|they|we)/ig, '');
                 var searchTokens = searchString.split(/[ ,]+/);
-                console.log(searchTokens);
                 return this.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
                                 'visibiliy': 'public',
                                 where:{
@@ -767,8 +759,6 @@ Hull.component('posts', {
                 }
             },
             beforeRender: function(data, error) {
-                console.log(data);
-                console.log(error);
             },
             afterRender: function(data) {
             	$("img").on("contextmenu",function(){
@@ -920,8 +910,6 @@ Hull.component('posts', {
             	this.$el.find(".imgIframe, .videoPostPlay").click(function() {
             		var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
 	                var currentId = oldId.substring(4);
-	                console.log("old " + oldId);
-	                console.log("current " + currentId);
 	                pTP = "pTP_" + currentId;
 	                pDP = "pDP_" + currentId;
 	                oldId = "#" + oldId;
@@ -1008,7 +996,6 @@ Hull.component('posts', {
    	
    		//See if the user already commented on this post today
    		this.api(this.options.id + '/comments', 'get').then(function(response) {
- 		console.log(response);
 		});
 		
             formData = this.sandbox.dom.getFormData($form);
@@ -1139,16 +1126,12 @@ Hull.component('posts', {
                     if(response.tags) {
                         numberOfTags = response.tags.length;
                         $.each(response.tags, function(tagsIndex, tagValue){
-                            console.log("tag value");
-                            console.log(tagValue);
                             componentRef.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
                         'visibiliy': 'public',
                         where:{
                           'tags.value':tagValue.value
                         }                     
                         }).then(function(response){
-                                console.log("related tag");
-                                console.log(response);
                                 $.each(response, function(responseIndex, responseValue){
                                 	if((responseValue.id != componentRef.options.id) && notAlreadyAdded(result, responseValue.id)) {
                                         result.push(responseValue);
@@ -1160,7 +1143,6 @@ Hull.component('posts', {
         
                         (function wait(){
                             if(tagsProcessed == numberOfTags) {
-                                console.log("Tags processing completed!");
                                 dff.resolve(result);
                             } else {
                                 setTimeout(wait, 100);
@@ -1175,14 +1157,8 @@ Hull.component('posts', {
                 }
             },    
             initialize: function(data) {
-                console.log("init");
-                console.log(data);
-                console.log(data);
             },
             beforeRender: function (data, errors) {
-                console.log("before render");
-                console.log(data);
-                console.log("Before render errors:" + errors);
             },
             afterRender: function (data) {
             	this.$el.removeClass("loading");
@@ -1200,9 +1176,6 @@ Hull.component('posts', {
                 var tab = this.$el.parent().find('.loading:first');
                 tab.slideUp();
         
-                console.log("after render");
-                console.log(data);
-                
                 if(hasElevatedAccess) {
 	                var tagsElement = this.$el.find('#postTags');
 	                tagsElement.tagsInput({
@@ -1272,7 +1245,6 @@ Hull.component('posts', {
 	                		component.api(component.options.id, 'put',{
 	                			"name": newValue
 	                		}).then(function() {
-	                			console.log("Title updated successfully!");
 	                		});
 	                	}
 	                });
@@ -1353,7 +1325,6 @@ Hull.component('posts', {
                         }).then(function(response) {
                             component.$el.find('#updateTags').removeClass("active disabled");
                             
-                            console.log(response);
                             window.location.href = '#/post/'+ component.options.id;
                         });
                     });
@@ -1449,12 +1420,9 @@ Hull.component('posts', {
             	$("img").on("contextmenu",function(){
                 	return false;
                 });
-                console.log(data);
 	            this.$el.find(".imgIframe, .videoPostPlay").click(function() {
 	            	var oldId = $(this).parent().children(":first").attr("id"); //we do this trick because we want to get the .imgIframe. But we might be called from .VideoPostPlay
 	                var currentId = oldId.substring(4);
-	                console.log("old " + oldId);
-	                console.log("current " + currentId);
 	                pTP = "pTP_" + currentId;
 	                pDP = "pDP_" + currentId;
 	                oldId = "#" + oldId;
@@ -1684,8 +1652,6 @@ Hull.component('posts', {
                                 }
                             }
                         }).then(function(response) {
-                            console.log("regular expression result");
-                            console.log(response);
                             if(response.length == 0) {
                             	var createTopicModal = component.$el.find("#createTopicModal");
                             	if(tagsText) {
@@ -1716,7 +1682,6 @@ Hull.component('posts', {
 	                                						"agreements": agreements
 	                                					}
 	                                				}).then(function(response) {
-	                                					console.log(response);
 	                							createTopicModal.on('hidden.bs.modal', function() {
 	                								window.location.href = '#/post/' + response.id;
 										})
@@ -1820,7 +1785,6 @@ Hull.component('posts', {
                 							"name": newConversationName,
                 							"tags": result
                 						}).then(function(response) {
-                							console.log(response);
                 							createTopicModal.on('hidden.bs.modal', function() {
                 								window.location.href = '#/post/' + response.id;
 									})
@@ -1849,7 +1813,6 @@ Hull.component('posts', {
                                 		"public": "true",
                                 		"name": newConversationName
                                     	}).then(function(response) {
-                                		console.log(response);
                                 		createTopicModal.on('hidden.bs.modal', function() {
                 					window.location.href = '#/post/' + response.id;
 						})
