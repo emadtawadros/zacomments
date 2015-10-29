@@ -864,14 +864,10 @@
 	            appId : "52e0c2a06b2de9b464000590",
 	            orgUrl: "https://d291172a.hullapp.io"
 	        }, function(hull, me, app, org){
-	        
-	            console.log('Here we go!');
-	            
 	            hull.api('52e138eaf0f1b0ac30000bad/conversations', 'get', {
 	                        'visibiliy': 'public',
 	                        'limit': 10
 	            }).then(function(response) {
-	            	console.log("Number of items "  + response.length);
 			rawAllTopics = response;
 	        	
 	                $( "#searchField" ).autocomplete({
@@ -981,13 +977,11 @@
 	                    				"public": "true",
 	                                                "name": valueTextTag
 	                    			}).then(function(response) {
-	                    				console.log("Tag Created");
 	                                                var datum = {
 	                                                    label: valueTextTag,
 	                                                    value: response.id
 	                                                }
 	                                            tagsWithID.push(datum);
-	                                            console.log("new tag");
 	                                            console.log(++tagsFinished);
 	                    			});
 	                    		} else {
