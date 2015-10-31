@@ -557,8 +557,8 @@ fieldset[disabled] .btn-warning.active{
 		height: 80%;
 	}
 }
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px){
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
 	.search,
 	.desktopOnly,
 	.create.desktop{
@@ -597,6 +597,12 @@ fieldset[disabled] .btn-warning.active{
 	}
 	body{
 		width:100%;
+	}
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+	#mainHeader{
+		height: 15%;
 	}
 }
 
