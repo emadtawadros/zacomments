@@ -470,15 +470,16 @@
                     var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
                     var currentUser = opts.component.sandbox.currentUser();
                     
+                    if(currentUser) {
                     //See if the user already commented on this post today
-                    opts.component.api(opts.objectID + '/comments', 'get', {
-                    	where: {
-                		user_id: currentUser.id,
-                		created_at: {
-                			'$gte': start,
-                			'$lte': end
-                			}
-                		}
+                    	opts.component.api(opts.objectID + '/comments', 'get', {
+                    		where: {
+	                		user_id: currentUser.id,
+	                		created_at: {
+	                			'$gte': start,
+	                			'$lte': end
+	                			}
+	                		}
                 	}).then(function(response) {
 	                	if(response.length>=1)
 	                	{
@@ -515,9 +516,23 @@
 	                		});	
 	                	}
                 	});
-		
-
-            		
+                    } else{ // he is a guest user
+                    	opts.component.api(opts.objectID + '/comments', 'post', {
+				"description": itemText,
+				"extra": {
+					"richComment": richComment
+				}
+			}).then(function(comment) {
+				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+				opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+				opts.component.toggleLoading();
+				opts.component.focusAfterRender = true;
+				opts.component.render();
+			}, function() {
+				opts.component.$el.find('input,input').focus();
+	    			opts.component.toggleLoading();
+			});
+                    }
                     /*$(".imgIframe").click(function() {
                         var oldId = $(this).attr("id");
                         var currentId = oldId.substring(4);
@@ -538,7 +553,6 @@
                             'width' : '495px'
                         });
                     });*/
-
                 }
                 else
                 {
@@ -551,87 +565,105 @@
                 	var start = opts.component.sandbox.util.moment().startOf('hour').toDate().toISOString();
 			var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
 			var currentUser = opts.component.sandbox.currentUser();
-
-                	//See if the user already commented on this post today
-                	opts.component.api(opts.objectID + '/comments', 'get', {
-                		where: {
-                			user_id: currentUser.id,
-                			created_at: {
-                				'$gte': start,
-                				'$lte': end
-                				}
-                			}
-                		}).then(function(response) {
-                			if(response.length>=1)
-                			{
-		                		var n = noty({
-		                			layout: 'topCenter',
-		                			theme: 'relax',
-		                			text: "Our records show that you recently commented on this topic. The world is filled with other topics to comment on!",
-		                			type: 'warning',
-		                			timeout: 3000,
-		                			killer: true,
-		                			animation: {
-		                				open: {height: 'toggle'}, // jQuery animate function property object
-		                				close: {height: 'toggle'}, // jQuery animate function property object
-		                				easing: 'swing', // easing
-		                				speed: 300 // opening & closing animation speed
-		                			}
-		                		});
-                				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
-                			} else {
-                				opts.component.api(opts.objectID + '/comments', 'post', {
-                					"description": itemText,
-                					"extra": {
-                						"richComment": richComment
-                					}
-                				}).then(function(comment) {
-                					opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
-                					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-							opts.component.toggleLoading();
-							opts.component.focusAfterRender = true;
-							opts.component.render();
-                				}, function() {
-                					opts.component.$el.find('input,input').focus();
-                					opts.component.toggleLoading();
-                				});	
-                			}
-                		});
+			
+			if(currentUser) {
+				//See if the user already commented on this post today
+                		opts.component.api(opts.objectID + '/comments', 'get', {
+	                		where: {
+	                			user_id: currentUser.id,
+	                			created_at: {
+	                				'$gte': start,
+	                				'$lte': end
+	                				}
+	                			}
+	                		}).then(function(response) {
+	                			if(response.length>=1)
+	                			{
+			                		var n = noty({
+			                			layout: 'topCenter',
+			                			theme: 'relax',
+			                			text: "Our records show that you recently commented on this topic. The world is filled with other topics to comment on!",
+			                			type: 'warning',
+			                			timeout: 3000,
+			                			killer: true,
+			                			animation: {
+			                				open: {height: 'toggle'}, // jQuery animate function property object
+			                				close: {height: 'toggle'}, // jQuery animate function property object
+			                				easing: 'swing', // easing
+			                				speed: 300 // opening & closing animation speed
+			                			}
+			                		});
+	                				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+	                			} else {
+	                				opts.component.api(opts.objectID + '/comments', 'post', {
+	                					"description": itemText,
+	                					"extra": {
+	                						"richComment": richComment
+	                					}
+	                				}).then(function(comment) {
+	                					opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+	                					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+								opts.component.toggleLoading();
+								opts.component.focusAfterRender = true;
+								opts.component.render();
+	                				}, function() {
+	                					opts.component.$el.find('input,input').focus();
+	                					opts.component.toggleLoading();
+	                				});	
+	                			}
+	                		});
+			} else{	//guest user
+	                	opts.component.api(opts.objectID + '/comments', 'post', {
+					"description": itemText,
+					"extra": {
+						"richComment": richComment
+					}
+				}).then(function(comment) {
+					opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+					opts.component.toggleLoading();
+					opts.component.focusAfterRender = true;
+					opts.component.render();
+				}, function() {
+					opts.component.$el.find('input,input').focus();
+					opts.component.toggleLoading();
+				});	
+			}
                 }
                     ///End of pasted
 
-					myThis.find('#preview'+selector).fadeOut("fast", function() {
-						myThis.find('#text'+selector).css({
-							"border" : "1px solid #b3b3b3",
-							"border-bottom" : "1px solid #e6e6e6"
-						});
-						myThis.find('#text'+selector).val("");
-						myThis.find('#previewImage'+selector).html("");
-						myThis.find('#previewTitle'+selector).html("");
-						myThis.find('#previewUrl'+selector).html("");
-						myThis.find('#previewDescription'+selector).html("");
-						//myThis.find(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
-						myThis.find(".imgIframe").click(function() {
-							var oldId = $(this).attr("id");
-							var currentId = oldId.substring(3);
-							pTP = "pTP" + currentId;
-							pDP = "pDP" + currentId;
-							oldId = "#" + oldId;
-							currentId = "#" + currentId;
-							myThis.find(oldId).css({
-								'display' : 'none'
-							});
-							myThis.find(currentId).css({
-								'display' : 'block'
-							});
-							/**myThis.find('#' + pTP).css({
-								'width' : '495px'
-							});
-							myThis.find('#' + pDP).css({
-								'width' : '495px'
-							});**/
-						});
-					});
+		myThis.find('#preview'+selector).fadeOut("fast", function() {
+			myThis.find('#text'+selector).css({
+				"border" : "1px solid #b3b3b3",
+				"border-bottom" : "1px solid #e6e6e6"
+			});
+			myThis.find('#text'+selector).val("");
+			myThis.find('#previewImage'+selector).html("");
+			myThis.find('#previewTitle'+selector).html("");
+			myThis.find('#previewUrl'+selector).html("");
+			myThis.find('#previewDescription'+selector).html("");
+			//myThis.find(content).hide().prependTo('#previewPostedList'+selector).fadeIn("fast");
+			myThis.find(".imgIframe").click(function() {
+				var oldId = $(this).attr("id");
+				var currentId = oldId.substring(3);
+				pTP = "pTP" + currentId;
+				pDP = "pDP" + currentId;
+				oldId = "#" + oldId;
+				currentId = "#" + currentId;
+				myThis.find(oldId).css({
+					'display' : 'none'
+				});
+				myThis.find(currentId).css({
+					'display' : 'block'
+				});
+				/**myThis.find('#' + pTP).css({
+					'width' : '495px'
+				});
+				myThis.find('#' + pDP).css({
+					'width' : '495px'
+				});**/
+			});
+		});
 
 
 
