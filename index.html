@@ -846,7 +846,11 @@
 			    <form  style="overflow:hidden">
 			      <div class='media'>
 			        <div class="pull-left">
-			          <img class="media-object img-rounded, userImg" src="{{me.picture}}" alt="{{me.name}}">
+			        	{{#if me.picture}}
+			        		<img class="media-object img-rounded, userImg" src="{{me.picture}}" alt="{{me.name}}">
+			        	{{else}}
+			        		<img class="media-object img-rounded, userImg" src="http://i2.wp.com/hull.s3.amazonaws.com/avatar.png">
+			        	{{/if}}
 			        </div>
 			        <div class="media-body">
 			              <div class="linkPreview" id="lp1"></div>
