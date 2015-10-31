@@ -558,7 +558,7 @@ fieldset[disabled] .btn-warning.active{
 	}
 }
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait){
 	.search,
 	.desktopOnly,
 	.create.desktop{
@@ -600,7 +600,7 @@ fieldset[disabled] .btn-warning.active{
 	}
 }
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
+@media only screen and (min-width : 321px) and (orientation : landscape){
 	#mainHeader{
 		height: 15%;
 	}
