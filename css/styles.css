@@ -604,6 +604,12 @@ fieldset[disabled] .btn-warning.active{
 	#mainHeader{
 		height: 15%;
 	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	#mobileNavigator{
+		display: block;
+	}
 }
 
 
