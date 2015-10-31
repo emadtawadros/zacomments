@@ -557,8 +557,17 @@ fieldset[disabled] .btn-warning.active{
 		height: 80%;
 	}
 }
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Smartphones (portrait only) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+	#mainHeader{
+		height: 10%;
+	}
+	main{
+		padding-top:15%;
+	}
+	.verticallyCentered{
+		padding-top: 3%;
+	}
 	.search,
 	.desktopOnly,
 	.create.desktop{
@@ -588,18 +597,6 @@ fieldset[disabled] .btn-warning.active{
 	}
 	body{
 		width:100%;
-	}
-}
-/* Portrait only */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait){
-	#mainHeader{
-		height: 10%;
-	}
-	main{
-		padding-top:15%;
-	}
-	.verticallyCentered{
-		padding-top: 3%;
 	}
 }
 /* Landscape only */
