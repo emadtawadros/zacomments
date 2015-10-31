@@ -557,8 +557,8 @@ fieldset[disabled] .btn-warning.active{
 		height: 80%;
 	}
 }
-/*phones*/
-@media only screen and (min-device-width: 320px) and (max-device-width : 480px){
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px){
 	.search,
 	.desktopOnly,
 	.create.desktop{
