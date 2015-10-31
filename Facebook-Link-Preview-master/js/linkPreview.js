@@ -517,7 +517,7 @@
 	                	}
                 	});
                     } else{ // he is a guest user
-                        var guestModal = opt.component.$el.find('#guestModal');
+                        var guestModal = opts.component.$el.find('#guestModal');
                         guestModal.on('hidden.bs.modal', function(){
                         	opts.component.api(opts.objectID + '/comments', 'post', {
 					"description": itemText,
