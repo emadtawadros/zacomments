@@ -310,7 +310,7 @@ Hull.component('posts', {
 	  		this.$el.find('#emailLoginSection').toggle();
 	  	},
 	  	toggleRegistration: function(){
-	  		this.$el.find('#registrationSection').toggle();
+	  		this.$el.find('#registrationSection').slideToggle();
 	  	},
 	  	signup: function() {
 	  		var component = this;
