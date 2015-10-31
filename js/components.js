@@ -313,7 +313,12 @@ Hull.component('posts', {
 	  		this.$el.find('#registrationSection').slideToggle();
 	  	},
 	  	newFBLogin: function(){
-	  		Hull.login({provider:'facebook'});
+	  		if(this.data.me.attributes.main_identity == "guest")
+	  		{
+	  			Hull.linkIdentity('facebook');
+	  		} else {
+	  			Hull.login({provider:'facebook'});
+	  		}
 	  	},
 	  	signup: function() {
 	  		var component = this;
