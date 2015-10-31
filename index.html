@@ -455,7 +455,7 @@
 						{{#if comment.user.name}}
 							<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
 						{{else}}
-							<p>Anonymous</p>
+							<p style="display:inline;">Anonymous</p>
 						{{/if}}
 						<time>{{fromNow comment.updated_at}}</time>
 					</span>
@@ -780,7 +780,7 @@
 		            		{{#if user.name}}
 			            		<a href="#/user/{{user.id}}">{{user.name}}</a>
 			            	{{else}}
-			            		<p>Anonymous</p>
+			            		<p style="display:inline;">Anonymous</p>
 			            	{{/if}}
 			            	<time class="muted">{{fromNow updated_at}}</time>
 		            	</span>
