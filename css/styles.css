@@ -599,7 +599,7 @@ fieldset[disabled] .btn-warning.active{
 		width:100%;
 	}
 }
-/* Landscape */
+/* Iphone 4 Landscape */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
@@ -645,11 +645,330 @@ fieldset[disabled] .btn-warning.active{
 		width:100%;
 	}
 }
+/*Iphone 5 landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
 
+/*Iphone 6 Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
 
+/* Iphone 6+Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
+/* Samsung galaxy S3 Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: landscape) {
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
 
+/* Samsung Galaxy s4 Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
 
+/* Samsung galaxy s5 Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
 
-
-
-
+/* HTC phones Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+	#mainHeader{
+		height: 15%;
+	}
+	main{
+		padding-top:10%;
+	}
+	.verticallyCentered{
+		padding-top: 1%;
+	}
+	.search,
+	.desktopOnly,
+	.create.desktop{
+		display: none;
+	}
+	#searchButtonMobile{
+		display: inline;	
+	}
+	#mobileNavigator{
+		display: block;
+	}
+	.ui-menu-item{
+		padding-top: 5%;
+	}
+	.create.mobile{
+	display: inline;
+	}
+	.horizontallyCentered{
+		margin: 0px 0px;
+		width: 100%;
+	}
+	.logo{
+		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	}
+	.mainAside{
+		clear: both;
+	}
+	body{
+		width:100%;
+	}
+}
