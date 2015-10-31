@@ -315,9 +315,15 @@ Hull.component('posts', {
 	  	newFBLogin: function(){
 	  		if(this.data.me.attributes.main_identity == "guest")
 	  		{
-	  			Hull.linkIdentity('facebook');
+	  			Hull.linkIdentity({
+	  				provider:'facebook',
+	  				strategy:'redirect'
+	  			});
 	  		} else {
-	  			Hull.login({provider:'facebook'});
+	  			Hull.login({
+	  				provider:'facebook',
+	  				strategy:'redirect'
+	  			});
 	  		}
 	  	},
 	  	signup: function() {
