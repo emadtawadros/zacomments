@@ -228,29 +228,32 @@
 			  </div>
 			{{else}}
 			  {{#if loggedOut}}
-			    <div class="close" data-hull-action="close"></div>
-			    <p>Don't be a stalker! Sign in and join the action!</p>
-			    <button type="button" class="btn btn-default" data-hull-action="toggleEmailLogin" id="toggleEmailLoginButton"><i class="icon-envelope"></i> Email</button>
-			    <div class="hull-identity__signin">
-			      {{#loggedOut}}
-			        <button data-hull-action="login" data-hull-provider="{{.}}" class="btn btn-default btn-{{.}}">
-			          <i class="icon-{{.}}"></i>
-			           {{classify .}}
-			        </button>
-			      {{/loggedOut}}
-			    </div>
-			    <div id="emailLoginSection" style="display:none">
-			    	<input type="text" placeholder="Email" id="emailLoginField"></input>
-				<input type="password" placeholder="Password" id="passwordLoginField"></input>
-				<button type="button" class="btn btn-default has-spinner" id="emailSigninButton" data-hull-action="signin"><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Login</button>
-			    </div>
-			    <p>First time? <a href="#" data-hull-action="expandSignup">Sign up now!</a></p>
-			    <div id="signupForm" style="display:none">
-		        	<input type="text" placeholder="Username" id="usernameField"></input>
-		        	<input type="text" placeholder="Email" id="emailField"></input>
-				<input type="password" placeholder="Password" id="passwordField"></input>
-				<input type="password" placeholder="Confirm Password" id="confirmPasswordField"></input>
-				<button type="button" class="btn btn-default has-spinner" id="signupButton" data-hull-action="signup"><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Sign up!</button>
+			    <button type="button" class="btn btn-default" data-hull-action="toggleRegistration" id="toggleRegistrationButton">Login</button>
+			    <div id="registrationSection">
+				    <div class="close" data-hull-action="close"></div>
+				    <p>Don't be a stalker! Sign in and join the action!</p>
+				    <button type="button" class="btn btn-default" data-hull-action="toggleEmailLogin" id="toggleEmailLoginButton"><i class="icon-envelope"></i> Email</button>
+				    <div class="hull-identity__signin">
+				      {{#loggedOut}}
+				        <button data-hull-action="login" data-hull-provider="{{.}}" class="btn btn-default btn-{{.}}">
+				          <i class="icon-{{.}}"></i>
+				           {{classify .}}
+				        </button>
+				      {{/loggedOut}}
+				    </div>
+				    <div id="emailLoginSection" style="display:none">
+				    	<input type="text" placeholder="Email" id="emailLoginField"></input>
+					<input type="password" placeholder="Password" id="passwordLoginField"></input>
+					<button type="button" class="btn btn-default has-spinner" id="emailSigninButton" data-hull-action="signin"><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Login</button>
+				    </div>
+				    <p>First time? <a href="#" data-hull-action="expandSignup">Sign up now!</a></p>
+				    <div id="signupForm" style="display:none">
+			        	<input type="text" placeholder="Username" id="usernameField"></input>
+			        	<input type="text" placeholder="Email" id="emailField"></input>
+					<input type="password" placeholder="Password" id="passwordField"></input>
+					<input type="password" placeholder="Confirm Password" id="confirmPasswordField"></input>
+					<button type="button" class="btn btn-default has-spinner" id="signupButton" data-hull-action="signup"><span class="spinner"><i class="icon-spin icon-refresh"></i></span> Sign up!</button>
+				    </div>
 			    </div>
 			  {{/if}}
 			{{/if}}
