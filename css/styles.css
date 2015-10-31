@@ -599,48 +599,7 @@ fieldset[disabled] .btn-warning.active{
 		width:100%;
 	}
 }
-/* Landscape only */
-@media only screen and (min-device-width : 321px) and (orientation : landscape){
-	#mainHeader{
-		height: 15%;
-	}
-	main{
-		padding-top:10%;
-	}
-	.verticallyCentered{
-		padding-top: 1%;
-	}
-	.search,
-	.desktopOnly,
-	.create.desktop{
-		display: none;
-	}
-	#searchButtonMobile{
-		display: inline;	
-	}
-	#mobileNavigator{
-		display: block;
-	}
-	.ui-menu-item{
-		padding-top: 5%;
-	}
-	.create.mobile{
-	display: inline;
-	}
-	.horizontallyCentered{
-		margin: 0px 0px;
-		width: 100%;
-	}
-	.logo{
-		background-image: url("http://zacomments.com/images/mobileBanner.png");
-	}
-	.mainAside{
-		clear: both;
-	}
-	body{
-		width:100%;
-	}
-}
+
 
 
 
