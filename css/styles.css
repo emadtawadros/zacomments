@@ -213,7 +213,9 @@ ul.ui-autocomplete {
 .login .btn-twitter{
 	color: #4099FF;
 }
-
+#registrationSection{
+	display:none;
+}
 #mobileNavigator a:active,
 #mobileNavigator a:visited,
 #mobileNavigator a:focus{
