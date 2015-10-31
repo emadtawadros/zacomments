@@ -309,6 +309,9 @@ Hull.component('posts', {
 	  	toggleEmailLogin: function(){
 	  		this.$el.find('#emailLoginSection').toggle();
 	  	},
+	  	toggleRegistration: function(){
+	  		this.$el.find('#registrationSection').toggle();
+	  	},
 	  	signup: function() {
 	  		var component = this;
 	  		var username = this.$el.find('#usernameField').val();
