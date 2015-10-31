@@ -517,21 +517,25 @@
 	                	}
                 	});
                     } else{ // he is a guest user
-                    	opts.component.api(opts.objectID + '/comments', 'post', {
-				"description": itemText,
-				"extra": {
-					"richComment": richComment
-				}
-			}).then(function(comment) {
-				opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
-				opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-				opts.component.toggleLoading();
-				opts.component.focusAfterRender = true;
-				opts.component.render();
-			}, function() {
-				opts.component.$el.find('input,input').focus();
-	    			opts.component.toggleLoading();
-			});
+                        var guestModal = opt.component.$el.find('#guestModal');
+                        guestModal.on('hidden.bs.modal', function(){
+                        	opts.component.api(opts.objectID + '/comments', 'post', {
+					"description": itemText,
+					"extra": {
+						"richComment": richComment
+					}
+				}).then(function(comment) {
+					opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+					opts.component.toggleLoading();
+					opts.component.focusAfterRender = true;
+					opts.component.render();
+				}, function() {
+					opts.component.$el.find('input,input').focus();
+		    			opts.component.toggleLoading();
+				});	
+                        });
+                        guestModal.modal("toggle");
                     }
                     /*$(".imgIframe").click(function() {
                         var oldId = $(this).attr("id");
@@ -613,21 +617,25 @@
 	                			}
 	                		});
 			} else{	//guest user
-	                	opts.component.api(opts.objectID + '/comments', 'post', {
-					"description": itemText,
-					"extra": {
-						"richComment": richComment
-					}
-				}).then(function(comment) {
-					opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
-					opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
-					opts.component.toggleLoading();
-					opts.component.focusAfterRender = true;
-					opts.component.render();
-				}, function() {
-					opts.component.$el.find('input,input').focus();
-					opts.component.toggleLoading();
-				});	
+				var guestModal = opt.component.$el.find('#guestModal');
+				guestModal.on('hidden.bs.modal', function(){
+					opts.component.api(opts.objectID + '/comments', 'post', {
+						"description": itemText,
+						"extra": {
+							"richComment": richComment
+						}
+					}).then(function(comment) {
+						opts.component.$el.find('#postPreviewButton' + selector).removeClass("active disabled");
+						opts.component.sandbox.emit('hull.comments.' + opts.objectID + '.added', comment);
+						opts.component.toggleLoading();
+						opts.component.focusAfterRender = true;
+						opts.component.render();
+					}, function() {
+						opts.component.$el.find('input,input').focus();
+						opts.component.toggleLoading();
+					});	
+				});
+				guestModal.modal("toggle");
 			}
                 }
                     ///End of pasted
