@@ -448,7 +448,11 @@
 				<img src="{{comment.user.picture}}" class="userImg" alt="{{comment.user.name}}">
 				<div class="userComment">
 					<span>
-						<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
+						{{#if comment.user.name}}
+							<a href="#/user/{{comment.user.id}}">{{comment.user.name}}</a>
+						{{else}}
+							<p>Anonymous</p>
+						{{/if}}
 						<time>{{fromNow comment.updated_at}}</time>
 					</span>
 					<div>
@@ -765,7 +769,11 @@
 		            <img src={{user.picture}} class="userImg">
 		            <div class="userComment">
 		            	<span>
-			            	<a href="#/user/{{user.id}}">{{user.name}}</a>
+		            		{{#if user.name}}
+			            		<a href="#/user/{{user.id}}">{{user.name}}</a>
+			            	{{else}}
+			            		<p>Anonymous</p>
+			            	{{/if}}
 			            	<time class="muted">{{fromNow updated_at}}</time>
 		            	</span>
 					  	<div class="hull-comments__description">
