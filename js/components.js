@@ -312,6 +312,9 @@ Hull.component('posts', {
 	  	toggleRegistration: function(){
 	  		this.$el.find('#registrationSection').slideToggle();
 	  	},
+	  	newFBLogin: function(){
+	  		Hull.login({provider:'facebook'});
+	  	},
 	  	signup: function() {
 	  		var component = this;
 	  		var username = this.$el.find('#usernameField').val();
