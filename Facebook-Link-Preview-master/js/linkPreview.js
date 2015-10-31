@@ -470,11 +470,17 @@
                     var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
                     var currentUser = opts.component.sandbox.currentUser();
                     
-                    if(currentUser) {
+                    if(currentUser || (opts.component.data.me.attributes.main_identity == "guest")) {
                     //See if the user already commented on this post today
+                    var id;
+                    if(currentUser) {
+                    	id = currentUser.id;
+                    } else{
+                    	id = opts.component.data.me.attributes.id;
+                    }
                     	opts.component.api(opts.objectID + '/comments', 'get', {
                     		where: {
-	                		user_id: currentUser.id,
+	                		user_id: id,
 	                		created_at: {
 	                			'$gte': start,
 	                			'$lte': end
@@ -570,11 +576,17 @@
 			var end = opts.component.sandbox.util.moment().endOf('hour').toDate().toISOString();
 			var currentUser = opts.component.sandbox.currentUser();
 			
-			if(currentUser) {
+			if(currentUser || (opts.component.data.me.attributes.main_identity == "guest")) {
 				//See if the user already commented on this post today
+	                    	var id;
+	                    	if(currentUser) {
+	                    		id = currentUser.id;
+	                    	} else{
+	                    		id = opts.component.data.me.attributes.id;
+	                    	}
                 		opts.component.api(opts.objectID + '/comments', 'get', {
 	                		where: {
-	                			user_id: currentUser.id,
+	                			user_id: id,
 	                			created_at: {
 	                				'$gte': start,
 	                				'$lte': end
