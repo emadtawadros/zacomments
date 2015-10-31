@@ -317,12 +317,14 @@ Hull.component('posts', {
 	  		{
 	  			Hull.linkIdentity({
 	  				provider:'facebook',
-	  				strategy:'redirect'
+	  				strategy:'redirect',
+	  				redirect_url:'http://zacomments.azurewebsites.net'
 	  			});
 	  		} else {
 	  			Hull.login({
 	  				provider:'facebook',
-	  				strategy:'redirect'
+	  				strategy:'redirect',
+	  				redirect_url:'http://zacomments.azurewebsites.net'
 	  			});
 	  		}
 	  	},
