@@ -558,7 +558,7 @@ fieldset[disabled] .btn-warning.active{
 	}
 }
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait){
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.search,
 	.desktopOnly,
 	.create.desktop{
@@ -573,21 +573,12 @@ fieldset[disabled] .btn-warning.active{
 	.ui-menu-item{
 		padding-top: 5%;
 	}
-	#mainHeader{
-		height: 10%;
-	}
-	main{
-		padding-top:15%;
-	}
 	.create.mobile{
 	display: inline;
 	}
 	.horizontallyCentered{
 		margin: 0px 0px;
 		width: 100%;
-	}
-	.verticallyCentered{
-		padding-top: 3%;
 	}
 	.logo{
 		background-image: url("http://zacomments.com/images/mobileBanner.png");
@@ -599,18 +590,31 @@ fieldset[disabled] .btn-warning.active{
 		width:100%;
 	}
 }
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) and (orientation : landscape){
+/* Portrait only */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait){
+	#mainHeader{
+		height: 10%;
+	}
+	main{
+		padding-top:15%;
+	}
+	.verticallyCentered{
+		padding-top: 3%;
+	}
+}
+/* Landscape only */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape){
 	#mainHeader{
 		height: 15%;
 	}
-	.logo{
-		background-image: url("http://zacomments.com/images/mobileBanner.png");
+	main{
+		padding-top:22%;
 	}
-	#mobileNavigator{
-		display: block;
+	.verticallyCentered{
+		padding-top: 5%;
 	}
 }
+
 
 
 
