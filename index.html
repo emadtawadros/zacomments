@@ -445,7 +445,11 @@
 		{{/ifcond}}
 		<article style="clear:both;">
 			<section class="comment">
-				<img src="{{comment.user.picture}}" class="userImg" alt="http://i2.wp.com/hull.s3.amazonaws.com/avatar.png">
+				{{#if comment.user.picture}}
+					<img src="{{comment.user.picture}}" class="userImg">
+				{{else}}
+					<img src="http://i2.wp.com/hull.s3.amazonaws.com/avatar.png" class="userImg">
+				{{/if}}
 				<div class="userComment">
 					<span>
 						{{#if comment.user.name}}
@@ -766,7 +770,11 @@
 		    <section class="commentFeed" class="media-list hull-comments__list">
 		        {{#comments}}
 				<section class="comment" data-hull-comment-id="{{id}}">
-		            <img src={{user.picture}} class="userImg" alt="http://i2.wp.com/hull.s3.amazonaws.com/avatar.png">
+				{{#if user.picture}}
+					<img src={{user.picture}} class="userImg">
+				{{else}}
+					<img src="http://i2.wp.com/hull.s3.amazonaws.com/avatar.png" class="userImg">
+				{{/if}}
 		            <div class="userComment">
 		            	<span>
 		            		{{#if user.name}}
