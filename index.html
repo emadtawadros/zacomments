@@ -155,7 +155,7 @@
 			                </ul>	
 					</section>
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>								
+					<section data-hull-component="test" class="loading" data-hull-id="{{id}}" data-hull-orderby="votes"></section>								
 	        			</article>
 
 	            {{/if}}
@@ -193,7 +193,7 @@
 						</ul>
 					</section>
 					<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-					<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+					<section data-hull-component="test" class="loading" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 				</article>					
 				{{/if}}
 			{{/each}}
@@ -677,10 +677,10 @@
 			        	</ul>
 			        	<div class="tab-content">
 			        		<div id="topcomments" class="tab-pane fade in active">
-			        			<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
+			        			<section data-hull-component="test" class="loading" data-hull-id="{{post.id}}" data-hull-orderby="votes"></section>
 			        		</div>
 			        		<div id="newcomments" class="tab-pane fade">
-			        			<section data-hull-component="test" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
+			        			<section data-hull-component="test" class="loading" data-hull-id="{{post.id}}" data-hull-orderby="date"></section>
 			        		</div>
 			        	</div>
 			        </div>
@@ -723,7 +723,7 @@
 			            				</ul>
 				    			</section>
 							<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-							<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+							<section data-hull-component="test" class="loading" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 			        		</article>
 			        	{{/each}}
 	        		</div>
@@ -758,7 +758,7 @@
 			            				</ul>
 				    			</section>
 							<section class="createComment" data-hull-component="commentbox" data-hull-id="{{id}}"></section>
-							<section data-hull-component="test" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
+							<section data-hull-component="test" class="loading" data-hull-id="{{id}}" data-hull-orderby="votes"></section>
 		        			</article>
 			    		{{/each}}
 	        		</div>
