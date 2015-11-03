@@ -922,6 +922,7 @@ Hull.component('posts', {
             },
             
             afterRender: function(data) {
+            	this.$el.removeClass('loading');
             	var tab = this.$el.parent().find('.loading');
             	tab.slideUp();
             	
