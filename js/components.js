@@ -960,18 +960,14 @@ Hull.component('posts', {
             	this.$el.find('.commentDescription').readmore({
             		speed: 75,
 	  		lessLink: '<a href="#">Read less</a>',
-	  		collapsedHeight: 100,
-	  		embedCSS: true,
-	  		blockCSS: 'text-overflow: ellipsis;white-space: nowrap;overflow: hidden; '
+	  		collapsedHeight: 100
             	});
             	this.$el.closest('.tab-content').siblings('.nav-tabs').find('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             		//this crazines is to handle showing readmore for comments that are originally hidden by tabs
             		component.$el.find('.commentDescription').readmore({
             			speed: 75,
 		  		lessLink: '<a href="#">Read less</a>',
-		  		collapsedHeight: 100,
-		  		embedCSS: true,
-	  			blockCSS: 'text-overflow: ellipsis;white-space: nowrap;overflow: hidden; '
+		  		collapsedHeight: 100
             		});
             	});
             },
