@@ -28,7 +28,7 @@ Hull.component('posts', {
                 var tab = this.$el.parent().find('.loading');
                 tab.slideDown();
         
-                this.options.trendingDaysLimit = 180;    //3 days
+                this.options.trendingDaysLimit = 181;    //3 days
                 this.options.trendingLimit = 30;    //10 posts
             }, //initialize
             datasources: {
